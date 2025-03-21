@@ -3,7 +3,7 @@ import { CONFIG } from "./config.js";
 import getNavBar from "../components/navBar.js";
 import { videosData } from "./data/videos.js";
 
-getNavBar(); // Carga la barra de navegación
+getNavBar(); // Carga la barra de navegacióndddgi
 
 // ==> cosas para el botón de navegación (dispositivos moviles)
 document
@@ -31,6 +31,6 @@ window.addEventListener("popstate", router);
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================
 
 console.log(CONFIG);
-console.log(videosData.find(video => video.category === "estres"))
+console.log(videosData.find((video) => video.category === "estres"));
 
 // ========================================================
