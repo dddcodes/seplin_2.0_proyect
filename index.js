@@ -12,7 +12,7 @@ document
     document.getElementById("navigationBar").classList.toggle("show");
   });
 
-// ==> cosas para lo del router
+// ==> cosas para lo del routeraa
 document.addEventListener("DOMContentLoaded", () => {
   router(); // Cargar la vista según la URL actual (no funciona parece ser)
 
