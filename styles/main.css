@@ -1,0 +1,486 @@
+:root {
+  --default-color: #1b1b1b;
+  --default-color-2: #272727;
+  --default-color-3: #363636;
+  --default-color-4: #424242;
+  --alt-color: #f8f9fa;
+  --alt-color-2: #8c8c8c;
+  --alt-color-3: #5b5b5b;
+  --alt-color-4: #383838;
+
+  --primary-color: #007bff;
+  --secondary-color: #60a1db;
+
+  --primary-gradient: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
+  --success-color: #28a745;
+  --info-color: cadetblue;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+
+  --navigation-bar-z-index: 3;
+  --navigation-button-z-index: 4;
+
+  --border-radius: 3px;
+  --border-radius-2: 5px;
+}
+
+/* Reset global styles for all elements */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+  flex-direction: column; /* Para que el contenido sea apilado de arriba hacia abajo */
+  text-align: center; /* Centrado del texto */
+
+  width: 100%;
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+
+  background-color: var(--default-color);
+}
+
+* {
+  color: var(--alt-color);
+  transition: all 0.3s ease-in-out; /* Agrega una transición para todos los cambios */
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-variant: normal;
+
+  text-decoration: none;
+  text-align: left;
+}
+
+::selection {
+  background-color: var(--alt-color);
+  color: var(--default-color);
+}
+
+#app {
+  width: 70%;
+  padding: 70px 5px;
+  background-color: var(--default-color);
+
+  transition: opacity 0.5s ease-in-out;
+}
+
+.animated {
+  animation: appEntryAnimation 2s ease-in-out;
+}
+
+@keyframes appEntryAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Estilos para el navBar ============================================*/
+
+#navigationBar {
+  display: flex;
+
+  background: var(--default-color-2);
+  width: 97%;
+
+  padding: 5px 0;
+  border-radius: var(--border-radius-2);
+
+  justify-content: right;
+  align-items: right;
+  text-align: right;
+
+  z-index: var(--navigation-bar-z-index);
+  position: fixed;
+
+  top: 5px;
+
+  transition: all 0.3s linear;
+  animation: navBarEntryAnimation 1.25s ease-in-out;
+}
+
+@keyframes navBarEntryAnimation {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+#navigationBar > a {
+  justify-content: flex-start; /* Alinea a la izquierda */
+
+  align-items: stretch; /* Igual altura para todos */
+  box-sizing: border-box;
+  font-size: 15px;
+  color: var(--alt-color);
+
+  border: var(--default-color-4) solid 0;
+  border-radius: var(--border-radius);
+
+  display: inline-block; /* Mantiene el tamaño del contenido */
+  padding: 10px 20px;
+
+  color: white;
+
+  margin-right: 20px; /* Espacio entre botones */
+  text-align: center;
+}
+
+#navigationBar > a:hover {
+  background-color: var(--default-color-3);
+}
+
+#navigationBar > a:active {
+  background-color: var(--default-color-4);
+}
+
+#navigationBar > .iconAndText {
+  width: max-content;
+  font-size: 12px;
+
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  border: var(--primary-color) solid 1.5px;
+
+  margin-right: auto;
+  margin-left: 5px;
+}
+
+#navigationButton {
+  background-color: var(--default-color);
+  border: none;
+
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  border-radius: var(--border-radius);
+
+  font-size: 30px;
+
+  /*Para que siempre este flotando encima de todo*/
+  z-index: var(--navigation-button-z-index);
+  position: fixed;
+  left: 5px;
+  top: 5px;
+
+  display: none; /*Ocultar el botón de navegación en pantallas grandes*/
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#navigationButton:hover {
+  background-color: var(--default-color-2);
+}
+
+#navigationButton:active {
+  background-color: var(--alt-color);
+}
+
+/* Dispositivos mas chicos ============================================*/
+@media (max-width: 700px) {
+  #navigationButton {
+    display: flex; /* Mostrar el botón de navegación en pantallas pequeñas */
+  }
+
+  #navigationBar {
+    display: block; /* Asegurarse de que el navBar esté oculto en pantallas pequeñas */
+    width: 99%;
+
+    border-radius: var(--border-radius-2);
+
+    left: -100%; /* Empuja la caja fuera de la pantalla por la izquierda */
+    transition: transform 0.6s ease-in-out; /* Transición de 1 segundo */
+  }
+
+  #navigationBar.show {
+    transform: translateX(100%);
+  }
+
+  #navigationBar > a {
+    display: block;
+    justify-content: left;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+  }
+
+  #navigationBar > a:hover {
+    border-left: var(--default-color-4) solid 50px;
+  }
+
+  #navigationBar > .iconAndText {
+    display: block;
+    justify-content: left;
+    flex-direction: column;
+
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+
+    border: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  #app {
+    width: 100%;
+  }
+}
+
+/* Estilos para los contenedores principales ============================================*/
+
+#app > p {
+  margin: 0;
+
+  padding: 15px;
+  font-size: 15px;
+  text-align: left;
+}
+p.justifyText,
+div.justifyText {
+  text-align: justify;
+}
+
+div{
+  padding: 10px;
+}
+
+div > p,h1,h2,h3,h4,h5,span{
+  margin: 0;
+}
+
+a{
+  color: var(--info-color);
+  border-bottom: 2px solid var(--info-color);  /* 2px de grosor, color negro */
+  display: inline; /* Asegura que solo afecte al texto */
+}
+
+a:hover{
+  color: var(--alt-color);
+  border-color: var(--alt-color);
+}
+
+.titleBox {
+  border-radius: 3px;
+  width: 100%;
+  padding: 30px 15px !important;
+
+  font-weight: bold;
+  font-size: 35px !important;
+
+  text-align: left;
+}
+
+
+
+.basicBox {
+  background-color: var(--default-color-2);
+  border-radius: var(--border-radius);
+  width: 100%;
+  margin: 10px 0 !important;
+  
+}
+
+.basicBox.llamative {
+  background: var(--primary-gradient);
+  border-radius: var(--border-radius);
+  width: 100%;
+
+  font-weight: bold;
+}
+
+.basicBox.OnlyBorder {
+  background-color: var(--default-color);
+  border: 1.5px solid var(--default-color-3);
+  border-radius: 3px;
+
+}
+
+/* Estilos para los botones ============================================*/
+
+.button {
+  background-color: var(--default-color-2);
+  border: none;
+
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+
+  outline: none; /* Quita el borde de enfoque */
+  -webkit-tap-highlight-color: transparent; /* Quita el resaltado azul en móviles */
+
+  font-size: 15px;
+
+  margin: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--default-color-3);
+}
+
+.button:active {
+  background: none;
+  background-color: var(--default-color-4);
+}
+
+.button.alt {
+  background-color: var(--alt-color);
+  color: var(--default-color-2);
+}
+
+.button.alt:hover {
+  background-color: var(--alt-color-2);
+}
+
+.button.alt:active {
+  background-color: var(--alt-color-3);
+}
+
+.button.onlyBorder {
+  background-color: var(--default-color);
+  border: 1.5px solid var(--default-color-2);
+}
+
+.button.onlyBorder:hover {
+  border-color: var(--default-color-3);
+}
+
+.button.onlyBorder:active {
+  background-color: var(--default-color-3);
+}
+
+/* Estilos para los inputs ============================================*/
+
+input,
+textarea {
+  background-color: var(--default-color);
+  border: var(--default-color-2) solid 1.5px;
+
+  outline: none;
+
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+
+  font-size: 15px;
+
+  margin: 5px;
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--default-color-3);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--alt-color);
+}
+
+/* Estilos para las CAJAS DE VIDEO ============================================*/
+
+.video-card {
+  width: 270px;
+  cursor: pointer;
+  padding: 0;
+
+  background-color: var(--default-color);
+
+  border-radius: var(--border-radius-2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+
+  justify-self: center;
+}
+.video-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  outline: var(--alt-color) solid .5px;
+
+}
+.thumbnail {
+  width: 100%;
+  height: 151.88px;
+  background: var(--default-color-3);
+  border-radius: var(--border-radius-2);
+  position: relative;
+  padding: 0;
+
+}
+
+.video-info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+}
+
+.text-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.title {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0 0 5px;
+}
+
+.link {
+  font-size: 9px;
+  color: var(--default-color-4);
+  padding: 5px 0 0;
+}
+
+.category{
+  font-size: 12px;
+  color: var(--alt-color-2);
+  padding: 2px;
+
+  border: var(--default-color-3) solid .5px;
+  width: fit-content;
+  border-radius: var(--border-radius);
+}
+
+/* Estilos de CATALOGO de video-cards ============================================*/
+
+.catalog-container {
+  margin: 15px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center; /* Centra los items horizontalmente */
+  align-items: center; /* Centra los items verticalmente */
+
+  padding: 0;
+  gap: 5px;
+}
+
+@media (max-width: 600px) {
+  .video-card {
+    width: 100vw;
+    margin-bottom: 10px;
+  }
+  .video-card > .thumbnail {
+    height: 50vw;
+  }
+}
