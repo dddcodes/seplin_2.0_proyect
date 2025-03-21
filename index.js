@@ -3,7 +3,7 @@ import { CONFIG } from "./config.js";
 import getNavBar from "../components/navBar.js";
 import { videosData } from "./data/videos.js";
 
-getNavBar(); // Carga la barra de navegacióndddgiiiA
+getNavBar(); // Carga la barra de navegación
 
 // ==> cosas para el botón de navegación (dispositivos moviles)
 document
