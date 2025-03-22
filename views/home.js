@@ -1,6 +1,6 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
-import getVideoCard from "../components/getVideoCard.js";
+
 
 const actualView = CONFIG.routes.home;
 
@@ -27,9 +27,7 @@ export default () => {
           <h1>Sugerencias:</h1>
           
           <div class="catalog-container">
-              ${getVideoCard()}
-              ${getVideoCard()}
-              ${getVideoCard()}
+              "Catalog container..."
           </div>
         </div>
 
