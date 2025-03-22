@@ -6,21 +6,15 @@ export const router = async () => {
   const app = document.querySelector("#app"); //document.querySelector("#app").style.visibility = "hidden";
 
   // Truco para reiniciar la animación de #app
-  app.style.visibility = "hidden";
-  setTimeout(() => {
-    app.classList.remove("animated");
-    void app.offsetWidth;
-    app.classList.add("animated");
-    app.style.visibility = "visible";
-  }, 200);
-
-  
+  app.classList.remove("animated");
+  void app.offsetWidth;
+  app.classList.add("animated");
 
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/about": () => import(`./views/${ROUTE.about.component}`), //sobre nosotros
-    "/catalog": () => import(`./views/${ROUTE.catalog.component}`) //catalogo
+    "/catalog": () => import(`./views/${ROUTE.catalog.component}`), //catalogo
   };
 
   const view =
