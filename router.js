@@ -23,7 +23,12 @@ export const router = async () => {
     routes[window.location.pathname] ||
     (() => `<h1>404 - Página no encontrada</h1>`);
 
-  app.innerHTML = await (await view()).default(); // Carga la vista en el contenedor de la aplicación
+  try {
+    app.innerHTML = await (await view()).default(); // Carga la vista en el contenedor de la aplicación
+  } catch (error) {
+    console.error("Error loading view:", error);
+    app.innerHTML = `<h1>Error loading page</h1>`;
+  }
 };
 
 export const navigateTo = (url) => {
