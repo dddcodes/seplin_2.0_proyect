@@ -7,15 +7,15 @@ export default () => {
             <div class="iconAndText">${CONFIG.proyectName}</div>
             <a href="/" data-link>
                 <ion-icon name="home"></ion-icon>
-                ${CONFIG.routes.home.title}
+                <span>${CONFIG.routes.home.title}</span>
+            </a>
+            <a href="/catalog" data-link>
+            <ion-icon name="albums"></ion-icon>
+            <span>${CONFIG.routes.catalog.title}</span>
             </a>
             <a href="/about" data-link>
                 <ion-icon name="information-circle"></ion-icon>
-                ${CONFIG.routes.about.title}
-            </a>
-            <a href="/catalog" data-link>
-                <ion-icon name="albums"></ion-icon>
-                ${CONFIG.routes.catalog.title}
+                <span>${CONFIG.routes.about.title}</span>
             </a>
         </nav>
         
