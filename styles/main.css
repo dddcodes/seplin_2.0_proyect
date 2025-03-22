@@ -109,7 +109,7 @@ body * {
   margin: 5px;
 
   border-radius: var(--border-radius-2);
-  background-color: var(--default-color-2);
+  
 
   flex-direction: column;
 
@@ -130,6 +130,8 @@ body * {
   top: 0;
 
   width: 290px;
+  background-color: var(--default-color);
+  border: var(--default-color-3) solid 1px;
 
   animation: sideBarEntryAnimation 2.5s ease-in-out;
 }
@@ -138,6 +140,7 @@ body * {
   top: 0;
 
   width: 250px;
+  background-color: var(--default-color-2);
 
   animation: navBarEntryAnimation 2.5s ease-in-out;
 }
@@ -214,8 +217,9 @@ body * {
     display: none;
   }
 
-  #navigationBar > a > ion-icon {
+  #navigationBar > a {
     font-size: 25px;
+    padding: 18px 0 20px 0;
   }
 
   #navigationBar > .iconAndText {
@@ -227,7 +231,7 @@ body * {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   #navigationBar {
     background-color: var(--default-color);
     border-top: var(--alt-color-4) solid 1px;
@@ -270,7 +274,7 @@ body * {
     margin: 0;
 
     top: auto;
-    bottom: 80px;
+    bottom: 82px;
     animation: none;
 
     border-radius: 0;
