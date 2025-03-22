@@ -1,0 +1,100 @@
+/* Estilos para el LAYOUT  ============================================*/
+#main {
+  width: calc(100vw - 17px);
+  min-height: 750px;
+  padding: 10px 300px 0 260px;
+  box-sizing: border-box;
+
+  animation: appEntryAnimation 2s ease-in-out;
+}
+
+#app {
+  width: 100%;
+  margin: 0 0 5px 0;
+  padding: 5px;
+  border-radius: var(--border-radius-2);
+}
+
+#sidebar,
+#navigationBar {
+  display: flex;
+  height: 98.9%;
+
+  gap: 5px;
+  padding: 5px;
+  margin: 5px;
+
+  border-radius: var(--border-radius-2);
+
+  flex-direction: column;
+
+  z-index: var(--navigation-bar-z-index);
+  position: fixed;
+}
+
+#sidebar > *,
+#navigationBar > * {
+  border-radius: var(--border-radius-2);
+
+  align-content: left;
+  align-items: left;
+}
+
+#sidebar {
+  right: 0;
+  top: 0;
+
+  width: 290px;
+  background-color: var(--default-color);
+  border: var(--default-color-3) solid 1px;
+
+  animation: sideBarEntryAnimation 2.5s ease-in-out;
+}
+
+#navigationBar {
+  top: 0;
+
+  width: 250px;
+  background-color: var(--default-color-2);
+
+  animation: navBarEntryAnimation 2.5s ease-in-out;
+}
+
+#navigationBar > a {
+  justify-content: flex-start; /* Alinea a la izquierda */
+
+  align-items: stretch; /* Igual altura para todos */
+  box-sizing: border-box;
+  font-size: 19px;
+  color: var(--alt-color);
+
+  width: 100%;
+  height: 60px;
+
+  border: var(--default-color-4) solid 0;
+
+  padding: 20px;
+
+  color: white;
+
+  text-align: center;
+}
+
+#navigationBar > a:hover {
+  background-color: var(--default-color-3);
+}
+
+#navigationBar > a:active {
+  background-color: var(--default-color-4);
+}
+
+#navigationBar > .iconAndText {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  text-align: center;
+
+  border: var(--default-color-4) solid 1px;
+  padding: 10px 0;
+}

@@ -20,7 +20,7 @@ export default () => {
         </nav>
         
     
-        <div id="main" class="animated">
+        <div id="main">
             <div id="app"></div>
         </div>
         <div id="sidebar">

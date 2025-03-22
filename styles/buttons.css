@@ -1,0 +1,52 @@
+/* Estilos para los botones ============================================*/
+
+.button {
+  background-color: var(--default-color-2);
+  border: none;
+
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+
+  outline: none; /* Quita el borde de enfoque */
+  -webkit-tap-highlight-color: transparent; /* Quita el resaltado azul en móviles */
+
+  font-size: 15px;
+
+  margin: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--default-color-3);
+}
+
+.button:active {
+  background: none;
+  background-color: var(--default-color-4);
+}
+
+.button.alt {
+  background-color: var(--alt-color);
+  color: var(--default-color-2);
+}
+
+.button.alt:hover {
+  background-color: var(--alt-color-2);
+}
+
+.button.alt:active {
+  background-color: var(--default-color-4);
+}
+
+.button.onlyBorder {
+  background-color: var(--default-color);
+  border: 1.5px solid var(--default-color-2);
+}
+
+.button.onlyBorder:hover {
+  border-color: var(--default-color-3);
+}
+
+.button.onlyBorder:active {
+  background-color: var(--default-color-3);
+}
