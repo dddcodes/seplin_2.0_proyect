@@ -21,8 +21,7 @@ export const router = async () => {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/about": () => import(`./views/${ROUTE.about.component}`), //sobre nosotros
-    "/contact": () => import(`./views/${ROUTE.contact.component}`), //contacto
-    "/catalog": () => import(`./views/${ROUTE.catalog.component}`), //catalogo
+    "/catalog": () => import(`./views/${ROUTE.catalog.component}`) //catalogo
   };
 
   const view =

@@ -1,24 +1,18 @@
 export const CONFIG = {
-  proyectName: "SPATLY",
-  version: "1.0.0",
+  proyectName: "SEPLIN",
+  version: "2.0.0",
   routes: {
     home: {
       component: "home.js",
       path: "/",
       title: "Inicio",
-      description: "Bienvenido a esta SPA sin frameworks!"
+      description: "Seplin es tu 2do cerebro!"
     },
     about: {
       component: "about.js",
       path: "/about",
       title: "Acerca de nosotros",
       description: "Conoce sobre nuestro proyecto!"
-    },
-    contact: {
-      component: "contact.js",
-      path: "/contact",
-      title: "Contáctanos",
-      description: "Quieres comunicarte con nosotros? Apoco si"
     },
     catalog: {
       component: "catalog.js",

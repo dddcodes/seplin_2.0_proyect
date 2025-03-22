@@ -5,11 +5,11 @@ import getVideoCard from "../components/getVideoCard.js";
 const actualView = CONFIG.routes.home;
 
 export default () => {
-  u.updatePageTitle(actualView.title);
+  u.updatePageTitle(actualView.description);
 
   return `
         <div class="titleBox">
-          Bienvenido a ${CONFIG.proyectName}!
+          ${actualView.title}
         </div>
         <p class="basicBox llamative">ESTO ES UNA PLANTILLA DE OLIVARES EN DESARROLLO...</p>
         <p class="basicBox">Estas cajas son de demostracion de los estilos responsive-Design de esta plantilla...</p>
