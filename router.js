@@ -3,6 +3,7 @@ import { CONFIG } from "./config.js";
 const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configuración
 
 export const router = async () => {
+  console.log("ROUTER()")
   const app = document.querySelector("#app"); // Obtiene el contenedor de la aplicación
 
   // Truco para reiniciar la animación de #app
@@ -25,7 +26,7 @@ export const router = async () => {
 };
 
 export const navigateTo = (url) => {
-  console.log(url);
+  console.log("NAVIGATE TO");
   history.pushState(null, null, url); // Cambia la URL sin recargar la página
   router(); // Llama al router para actualizar la vista
 };

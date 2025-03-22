@@ -6,7 +6,7 @@ getLayout(); // Carga la barra de navegación
 
 // ==> cosas para lo del router
 document.addEventListener("DOMContentLoaded", () => {
-  router(); // Cargar la vista según la URL actual (no funciona parece ser)
+  router(); // Cargar la vista según la URL actual
 
   // Captura los clics en los enlaces internos para evitar recargar la página
   document.body.addEventListener("click", (e) => {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==> Detecta cuando el usuario usa el botón de "atrás" del navegador
-window.addEventListener("popstate", navigateTo);
+window.addEventListener("popstate", router);
 
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================
 
