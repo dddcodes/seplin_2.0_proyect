@@ -4,30 +4,27 @@ import getLayout from "../components/layout.js";
 
 getLayout(); // Carga la barra de navegación
 
+
+
+// ==> cosas para lo del routeraa
 document.addEventListener("DOMContentLoaded", () => {
-  router(); // Cargar la vista según la URL actual
+  router(); // Cargar la vista según la URL actual (no funciona parece ser)
 
   // Captura los clics en los enlaces internos para evitar recargar la página
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
-      e.preventDefault(); // Evita la recarga de la página
+      e.preventDefault();
       navigateTo(e.target.href); // Usa navigateTo() para cambiar la vista
     }
   });
 });
 
-// Detecta cuando el botón "atrás" del navegador es activado
+// ==> Detecta cuando el usuario usa el botón de "atrás" del navegador
 window.addEventListener("popstate", router);
-
-// Redirigir al inicio si se carga una ruta manualmente
-window.addEventListener('load', () => {
-  if (window.location.pathname !== '/') {
-    navigateTo('/');
-  }
-});
 
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================
 
 console.log(CONFIG);
+console.log(videosData.find((video) => video.category === "estres"));
 
 // ========================================================
