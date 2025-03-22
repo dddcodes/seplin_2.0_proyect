@@ -1,6 +1,7 @@
 import { router, navigateTo } from "./router.js";
 import { CONFIG } from "./config.js";
 import getLayout from "../components/layout.js";
+import { videosData } from "./data/videos.js";
 
 getLayout(); // Carga la barra de navegación
 
