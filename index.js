@@ -1,9 +1,9 @@
 import { router, navigateTo } from "./router.js";
 import { CONFIG } from "./config.js";
-import getNavBar from "../components/navBar.js";
+import getLayout from "../components/layout.js";
 import { videosData } from "./data/videos.js";
 
-getNavBar(); // Carga la barra de navegación
+getLayout(); // Carga la barra de navegación
 
 // ==> cosas para el botón de navegación (dispositivos moviles)
 document
