@@ -1,15 +1,12 @@
-import { router, navigateTo } from "./router.js";
+import { navigateTo } from "./router.js";
 import { CONFIG } from "./config.js";
 import getLayout from "../components/layout.js";
-import { videosData } from "./data/videos.js";
 
 getLayout(); // Carga la barra de navegación
 
-
-
-// ==> cosas para lo del routeraa
+// ==> cosas para lo del router
 document.addEventListener("DOMContentLoaded", () => {
-  router(); // Cargar la vista según la URL actual (no funciona parece ser)
+  navigateTo(); // Cargar la vista según la URL actual (no funciona parece ser)
 
   // Captura los clics en los enlaces internos para evitar recargar la página
   document.body.addEventListener("click", (e) => {
@@ -21,11 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==> Detecta cuando el usuario usa el botón de "atrás" del navegador
-window.addEventListener("popstate", router);
+window.addEventListener("popstate", navigateTo);
 
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================
 
 console.log(CONFIG);
-console.log(videosData.find((video) => video.category === "estres"));
 
 // ========================================================
