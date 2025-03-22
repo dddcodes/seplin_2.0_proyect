@@ -3,7 +3,7 @@ import { CONFIG } from "./config.js";
 const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configuración
 
 export const router = async () => {
-  console.log("ROUTER()")
+  console.log("ROUTER()");
   const app = document.querySelector("#app"); // Obtiene el contenedor de la aplicación
 
   // Truco para reiniciar la animación de #app
@@ -11,7 +11,8 @@ export const router = async () => {
   void app.offsetWidth;
   app.classList.add("animated");
 
-  const routes = { // Define las rutas de la aplicación
+  const routes = {
+    // Define las rutas de la aplicación
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/about": () => import(`./views/${ROUTE.about.component}`), //sobre nosotros

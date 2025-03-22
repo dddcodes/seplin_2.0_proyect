@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Captura los clics en los enlaces internos para evitar recargar la página
   document.body.addEventListener("click", (e) => {
-    if (e.target.matches("[data-link]")) { // Si el clic es en un enlace interno
+    if (e.target.matches("[data-link]")) {
+      // Si el clic es en un enlace interno
       e.preventDefault(); // Evita la recarga de la página
       navigateTo(e.target.href); // Usa navigateTo() para cambiar la vista
     }
