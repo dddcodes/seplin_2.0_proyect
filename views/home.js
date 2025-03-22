@@ -29,6 +29,22 @@ export default () => {
           <div class="catalog-container">
               "Catalog container..."
           </div>
+          <div class="catalog-container">
+              "Catalog container..."
+          </div>
+          <div class="catalog-container">
+              "Catalog container..."
+          </div>
+          <div class="catalog-container">
+              "Catalog container..."
+          </div>
+          <div class="catalog-container">
+              "Catalog container..."
+          </div>
+          <div class="catalog-container">
+              "Catalog container..."
+          </div>
+          
         </div>
 
         <a href="https://github.com/dddcodes/SPA_template_vanilla">

@@ -95,19 +95,22 @@ body {
   display: flex;
 
   background: var(--default-color-2);
-  width: 97%;
+  width: 300px;
+  margin: 5px;
+  height: 98.5%; /*MALA PRACTICA, pero no tenia alternativa alv JAJAJAJ 21/marzo/2025 */
+  gap: 5px;
 
   padding: 5px 0;
   border-radius: var(--border-radius-2);
 
-  justify-content: right;
-  align-items: right;
-  text-align: right;
+
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 
   z-index: var(--navigation-bar-z-index);
   position: fixed;
-
-  top: 5px;
+  left: 0;
 
   transition: all 0.3s linear;
   animation: navBarEntryAnimation 1.25s ease-in-out;
@@ -127,18 +130,16 @@ body {
 
   align-items: stretch; /* Igual altura para todos */
   box-sizing: border-box;
-  font-size: 15px;
+  font-size: 19px;
   color: var(--alt-color);
+  width: 100%;
 
   border: var(--default-color-4) solid 0;
-  border-radius: var(--border-radius);
 
-  display: inline-block; /* Mantiene el tamaño del contenido */
-  padding: 10px 20px;
+  padding: 15px 20px;
 
   color: white;
 
-  margin-right: 20px; /* Espacio entre botones */
   text-align: center;
 }
 
@@ -151,15 +152,12 @@ body {
 }
 
 #navigationBar > .iconAndText {
-  width: max-content;
-  font-size: 12px;
-
-  padding: 10px 20px;
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
   border-radius: var(--border-radius);
-  border: var(--primary-color) solid 1.5px;
+  text-align: center;
 
-  margin-right: auto;
-  margin-left: 5px;
 }
 
 #navigationButton {
@@ -260,21 +258,27 @@ div.justifyText {
   text-align: justify;
 }
 
-div{
+div {
   padding: 10px;
 }
 
-div > p,h1,h2,h3,h4,h5,span{
+div > p,
+h1,
+h2,
+h3,
+h4,
+h5,
+span {
   margin: 0;
 }
 
-a{
+a {
   color: var(--info-color);
-  border-bottom: 2px solid var(--info-color);  /* 2px de grosor, color negro */
+  border-bottom: 2px solid var(--info-color); /* 2px de grosor, color negro */
   display: inline; /* Asegura que solo afecte al texto */
 }
 
-a:hover{
+a:hover {
   color: var(--alt-color);
   border-color: var(--alt-color);
 }
@@ -290,14 +294,11 @@ a:hover{
   text-align: left;
 }
 
-
-
 .basicBox {
   background-color: var(--default-color-2);
   border-radius: var(--border-radius);
   width: 100%;
   margin: 10px 0 !important;
-  
 }
 
 .basicBox.llamative {
@@ -312,7 +313,6 @@ a:hover{
   background-color: var(--default-color);
   border: 1.5px solid var(--default-color-3);
   border-radius: 3px;
-
 }
 
 /* Estilos para los botones ============================================*/
@@ -407,14 +407,12 @@ textarea:focus {
   border-radius: var(--border-radius-2);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 
-
   justify-self: center;
 }
 .video-card:hover {
   transform: translateY(-7px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  outline: var(--alt-color) solid .5px;
-
+  outline: var(--alt-color) solid 0.5px;
 }
 .thumbnail {
   width: 100%;
@@ -423,14 +421,12 @@ textarea:focus {
   border-radius: var(--border-radius-2);
   position: relative;
   padding: 0;
-
 }
 
 .video-info {
   display: flex;
   align-items: center;
   padding: 10px;
-
 }
 
 .text-info {
@@ -450,12 +446,12 @@ textarea:focus {
   padding: 5px 0 0;
 }
 
-.category{
+.category {
   font-size: 12px;
   color: var(--alt-color-2);
   padding: 2px;
 
-  border: var(--default-color-3) solid .5px;
+  border: var(--default-color-3) solid 0.5px;
   width: fit-content;
   border-radius: var(--border-radius);
 }
