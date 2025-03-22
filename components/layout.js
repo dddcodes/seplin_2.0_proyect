@@ -21,7 +21,7 @@ export default () => {
         
     
         <div id="main" class="animated">
-            <div id="app" ></div>
+            <div id="app"></div>
         </div>
         <div id="sidebar">
             <div id="sidebarContent">
