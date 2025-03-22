@@ -23,28 +23,24 @@ export default () => {
         <input type="text" class="input" placeholder="Input por defecto">
         <input type="password" class="input" placeholder="Password por defecto">
 
+        <input type="text" class="input" placeholder="Input por defecto">
+        <input type="password" class="input" placeholder="Password por defecto">
+
+        <input type="text" class="input" placeholder="Input por defecto">
+        <input type="password" class="input" placeholder="Password por defecto">
+
+        <input type="text" class="input" placeholder="Input por defecto">
+        <input type="password" class="input" placeholder="Password por defecto">
+
         <div class="basicBox OnlyBorder">
-          <h1>Sugerencias:</h1>
-          
-          <div class="catalog-container">
-              "Catalog container..."
-          </div>
-          <div class="catalog-container">
-              "Catalog container..."
-          </div>
-          <div class="catalog-container">
-              "Catalog container..."
-          </div>
-          <div class="catalog-container">
-              "Catalog container..."
-          </div>
-          <div class="catalog-container">
-              "Catalog container..."
-          </div>
-          <div class="catalog-container">
-              "Catalog container..."
-          </div>
-          
+          <h1>Sugerencias:</h1>    
+           <h1>Sugerencias:</h1> 
+            <h1>Sugerencias:</h1> 
+             <h1>Sugerencias:</h1> 
+             <h1>Sugerencias:</h1> 
+             <h1>Sugerencias:</h1> 
+
+              
         </div>
 
         <a href="https://github.com/dddcodes/SPA_template_vanilla">

@@ -23,7 +23,6 @@
   --danger-color: #dc3545;
 
   --navigation-bar-z-index: 3;
-  --navigation-button-z-index: 4;
 
   --border-radius: 3px;
   --border-radius-2: 5px;
@@ -58,18 +57,21 @@ body {
   text-align: left;
 }
 
+body{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+
+}
+
+body *{
+  max-width: 100%;
+}
+
 ::selection {
   background-color: var(--alt-color);
   color: var(--default-color);
 }
 
-#app {
-  width: 70%;
-  padding: 70px 5px;
-  background-color: var(--default-color);
-
-  transition: opacity 0.5s ease-in-out;
-}
 
 .animated {
   animation: appEntryAnimation 2s ease-in-out;
@@ -89,15 +91,61 @@ body {
   pointer-events: none;
 }
 
-/* Estilos para el navBar ============================================*/
+/* Estilos para el LAYOUT y navBar ============================================*/
+#main{
+  width: calc(100vw - 17px);
+  padding: 5px 300px 0 280px;
+  box-sizing: border-box;
+
+}
+
+#app {
+  
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+
+  background-color: var(--default-color);
+  background-color: var(--default-color-2);
+  border-radius: var(--border-radius-2);
+
+
+}
+
+#sidebar{
+  display: flex;
+  width: 290px;
+  height: 98.9%;
+
+  margin: 5px;
+  padding: 10px;
+  border-radius: var(--border-radius-2);
+
+  background-color: var(--default-color-2);
+  gap: 5px;
+
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+  z-index: var(--navigation-bar-z-index);
+  position: fixed;
+
+  right: 0;
+  top: 0;
+
+  animation: sideBarEntryAnimation 2.5s ease-in-out;
+
+}
+
 
 #navigationBar {
   display: flex;
 
   background: var(--default-color-2);
-  width: 300px;
+  width: 270px;
   margin: 5px;
-  height: 98.5%; /*MALA PRACTICA, pero no tenia alternativa alv JAJAJAJ 21/marzo/2025 */
+  height: 98.9%; /*MALA PRACTICA, pero no tenia alternativa alv JAJAJAJ 21/marzo/2025 */
   gap: 5px;
 
   padding: 5px 0;
@@ -110,18 +158,28 @@ body {
 
   z-index: var(--navigation-bar-z-index);
   position: fixed;
-  left: 0;
 
-  transition: all 0.3s linear;
-  animation: navBarEntryAnimation 1.25s ease-in-out;
+  top: 0;
+
+
+  animation: navBarEntryAnimation 2.5s ease-in-out;
 }
 
 @keyframes navBarEntryAnimation {
   from {
-    transform: translateY(-50px);
+    transform: translatex(-100%);
   }
   to {
-    transform: translateY(0);
+    transform: translatex(0);
+  }
+}
+
+@keyframes sideBarEntryAnimation {
+  from {
+    transform: translatex(200%);
+  }
+  to {
+    transform: translatex(0);
   }
 }
 
@@ -160,44 +218,8 @@ body {
 
 }
 
-#navigationButton {
-  background-color: var(--default-color);
-  border: none;
-
-  width: 60px;
-  height: 60px;
-  padding: 15px;
-  border-radius: var(--border-radius);
-
-  font-size: 30px;
-
-  /*Para que siempre este flotando encima de todo*/
-  z-index: var(--navigation-button-z-index);
-  position: fixed;
-  left: 5px;
-  top: 5px;
-
-  display: none; /*Ocultar el botón de navegación en pantallas grandes*/
-
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-#navigationButton:hover {
-  background-color: var(--default-color-2);
-}
-
-#navigationButton:active {
-  background-color: var(--alt-color);
-}
-
 /* Dispositivos mas chicos ============================================*/
 @media (max-width: 700px) {
-  #navigationButton {
-    display: flex; /* Mostrar el botón de navegación en pantallas pequeñas */
-  }
 
   #navigationBar {
     display: block; /* Asegurarse de que el navBar esté oculto en pantallas pequeñas */
@@ -238,11 +260,6 @@ body {
   }
 }
 
-@media (max-width: 900px) {
-  #app {
-    width: 100%;
-  }
-}
 
 /* Estilos para los contenedores principales ============================================*/
 
@@ -459,7 +476,7 @@ textarea:focus {
 /* Estilos de CATALOGO de video-cards ============================================*/
 
 .catalog-container {
-  margin: 15px 0;
+
 
   display: flex;
   flex-wrap: wrap;
@@ -469,14 +486,4 @@ textarea:focus {
 
   padding: 0;
   gap: 5px;
-}
-
-@media (max-width: 600px) {
-  .video-card {
-    width: 100vw;
-    margin-bottom: 10px;
-  }
-  .video-card > .thumbnail {
-    height: 50vw;
-  }
 }

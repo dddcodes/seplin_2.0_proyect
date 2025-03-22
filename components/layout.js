@@ -19,11 +19,14 @@ export default () => {
             </a>
         </nav>
         
-        <button id="navigationButton">
-                <ion-icon name="grid-outline" role="img" class="md hydrated" aria-label="grid outline"></ion-icon>
-        </button>  
     
-        <div id="app" class="animated"></div>
+        <div id="main" class="animated">
+            <div id="app" ></div>
+        </div>
+        <div id="sidebar">
+            <div id="sidebarContent">
+            </div>
+        </div>
         
     `; // Crea la barra de navegación y el contenedor de la aplicación...
 };

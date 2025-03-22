@@ -5,12 +5,7 @@ import { videosData } from "./data/videos.js";
 
 getLayout(); // Carga la barra de navegación
 
-// ==> cosas para el botón de navegación (dispositivos moviles)
-document
-  .getElementById("navigationButton")
-  .addEventListener("click", function () {
-    document.getElementById("navigationBar").classList.toggle("show");
-  });
+
 
 // ==> cosas para lo del routeraa
 document.addEventListener("DOMContentLoaded", () => {
