@@ -25,4 +25,5 @@ window.addEventListener("popstate", router);
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================
 
 console.log(CONFIG);
+
 // ========================================================
