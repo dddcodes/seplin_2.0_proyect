@@ -40,7 +40,7 @@ function isMobileDevice() {
 
 // ==> Si es smartphone: el width del main es 100% al no estar estorbando el scrollbar ==============
 if (isMobileDevice()) {
-  document.querySelector("#main").styles.width = "100%";
+  document.querySelector("#app").styles.width = "100%";
 } else {
   console.log("DISOPOSITIVO ES PC");
 }
