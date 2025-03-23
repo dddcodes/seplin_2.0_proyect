@@ -3,7 +3,7 @@
 input,
 textarea {
   background-color: var(--default-color);
-  border: var(--default-color-2) solid 1.5px;
+  border: var(--default-color-2) solid 2px;
 
   outline: none;
 
@@ -11,10 +11,14 @@ textarea {
   border-radius: var(--border-radius-2);
 
   font-size: 15px;
-
   margin: 5px;
+}
 
+input,
+button,
+textarea{
   width: 45%;
+  min-height: 60px;
 }
 
 input:hover,

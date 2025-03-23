@@ -70,7 +70,7 @@ body * {
   color: var(--default-color);
 }
 
-.animated{
+.animated {
   animation: appEntryAnimation 2.5s ease-in-out;
 }
 
@@ -127,14 +127,14 @@ a:hover {
 
 .basicBox {
   background-color: var(--default-color-2);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-2);
   width: 100%;
   margin: 10px 0 !important;
 }
 
 .basicBox.llamative {
   background: var(--primary-gradient);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-2);
   width: 100%;
 
   font-weight: bold;
@@ -142,8 +142,7 @@ a:hover {
 
 .basicBox.OnlyBorder {
   background-color: var(--default-color);
-  border: 1.5px solid var(--default-color-3);
-  border-radius: 3px;
+  border: 3px solid var(--default-color-2);
 }
 
 /* Estilos para las CAJAS DE VIDEO ============================================*/
@@ -204,18 +203,5 @@ a:hover {
 
   border: var(--default-color-3) solid 0.5px;
   width: fit-content;
-  border-radius: var(--border-radius);
-}
-
-/* Estilos de CATALOGO de video-cards ============================================*/
-
-.catalog-container {
-  display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center; /* Centra los items horizontalmente */
-  align-items: center; /* Centra los items verticalmente */
-
-  padding: 0;
-  gap: 5px;
+  border-radius: var(--border-radius-2);
 }
