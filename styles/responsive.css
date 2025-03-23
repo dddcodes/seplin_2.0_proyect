@@ -24,6 +24,8 @@
 }
 
 @media (max-width: 800px) {
+
+  /*LAYOUT ==========================================================*/
   #navigationBar,
   #sidebar {
     width: 100%;
@@ -67,5 +69,12 @@
 
   #main {
     padding: 5px 5px 200px 5px;
+  }
+
+  /*INPUTS =====================================*/
+  input,
+  textarea {
+    width: 95%;
+    margin: 5px 0 5px 0;
   }
 }

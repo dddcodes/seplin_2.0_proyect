@@ -4,8 +4,8 @@
   background-color: var(--default-color-2);
   border: none;
 
-  padding: 10px 20px;
-  border-radius: var(--border-radius);
+  padding: 20px;
+  border-radius: var(--border-radius-2);
 
   outline: none; /* Quita el borde de enfoque */
   -webkit-tap-highlight-color: transparent; /* Quita el resaltado azul en móviles */
