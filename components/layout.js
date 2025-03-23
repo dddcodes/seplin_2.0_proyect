@@ -11,16 +11,22 @@ export default () => {
                 ${CONFIG.routes.home.title}
 
             </a>
-            <a href="/about" data-link>
+            <a href="/faq" data-link>
                 <ion-icon name="information-circle"></ion-icon>
 
-                ${CONFIG.routes.about.title}
+                ${CONFIG.routes.faq.title}
 
             </a>
             <a href="/catalog" data-link>
                 <ion-icon name="albums"></ion-icon>
 
                 ${CONFIG.routes.catalog.title}
+
+            </a>
+            <a href="/archived" data-link>
+                <ion-icon name="trash"></ion-icon>
+
+                ${CONFIG.routes.archived.title}
 
             </a>
         </nav>

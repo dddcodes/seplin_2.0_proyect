@@ -1,7 +1,7 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 
-const actualView = CONFIG.routes.about; // Título de la página
+const actualView = CONFIG.routes.archived;
 
 export default () => {
   u.updatePageTitle(actualView.title);

@@ -6,19 +6,25 @@ export const CONFIG = {
       component: "home.js",
       path: "/",
       title: "Inicio",
-      description: "Seplin es tu 2do cerebro!"
+      description: "Seplin es tu 2do cerebro!",
     },
-    about: {
-      component: "about.js",
-      path: "/about",
-      title: "Acerca de nosotros",
-      description: "Conoce sobre nuestro proyecto!"
+    faq: {
+      component: "faq.js",
+      path: "/faq",
+      title: "FAQ",
+      description: "Conoce sobre nuestro proyecto!",
     },
     catalog: {
       component: "catalog.js",
       path: "/catalog",
-      title: "Catálogo",
-      description: "Admirad vuestro ser y mejorad cada dia!"
+      title: "Todos tus Quizzes",
+      description: "Admirad vuestro ser y mejorad cada dia!",
+    },
+    archived: {
+      component: "archived.js",
+      path: "/archived",
+      title: "Archivados",
+      description: "Aqui encontraras tus quizzes archivados! puedes volver a ellos cuando quieras manualmente!",
     }
   }
 };
