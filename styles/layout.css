@@ -116,7 +116,5 @@
 
 #sidebar > .card.onlyBorder {
   background-color: var(--default-color);
-  border-top: var(--default-color-2) solid 2px;
-  border-left: var(--default-color-2) solid 2px;
-  border-right: var(--default-color-2) solid 2px;
+  outline: var(--default-color-2) solid 2px;
 }
