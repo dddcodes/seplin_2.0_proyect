@@ -1,4 +1,6 @@
 import { CONFIG } from "./config.js";
+import * as u from "../utils.js";
+import { scrollToTop } from "./utils.js";
 
 const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configuración
 
@@ -9,6 +11,8 @@ export const router = async () => {
   app.classList.remove("animated");
   void app.offsetWidth; // Reinicia la animación
   app.classList.add("animated");
+
+  scrollToTop(); // Mueve la página al inicio
 
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio

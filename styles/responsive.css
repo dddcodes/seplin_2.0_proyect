@@ -98,4 +98,11 @@
     width: 95%;
     margin: 5px 0 5px 0;
   }
+
+  /*MORE*/
+
+  #sidebar > .card{
+    padding: 0;
+    align-content: center;
+  }
 }

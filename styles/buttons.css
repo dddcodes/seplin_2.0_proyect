@@ -6,7 +6,6 @@ button, a{
 .button {
   background-color: var(--default-color-2);
   border: none;
-  width: 45%;
 
   padding: 20px;
   border-radius: var(--border-radius-2);

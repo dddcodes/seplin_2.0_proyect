@@ -4,7 +4,7 @@ import { CONFIG } from "../config.js";
 const actualView = CONFIG.routes.archived;
 
 export default () => {
-  u.updatePageTitle(actualView.title);
+  u.setPageTitle(actualView.title);
 
   return `
         <div class="titleBox">

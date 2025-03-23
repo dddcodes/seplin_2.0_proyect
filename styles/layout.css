@@ -58,7 +58,6 @@
   width: 250px;
   background-color: var(--default-color-2);
 
-
   z-index: 9;
 
   animation: navBarEntryAnimation 2.5s ease-in-out;
@@ -98,19 +97,26 @@
   width: 100%;
   font-size: 30px;
   font-weight: bold;
-  border-radius: var(--border-radius);
   text-align: center;
+  border-radius: 0;
 
-  border: var(--default-color-4) solid 1px;
+  border-bottom: var(--default-color-4) solid 3px;
   padding: 10px 0;
 }
-  
-#sidebar > card{
+
+#sidebar > .card {
   background-color: var(--default-color-2);
   border-radius: var(--border-radius-2);
 
   width: 100%;
-  padding: 30px 10px;
+  padding: 50px 10px;
 
   text-align: center;
+}
+
+#sidebar > .card.onlyBorder {
+  background-color: var(--default-color);
+  border-top: var(--default-color-2) solid 2px;
+  border-left: var(--default-color-2) solid 2px;
+  border-right: var(--default-color-2) solid 2px;
 }
