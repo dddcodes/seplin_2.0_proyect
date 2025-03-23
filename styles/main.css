@@ -69,6 +69,10 @@ body * {
   color: var(--default-color);
 }
 
+.animated{
+  animation: appEntryAnimation 2.5s ease-in-out;
+}
+
 /* Estilos para los contenedores principales ============================================*/
 
 #app > p {

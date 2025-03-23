@@ -7,7 +7,7 @@ export const router = async () => {
 
   // Truco para reiniciar la animación de #app
   app.classList.remove("animated");
-  void app.offsetWidth;
+  void app.offsetWidth; // Reinicia la animación
   app.classList.add("animated");
 
   const routes = {
