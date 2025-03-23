@@ -20,6 +20,12 @@ export const CONFIG = {
       title: "Todos tus Quizzes",
       description: "Admirad vuestro ser y mejorad cada dia!",
     },
+    practice: {
+      component: "practice.js",
+      path: "/practice",
+      title: "Practica de la mejor manera!",
+      description: "Practica tus quizzes y mejora tus habilidades!",
+    },
     archived: {
       component: "archived.js",
       path: "/archived",

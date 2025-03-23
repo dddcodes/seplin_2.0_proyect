@@ -103,3 +103,11 @@
   border: var(--default-color-4) solid 1px;
   padding: 10px 0;
 }
+
+#navigationBar > .centerNavbarButton{
+  background: var(--primary-gradient);
+}
+
+#navigationBar > .centerNavbarButton > ion-icon {
+  color: var(--default-color);
+}
