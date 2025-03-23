@@ -22,6 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==> Detecta cuando el usuario usa el botón de "atrás" del navegador
 window.addEventListener("popstate", router);
 
+// ==> Detecta si el dispositivo es un smartphone ==============================================
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// ==> Si es smartphone: el width del main es 100% al no estar estorbando el scrollbar ==============
+if (isMobileDevice()) {
+  document.querySelector("#main").styles.width = "100%";
+} else {
+  console.log("DISOPOSITIVO ES PC");
+}
+
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================
 
 console.log(CONFIG);

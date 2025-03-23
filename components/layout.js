@@ -29,10 +29,11 @@ export default () => {
         <div id="main" class="animated">
             <div id="app" ></div>
         </div>
+        
         <div id="sidebar">
-            <div id="sidebarContent">
-            </div>
+            <card></card>
         </div>
+        
         
     `; // Crea la barra de navegación y el contenedor de la aplicación...
 };
