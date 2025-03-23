@@ -1,4 +1,7 @@
 /* Estilos para los botones ============================================*/
+button, a{
+  -webkit-tap-highlight-color: transparent; /* Quita el resaltado azul en móviles */
+}
 
 .button {
   background-color: var(--default-color-2);
@@ -8,7 +11,6 @@
   border-radius: var(--border-radius-2);
 
   outline: none; /* Quita el borde de enfoque */
-  -webkit-tap-highlight-color: transparent; /* Quita el resaltado azul en móviles */
 
   font-size: 15px;
 
@@ -25,6 +27,8 @@
   background-color: var(--default-color-4);
 }
 
+/*BOTONES ALTERNATIVOS =======================================================================*/
+
 .button.alt {
   background-color: var(--alt-color);
   color: var(--default-color-2);
@@ -37,6 +41,8 @@
 .button.alt:active {
   background-color: var(--default-color-4);
 }
+
+/*BOTONES ONLYBORDER =======================================================================*/
 
 .button.onlyBorder {
   background-color: var(--default-color);

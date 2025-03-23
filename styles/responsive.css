@@ -24,7 +24,6 @@
 }
 
 @media (max-width: 800px) {
-
   /*LAYOUT ==========================================================*/
   #navigationBar,
   #sidebar {
@@ -71,10 +70,20 @@
     padding: 5px 5px 200px 5px;
   }
 
-  #navigationBar > .centerNavbarButton{
+  #navigationBar > .centerNavbarButton {
     background: var(--primary-gradient);
   }
-  
+
+  #navigationBar > .centerNavbarButton:hover {
+    background: none;
+    background-color: var(--default-color);
+    outline: var(--primary-color) solid 2px;
+  }
+
+  #navigationBar > .centerNavbarButton:hover > ion-icon {
+    color: var(--primary-color);
+  }
+
   #navigationBar > .centerNavbarButton > ion-icon {
     color: var(--default-color);
   }

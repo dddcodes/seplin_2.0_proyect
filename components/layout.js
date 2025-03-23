@@ -25,10 +25,6 @@ export default () => {
                 ${CONFIG.routes.catalog.title}
             
             </a>
-
-
-
-
         </nav>
         
     
