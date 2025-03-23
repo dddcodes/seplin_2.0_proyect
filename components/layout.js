@@ -11,13 +11,7 @@ export default () => {
                 ${CONFIG.routes.home.title}
 
             </a>
-            <a href="/catalog" data-link>
-                <ion-icon name="albums"></ion-icon>
             
-                ${CONFIG.routes.catalog.title}
-            
-            </a>
-
             <a href="/practice" data-link class="centerNavbarButton">
                 <ion-icon name="barbell"></ion-icon>
             
@@ -25,19 +19,15 @@ export default () => {
             
             </a>
 
-            <a href="/archived" data-link>
-                <ion-icon name="trash"></ion-icon>
+            <a href="/catalog" data-link>
+                <ion-icon name="albums"></ion-icon>
             
-                ${CONFIG.routes.archived.title}
+                ${CONFIG.routes.catalog.title}
             
             </a>
 
-            <a href="/faq" data-link>
-                <ion-icon name="information-circle"></ion-icon>
 
-                ${CONFIG.routes.faq.title}
 
-            </a>
 
         </nav>
         

@@ -71,6 +71,14 @@
     padding: 5px 5px 200px 5px;
   }
 
+  #navigationBar > .centerNavbarButton{
+    background: var(--primary-gradient);
+  }
+  
+  #navigationBar > .centerNavbarButton > ion-icon {
+    color: var(--default-color);
+  }
+
   /*INPUTS =====================================*/
   input,
   textarea {

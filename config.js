@@ -8,12 +8,6 @@ export const CONFIG = {
       title: "Inicio",
       description: "Seplin es tu 2do cerebro!",
     },
-    faq: {
-      component: "faq.js",
-      path: "/faq",
-      title: "FAQ",
-      description: "Conoce sobre nuestro proyecto!",
-    },
     catalog: {
       component: "catalog.js",
       path: "/catalog",
@@ -23,7 +17,7 @@ export const CONFIG = {
     practice: {
       component: "practice.js",
       path: "/practice",
-      title: "Practica de la mejor manera!",
+      title: "Practicar",
       description: "Practica tus quizzes y mejora tus habilidades!",
     },
     archived: {

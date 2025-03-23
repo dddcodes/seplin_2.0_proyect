@@ -13,7 +13,6 @@ export const router = async () => {
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/": () => import(`./views/${ROUTE.home.component}`), //inicio
-    "/faq": () => import(`./views/${ROUTE.faq.component}`), //sobre nosotros
     "/catalog": () => import(`./views/${ROUTE.catalog.component}`), //catalogo
     "/practice": () => import(`./views/${ROUTE.practice.component}`),
     "/archived": () => import(`./views/${ROUTE.archived.component}`) //quizes archivados

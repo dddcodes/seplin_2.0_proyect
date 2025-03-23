@@ -1,7 +1,7 @@
 /* Estilos para el LAYOUT  ============================================*/
 #main {
   width: calc(100vw - 17px);
-  min-height: 750px;
+  min-height: 910px;
   padding: 10px 300px 0 260px;
   box-sizing: border-box;
 
@@ -102,12 +102,4 @@
 
   border: var(--default-color-4) solid 1px;
   padding: 10px 0;
-}
-
-#navigationBar > .centerNavbarButton{
-  background: var(--primary-gradient);
-}
-
-#navigationBar > .centerNavbarButton > ion-icon {
-  color: var(--default-color);
 }
