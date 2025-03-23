@@ -25,6 +25,7 @@ export const router = async () => {
   const view =
     routes[window.location.pathname] ||
     (() => `<h1>404 - Página no encontrada</h1>`);
+    //PARECE NO FUNCIONAR NUNCA
 
   app.innerHTML = await (await view()).default();
 };
