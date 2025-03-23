@@ -1,6 +1,5 @@
 import { CONFIG } from "./config.js";
 import * as u from "../utils.js";
-import { scrollToTop } from "./utils.js";
 
 const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configuración
 
@@ -12,7 +11,15 @@ export const router = async () => {
   void app.offsetWidth; // Reinicia la animación
   app.classList.add("animated");
 
-  scrollToTop(); // Mueve la página al inicio
+  u.scrollToTop(); // Mueve la página al inicio
+  u.updateSidebar(`
+    <a 
+      href="https://github.com/dddcodes/seplin_2.0_proyect" 
+      target="_blank" rel="noopener noreferrer"
+      class="card onlyBorder">
+        Github del proyecto
+    </a>`); // Actualiza la barra lateral
+
 
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio

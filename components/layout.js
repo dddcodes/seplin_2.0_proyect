@@ -33,8 +33,6 @@ export default () => {
         </div>
         
         <div id="sidebar">
-            <a class="card">Importar quizzes</a>
-            <a class="card onlyBorder">Github del proyecto</card>
         </div>
         
         

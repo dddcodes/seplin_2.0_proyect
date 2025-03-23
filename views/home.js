@@ -1,11 +1,21 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 
-
 const actualView = CONFIG.routes.home;
 
 export default () => {
   u.setPageTitle(actualView.description);
+  u.updateSidebar(`
+    <a class="card">
+      Importar quizzes
+    </a>
+    
+    <a 
+      href="https://github.com/dddcodes/seplin_2.0_proyect" 
+      target="_blank" rel="noopener noreferrer"
+      class="card onlyBorder">
+        Github del proyecto
+    </a>`);
 
   return `
         <div class="titleBox">
@@ -43,8 +53,11 @@ export default () => {
               
         </div>
 
-        <a href="https://github.com/dddcodes/SPA_template_vanilla">
-          Github del proyecto
+        <a 
+          href="https://github.com/dddcodes/seplin_2.0_proyect" 
+          target="_blank" rel="noopener noreferrer"
+          class="card onlyBorder">
+            Github del proyecto
         </a>
         
     `;
