@@ -104,7 +104,7 @@
   border: var(--default-color-4) solid 1px;
   padding: 10px 0;
 }
-
+  
 #sidebar > card{
   background-color: var(--default-color-2);
   border-radius: var(--border-radius-2);
