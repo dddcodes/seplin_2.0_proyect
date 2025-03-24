@@ -8,20 +8,20 @@ export default () => {
   u.updateSidebar(`
     <a class="card">
 
-      TITULO
+      CREAR TUS QUIZZES
 
-      <p>texto lorem</p>
+      <p>Crea tus propios flashcards en forma questionarios rapido y eficientemente bro!</p>
 
     </a>
     
-    <a 
+    <a
       href="https://github.com/dddcodes/seplin_2.0_proyect" 
       target="_blank" rel="noopener noreferrer"
       class="card onlyBorder">
       
-        Github del proyecto
+        GITHUB
 
-        <p>texto lorem</p>
+        <p>Seplin es de codigo abierto, por lo que puedes acceder al codigo fuente en Github! </p>
 
     </a>`);
 

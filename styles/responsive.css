@@ -104,5 +104,10 @@
   #sidebar > .card{
     padding: 0;
     align-content: center;
+    min-height: 0;
+  }
+
+  #sidebar > .card > p{
+    display: none;
   }
 }

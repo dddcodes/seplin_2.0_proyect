@@ -109,10 +109,14 @@
   border-radius: var(--border-radius-2);
 
   width: 100%;
-  padding: 20px 10px;
+  padding: 20px 10px 10px 10px;
   min-height: 100px;
 
   text-align: center;
+}
+
+#sidebar > .card:hover {
+  background-color: var(--default-color-3);
 }
 
 #sidebar > .card.onlyBorder {
@@ -120,6 +124,10 @@
   outline: var(--default-color-2) solid 2px;
 }
 
+#sidebar > .card.onlyBorder:hover {
+  outline-color: var(--default-color-3);
+}
+
 #sidebar > .card > p{
-  color: red;
+  color: var(--alt-color-2);
 }
