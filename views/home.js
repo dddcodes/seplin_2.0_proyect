@@ -8,7 +8,7 @@ export default () => {
   u.updateSidebar(`
     <a 
       class="card"
-      href="${CONFIG.routes.practice.path}" 
+      href="${CONFIG.url}${CONFIG.routes.practice.path}" 
       data-link>
 
       CREAR TUS QUIZZES

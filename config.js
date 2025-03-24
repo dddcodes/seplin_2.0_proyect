@@ -1,6 +1,7 @@
 export const CONFIG = {
   proyectName: "SEPLIN",
   version: "2.0.0",
+  url: "https://olivares.netlify.app",
   routes: {
     home: {
       component: "home.js",
