@@ -1,6 +1,9 @@
 import { router, navigateTo } from "./router.js";
 import { CONFIG } from "./config.js";
 import getLayout from "../components/layout.js";
+import { LSM, RESET } from "./localStorageManager.js";
+
+console.log(LSM, RESET);
 
 getLayout(); // Carga el navbar, sidebar y main-app (HTML)
 
@@ -27,23 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-// ==> Detecta cuando el usuario usa el botón de "atrás" del navegador
-window.addEventListener("popstate", router);
-
-// ==> Detecta si el dispositivo es un smartphone ==============================================
-function isMobileDevice() {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
-}
-
-// ==> Si es smartphone: el width del main es 100% al no estar estorbando el scrollbar ==============
-if (isMobileDevice()) {
-  document.querySelector("#app").styles.width = "100%";
-} else {
-  console.log("DISOPOSITIVO ES PC");
-}
 
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================
 
