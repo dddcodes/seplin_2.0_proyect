@@ -5,7 +5,7 @@ console.log("SCRIPT LOADED");
  * A collection of functions to handle basic CRUD operations with localStorage
  */
 
-const localStorageManager = {
+const LSM = {
   /**
    * Creates or stores an item in localStorage
    */
@@ -85,7 +85,7 @@ const localStorageManager = {
     try {
       // 1. Get existing parent item
       const localQuizzesKey = "localQuizzes";
-      const localQuizzes = localStorageManager.getItem(localQuizzesKey);
+      const localQuizzes = LSM.getItem(localQuizzesKey);
 
       if (localQuizzes === null) {
         console.warn(`[Warning] Parent key "${localQuizzesKey}" doesn't exist`);
@@ -112,7 +112,7 @@ const localStorageManager = {
       localQuizzes[newQuizID] = newQuizContent;
 
       // 5. Save back to localStorage
-      localStorageManager.updateItem(localQuizzesKey, localQuizzes);
+      LSM.updateItem(localQuizzesKey, localQuizzes);
       console.log(
         `[Success] Added nested object "${newQuizID}" to "${localQuizzesKey}"`
       );
@@ -133,9 +133,9 @@ const localStorageManager = {
         console.warn(`[Warning] Key "${quizID}" doesn't exist in localStorage`);
         return false;
       } else {
-        let localQuizzes = localStorageManager.getItem("localQuizzes");
+        let localQuizzes = LSM.getItem("localQuizzes");
         delete localQuizzes[quizID];
-        localStorageManager.setItem("localQuizzes", localQuizzes);
+        LSM.setItem("localQuizzes", localQuizzes);
       }
     } catch (error) {
       console.error(`[Error] Failed to remove quiz "${quizID}":`, error);
@@ -144,13 +144,13 @@ const localStorageManager = {
   },
 
   getLocalQuizzes: function () {
-    return localStorageManager.getItem("localQuizzes");
+    return LSM.getItem("localQuizzes");
   },
 };
 
 // Usage Examples:
 // Store data
-localStorageManager.createItem("localQuizzes", {
+LSM.createItem("localQuizzes", {
   "001": {
     question: "What is the capital of Spain?",
     correctAnswer: "Madrid",
@@ -160,30 +160,28 @@ localStorageManager.createItem("localQuizzes", {
 
 // Update data
 /*
-localStorageManager.updateItem("localQuizzes", {
+LSM.updateItem("localQuizzes", {
   question: "What is the capital of France?",
 });*/
 
 // Retrieve data
-let localQuizzes = localStorageManager.getItem("localQuizzes");
+let localQuizzes = LSM.getItem("localQuizzes");
 console.log(localQuizzes);
 
 //add a new quiz
-localStorageManager.addQuiz("002", {
+LSM.addQuiz("002", {
   question: "What is the capital of France?",
   correctAnswer: "Paris",
   incorrectAnswers: ["Madrid", "Lisbon", "Barcelona"],
 });
 
-localQuizzes = localStorageManager.getItem("localQuizzes");
+localQuizzes = LSM.getItem("localQuizzes");
 console.log(localQuizzes);
 
 // Remove data
-//localStorageManager.removeItem("localQuizzes");
+//LSM.removeItem("localQuizzes");
 
 function RESET() {
-  localStorageManager.removeItem("localQuizzes");
+  LSM.removeItem("localQuizzes");
   console.log("RESETEADO");
 }
-
-const LSM = localStorageManager;
