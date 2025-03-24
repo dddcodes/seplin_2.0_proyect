@@ -6,7 +6,10 @@ const actualView = CONFIG.routes.home;
 export default () => {
   u.setPageTitle(actualView.description);
   u.updateSidebar(`
-    <a class="card">
+    <a 
+      class="card"
+      href="olivares.netlify.app${CONFIG.routes.practice.path}" 
+      data-link>
 
       CREAR TUS QUIZZES
 

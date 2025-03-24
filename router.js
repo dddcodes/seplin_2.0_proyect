@@ -17,7 +17,11 @@ export const router = async () => {
       href="https://github.com/dddcodes/seplin_2.0_proyect" 
       target="_blank" rel="noopener noreferrer"
       class="card onlyBorder">
+
         Github del proyecto
+
+        <p>Seplin es de codigo abierto, por lo que puedes acceder al codigo fuente en Github! </p>
+        
     </a>`); // Actualiza la barra lateral
 
 
