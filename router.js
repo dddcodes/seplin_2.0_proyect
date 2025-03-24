@@ -5,6 +5,7 @@ const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configurac
 
 export const router = async () => {
   const app = document.querySelector("#app"); //document.querySelector("#app").style.visibility = "hidden";
+  const sidebar = document.querySelector("#sidebar");
 
   // Truco para reiniciar la animación de #app
   app.classList.remove("animated");
@@ -24,19 +25,18 @@ export const router = async () => {
         
     </a>`); // Actualiza la barra lateral
 
-
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/catalog": () => import(`./views/${ROUTE.catalog.component}`), //catalogo
     "/practice": () => import(`./views/${ROUTE.practice.component}`),
-    "/archived": () => import(`./views/${ROUTE.archived.component}`) //quizes archivados
+    "/archived": () => import(`./views/${ROUTE.archived.component}`), //quizes archivados
   };
 
   const view =
     routes[window.location.pathname] ||
     (() => `<h1>404 - Página no encontrada</h1>`);
-    //PARECE NO FUNCIONAR NUNCA
+  //PARECE NO FUNCIONAR NUNCA
 
   app.innerHTML = await (await view()).default();
 };
