@@ -8,7 +8,7 @@ export default () => {
   u.updateSidebar(`
     <a 
       class="card"
-      href="olivares.netlify.app${CONFIG.routes.practice.path}" 
+      href="${CONFIG.routes.practice.path}" 
       data-link>
 
       CREAR TUS QUIZZES
