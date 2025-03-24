@@ -3,7 +3,9 @@ import { CONFIG } from "./config.js";
 import getLayout from "../components/layout.js";
 import { LSM, RESET } from "./localStorageManager.js";
 
-console.log(LSM, RESET);
+//RESET()
+LSM.createItem("localQuizzes", "{'NO DEFAULT QUIZZES'}");
+console.log(LSM.getLocalQuizzes());
 
 getLayout(); // Carga el navbar, sidebar y main-app (HTML)
 

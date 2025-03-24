@@ -151,16 +151,6 @@ export function RESET() {
 }
 
 // EXAMPLES ===========================================================:
-// Store data
-/*
-LSM.createItem("localQuizzes", {
-  "001": {
-    question: "What is the capital of Spain?",
-    correctAnswer: "Madrid",
-    incorrectAnswers: ["Barcelona", "Lisbon", "Paris"],
-  },
-});
-*/
 
 /*
 let localQuizzes = LSM.getItem("localQuizzes");

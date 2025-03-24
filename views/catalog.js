@@ -1,5 +1,6 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
+import {LSM} from "../localStorageManager.js" 
 
 const actualView = CONFIG.routes.catalog;
 
@@ -14,7 +15,7 @@ export default () => {
         
         <div class="basicBox OnlyBorder">
             <div class="catalog-container">
-                
+                ${LSM.getLocalQuizzes()}
             </div>
         </div>
     `;
