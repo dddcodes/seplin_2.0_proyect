@@ -7,14 +7,22 @@ export default () => {
   u.setPageTitle(actualView.description);
   u.updateSidebar(`
     <a class="card">
-      Importar quizzes
+
+      TITULO
+
+      <p>texto lorem</p>
+
     </a>
     
     <a 
       href="https://github.com/dddcodes/seplin_2.0_proyect" 
       target="_blank" rel="noopener noreferrer"
       class="card onlyBorder">
+      
         Github del proyecto
+
+        <p>texto lorem</p>
+
     </a>`);
 
   return `

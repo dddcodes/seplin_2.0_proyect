@@ -109,7 +109,8 @@
   border-radius: var(--border-radius-2);
 
   width: 100%;
-  padding: 50px 10px;
+  padding: 20px 10px;
+  min-height: 100px;
 
   text-align: center;
 }
@@ -117,4 +118,8 @@
 #sidebar > .card.onlyBorder {
   background-color: var(--default-color);
   outline: var(--default-color-2) solid 2px;
+}
+
+#sidebar > .card > p{
+  color: red;
 }
