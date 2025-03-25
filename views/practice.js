@@ -5,14 +5,16 @@ import { LSM } from "../localStorageManager.js";
 const actualView = CONFIG.routes.practice;
 
 export default () => {
-  const localQuizzes = LSM.getLocalQuizzes();
-
   u.setPageTitle(actualView.title);
+
+  const localQuizzes = LSM.getLocalQuizzes();
 
   let localQuizzesLength = Object.keys(localQuizzes).length;
   let randomNumber = u.random(1, localQuizzesLength);
+
   let actualQuiz = localQuizzes[randomNumber];
   console.log(actualQuiz);
+
   return `
         <div>
             <div class="quizBox">
@@ -25,14 +27,13 @@ export default () => {
                   .map(
                     (option, index) => `
                     <button class="option" value="${index}" onclick="">
-                      ${index + 1} - ${option}
-                    </button>
-                  `
+                        ${index + 1} - ${option}
+                    </button>`
                   )
                   .join("")}
-                    <button class="option" value="VALUE" onclick="">4 - ${
-                      actualQuiz.answer
-                    }</button>
+                    <button class="option" value="VALUE" onclick="">
+                        4 - ${actualQuiz.answer}
+                    </button>
                 </div>
 
             </div>
