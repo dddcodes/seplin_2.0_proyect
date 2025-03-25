@@ -9,7 +9,7 @@ export default () => {
   u.updateSidebar(`
     <a 
       class="card"
-      onclick="${navigateTo(CONFIG.routes.practice.path)}" 
+      href="/practice"
       data-link>
 
       CREAR TUS QUIZZES

@@ -51,6 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  document.querySelectorAll("p").forEach((p) => {
+    p.addEventListener("click", (e) => {
+      const link = p.closest("a"); // Encuentra el <a> padre
+      if (link) {
+        e.preventDefault(); // Evita la recarga de la página
+        navigateTo(link.href); // Usa navigateTo() para cambiar la vista
+      }
+    });
+  });
+
 });
 
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================
