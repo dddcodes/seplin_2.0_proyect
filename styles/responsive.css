@@ -11,7 +11,6 @@
     width: 80px;
     height: 80px;
 
-
     padding: 25px 20px 20px 20px;
   }
 
@@ -47,10 +46,9 @@
     animation: none;
   }
 
-  #navigationBar{
+  #navigationBar {
     background-color: var(--default-color);
     border-top: var(--default-color-2) solid 3px;
-
 
     bottom: 0;
     top: auto;
@@ -68,7 +66,6 @@
     border-left: none;
     border-right: none;
     top: 0;
-
   }
 
   #navigationBar > a > ion-icon {
@@ -107,13 +104,13 @@
 
   /*MORE*/
 
-  #sidebar > .card{
+  #sidebar > .card {
     padding: 0;
     align-content: center;
     min-height: 0;
   }
 
-  #sidebar > .card > p{
+  #sidebar > .card > p {
     display: none;
   }
 }

@@ -49,11 +49,10 @@
 
   z-index: 10;
 
-  animation: sideBarEntryAnimation 2.5s ease-in-out; 
-
+  animation: sideBarEntryAnimation 2.5s ease-in-out;
 }
 
-.test{
+.test {
   background-color: red;
 }
 

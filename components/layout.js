@@ -34,6 +34,10 @@ export default () => {
         
         <div id="sidebar">
         </div>
+
+        <div id="practicebar">
+        PRACTICEBAR
+        </div>
         
         
     `; // Crea la barra de navegación y el contenedor de la aplicación...
