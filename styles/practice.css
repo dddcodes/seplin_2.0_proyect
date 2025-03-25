@@ -44,6 +44,10 @@
   background-color: var(--alt-color);
   color: var(--default-color);
 }
+
+.quizBox > .optionsBox > .option[value="correct"]{
+  background-color: var(--success-color);
+}
 /*HEREDADO DE SEPLIN 1.0 (AUN NO SE UTILIZA EN SEPLIN 2.0)*/
 
 .quizBox > .optionsBox > .option:disabled {
