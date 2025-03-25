@@ -1,13 +1,34 @@
-import { router, navigateTo } from "./router.js";
 import { CONFIG } from "./config.js";
+import { router, navigateTo } from "./router.js";
 import getLayout from "../components/layout.js";
+
 import { LSM, RESET } from "./localStorageManager.js";
 
-//RESET()
-LSM.createItem("localQuizzes", "{'NO DEFAULT QUIZZES'}");
-console.log(LSM.getLocalQuizzes());
+RESET();
+LSM.createItem("localQuizzes", {
+  "001": {
+    question: "¿Cuál es la capital de Francia?",
+    answer: "París",
+    explanation: "París ha sido la capital de Francia desde el año 508.",
+    options: ["Lyon", "Marsella", "Toulouse"],
+  },
+  "002": {
+    question: "¿En qué año llegó el hombre a la Luna?",
+    answer: "1969",
+    explanation: "El Apolo 11 aterrizó en la Luna el 20 de julio de 1969.",
+    options: ["1955", "1975", "1989"],
+  },
+  "003": {
+    question: "¿Qué elemento químico tiene el símbolo 'O'?",
+    answer: "Oxígeno",
+    explanation: "El oxígeno es esencial para la respiración y la combustión.",
+    options: ["Oro", "Osmio", "Oganesón"],
+  },
+});
+console.log(LSM.getLocalQuizzes())
 
 getLayout(); // Carga el navbar, sidebar y main-app (HTML)
+navigateTo("/practice");
 
 // ==> Carga la vista =====================================================
 document.addEventListener("DOMContentLoaded", () => {

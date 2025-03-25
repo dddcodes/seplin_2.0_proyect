@@ -5,6 +5,7 @@
 @import url("./buttons.css");
 
 @import url("./responsive.css");
+@import url("./practice.css");
 
 :root {
   --default-color: #1b1b1b;
@@ -118,9 +119,9 @@ a:hover {
   border-radius: 3px;
   width: 100%;
   padding: 30px 15px !important;
-
-  font-weight: bold;
+  
   font-size: 35px !important;
+  font-weight:900;
 
   text-align: left;
 }

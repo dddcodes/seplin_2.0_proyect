@@ -1,5 +1,6 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
+import { navigateTo } from "../router.js";
 
 const actualView = CONFIG.routes.home;
 
@@ -8,7 +9,7 @@ export default () => {
   u.updateSidebar(`
     <a 
       class="card"
-      href="${CONFIG.url}${CONFIG.routes.practice.path}" 
+      onclick="${navigateTo(CONFIG.routes.practice.path)}" 
       data-link>
 
       CREAR TUS QUIZZES

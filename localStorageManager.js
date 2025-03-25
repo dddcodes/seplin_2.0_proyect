@@ -3,9 +3,6 @@
  * A collection of functions to handle basic CRUD operations with localStorage
  */
 export const LSM = {
-  /**
-   * Creates or stores an item in localStorage
-   */
   setItem: function (key, value) {
     try {
       const stringValue = JSON.stringify(value);
@@ -17,7 +14,6 @@ export const LSM = {
       return false;
     }
   },
-  /*Creates a new item in localStorage (fails if key exists) */
   createItem: function (key, value) {
     if (localStorage.getItem(key)) {
       console.warn(`[Warning] LocalStorage Key "${key}" already exists.`);
@@ -25,10 +21,6 @@ export const LSM = {
     }
     return this.setItem(key, value);
   },
-
-  /**
-   * Updates an existing item in localStorage
-   */
   updateItem: function (key, newValue) {
     if (!localStorage.getItem(key)) {
       console.warn(`[Warning] Key "${key}" doesn't exist in localStorage`);
@@ -45,10 +37,6 @@ export const LSM = {
       return false;
     }
   },
-
-  /**
-   * Removes an item from localStorage
-   */
   removeItem: function (key) {
     if (!localStorage.getItem(key)) {
       console.warn(`[Warning] Key "${key}" doesn't exist in localStorage`);
@@ -64,10 +52,6 @@ export const LSM = {
       return false;
     }
   },
-
-  /**
-   * Bonus: Retrieves an item from localStorage
-   */
   getItem: function (key) {
     try {
       const item = localStorage.getItem(key);
@@ -77,7 +61,7 @@ export const LSM = {
       return null;
     }
   },
-
+  
   addQuiz: function (newQuizID, newQuizContent) {
     try {
       // 1. Get existing parent item
@@ -122,7 +106,6 @@ export const LSM = {
       return false;
     }
   },
-
   removeQuiz: function (quizID) {
     //ahora todo el mismo proceso pero con try y catch, en caso de que el quizID no exista
     try {
@@ -139,11 +122,16 @@ export const LSM = {
       return;
     }
   },
-
   getLocalQuizzes: function () {
     return LSM.getItem("localQuizzes");
   },
 };
+
+/*FALTA AGREGAR FUNCIONES PARA LOS GRUPOS DE QUIZZES: 
+    -> getLocalGroups()
+    -> addGroup(info)
+    -> removeGroup(ID, withQuizzes = false)
+*/
 
 export function RESET() {
   LSM.removeItem("localQuizzes");

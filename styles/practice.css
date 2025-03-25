@@ -1,0 +1,56 @@
+.quizBox{
+  padding: 0;
+}
+.quizBox *{
+    border-radius: var(--border-radius-2);
+}
+
+
+.quizBox > .details{
+  color: var(--default-color-3);
+  font-size: 22px;
+  padding: 3px 10px;
+  font-weight:900;
+}
+
+.quizBox > .question {
+  color: var(--clr);
+  padding: 10px;
+
+  font-size: 30px;
+  font-weight:900;
+
+  text-align: left;
+}
+
+.quizBox > .optionsBox > .option {
+  border: 2px solid var(--default-color-2);
+  background-color: var(--default-color);
+
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.quizBox > .optionsBox > .option:hover {
+  border-color: var(--default-color-3);
+}
+
+.quizBox > .optionsBox > .option:focus {
+  border-color: var(--alt-color);
+  background-color: var(--alt-color);
+  color: var(--default-color);
+}
+/*HEREDADO DE SEPLIN 1.0 (AUN NO SE UTILIZA EN SEPLIN 2.0)*/
+
+.quizBox > .optionsBox > .option:disabled {
+  cursor: no-drop;
+}
+
+.quizBox > .optionsBox > .option[disabled] {
+  background-color: var(--default-color);
+  border-color: var(--default-color-2);
+}
