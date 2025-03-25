@@ -38,7 +38,9 @@ export const router = async () => {
     (() => `<h1>404 - Página no encontrada</h1>`);
   //PARECE NO FUNCIONAR NUNCA
 
+  import(`./localStorageManager.js`)
   app.innerHTML = await (await view()).default();
+
 };
 
 export const navigateTo = (url) => {
