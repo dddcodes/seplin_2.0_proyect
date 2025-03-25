@@ -3,6 +3,13 @@ import { CONFIG } from "../config.js";
 import { LSM } from "../localStorageManager.js";
 
 const actualView = CONFIG.routes.practice;
+const localQuizzes = LSM.getLocalQuizzes();
+
+for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    
+}
+
 const TEST = LSM.getLocalQuizzes()["001"];
 
 export default () => {
