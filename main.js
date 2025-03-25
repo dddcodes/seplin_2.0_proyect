@@ -28,7 +28,6 @@ LSM.createItem("localQuizzes", {
 console.log(LSM.getLocalQuizzes())
 
 getLayout(); // Carga el navbar, sidebar y main-app (HTML)
-navigateTo("/practice");
 
 // ==> Carga la vista =====================================================
 document.addEventListener("DOMContentLoaded", () => {
