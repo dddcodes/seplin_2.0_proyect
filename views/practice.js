@@ -7,10 +7,11 @@ const actualView = CONFIG.routes.practice;
 export default () => {
   const localQuizzes = LSM.getLocalQuizzes();
 
-  const TEST = LSM.getLocalQuizzes()["1"];
   u.setPageTitle(actualView.title);
 
-  let actualQuiz = localQuizzes[u.random(1, Object.keys(localQuizzes).length)];
+  let localQuizzesLength = Object.keys(localQuizzes).length;
+  let randomNumber = u.random(1, localQuizzesLength);
+  let actualQuiz = localQuizzes[randomNumber];
   console.log(actualQuiz);
   return `
         <div>
@@ -20,7 +21,7 @@ export default () => {
 
                 <p class="question">${actualQuiz.question}</p>
                 <div class="optionsBox">
-                ${TEST.options
+                ${actualQuiz.options
                   .map(
                     (option, index) => `
                     <button class="option" value="${index}" onclick="">
