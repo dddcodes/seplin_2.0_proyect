@@ -31,7 +31,7 @@ export default () => {
                   )
                   .join("")}
                     <button class="option" value="VALUE" onclick="">4 - ${
-                      TEST.answer
+                      actualQuiz.answer
                     }</button>
                 </div>
 
