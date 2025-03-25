@@ -72,7 +72,7 @@ body * {
 }
 
 .animated {
-  animation: appEntryAnimation 2.5s ease-in-out;
+  animation: appEntryAnimation 4s ease-in-out;
 }
 
 /* Estilos para los contenedores principales ============================================*/
