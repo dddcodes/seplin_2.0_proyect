@@ -15,7 +15,7 @@ export default () => {
         
         <div class="basicBox OnlyBorder">
             <div class="catalog-container">
-                ${LSM.getLocalQuizzes()["001"].question}
+                ${LSM.getLocalQuizzes()[1].question}
             </div>
         </div>
     `;
