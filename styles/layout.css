@@ -1,9 +1,10 @@
 /* Estilos para el LAYOUT  ============================================*/
 #main {
-  width: calc(100vw - 17px);
+  width: calc(100vw - 16.5px);
   min-height: 100vh;
   padding: 10px 300px 0 260px;
   box-sizing: border-box;
+
 
   animation: appEntryAnimation 2s ease-in-out;
 }
