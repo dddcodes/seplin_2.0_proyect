@@ -2,7 +2,7 @@ import { CONFIG } from "./config.js";
 import { router, navigateTo } from "./router.js";
 import getLayout from "../components/layout.js";
 
-import { LSM, RESET } from "./localStorageManager.js"; //lol
+import { LSM, RESET } from "./localStorageManager.js";
 
 RESET();
 LSM.createItem("localQuizzes", {
