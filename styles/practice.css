@@ -114,11 +114,6 @@
   width: 40%;
 }
 
-#practiceBar > button:hover {
-  border-right: var(--success-color) solid 23px;
-  border-left: var(--success-color) solid 23px;
-}
-
 #practiceBar > #explainButton{
   background-color: var(--default-color);
   border: var(--default-color-3) solid 2px;
@@ -141,6 +136,6 @@
 }
 
 #practiceBar > #respondButton:hover{
-  border-right: var(--success-color) solid 25px;
-  border-left: var(--success-color) solid 25px;
+  border-right: var(--primary-color) solid 25px;
+  border-left: var(--primary-color) solid 25px;
 }
