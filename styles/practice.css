@@ -1,6 +1,4 @@
-#practiceLayout{
-  margin-top: -80px;
-}
+
 
 .quizBox {
   padding: 0;
@@ -19,6 +17,10 @@
 
 .quizBox > .question {
   color: var(--clr);
+  border-bottom: var(--primary-color) solid 2px;
+  border-radius: 0;
+  padding-bottom: 10px;
+
   padding: 10px;
 
   font-size: 30px;
@@ -44,14 +46,10 @@
 }
 
 .quizBox > .optionsBox > .option:focus {
-  border-color: var(--alt-color);
-  background-color: var(--alt-color);
-  color: var(--default-color);
+  border-color: var(--primary-color);
 }
 
-.quizBox > .optionsBox > .option[value="correct"] {
-  background-color: var(--success-color);
-}
+
 /*HEREDADO DE SEPLIN 1.0 (AUN NO SE UTILIZA EN SEPLIN 2.0)*/
 
 .quizBox > .optionsBox > .option:disabled {
@@ -137,9 +135,9 @@
 }
 
 #practiceBar > #respondButton {
-  border: var(--success-color) solid 2px;
+  border: var(--primary-color) solid 2px;
   background-color: var(--default-color);
-  color: var(--success-color);
+  color: var(--primary-color);
 }
 
 #practiceBar > #respondButton:hover{

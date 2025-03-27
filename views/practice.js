@@ -33,12 +33,16 @@ export default () => {
   return `
     <div id="practiceLayout">
       <button id="backButton" onClick='
+
       window.history.back();
+
       const sidebar = document.querySelector("#sidebar");
       const navbar = document.querySelector("#navigationBar");
-      const mainApp = document.querySelector("#main");
       sidebar.style.display = "flex";
       navbar.style.display = "flex";
+
+      window.scrollTo(0, 0);
+
       '>X</button>
         <div class="quizBox">
 

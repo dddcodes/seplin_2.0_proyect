@@ -78,7 +78,7 @@
   }
 
   #navigationBar > .centerNavbarButton {
-    background: var(--primary-gradient);
+    background: var(--primary-color);
     outline: var(--default-color) solid 2px;
   }
 
@@ -113,5 +113,9 @@
 
   #sidebar > .card > p {
     display: none;
+  }
+
+  #practiceLayout{
+    margin-top: -80px;
   }
 }
