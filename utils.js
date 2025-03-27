@@ -42,3 +42,9 @@ export function shuffleArray(array) {
   
   return newArray;
 }
+
+export function goBackWithConfirm(message = '¿Seguro que quieres salir?') {
+  if (confirm(message)) {
+    window.history.back();
+  }
+}

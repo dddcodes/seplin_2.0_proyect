@@ -1,16 +1,20 @@
-.quizBox{
+#practiceLayout{
+  margin-top: -80px;
+}
+
+.quizBox {
   padding: 0;
+  margin-top: 40px;
 }
-.quizBox *{
-    border-radius: var(--border-radius-2);
+.quizBox * {
+  border-radius: var(--border-radius-2);
 }
 
-
-.quizBox > .details{
+.quizBox > .details {
   color: var(--default-color-3);
   font-size: 22px;
   padding: 3px 10px;
-  font-weight:900;
+  font-weight: 900;
 }
 
 .quizBox > .question {
@@ -18,7 +22,7 @@
   padding: 10px;
 
   font-size: 30px;
-  font-weight:900;
+  font-weight: 900;
 
   text-align: left;
 }
@@ -45,7 +49,7 @@
   color: var(--default-color);
 }
 
-.quizBox > .optionsBox > .option[value="correct"]{
+.quizBox > .optionsBox > .option[value="correct"] {
   background-color: var(--success-color);
 }
 /*HEREDADO DE SEPLIN 1.0 (AUN NO SE UTILIZA EN SEPLIN 2.0)*/
@@ -59,4 +63,86 @@
   border-color: var(--default-color-2);
 }
 
+#backButton {
+  border: var(--default-color-3) solid 2px;
+  background-color: var(--default-color);
+  color: var(--default-color-3);
+  padding: 0;
+
+  width: 70px;
+  height: 70px;
+  min-width: 0;
+  min-height: 0;
+
+  text-align: center;
+  font-size: 27px;
+  font-weight: 700;
+}
+
 /*PRACTICEBAR =======================================================*/
+
+#practiceBar {
+  gap: 10px;
+
+  position: fixed;
+
+  z-index: 9;
+
+  width: 100%;
+  height: 85px;
+
+  margin: 0;
+  border-radius: 0;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  animation: none;
+
+  background-color: var(--default-color);
+  border-top: var(--default-color-2) solid 3px;
+
+  bottom: 0;
+  left: 0;
+}
+
+#practiceBar > button {
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+  padding: 0;
+  width: 40%;
+}
+
+#practiceBar > button:hover {
+  border-right: var(--success-color) solid 23px;
+  border-left: var(--success-color) solid 23px;
+}
+
+#practiceBar > #explainButton{
+  background-color: var(--default-color);
+  border: var(--default-color-3) solid 2px;
+  color: var(--default-color-3);
+}
+
+#practiceBar > #explainButton:hover{
+  background-color: var(--default-color);
+  border: var(--alt-color) solid 2px;
+  color: var(--alt-color);
+
+  border-left: var(--alt-color) solid 23px;
+  border-right: var(--alt-color) solid 23px;
+}
+
+#practiceBar > #respondButton {
+  border: var(--success-color) solid 2px;
+  background-color: var(--default-color);
+  color: var(--success-color);
+}
+
+#practiceBar > #respondButton:hover{
+  border-right: var(--success-color) solid 25px;
+  border-left: var(--success-color) solid 25px;
+}
