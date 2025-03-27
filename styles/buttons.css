@@ -3,7 +3,7 @@ button, a{
   -webkit-tap-highlight-color: transparent; /* Quita el resaltado azul en móviles */
 }
 
-.button {
+button {
   background-color: var(--default-color-2);
   border: none;
 
@@ -18,41 +18,43 @@ button, a{
   cursor: pointer;
 }
 
-.button:hover {
+button:hover {
   background-color: var(--default-color-3);
 }
 
-.button:active {
+button:active {
   background: none;
-  background-color: var(--default-color-4);
+  background-color: var(--alt-color);
+  color: var(--default-color);
 }
 
 /*BOTONES ALTERNATIVOS =======================================================================*/
 
-.button.alt {
+button.alt {
   background-color: var(--alt-color);
   color: var(--default-color-2);
 }
 
-.button.alt:hover {
+button.alt:hover {
   background-color: var(--alt-color-2);
 }
 
-.button.alt:active {
-  background-color: var(--default-color-4);
+button.alt:active {
+  background-color: var(--default-color-2); 
+  color: var(--alt-color);
 }
 
 /*BOTONES ONLYBORDER =======================================================================*/
 
-.button.onlyBorder {
+button.onlyBorder {
   background-color: var(--default-color);
   border: 2px solid var(--default-color-2);
 }
 
-.button.onlyBorder:hover {
+button.onlyBorder:hover {
   border-color: var(--default-color-3);
 }
 
-.button.onlyBorder:active {
+button.onlyBorder:active {
   background-color: var(--default-color-3);
 }

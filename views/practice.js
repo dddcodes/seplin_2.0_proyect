@@ -40,7 +40,9 @@ export default () => {
             )
             .join("")}
         </div>
-        
+
+        <button value="hola">
+
       </div>
     </div>
   `;

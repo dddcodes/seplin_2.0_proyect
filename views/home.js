@@ -38,9 +38,9 @@ export default () => {
         <p class="basicBox OnlyBorder">Esto es un mini proyecto del tipo Single-Page Application (S.P.A) Open Source en latino</p>
         <p>Esta plantilla tambien incluye estilos web CSS vanilla responsive-Design y extras como tarjetas de video y </p>
 
-        <button class="button">Boton por defecto</button>
-        <button class="button alt">Boton alternativo</button>
-        <button class="button onlyBorder">Boton de solo borde</button>
+        <button >Boton por defecto</button>
+        <button class="alt">Boton alternativo</button>
+        <button class="onlyBorder">Boton de solo borde</button>
 
         <input type="text" class="input" placeholder="Input por defecto">
         <input type="password" class="input" placeholder="Password por defecto">
