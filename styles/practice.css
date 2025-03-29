@@ -126,17 +126,24 @@
   border: var(--alt-color) solid 2px;
   color: var(--alt-color);
 
-  border-left: var(--alt-color) solid 23px;
-  border-right: var(--alt-color) solid 23px;
+  border-left: var(--alt-color) solid 20px;
+  border-right: var(--alt-color) solid 20px;
 }
 
-#practiceBar > #submitAnswerButton {
+#practiceBar > #submitAnswerButton,
+#practiceBar > #nextQuizButton {
   border: var(--primary-color) solid 2px;
   background-color: var(--default-color);
   color: var(--primary-color);
 }
 
-#practiceBar > #submitAnswerButton:hover {
-  border-right: var(--primary-color) solid 25px;
-  border-left: var(--primary-color) solid 25px;
+#practiceBar > #submitAnswerButton:hover,
+#practiceBar > #nextQuizButton:hover {
+  border-right: var(--primary-color) solid 20px;
+  border-left: var(--primary-color) solid 20px;
+}
+
+#practiceBar > #nextQuizButton{
+  background-color: var(--primary-color);
+  color: var(--default-color);
 }

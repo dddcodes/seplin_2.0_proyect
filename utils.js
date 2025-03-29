@@ -48,3 +48,11 @@ export function goBackWithConfirm(message = '¿Seguro que quieres salir?') {
     window.history.back();
   }
 }
+
+export function disappear(element){
+  element.style.display = "none";
+}
+
+export function appear(element, display = "block"){
+  element.style.display = display;
+}

@@ -30,9 +30,8 @@ export default () => {
     actualQuiz = getRandomQuizInfo();
     allQuizOptions = suffleQuizOptions();
 
-
     quizBox.classList.remove("animated");
-    void quizBox.offsetWidth; 
+    void quizBox.offsetWidth;
     quizBox.classList.add("animated");
 
     quizBox.innerHTML = `
@@ -57,6 +56,7 @@ export default () => {
 
   let actualQuiz = getRandomQuizInfo();
   let allQuizOptions = suffleQuizOptions();
+
   setTimeout(() => {
     const quizBox = document.querySelector(".quizBox");
     quizBox.innerHTML = `<p class="details">Deportes 401</p>
@@ -77,10 +77,20 @@ export default () => {
         </div>`;
 
     const submitAnswerButton = document.querySelector("#submitAnswerButton");
-    submitAnswerButton.addEventListener("click", () => {
+    const nextQuizButton = document.querySelector("#nextQuizButton");
+    u.disappear(nextQuizButton);
+
+    nextQuizButton.addEventListener("click", () => {
       getQuiz();
+      u.disappear(nextQuizButton);
+      u.appear(submitAnswerButton);
     });
-  }, 300);
+
+    submitAnswerButton.addEventListener("click", () => {
+      u.appear(nextQuizButton);
+      u.disappear(submitAnswerButton);
+    });
+  }, 200);
 
   return `
     <div id="practiceLayout">
@@ -105,6 +115,7 @@ export default () => {
       <div id="practiceBar">
         <button id="feedbackButton">EXPLICAR</button>
         <button id="submitAnswerButton">CONTESTAR</button>
+        <button id="nextQuizButton">SIQUIENTE</button>
       </div>
 
     </div>
