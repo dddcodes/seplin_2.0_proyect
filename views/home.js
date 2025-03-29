@@ -1,6 +1,5 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
-import { navigateTo } from "../router.js";
 
 const actualView = CONFIG.routes.home;
 
