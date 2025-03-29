@@ -5,7 +5,7 @@ const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configurac
 
 export const router = async () => {
   const app = document.querySelector("#app"); //document.querySelector("#app").style.visibility = "hidden";
-  const sidebar = document.querySelector("#sidebar");
+
 
   // Truco para reiniciar la animación de #app
   app.classList.remove("animated");
