@@ -6,10 +6,12 @@ import { navigateTo } from "../router.js";
 const actualView = CONFIG.routes.practice;
 
 export default () => {
-  u.setPageTitle(actualView.title); //titulo de la pestana
+  u.setPageTitle(actualView.title); //titulo
 
-  const localQuizzes = LSM.getLocalQuizzes(); //LOCAL QUIZZES
-  const localQuizzesLength = Object.keys(localQuizzes).length; //TAMANO
+  //LOCAL QUIZZES
+  const localQuizzes = LSM.getLocalQuizzes();
+  const localQuizzesLength = Object.keys(localQuizzes).length;
+
   const randomQuizIndex = u.random(1, localQuizzesLength); //RANDOM
   const actualQuiz = localQuizzes[randomQuizIndex];
 
@@ -23,13 +25,10 @@ export default () => {
 
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
+  
   sidebar.style.display = "none";
   navbar.style.display = "none";
-
-  const mainApp = document.querySelector("#main");
-
-  const backButton = document.querySelector("#backButton");
-
+  
 
   return `
     <div id="practiceLayout">
@@ -71,8 +70,8 @@ export default () => {
       </div>
         
       <div id="practiceBar">
-        <button id="explainButton">EXPLICAR</button>
-        <button id="respondButton">CONTESTAR</button>
+        <button id="feedbackButton">EXPLICAR</button>
+        <button id="submitAnswerButton">CONTESTAR</button>
       </div>
 
     </div>

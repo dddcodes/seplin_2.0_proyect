@@ -46,6 +46,7 @@
 
 .quizBox > .optionsBox > .option:focus {
   border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 
@@ -114,13 +115,13 @@
   width: 40%;
 }
 
-#practiceBar > #explainButton{
+#practiceBar > #feedbackButton{
   background-color: var(--default-color);
   border: var(--default-color-3) solid 2px;
   color: var(--default-color-3);
 }
 
-#practiceBar > #explainButton:hover{
+#practiceBar > #feedbackButton:hover{
   background-color: var(--default-color);
   border: var(--alt-color) solid 2px;
   color: var(--alt-color);
@@ -129,13 +130,13 @@
   border-right: var(--alt-color) solid 23px;
 }
 
-#practiceBar > #respondButton {
+#practiceBar > #submitAnswerButton {
   border: var(--primary-color) solid 2px;
   background-color: var(--default-color);
   color: var(--primary-color);
 }
 
-#practiceBar > #respondButton:hover{
+#practiceBar > #submitAnswerButton:hover{
   border-right: var(--primary-color) solid 25px;
   border-left: var(--primary-color) solid 25px;
 }
