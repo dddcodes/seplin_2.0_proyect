@@ -6,7 +6,7 @@
   box-sizing: border-box;
 
 
-  animation: appEntryAnimation 2s ease-in-out;
+  animation: appEntryAnimation 1s ease-in-out;
 }
 
 #app {

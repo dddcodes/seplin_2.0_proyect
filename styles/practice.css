@@ -1,7 +1,9 @@
-
-
 .quizBox {
   padding: 0;
+}
+
+.quizBox.animated {
+  animation: quizBoxAnimation 1s ease-in-out;
 }
 .quizBox * {
   border-radius: var(--border-radius-2);
@@ -49,7 +51,6 @@
   color: var(--primary-color);
 }
 
-
 /*HEREDADO DE SEPLIN 1.0 (AUN NO SE UTILIZA EN SEPLIN 2.0)*/
 
 .quizBox > .optionsBox > .option:disabled {
@@ -66,7 +67,6 @@
   background-color: var(--default-color);
   color: var(--default-color-3);
   padding: 0;
-
 
   width: 60px;
   height: 60px;
@@ -115,13 +115,13 @@
   width: 40%;
 }
 
-#practiceBar > #feedbackButton{
+#practiceBar > #feedbackButton {
   background-color: var(--default-color);
   border: var(--default-color-3) solid 2px;
   color: var(--default-color-3);
 }
 
-#practiceBar > #feedbackButton:hover{
+#practiceBar > #feedbackButton:hover {
   background-color: var(--default-color);
   border: var(--alt-color) solid 2px;
   color: var(--alt-color);
@@ -136,7 +136,7 @@
   color: var(--primary-color);
 }
 
-#practiceBar > #submitAnswerButton:hover{
+#practiceBar > #submitAnswerButton:hover {
   border-right: var(--primary-color) solid 25px;
   border-left: var(--primary-color) solid 25px;
 }

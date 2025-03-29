@@ -2,14 +2,13 @@ import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 import { LSM } from "../localStorage/localStorageManager.js";
 
-const actualView = CONFIG.routes.practice;
-
 export default () => {
+  const actualView = CONFIG.routes.practice;
   u.setPageTitle(actualView.title); //titulo
 
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
-  
+
   sidebar.style.display = "none";
   navbar.style.display = "none";
 
@@ -30,6 +29,11 @@ export default () => {
 
     actualQuiz = getRandomQuizInfo();
     allQuizOptions = suffleQuizOptions();
+
+
+    quizBox.classList.remove("animated");
+    void quizBox.offsetWidth; 
+    quizBox.classList.add("animated");
 
     quizBox.innerHTML = `
       <p class="details">Deportes 401</p>
@@ -55,7 +59,6 @@ export default () => {
   let allQuizOptions = suffleQuizOptions();
   setTimeout(() => {
     const quizBox = document.querySelector(".quizBox");
-
     quizBox.innerHTML = `<p class="details">Deportes 401</p>
         <p class="question">${actualQuiz.question}</p>
 
@@ -96,7 +99,7 @@ export default () => {
       </button>
     
 
-      <div class="quizBox">
+      <div class="quizBox animated">
       </div>
         
       <div id="practiceBar">
