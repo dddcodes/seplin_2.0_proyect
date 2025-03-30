@@ -75,12 +75,7 @@ export default () => {
     u.disappear(nextQuizButton);
 
     backButton.addEventListener("click", () => {
-      window.history.back();
-
-      u.appear(sidebar, "flex");
-      u.appear(navbar, "flex");
-
-      window.scrollTo(0, 0);
+      u.back();
     });
     nextQuizButton.addEventListener("click", () => {
       getQuiz();

@@ -71,3 +71,7 @@ export function confirmLayoutVisibility() {
     appear(mainApp, "flex");
   }
 }
+
+export function back(){
+  window.history.back();
+}
