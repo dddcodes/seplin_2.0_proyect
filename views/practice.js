@@ -14,9 +14,6 @@ export default () => {
   u.disappear(sidebar);
   u.disappear(navbar);
 
-  //LOCAL QUIZZES
-  const localQuizzes = LSM.getLocalQuizzes();
-
   const suffleQuizOptions = () => {
     return u.shuffleArray([...actualQuiz.options, actualQuiz.answer]);
   };
