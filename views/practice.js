@@ -1,6 +1,8 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
+
 import { LSM } from "../localStorage/localStorageManager.js";
+import getQuizInfo from "../localStorage/getQuizInfo.js";
 
 export default () => {
   const actualView = CONFIG.routes.practice;
@@ -16,18 +18,13 @@ export default () => {
   const localQuizzes = LSM.getLocalQuizzes();
   const localQuizzesLength = Object.keys(localQuizzes).length;
 
-  const getRandomQuizInfo = () => {
-    return localQuizzes[
-      Object.keys(localQuizzes)[u.random(0, localQuizzesLength - 1)]
-    ];
-  };
   const suffleQuizOptions = () => {
     return u.shuffleArray([...actualQuiz.options, actualQuiz.answer]);
   };
   const getQuiz = () => {
     const quizBox = document.querySelector(".quizBox");
 
-    actualQuiz = getRandomQuizInfo();
+    actualQuiz = getQuizInfo();
     allQuizOptions = suffleQuizOptions();
 
     quizBox.classList.remove("animated");
@@ -54,7 +51,7 @@ export default () => {
       `;
   };
 
-  let actualQuiz = getRandomQuizInfo();
+  let actualQuiz = getQuizInfo();
   let allQuizOptions = suffleQuizOptions();
 
   setTimeout(() => {
