@@ -11,12 +11,11 @@ export default () => {
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
 
-  sidebar.style.display = "none";
-  navbar.style.display = "none";
+  u.disappear(sidebar);
+  u.disappear(navbar);
 
   //LOCAL QUIZZES
   const localQuizzes = LSM.getLocalQuizzes();
-  const localQuizzesLength = Object.keys(localQuizzes).length;
 
   const suffleQuizOptions = () => {
     return u.shuffleArray([...actualQuiz.options, actualQuiz.answer]);
@@ -74,15 +73,23 @@ export default () => {
         </div>`;
 
     const submitAnswerButton = document.querySelector("#submitAnswerButton");
+    const backButton = document.querySelector("#backButton");
     const nextQuizButton = document.querySelector("#nextQuizButton");
     u.disappear(nextQuizButton);
 
+    backButton.addEventListener("click", () => {
+      window.history.back();
+
+      u.appear(sidebar, "flex");
+      u.appear(navbar, "flex");
+
+      window.scrollTo(0, 0);
+    });
     nextQuizButton.addEventListener("click", () => {
       getQuiz();
       u.disappear(nextQuizButton);
       u.appear(submitAnswerButton);
     });
-
     submitAnswerButton.addEventListener("click", () => {
       u.appear(nextQuizButton);
       u.disappear(submitAnswerButton);
@@ -91,18 +98,8 @@ export default () => {
 
   return `
     <div id="practiceLayout">
-      <button id="backButton" onClick='
-
-        window.history.back();
-
-        const sidebar = document.querySelector("#sidebar");
-        const navbar = document.querySelector("#navigationBar");
-        sidebar.style.display = "flex";
-        navbar.style.display = "flex";
-
-        window.scrollTo(0, 0);
-
-      '>X
+      <button id="backButton">
+        X
       </button>
     
 

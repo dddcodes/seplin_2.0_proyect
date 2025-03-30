@@ -39,20 +39,35 @@ export function shuffleArray(array) {
     const j = Math.floor(Math.random() * (i + 1));
     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
   }
-  
+
   return newArray;
 }
 
-export function goBackWithConfirm(message = '¿Seguro que quieres salir?') {
+export function goBackWithConfirm(message = "¿Seguro que quieres salir?") {
   if (confirm(message)) {
     window.history.back();
   }
 }
 
-export function disappear(element){
+export function disappear(element) {
   element.style.display = "none";
 }
 
-export function appear(element, display = "block"){
+export function appear(element, display = "block") {
   element.style.display = display;
+}
+
+export function confirmLayoutVisibility() {
+  const sidebar = document.querySelector("#sidebar");
+  const navbar = document.querySelector("#navigationBar");
+  const mainApp = document.querySelector("#main");
+  if (sidebar.style.display !== "flex") {
+    appear(sidebar, "flex");
+  }
+  if (navbar.style.display !== "flex") {
+    appear(navbar, "flex");
+  }
+  if (mainApp.style.display !== "flex") {
+    appear(mainApp, "flex");
+  }
 }

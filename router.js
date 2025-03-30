@@ -6,7 +6,6 @@ const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configurac
 export const router = async () => {
   const app = document.querySelector("#app"); //document.querySelector("#app").style.visibility = "hidden";
 
-
   // Truco para reiniciar la animación de #app
   app.classList.remove("animated");
   void app.offsetWidth; // Reinicia la animación
@@ -38,9 +37,9 @@ export const router = async () => {
     (() => `<h1>404 - Página no encontrada</h1>`);
   //PARECE NO FUNCIONAR NUNCA
 
-  import(`./localStorage/localStorageManager.js`)
+  import(`./localStorage/localStorageManager.js`);
+  u.confirmLayoutVisibility();
   app.innerHTML = await (await view()).default();
-
 };
 
 export const navigateTo = (url) => {
