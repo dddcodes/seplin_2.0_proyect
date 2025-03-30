@@ -51,15 +51,15 @@
   color: var(--primary-color);
 }
 
-/*HEREDADO DE SEPLIN 1.0 (AUN NO SE UTILIZA EN SEPLIN 2.0)*/
-
-.quizBox > .optionsBox > .option:disabled {
+.quizBox > .optionsBox > .option[disabled] {
   cursor: no-drop;
+  border-color: var(--fail-color);
 }
 
-.quizBox > .optionsBox > .option[disabled] {
-  background-color: var(--default-color);
-  border-color: var(--default-color-2);
+.quizBox > .optionsBox > .option[disabled][value="correct"] {
+  border-color: var(--success-color);
+  background-color: var(--success-color);
+  color: var(--default-color);
 }
 
 #backButton {
@@ -143,7 +143,7 @@
   border-left: var(--primary-color) solid 20px;
 }
 
-#practiceBar > #nextQuizButton{
+#practiceBar > #nextQuizButton {
   background-color: var(--primary-color);
   color: var(--default-color);
 }

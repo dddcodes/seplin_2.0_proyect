@@ -1,11 +1,10 @@
-import {LSM} from "./localStorageManager.js"
-import * as u from "../utils.js"
+import { LSM } from "./localStorageManager.js";
+import * as u from "../utils.js";
 
 export default () => {
   const localQuizzes = LSM.getLocalQuizzes();
-  const localQuizzesLength = Object.keys(localQuizzes).length;
+  const localQuizzesKeys = Object.keys(localQuizzes);
+  const localQuizzesLength = localQuizzesKeys.length - 1;
 
-  return localQuizzes[
-    Object.keys(localQuizzes)[u.random(0, localQuizzesLength - 1)]
-  ];
+  return localQuizzes[localQuizzesKeys[u.random(0, localQuizzesLength)]];
 };

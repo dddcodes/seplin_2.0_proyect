@@ -25,7 +25,7 @@
   --success-color: #4caf50; /* Verde más calmado (#28a745 es muy vibrante) */
   --info-color: rgb(106, 165, 167);
   --warning-color: #ff9800; /* Naranja menos agresivo */
-  --danger-color: #f44336; /* Rojo con 8% más luminosidad */
+  --fail-color: #f44336; /* Rojo con 8% más luminosidad */
 
   /* Gradiente Científico */
   --primary-gradient: linear-gradient(

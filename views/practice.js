@@ -1,7 +1,5 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
-
-import { LSM } from "../localStorage/localStorageManager.js";
 import getQuizInfo from "../localStorage/getQuizInfo.js";
 
 export default () => {
@@ -45,10 +43,25 @@ export default () => {
             .join("")}
         </div>
       `;
+
+    const options = document.querySelectorAll(".option");
+
+    options.forEach((option) => {
+      option.addEventListener("click", function () {
+        selectedOptionValue = option.value;
+
+        console.log(selectedOptionValue);
+      });
+    });
+
+    document.querySelectorAll('.option').forEach(button => {
+      button.disabled = false;
+    });
   };
 
   let actualQuiz = getQuizInfo();
   let allQuizOptions = suffleQuizOptions();
+  let selectedOptionValue = null;
 
   setTimeout(() => {
     const quizBox = document.querySelector(".quizBox");
@@ -69,6 +82,16 @@ export default () => {
             .join("")}
         </div>`;
 
+    const options = document.querySelectorAll(".option");
+
+    options.forEach((option) => {
+      option.addEventListener("click", function () {
+        selectedOptionValue = option.value;
+
+        console.log(selectedOptionValue);
+      });
+    });
+
     const submitAnswerButton = document.querySelector("#submitAnswerButton");
     const backButton = document.querySelector("#backButton");
     const nextQuizButton = document.querySelector("#nextQuizButton");
@@ -85,6 +108,16 @@ export default () => {
     submitAnswerButton.addEventListener("click", () => {
       u.appear(nextQuizButton);
       u.disappear(submitAnswerButton);
+
+      if (selectedOptionValue === "correct") {
+        console.log("RESPUESTA CORRECTA");
+      } else if (selectedOptionValue === "incorrect") {
+        console.log("RESPUESTA INCORRECTA");
+      }
+
+      document.querySelectorAll('.option').forEach(button => {
+        button.disabled = true;
+      });
     });
   }, 200);
 
