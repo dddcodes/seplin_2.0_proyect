@@ -78,7 +78,7 @@
   }
 
   #navigationBar > .centerNavbarButton {
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     outline: var(--default-color) solid 2px;
   }
 
