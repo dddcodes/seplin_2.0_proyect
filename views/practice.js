@@ -132,7 +132,7 @@ export default () => {
       </div>
         
       <div id="practiceBar">
-        <button id="feedbackButton">EXPLICAR</button>
+        <button id="feedbackButton" class="onlyBorder">EXPLICAR</button>
         <button id="submitAnswerButton">CONTESTAR</button>
         <button id="nextQuizButton">SIQUIENTE</button>
       </div>

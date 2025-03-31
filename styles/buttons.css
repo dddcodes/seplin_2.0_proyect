@@ -29,35 +29,21 @@ button:active {
   background-color: var(--alt-color);
   color: var(--default-color);
 }
-
-/*BOTONES ALTERNATIVOS =======================================================================*/
-
-button.alt {
-  background-color: var(--alt-color);
-  color: var(--default-color-2);
-}
-
-button.alt:hover {
-  background-color: var(--alt-color-2);
-}
-
-button.alt:active {
-  background-color: var(--default-color-2);
-  color: var(--alt-color);
-}
-
 /*BOTONES ONLYBORDER =======================================================================*/
 
 button.onlyBorder {
   background-color: var(--default-color);
-  border: 2px solid var(--default-color-2);
+  border: var(--default-color-3) solid 2px;
+  color: var(--default-color-3);
 }
 
 button.onlyBorder:hover {
-  border-color: var(--default-color-3);
+  background-color: var(--default-color);
+  border: var(--alt-color) solid 2px;
+  color: var(--alt-color);
 
-  border-right: var(--default-color-3) solid 30px;
-  border-left: var(--default-color-3) solid 30px;
+  border-left: var(--alt-color) solid 20px;
+  border-right: var(--alt-color) solid 20px;
 }
 
 button.onlyBorder:active {
