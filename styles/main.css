@@ -19,7 +19,7 @@
 
   /* Énfasis (basado en tu identidad pero optimizado) */
   --primary-color: #FFB74D;      /* Amarillo más cálido */
-  --secondary-color: #41a4f4;    /* Azul más suave */
+  --secondary-color: #ff7e6b;   
 
   /* Nuevos colores para estados */
   --success-color: #4caf50; /* Verde más calmado (#28a745 es muy vibrante) */
@@ -31,7 +31,7 @@
   --primary-gradient: linear-gradient(
     135deg,
     var(--secondary-color) 0%,
-    #82d2eb 100% /* Azul-cian (aumenta concentración) */
+    var(--primary-color) 100% /* Azul-cian (aumenta concentración) */
   );
 
   --border-radius: 3px;
@@ -72,7 +72,7 @@ body * {
 }
 
 ::selection {
-  background-color: #ff7e6b;
+  background-color: var(--secondary-color);
   color: var(--default-color);
 }
 
@@ -139,7 +139,7 @@ a:hover {
 }
 
 .basicBox.llamative {
-  background: var(--primary-color);
+  background: var(--primary-gradient);
   border-radius: var(--border-radius-2);
   width: 100%;
   color: var(--default-color);
@@ -150,65 +150,4 @@ a:hover {
 .basicBox.OnlyBorder {
   background-color: var(--default-color);
   border: 3px solid var(--default-color-2);
-}
-
-/* Estilos para las CAJAS DE VIDEO ============================================*/
-
-.video-card {
-  width: 270px;
-  cursor: pointer;
-  padding: 0;
-
-  background-color: var(--default-color);
-
-  border-radius: var(--border-radius-2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-
-  justify-self: center;
-}
-.video-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  outline: var(--alt-color) solid 0.5px;
-}
-.thumbnail {
-  width: 100%;
-  height: 151.88px;
-  background: var(--default-color-3);
-  border-radius: var(--border-radius-2);
-  position: relative;
-  padding: 0;
-}
-
-.video-info {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-}
-
-.text-info {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-.title {
-  font-weight: bold;
-  font-size: 16px;
-  padding: 0 0 5px;
-}
-
-.link {
-  font-size: 9px;
-  color: var(--default-color-4);
-  padding: 5px 0 0;
-}
-
-.category {
-  font-size: 12px;
-  color: var(--alt-color-2);
-  padding: 2px;
-
-  border: var(--default-color-3) solid 0.5px;
-  width: fit-content;
-  border-radius: var(--border-radius-2);
 }
