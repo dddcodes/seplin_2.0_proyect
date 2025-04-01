@@ -20,13 +20,15 @@ export const CONFIG = {
       component: "practice.js",
       path: "/practice",
       title: "Practicar",
-      description: "Practica tus quizzes y mejora tus habilidades de manera efectiva, basado en ciencia!",
+      description:
+        "Practica tus quizzes y mejora tus habilidades de manera efectiva, basado en ciencia!",
     },
     archived: {
       component: "archived.js",
       path: "/archived",
       title: "Archivados",
-      description: "Aqui encontraras tus quizzes archivados! puedes volver a ellos cuando quieras manualmente!",
-    }
-  }
+      description:
+        "Aqui encontraras tus quizzes archivados! puedes volver a ellos cuando quieras manualmente!",
+    },
+  },
 };

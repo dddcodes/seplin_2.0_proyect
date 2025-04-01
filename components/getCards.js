@@ -1,21 +1,25 @@
 import { CONFIG } from "../config.js";
 
-function createCard(title, description, href = "/", type = "intern", atributes = "") {
-
-    if (type === "intern") {
-        return `
+function createCard(
+  title,
+  description,
+  href = "/",
+  type = "intern",
+  atributes = ""
+) {
+  if (type === "intern") {
+    return `
           <a href="${href}" data-link ${atributes}>
               ${title}
               <p>${description}</p>
           </a>`;
-        
-    } else if(type === "extern"){
-        return `
+  } else if (type === "extern") {
+    return `
           <a href="${href}" target="_blank" rel="noopener noreferrer" ${atributes}>
               ${title}
               <p>${description}</p>
           </a>`;
-    }
+  }
 }
 
 export const getCard = {
@@ -29,10 +33,10 @@ export const getCard = {
   },
   practice: function () {
     return createCard(
-        "PRUEBA QUIZZES!",
-        CONFIG.routes.practice.description,
-        CONFIG.routes.practice.path,
-        "intern"
+      "PRUEBA QUIZZES!",
+      CONFIG.routes.practice.description,
+      CONFIG.routes.practice.path,
+      "intern"
     );
   },
 };
