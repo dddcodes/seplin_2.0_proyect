@@ -23,15 +23,15 @@ export const getCard = {
     return createCard(
       "GITHUB",
       "Seplin es de codigo abierto, por lo que puedes acceder al codigo fuente en Github!",
-      "https://github.com/dddcodes/seplin_2.0_proyect",
+      CONFIG.gitHub,
       "extern"
     );
   },
   practice: function () {
     return createCard(
         "PRUEBA QUIZZES!",
-        "En lo que contruyo el proyecto puedes contestar unos quizzes de prueba!",
-        "/practice",
+        CONFIG.routes.practice.description,
+        CONFIG.routes.practice.path,
         "intern"
     );
   },

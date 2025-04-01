@@ -1,6 +1,6 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
-import { getCard } from "../components/gerCards.js";
+import { getCard } from "../components/getCards.js";
 
 const actualView = CONFIG.routes.home;
 

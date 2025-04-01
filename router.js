@@ -1,7 +1,7 @@
 import { CONFIG } from "./config.js";
 import * as u from "../utils.js";
 
-import { getCard } from "./components/gerCards.js";
+import { getCard } from "./components/getCards.js";
 
 const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configuración
 

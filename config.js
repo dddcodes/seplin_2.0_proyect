@@ -2,6 +2,7 @@ export const CONFIG = {
   proyectName: "SEPLIN",
   version: "2.0.0",
   url: "https://olivares.netlify.app",
+  gitHub: "https://github.com/dddcodes/seplin_2.0_proyect",
   routes: {
     home: {
       component: "home.js",
@@ -19,7 +20,7 @@ export const CONFIG = {
       component: "practice.js",
       path: "/practice",
       title: "Practicar",
-      description: "Practica tus quizzes y mejora tus habilidades!",
+      description: "Practica tus quizzes y mejora tus habilidades de manera efectiva, basado en ciencia!",
     },
     archived: {
       component: "archived.js",
