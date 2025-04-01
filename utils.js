@@ -72,6 +72,8 @@ export function confirmLayoutVisibility() {
   }
 }
 
-export function back(){
+export function back() {
+  const mainApp = document.querySelector("#main");
+  mainApp.className = "";
   window.history.back();
 }

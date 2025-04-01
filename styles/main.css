@@ -4,8 +4,8 @@
 @import url("./inputs.css");
 @import url("./buttons.css");
 
-@import url("./responsive.css");
 @import url("./practice.css");
+@import url("./responsive.css");
 
 :root {
   --default-color: #000000;

@@ -8,6 +8,8 @@ export default () => {
 
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
+  const mainApp = document.querySelector("#main");
+  mainApp.className = "complete";
 
   u.disappear(sidebar);
   u.disappear(navbar);
@@ -54,7 +56,7 @@ export default () => {
       });
     });
 
-    document.querySelectorAll('.option').forEach(button => {
+    document.querySelectorAll(".option").forEach((button) => {
       button.disabled = false;
     });
   };
@@ -114,7 +116,7 @@ export default () => {
         console.log("RESPUESTA INCORRECTA");
       }
 
-      document.querySelectorAll('.option').forEach(button => {
+      document.querySelectorAll(".option").forEach((button) => {
         button.disabled = true;
       });
     });

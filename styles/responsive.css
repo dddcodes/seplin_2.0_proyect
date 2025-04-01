@@ -6,8 +6,7 @@
     border-radius: 40px;
     margin: 4px;
     height: 99%;
-    
-    
+
     border: var(--default-color-2) solid 2px;
   }
 
@@ -21,7 +20,7 @@
     padding: 18px;
   }
 
-  #navigationBar > a:hover{
+  #navigationBar > a:hover {
     border-width: 2px;
   }
 
@@ -88,6 +87,10 @@
     width: 100vw;
   }
 
+  #main.complete {
+    padding: 80px 5px;
+  }
+
   #navigationBar > .centerNavbarButton {
     background: var(--primary-gradient);
     outline: var(--default-color) solid 2px;
@@ -114,23 +117,23 @@
     margin: 5px 0 5px 0;
   }
 
-  button:hover{
+  button:hover {
     border-width: 2px;
   }
 
   /*MORE*/
 
-  #sidebar > .card {
+  #sidebar > a {
     padding: 0;
     align-content: center;
     min-height: 0;
   }
 
-  #sidebar > .card > p {
+  #sidebar > a > p {
     display: none;
   }
 
-  #practiceLayout{
+  #practiceLayout {
     margin-top: -80px;
   }
 }
