@@ -12,7 +12,7 @@
 .quizBox > .details {
   color: var(--default-color-3);
   font-size: 22px;
-  padding: 3px 10px;
+  padding: 5px;
   font-weight: 900;
 }
 
@@ -20,14 +20,17 @@
   color: var(--clr);
   border-bottom: var(--primary-color) solid 2px;
   border-radius: 0;
-  padding-bottom: 10px;
 
-  padding: 10px;
+  padding-bottom: 10px;
 
   font-size: 24px;
   font-weight: 900;
 
   text-align: left;
+}
+
+.quizBox > .optionsBox{
+  padding: 5px 0 0 0;
 }
 
 .quizBox > .optionsBox > .option {
@@ -43,7 +46,7 @@
 }
 
 .quizBox > .optionsBox > .option:hover {
-  border-color: var(--default-color-3);
+  border-color: var(--alt-color);
 }
 
 .quizBox > .optionsBox > .option:focus {
@@ -54,16 +57,20 @@
 .quizBox > .optionsBox > .option[disabled] {
   cursor: no-drop;
   border-color: var(--fail-color);
+  color: var(--fail-color);
+  
 }
 
 .quizBox > .optionsBox > .option[disabled][value="correct"] {
   border-color: var(--success-color);
   background-color: var(--success-color);
   color: var(--default-color);
+  font-weight: 700;
 }
 
 #backButton {
   border: var(--default-color-3) solid 2px;
+  border-radius: var(--border-radius-2);
   background-color: var(--default-color);
   color: var(--default-color-3);
   padding: 0;
@@ -76,6 +83,11 @@
   text-align: center;
   font-size: 27px;
   font-weight: 900;
+}
+
+#backButton:hover{
+  border-color: var(--fail-color);
+  color: var(--alt-color);
 }
 
 /*PRACTICEBAR =======================================================*/
@@ -117,18 +129,25 @@
 
 #practiceBar > #submitAnswerButton,
 #practiceBar > #nextQuizButton {
-  border: var(--primary-color) solid 2px;
+  border-color: var(--primary-color);
   background-color: var(--default-color);
   color: var(--primary-color);
 }
 
 #practiceBar > #submitAnswerButton:hover,
 #practiceBar > #nextQuizButton:hover {
-  border-right: var(--primary-color) solid 20px;
-  border-left: var(--primary-color) solid 20px;
+  border-right-color: var(--primary-color);
+  border-left-color: var(--primary-color);
 }
 
 #practiceBar > #nextQuizButton {
-  background-color: var(--primary-color);
+  background-color: none;
+  background: var(--primary-gradient);
   color: var(--default-color);
+  border-color: var(--default-color);
+}
+
+#practiceBar > #nextQuizButton:hover {
+  border-width: 2px;
+  border-color: var(--alt-color);
 }

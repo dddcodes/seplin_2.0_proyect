@@ -12,7 +12,7 @@ export const CONFIG = {
     catalog: {
       component: "catalog.js",
       path: "/catalog",
-      title: "Todos tus Quizzes",
+      title: "Tus Quizzes",
       description: "Admirad vuestro ser y mejorad cada dia!",
     },
     practice: {

@@ -8,9 +8,9 @@
 @import url("./practice.css");
 
 :root {
-  --default-color: #1b1b1b;
-  --default-color-2: #272727;
-  --default-color-3: #363636;
+  --default-color: #000000;
+  --default-color-2: #131313;
+  --default-color-3: #212121;
   --default-color-4: #424242;
 
   /* Colores de Interfaz */
