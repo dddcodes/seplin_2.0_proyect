@@ -64,6 +64,7 @@ body * {
   color: var(--alt-color);
   transition: all 0.3s ease-in-out; /* Agrega una transición para todos los cambios */
   box-sizing: border-box;
+  
   font-family: "Roboto", sans-serif;
   font-variant: normal;
 
