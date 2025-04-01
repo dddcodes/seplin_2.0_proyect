@@ -89,6 +89,7 @@
 
 #navigationBar > a:active{
   background-color: var(--alt-color);
+  color: var(--default-color);
 }
 #navigationBar > a:active ion-icon{
   color: var(--default-color);
