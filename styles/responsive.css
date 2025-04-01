@@ -58,6 +58,7 @@
 
   #navigationBar {
     background-color: var(--default-color);
+    border: none;
     border-top: var(--default-color-2) solid 3px;
 
     bottom: 0;
