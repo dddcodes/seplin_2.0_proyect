@@ -1,32 +1,12 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
+import { getCard } from "../components/gerCards.js";
 
 const actualView = CONFIG.routes.home;
 
 export default () => {
   u.setPageTitle(actualView.description);
-  u.updateSidebar(`
-    <a 
-      class="card"
-      href="/practice"
-      data-link>
-
-      CREAR TUS QUIZZES
-
-      <p>Crea tus propios flashcards en forma questionarios rapido y eficientemente bro!</p>
-
-    </a>
-    
-    <a
-      href="https://github.com/dddcodes/seplin_2.0_proyect" 
-      target="_blank" rel="noopener noreferrer"
-      class="card onlyBorder">
-      
-        GITHUB
-
-        <p>Seplin es de codigo abierto, por lo que puedes acceder al codigo fuente en Github! </p>
-
-    </a>`);
+  u.updateSidebar(getCard.practice() + getCard.gitHubLink());
 
   return `
         <div class="titleBox">
@@ -38,31 +18,6 @@ export default () => {
         <p>Esta plantilla tambien incluye estilos web CSS vanilla responsive-Design y extras como tarjetas de video y </p>
 
         <button >Boton por defecto</button>
-        <button class="alt">Boton alternativo</button>
-        <button class="onlyBorder">Boton de solo borde</button>
-
-        <input type="text" class="input" placeholder="Input por defecto">
-        <input type="password" class="input" placeholder="Password por defecto">
-
-        <input type="text" class="input" placeholder="Input por defecto">
-        <input type="password" class="input" placeholder="Password por defecto">
-
-        <input type="text" class="input" placeholder="Input por defecto">
-        <input type="password" class="input" placeholder="Password por defecto">
-
-        <input type="text" class="input" placeholder="Input por defecto">
-        <input type="password" class="input" placeholder="Password por defecto">
-
-        <div class="basicBox OnlyBorder">
-          <h1>Sugerencias:</h1>    
-           <h1>Sugerencias:</h1> 
-            <h1>Sugerencias:</h1> 
-             <h1>Sugerencias:</h1> 
-             <h1>Sugerencias:</h1> 
-             <h1>Sugerencias:</h1> 
-
-              
-        </div>
 
         <a 
           href="https://github.com/dddcodes/seplin_2.0_proyect" 

@@ -1,6 +1,8 @@
 import { CONFIG } from "./config.js";
 import * as u from "../utils.js";
 
+import { getCard } from "./components/gerCards.js";
+
 const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configuración
 
 export const router = async () => {
@@ -12,17 +14,7 @@ export const router = async () => {
   app.classList.add("animated");
 
   u.scrollToTop(); // Mueve la página al inicio
-  u.updateSidebar(`
-    <a 
-      href="https://github.com/dddcodes/seplin_2.0_proyect" 
-      target="_blank" rel="noopener noreferrer"
-      class="card onlyBorder">
-
-        Github del proyecto
-
-        <p>Seplin es de codigo abierto, por lo que puedes acceder al codigo fuente en Github! </p>
-        
-    </a>`); // Actualiza la barra lateral
+  u.updateSidebar(getCard.gitHubLink()); // SIDEBAR DEFAULT
 
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio

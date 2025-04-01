@@ -83,7 +83,6 @@ export default () => {
         </div>`;
 
     const options = document.querySelectorAll(".option");
-
     options.forEach((option) => {
       option.addEventListener("click", function () {
         selectedOptionValue = option.value;

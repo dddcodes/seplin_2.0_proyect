@@ -105,8 +105,9 @@
   padding: 10px 0;
 }
 
-#sidebar > .card {
-  background-color: var(--default-color-2);
+.card,
+#sidebar > a {
+  background-color: var(--default-color);
   border-radius: var(--border-radius-2);
 
   width: 100%;
@@ -116,22 +117,15 @@
 
   text-align: center;
 
-  outline: var(--default-color) solid 2px;
-}
-
-#sidebar > .card:hover {
-  outline-color: var(--alt-color);
-}
-
-#sidebar > .card.onlyBorder {
-  background-color: var(--default-color);
   outline: var(--default-color-2) solid 2px;
 }
 
-#sidebar > .card.onlyBorder:hover {
+.card:hover,
+#sidebar > a:hover {
   outline-color: var(--alt-color);
 }
 
-#sidebar > .card > p {
+.card > p,
+#sidebar > a > p {
   color: var(--alt-color-2);
 }
