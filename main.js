@@ -5,7 +5,6 @@ import getLayout from "../components/layout.js";
 import { RESET } from "./localStorage/localStorageManager.js";
 import defaultQuizzes from "./localStorage/defaultQuizzes.js";
 
-RESET();
 defaultQuizzes();
 
 getLayout(); // Carga el navbar, sidebar y main-app (HTML)

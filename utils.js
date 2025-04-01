@@ -77,3 +77,9 @@ export function back() {
   mainApp.className = "";
   window.history.back();
 }
+
+export function shiftAndPush(arr, newElement) {
+  arr.shift(); // Elimina el primer elemento
+  arr.push(newElement); // Agrega el nuevo al final
+  return arr;
+}
