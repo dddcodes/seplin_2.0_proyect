@@ -2,6 +2,8 @@ import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 import getQuizInfo from "../localStorage/getQuizInfo.js";
 
+import { LSM } from "../localStorage/localStorageManager.js";
+
 export default () => {
   const actualView = CONFIG.routes.practice;
   u.setPageTitle(actualView.title); //titulo
@@ -20,7 +22,8 @@ export default () => {
   const getQuiz = () => {
     const quizBox = document.querySelector(".quizBox");
 
-    actualQuiz = getQuizInfo();
+    actualQuizID = getQuizInfo();
+    actualQuiz = localQuizzes[actualQuizID];
     allQuizOptions = suffleQuizOptions();
 
     quizBox.classList.remove("animated");
@@ -61,7 +64,9 @@ export default () => {
     });
   };
 
-  let actualQuiz = getQuizInfo();
+  const localQuizzes = LSM.getLocalQuizzes();
+  let actualQuizID = getQuizInfo();
+  let actualQuiz = localQuizzes[actualQuizID];
   let allQuizOptions = suffleQuizOptions();
   let selectedOptionValue = null;
 
@@ -110,11 +115,24 @@ export default () => {
       u.appear(nextQuizButton);
       u.disappear(submitAnswerButton);
 
+      console.log(localQuizzes["6e5577fa-3165-4116-ab88-bfee019a4789"]);
+
       if (selectedOptionValue === "correct") {
         console.log("RESPUESTA CORRECTA");
+
+        u.shiftAndPush(actualQuiz.hitScore, true);
+
+        localQuizzes[actualQuizID] = actualQuiz;
+        LSM.updateItem("localQuizzes", localQuizzes);
+        console.log(LSM.getItem("localQuizzes"));
       } else if (selectedOptionValue === "incorrect") {
         console.log("RESPUESTA INCORRECTA");
+
+        u.shiftAndPush(actualQuiz.hitScore, false);
+      } else {
+        console.log("NO SE SELECCIONO RESPUESTA")
       }
+      console.log(actualQuiz.hitScore);
 
       document.querySelectorAll(".option").forEach((button) => {
         button.disabled = true;

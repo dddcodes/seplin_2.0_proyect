@@ -21,7 +21,7 @@ export const LSM = {
     }
     return this.setItem(key, value);
   },
-  updateItem: function (key, newValue) {
+  updateItem: function (key, newValue) { 
     if (!localStorage.getItem(key)) {
       console.warn(`[Warning] Key "${key}" doesn't exist in localStorage`);
       return false;
