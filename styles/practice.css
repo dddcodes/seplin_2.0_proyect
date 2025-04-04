@@ -1,5 +1,5 @@
-#main.extended{
-  padding: 10px 15%
+#main.extended {
+  padding: 10px 15%;
 }
 
 .quizBox {
@@ -33,8 +33,8 @@
   text-align: left;
 }
 
-.quizBox > .optionsBox{
-  padding: 5px 0 0 0;
+.quizBox > .optionsBox {
+  padding: 5px 0 5px 0;
 }
 
 .quizBox > .optionsBox > .option {
@@ -53,16 +53,18 @@
   border-color: var(--alt-color);
 }
 
-.quizBox > .optionsBox > .option:focus {
+.quizBox > .optionsBox > .option.selectedOption {
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
 
 .quizBox > .optionsBox > .option[disabled] {
   cursor: no-drop;
+}
+
+.quizBox > .optionsBox > .option[disabled].selectedOption {
   border-color: var(--fail-color);
   color: var(--fail-color);
-  
 }
 
 .quizBox > .optionsBox > .option[disabled][value="correct"] {
@@ -89,9 +91,32 @@
   font-weight: 900;
 }
 
-#backButton:hover{
+#backButton:hover {
   border-color: var(--fail-color);
   color: var(--alt-color);
+}
+
+#feedbackBox {
+  border-radius: var(--border-radius-2);
+  width: 100%;
+  padding: 5px 0 0 0;
+
+  border-radius: 0;
+  border-top: var(--primary-color) solid 2px;
+}
+
+#feedbackBox > .title {
+  color: var(--alt-color-2);
+  font-size: 22px;
+  font-weight: 900;
+  padding-bottom: 10px;
+}
+
+#feedbackBox > .content {
+  font-size: 19px;
+  padding: 10px;
+  border: var(--primary-color) solid 1px;
+  color: var(--primary-color);
 }
 
 /*PRACTICEBAR =======================================================*/
@@ -154,4 +179,19 @@
 #practiceBar > #nextQuizButton:hover {
   border-width: 2px;
   border-color: var(--alt-color);
+}
+
+#practiceBar > #submitAnswerButton[disabled] {
+  border-color: var(--default-color-3);
+  background-color: var(--default-color);
+  color: var(--default-color-3);
+  cursor: no-drop;
+}
+
+#practiceBar > #submitAnswerButton[disabled]:hover {
+  border: var(--default-color-3) solid 2px;
+}
+
+#practiceBar > #submitAnswerButton[disabled]:active {
+  background-color: var(--fail-color);
 }

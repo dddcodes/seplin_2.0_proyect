@@ -31,7 +31,7 @@ export function random(min, max) {
   return randomNumer;
 }
 
-// Función para mezclar arrays (Fisher-Yates shuffle)
+// Función para mezclar arrays
 export function shuffleArray(array) {
   const newArray = [...array];
 
@@ -101,4 +101,10 @@ export function extendedMainAppWidth() {
 export function defaultMainAppWidth() {
   const mainApp = document.querySelector("#main");
   removeClassFromElement(mainApp, "extended");
+}
+
+export function resetAnimation(element) {
+  element.classList.remove("animated");
+  void element.offsetWidth; // Forzar el reflow
+  element.classList.add("animated");
 }
