@@ -127,6 +127,10 @@ export default () => {
   const getFeedback = () => {
     const feedbackBox = document.querySelector("#feedbackBox");
     u.appear(feedbackBox);
+    feedbackBox.innerHTML = `
+      <p class="title">Ayuda:</p>
+      <p class="content">${actualQuiz.feedback}</p>
+    `;
   };
 
   const addEventListenersToButtons = () => {
@@ -145,7 +149,6 @@ export default () => {
       verifyQuiz();
     });
     feedbackButton.addEventListener("click", () => {
-      console.log("feedbackButton");
       getFeedback();
     });
   };
