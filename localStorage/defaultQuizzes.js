@@ -1,30 +1,35 @@
 import { LSM, RESET } from "../localStorage/localStorageManager.js";
 
 export default () => {
-  RESET(); //RESETEA EL LOCALSTORAGE
-  LSM.createItem("localQuizzes", {
-    [uuidv4()]: {
-      question: "¿Cuál es la capital de Francia?",
-      answer: "París",
-      feedback: "París ha sido la capital de Francia desde el año 508.",
-      options: ["Lyon", "Marsella", "Toulouse"],
-      hitScore: [false, false, false, false, false],
-    },
-    [uuidv4()]: {
-      question: "¿En qué año llegó el hombre a la Luna?",
-      answer: "1969",
-      feedback: "El Apolo 11 aterrizó en la Luna el 20 de julio de 1969.",
-      options: ["1955", "1975", "1989"],
-      hitScore: [false, false, false, false, false],
-    },
-    [uuidv4()]: {
-      question: "¿Qué elemento químico tiene el símbolo 'O'?",
-      answer: "Oxígeno",
-      feedback:
-        "El oxígeno es esencial para la respiración y la combustión.",
-      options: ["Oro", "Osmio", "Oganesón"],
-      hitScore: [false, false, false, false, false],
-    },
-  });
+  //RESET(); //RESETEA EL LOCALSTORAGE
+  if (!localStorage.getItem("localQuizzes")) {
+    LSM.createItem("localQuizzes");
+
+    LSM.addQuiz(
+      "Capital de Inglaterra",
+      "Londres",
+      "La capital de Inglaterra es Londres",
+      ["Paris", "Berlin", "Madrid"]
+    );
+    LSM.addQuiz(
+      "Capital de Francia",
+      "Paris",
+      "La capital de Francia es Paris",
+      ["Londres", "Berlin", "Madrid"]
+    );
+    LSM.addQuiz(
+      "Capital de Alemania",
+      "Berlin",
+      "La capital de Alemania es Berlin",
+      ["Paris", "Londres", "Madrid"]
+    );
+    LSM.addQuiz(
+      "Capital de España",
+      "Madrid",
+      "La capital de España es Madrid",
+      ["Paris", "Berlin", "Londres"]
+    );
+  }
+
   console.log(LSM.getLocalQuizzes());
 };

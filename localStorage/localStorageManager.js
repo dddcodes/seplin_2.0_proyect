@@ -1,3 +1,5 @@
+import * as u from "../utils.js";
+
 /**
  * LocalStorage Manager
  * A collection of functions to handle basic CRUD operations with localStorage
@@ -14,14 +16,14 @@ export const LSM = {
       return false;
     }
   },
-  createItem: function (key, value) {
+  createItem: function (key, value = {}) {
     if (localStorage.getItem(key)) {
       console.warn(`[Warning] LocalStorage Key "${key}" already exists.`);
       return false;
     }
     return this.setItem(key, value);
   },
-  updateItem: function (key, newValue) { 
+  updateItem: function (key, newValue) {
     if (!localStorage.getItem(key)) {
       console.warn(`[Warning] Key "${key}" doesn't exist in localStorage`);
       return false;
@@ -30,7 +32,7 @@ export const LSM = {
     try {
       const stringValue = JSON.stringify(newValue);
       localStorage.setItem(key, stringValue);
-      console.log(`[Success] Updated item with key: "${key}"`);
+      console.warn(`[Success] Updated item with key: "${key}"`);
       return true;
     } catch (error) {
       console.error(`[Error] Failed to update item "${key}":`, error);
@@ -61,12 +63,17 @@ export const LSM = {
       return null;
     }
   },
-  
-  addQuiz: function (newQuizID, newQuizContent) {
+
+  //QUIZZES FUNCTIONS ============================================
+  addQuiz: function (question, answer, feedback, options) {
     try {
       // 1. Get existing parent item
       const localQuizzesKey = "localQuizzes";
       const localQuizzes = LSM.getItem(localQuizzesKey);
+
+      const hitScore = [false, false, false, false, false];
+      const newQuizID = uuidv4();
+      const newQuizContent = { question, answer, feedback, options, hitScore };
 
       if (localQuizzes === null) {
         console.warn(`[Warning] Parent key "${localQuizzesKey}" doesn't exist`);
@@ -97,7 +104,6 @@ export const LSM = {
       console.log(
         `[Success] Added nested object "${newQuizID}" to "${localQuizzesKey}"`
       );
-      console.log(localQuizzes);
     } catch (error) {
       console.error(
         `[Error] Failed to add nested object "${newQuizID}" to "${localQuizzesKey}":`,
@@ -137,18 +143,3 @@ export function RESET() {
   LSM.removeItem("localQuizzes");
   console.log("RESETEADO");
 }
-
-// EXAMPLES ===========================================================:
-
-/*
-let localQuizzes = LSM.getItem("localQuizzes");
-console.log(localQuizzes);
-*/
-
-/*
-LSM.addQuiz("002", {
-  question: "What is the capital of France?",
-  correctAnswer: "Paris",
-  incorrectAnswers: ["Madrid", "Lisbon", "Barcelona"],
-});
-*/
