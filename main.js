@@ -2,7 +2,6 @@ import { CONFIG } from "./config.js";
 import { router, navigateTo } from "./router.js";
 import getLayout from "../components/layout.js";
 
-import { RESET } from "./localStorage/localStorageManager.js";
 import defaultQuizzes from "./localStorage/defaultQuizzes.js";
 
 defaultQuizzes();

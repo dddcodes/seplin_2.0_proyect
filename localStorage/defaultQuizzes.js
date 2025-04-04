@@ -1,4 +1,4 @@
-import { LSM, RESET } from "../localStorage/localStorageManager.js";
+import { LSM } from "../localStorage/localStorageManager.js";
 
 export default () => {
   LSM.RESET(); //RESETEA EL LOCALSTORAGE
