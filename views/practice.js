@@ -10,21 +10,31 @@ export default () => {
 
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
-  const mainApp = document.querySelector("#main");
-  mainApp.className = "complete";
+  u.extendedMainAppWidth();
 
   u.disappear(sidebar);
   u.disappear(navbar);
 
+  const localQuizzes = LSM.getLocalQuizzes();
+  let actualQuizID;
+  let actualQuiz;
+  let allQuizOptions;
+  let selectedOptionValue;
+
   const suffleQuizOptions = () => {
     return u.shuffleArray([...actualQuiz.options, actualQuiz.answer]);
   };
-  const getQuiz = () => {
+  const addEventListenersToOptions = () => {
+    const options = document.querySelectorAll(".option");
+    options.forEach((option) => {
+      option.addEventListener("click", function () {
+        selectedOptionValue = option.value;
+        console.log(selectedOptionValue);
+      });
+    });
+  };
+  const getQuizLayout = () => {
     const quizBox = document.querySelector(".quizBox");
-
-    actualQuizID = getQuizInfo();
-    actualQuiz = localQuizzes[actualQuizID];
-    allQuizOptions = suffleQuizOptions();
 
     quizBox.classList.remove("animated");
     void quizBox.offsetWidth;
@@ -48,55 +58,24 @@ export default () => {
             .join("")}
         </div>
       `;
+  };
+  const getQuiz = () => {
+    actualQuizID = getQuizInfo();
+    actualQuiz = localQuizzes[actualQuizID];
+    allQuizOptions = suffleQuizOptions();
 
-    const options = document.querySelectorAll(".option");
-
-    options.forEach((option) => {
-      option.addEventListener("click", function () {
-        selectedOptionValue = option.value;
-
-        console.log(selectedOptionValue);
-      });
-    });
+    getQuizLayout();
+    addEventListenersToOptions();
 
     document.querySelectorAll(".option").forEach((button) => {
       button.disabled = false;
     });
   };
 
-  const localQuizzes = LSM.getLocalQuizzes();
-  let actualQuizID = getQuizInfo();
-  let actualQuiz = localQuizzes[actualQuizID];
-  let allQuizOptions = suffleQuizOptions();
-  let selectedOptionValue = null;
+  
 
   setTimeout(() => {
-    const quizBox = document.querySelector(".quizBox");
-    quizBox.innerHTML = `<p class="details">Deportes 401</p>
-        <p class="question">${actualQuiz.question}</p>
-
-        <div class="optionsBox">
-          ${allQuizOptions
-            .map(
-              (option, index) => `
-            <button class="option" value="${
-              option === actualQuiz.answer ? "correct" : "incorrect"
-            }" 
-                    onclick="">
-              ${index + 1} - ${option}
-            </button>`
-            )
-            .join("")}
-        </div>`;
-
-    const options = document.querySelectorAll(".option");
-    options.forEach((option) => {
-      option.addEventListener("click", function () {
-        selectedOptionValue = option.value;
-
-        console.log(selectedOptionValue);
-      });
-    });
+    getQuiz()
 
     const submitAnswerButton = document.querySelector("#submitAnswerButton");
     const backButton = document.querySelector("#backButton");
@@ -115,8 +94,6 @@ export default () => {
       u.appear(nextQuizButton);
       u.disappear(submitAnswerButton);
 
-      console.log(localQuizzes["6e5577fa-3165-4116-ab88-bfee019a4789"]);
-
       if (selectedOptionValue === "correct") {
         console.log("RESPUESTA CORRECTA");
 
@@ -124,14 +101,14 @@ export default () => {
 
         localQuizzes[actualQuizID] = actualQuiz;
         LSM.updateItem("localQuizzes", localQuizzes);
-        console.log(LSM.getItem("localQuizzes"));
       } else if (selectedOptionValue === "incorrect") {
         console.log("RESPUESTA INCORRECTA");
 
         u.shiftAndPush(actualQuiz.hitScore, false);
       } else {
-        console.log("NO SE SELECCIONO RESPUESTA")
+        console.log("NO SE SELECCIONO RESPUESTA");
       }
+
       console.log(actualQuiz.hitScore);
 
       document.querySelectorAll(".option").forEach((button) => {

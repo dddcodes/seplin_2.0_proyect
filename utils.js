@@ -67,12 +67,13 @@ export function confirmLayoutVisibility() {
 }
 
 export function back() {
-  const mainApp = document.querySelector("#main");
-  mainApp.className = "";
+  defaultMainAppWidth();
   window.history.back();
 }
 
-export function goBackWithConfirm(message = "¿Seguro que quieres ir devuelta bro?") {
+export function goBackWithConfirm(
+  message = "¿Seguro que quieres ir devuelta bro?"
+) {
   if (confirm(message)) {
     back();
   }
@@ -82,4 +83,22 @@ export function shiftAndPush(arr, newElement) {
   arr.shift(); // Elimina el primer elemento
   arr.push(newElement); // Agrega el nuevo al final
   return arr;
+}
+
+export function removeClassFromElement(element, className) {
+  element.classList.remove(className);
+}
+
+export function addClassToElement(element, className) {
+  element.classList.add(className);
+}
+
+export function extendedMainAppWidth() {
+  const mainApp = document.querySelector("#main");
+  addClassToElement(mainApp, "extended");
+}
+
+export function defaultMainAppWidth() {
+  const mainApp = document.querySelector("#main");
+  removeClassFromElement(mainApp, "extended");
 }
