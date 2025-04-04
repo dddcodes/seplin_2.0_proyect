@@ -131,6 +131,10 @@ export const LSM = {
   getLocalQuizzes: function () {
     return LSM.getItem("localQuizzes");
   },
+  RESET: function () {
+    LSM.removeItem("localQuizzes");
+    console.log("RESETEADO");
+  },
 };
 
 /*FALTA AGREGAR FUNCIONES PARA LOS GRUPOS DE QUIZZES: 
@@ -138,8 +142,3 @@ export const LSM = {
     -> addGroup(info)
     -> removeGroup(ID, withQuizzes = false)
 */
-
-export function RESET() {
-  LSM.removeItem("localQuizzes");
-  console.log("RESETEADO");
-}
