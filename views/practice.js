@@ -104,7 +104,7 @@ export default () => {
     u.disappear(nextQuizButton);
 
     backButton.addEventListener("click", () => {
-      u.back();
+      u.goBackWithConfirm();
     });
     nextQuizButton.addEventListener("click", () => {
       getQuiz();

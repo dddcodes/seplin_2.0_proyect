@@ -43,12 +43,6 @@ export function shuffleArray(array) {
   return newArray;
 }
 
-export function goBackWithConfirm(message = "¿Seguro que quieres salir?") {
-  if (confirm(message)) {
-    window.history.back();
-  }
-}
-
 export function disappear(element) {
   element.style.display = "none";
 }
@@ -76,6 +70,12 @@ export function back() {
   const mainApp = document.querySelector("#main");
   mainApp.className = "";
   window.history.back();
+}
+
+export function goBackWithConfirm(message = "¿Seguro que quieres ir devuelta bro?") {
+  if (confirm(message)) {
+    back();
+  }
 }
 
 export function shiftAndPush(arr, newElement) {
