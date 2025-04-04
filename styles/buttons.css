@@ -5,11 +5,12 @@ a {
 }
 
 button {
-  background-color: var(--default-color-2);
-  border: none;
+  background-color: var(--default-color);
+  border: var(--default-color-3) solid 2px;
+  color: var(--alt-color);
+  border-radius: 30px;
 
   padding: 20px;
-  border-radius: var(--border-radius-2);
 
   outline: none; /* Quita el borde de enfoque */
 
@@ -20,13 +21,6 @@ button {
   cursor: pointer;
 }
 
-button {
-  background-color: var(--default-color);
-  border: var(--default-color-3) solid 2px;
-  color: var(--alt-color);
-  border-radius: 30px;
-}
-
 button:hover {
   background-color: var(--default-color);
   border: var(--alt-color) solid 2px;
@@ -34,6 +28,8 @@ button:hover {
 
   border-left: var(--alt-color) solid 20px;
   border-right: var(--alt-color) solid 20px;
+
+  padding: 20px 0;
 }
 
 button:active {
