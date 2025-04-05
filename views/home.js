@@ -10,14 +10,12 @@ export default () => {
 
   return `
         <div class="titleBox">
-          ${actualView.title}
+          ${CONFIG.proyectName} ${CONFIG.version}
         </div>
-        <p class="basicBox llamative">ESTO ES UNA PLANTILLA DE OLIVARES EN DESARROLLO...</p>
-        <p class="basicBox">Estas cajas son de demostracion de los estilos responsive-Design de esta plantilla...</p>
-        <p class="basicBox OnlyBorder">Esto es un mini proyecto del tipo Single-Page Application (S.P.A) Open Source en latino</p>
-        <p>Esta plantilla tambien incluye estilos web CSS vanilla responsive-Design y extras como tarjetas de video y </p>
-
-        <button >Boton por defecto</button>
+        <p class="basicBox llamative">Muy pronto podras estudiar de manera mucho mas eficiente y elegante que SEPLIN ALPHA 1 y los metodos tradicionales!</p>
+        <p class="basicBox">Objetivo: Desarrollar una WebApp elegante y basada en la neurociencia para un aprendizaje eficiente y ordenado</p>
+        <p class="basicBox OnlyBorder">PROYECTO IDEADO DESDE 2021, Y ESTA SEGUNDA VERSION ALPHA INICIO DESARROLLO A MEDIADOS DE MARZO! </p>
+        <p>Detalles tecnicos: S.P.A, Open Source, JS y CSS vanilla, no frameworks, Uso de Google Icons y uso constante de LocalStorage</p>
         
     `;
 };
