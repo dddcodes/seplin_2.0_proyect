@@ -1,7 +1,7 @@
 import { LSM } from "../localStorage/localStorageManager.js";
 
 export default () => {
-  LSM.RESET(); //RESETEA EL LOCALSTORAGE
+  //LSM.RESET(); //RESETEA EL LOCALSTORAGE
   if (!localStorage.getItem("localQuizzes")) {
     LSM.createItem("localQuizzes");
 

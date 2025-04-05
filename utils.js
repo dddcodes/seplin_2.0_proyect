@@ -26,7 +26,7 @@ export function random(min, max) {
   // Fórmula para número aleatorio inclusivo
 
   const randomNumer = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log(randomNumer);
+  //console.log(randomNumer);
 
   return randomNumer;
 }

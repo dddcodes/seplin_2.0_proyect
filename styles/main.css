@@ -4,7 +4,9 @@
 @import url("./inputs.css");
 @import url("./buttons.css");
 
-@import url("./practice.css");
+@import url("./stylesForSubpages/practice.css");
+@import url("./stylesForSubpages/catalog.css");
+
 @import url("./responsive.css");
 
 :root {
