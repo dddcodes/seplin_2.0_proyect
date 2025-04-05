@@ -8,6 +8,8 @@ defaultQuizzes();
 
 getLayout(); // Carga el navbar, sidebar y main-app (HTML)
 
+navigateTo("/catalog"); // Navega a la ruta actual
+
 // ==> Carga la vista =====================================================
 document.addEventListener("DOMContentLoaded", () => {
   router(); // Cargar la vista según la URL actual (no funciona parece ser)

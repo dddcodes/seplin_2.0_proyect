@@ -1,6 +1,6 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
-import getQuizInfo from "../localStorage/getQuizInfo.js";
+import getRandomQuizID from "../localStorage/getRandomQuizID.js";
 
 import { LSM } from "../localStorage/localStorageManager.js";
 
@@ -79,7 +79,7 @@ export default () => {
   };
 
   const getQuiz = () => {
-    actualQuizID = getQuizInfo();
+    actualQuizID = getRandomQuizID();
     actualQuiz = localQuizzes[actualQuizID];
     allQuizOptions = suffleQuizOptions();
 
