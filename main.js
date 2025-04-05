@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Captura los clics en los ION-ICONS de la barra de navegación
-  document.querySelectorAll("ion-icon").forEach((icon) => {
+  document.querySelectorAll(".material-symbols-rounded ").forEach((icon) => {
     icon.addEventListener("click", (e) => {
       const link = icon.closest("a"); // Encuentra el <a> padre
       if (link) {

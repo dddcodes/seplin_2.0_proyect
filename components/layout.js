@@ -6,23 +6,23 @@ export default () => {
         <nav id="navigationBar">
             <div class="iconAndText">${CONFIG.proyectName}</div>
             <a href="/" data-link>
-                <ion-icon name="home"></ion-icon>
+                <span class="material-symbols-rounded">home</span>
 
-                ${CONFIG.routes.home.title}
+               <p> ${CONFIG.routes.home.title}</p>
 
             </a>
             
             <a href="/practice" data-link class="centerNavbarButton">
-                <ion-icon name="barbell"></ion-icon>
+                <span class="material-symbols-rounded">exercise</span>
             
-                ${CONFIG.routes.practice.title}
+                <p>${CONFIG.routes.practice.title}</p>
             
             </a>
 
             <a href="/catalog" data-link>
-                <ion-icon name="albums"></ion-icon>
+                <span class="material-symbols-rounded">home</span>
             
-                ${CONFIG.routes.catalog.title}
+                <p>${CONFIG.routes.catalog.title}</p>
             
             </a>
         </nav>

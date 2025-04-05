@@ -13,6 +13,7 @@ export const router = async () => {
   void app.offsetWidth; // Reinicia la animación
   app.classList.add("animated");
 
+  u.defaultMainAppWidth(); // Restablece el ancho del main-app
   u.scrollToTop(); // Mueve la página al inicio
   u.updateSidebar(getCard.gitHubLink()); // SIDEBAR DEFAULT
 
