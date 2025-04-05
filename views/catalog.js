@@ -1,23 +1,22 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
+import { LSM } from "../localStorage/localStorageManager.js";
 
-import getQuizInfo from "../localStorage/getQuizInfo.js";
+import getRandomQuizID from "../localStorage/getRandomQuizID.js";
 
 const actualView = CONFIG.routes.catalog;
 
 export default () => {
   u.setPageTitle(actualView.title);
 
+  const localQuizzes = LSM.getLocalQuizzes();
+  const localQuizzesKeys = Object.keys(localQuizzes);
+  const localQuizzesLength = localQuizzesKeys.length - 1;
+
+
   return `
-        <div class="titleBox">
-            ${actualView.title}
-        </div>
-        <p>${actualView.description}</p>
-        
-        <div class="basicBox OnlyBorder">
-            <div class="catalog-container">
-                ${getQuizInfo().question}
-            </div>
-        </div>
-    `;
+<div class="titleBox">
+    TUS QUIZZES!
+    
+</div>`;
 };
