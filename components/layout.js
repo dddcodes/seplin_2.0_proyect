@@ -20,9 +20,16 @@ export default () => {
             </a>
 
             <a href="/catalog" data-link>
-                <span class="material-symbols-rounded">home</span>
+                <span class="material-symbols-rounded">event_list</span>
             
                 <p>${CONFIG.routes.catalog.title}</p>
+            
+            </a>
+
+            <a href="/create-quizzes" data-link>
+                <span class="material-symbols-rounded">add_circle</span>
+            
+                <p>${CONFIG.routes.createQuizzes.title}</p>
             
             </a>
         </nav>

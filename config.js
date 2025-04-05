@@ -13,7 +13,7 @@ export const CONFIG = {
     catalog: {
       component: "catalog.js",
       path: "/catalog",
-      title: "Tus Quizzes",
+      title: "Quizzes",
       description: "Admirad vuestro ser y mejorad cada dia!",
     },
     practice: {
@@ -23,12 +23,12 @@ export const CONFIG = {
       description:
         "Practica tus quizzes y mejora tus habilidades de manera efectiva, basado en ciencia!",
     },
-    archived: {
-      component: "archived.js",
-      path: "/archived",
-      title: "Archivados",
+    createQuizzes: {
+      component: "createQuizzes.js",
+      path: "/create-quizzes",
+      title: "Crear",
       description:
-        "Aqui encontraras tus quizzes archivados! puedes volver a ellos cuando quieras manualmente!",
+        "Crea quizzes personalizados para estudiar de manera inteligente!",
     },
   },
 };
