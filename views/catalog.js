@@ -16,11 +16,14 @@ export default () => {
   };
   const printAllOptions = (quizData) => {
     const options = quizData.options;
-    let optionsHTML; //string
+    let optionsHTML = ``;
     for (let i = 0; i < options.length; i++) {
       const option = options[i];
+
       optionsHTML += `
-          <p class="option">${option}</p>
+          <p class="option">
+            ${i + 1} - ${option}
+          </p>
       `;
     }
     return optionsHTML;
@@ -30,32 +33,59 @@ export default () => {
       <div class="quizDataCard" id="quizDataCard${index}">
 
         <div class="headDiv">
-          <p class="index">${index++}</p>
-          <button class="editButton">/</button>
-          <button class="seeMoreButton">o</button>
-          <button class="selectButton">||</button>
+          <p class="index">${index + 1}</p>
+          <button class="editButton">
+            <span class="material-symbols-rounded">
+              edit
+            </span>
+          </button>
+          <button class="seeMoreButton">
+            <span class="material-symbols-rounded">
+              visibility
+            </span>
+          </button>
+          <button class="selectButton">
+            <span class="material-symbols-rounded">
+              check_box_outline_blank
+            </span>
+          </button>
         </div>
 
         <div class="dataDiv">
+          <p class="group">Grupo default 4to semestre</p>
           <p class="question">${quizData.question}</p>
         </div>
 
         <div class="moreDataDiv">
-          <p class="answer">${quizData.answer}</p>
-          <p class="feedback">${quizData.feedback}</p>
+          <div class="answer">
+            <p class="title">RESPUESTA</p>
+            <p class="content">
+              ${quizData.answer}
+            </p>
+          </div>
+          <div class="feedback">
+            <p class="title">EXPLICACIÓN</p>
+            <p class="content">
+              ${quizData.feedback}
+            </p>
+          </div>
 
           <div class="optionsBox">
-            ${printAllOptions(quizData)}
+            <p class="title">OPCIONES INCORRECTAS</p>
+            <div class="content">
+              ${printAllOptions(quizData)}
+            </div>
           </div>
         </div>
 
       </div>
     `;
   };
-  let catalogContent; //string
 
+  let catalogContent = ``;
   for (let i = 0; i < LQ.length; i++) {
     /*ID*/ const actualID = LQ.keys[i];
+    console.log(actualID);
     /*DATA*/ const actualQuizData = LQ.content[actualID];
 
     /*from DATA to HTML*/
@@ -63,12 +93,12 @@ export default () => {
     /*HTML added to CATALOG HTML*/
     catalogContent += quizHTML;
   }
-  //console.log(catalogContent);
   return `
-<div class="titleBox">
-    TUS QUIZZES!
-    <div class="quizzesDataContainer">
-      ${catalogContent}
-    </div>
-</div>`;
+  <div class="titleBox">
+      TUS QUIZZES!
+      <div id="quizzesDataContainer">
+        ${catalogContent}
+      </div>
+  </div>
+  `;
 };

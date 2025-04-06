@@ -1,0 +1,122 @@
+#quizzesDataContainer {
+  margin: 0;
+  margin-left: -10px; /*ALERTA: el width raro de layout.css al estar el scroll hacia que este container no este centrado en la vista*/
+
+  display: flex;
+  flex-wrap: wrap; /* Permite que bajen a la siguiente línea */
+  justify-content: center;
+}
+
+#quizzesDataContainer > .quizDataCard {
+  background: var(--default-color-2);
+  margin: 10px;
+  padding: 0;
+
+  border-radius: 15px;
+  width: 450px;
+}
+/*HEAD DIV ==================================================================================*/
+
+#quizzesDataContainer > .quizDataCard > .headDiv {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* 👈 se quedan en la misma fila sí o sí */
+
+  padding: 0;
+}
+
+#quizzesDataContainer > .quizDataCard > .headDiv > * {
+  width: 100%; /* Fijo */
+  height: 30px;
+  min-height: 0;
+
+  background-color: var(--default-color-2);
+  color: var(--alt-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  padding: 0 !important;
+
+  font-weight: 200;
+  font-size: 20px;
+
+  border: var(--default-color-3) solid 1px;
+}
+
+#quizzesDataContainer > .quizDataCard > .headDiv > *:hover{
+  background-color: var(--alt-color);
+  color: var(--default-color);
+  border-radius: 20px;
+  border-color: var(--alt-color);
+}
+#quizzesDataContainer > .quizDataCard > .headDiv > *:hover > span{
+    color: var(--default-color);
+}
+
+#quizzesDataContainer > .quizDataCard > .headDiv > .index {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: var(--default-color-3);
+}
+#quizzesDataContainer > .quizDataCard > .headDiv > .index:hover {
+  background-color: var(--default-color-3);
+  border-color: var(--default-color-3);
+  border-radius: 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  color: var(--alt-color);
+}
+#quizzesDataContainer > .quizDataCard > .headDiv > .selectButton {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/*DATA DIV ====================================================================================*/
+#quizzesDataContainer > .quizDataCard > .dataDiv {
+  padding: 10px;
+}
+#quizzesDataContainer > .quizDataCard > .dataDiv > .question {
+  font-size: 20px;
+  font-weight: 600;
+}
+#quizzesDataContainer > .quizDataCard > .dataDiv > .group {
+  font-size: 15px;
+  color: var(--info-color);
+  font-weight: 100;
+}
+
+/*MORE DATA DIV ====================================================================================*/
+#quizzesDataContainer > .quizDataCard > .moreDataDiv {
+  background-color: var(--default-color-3);
+  margin: 8px;
+  border-radius: var(--border-radius-2);
+  padding: 2px;
+  padding-bottom: 0.3px;
+
+  font-size: 20px;
+  font-weight: 100;
+}
+
+#quizzesDataContainer > .quizDataCard > .moreDataDiv > div {
+  background-color: var(--default-color-2);
+  margin-bottom: 2px;
+  border-radius: var(--border-radius);
+  padding: 5px;
+}
+
+#quizzesDataContainer > .quizDataCard > .moreDataDiv > div > .title {
+  font-size: 10px;
+  color: var(--alt-color-2);
+  padding: 2px;
+}
+
+#quizzesDataContainer > .quizDataCard > .moreDataDiv > div > .content {
+  padding: 0;
+  font-size: 18px;
+}
