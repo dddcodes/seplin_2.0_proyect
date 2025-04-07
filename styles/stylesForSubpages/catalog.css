@@ -48,14 +48,14 @@
   border: var(--default-color-3) solid 1px;
 }
 
-#quizzesDataContainer > .quizDataCard > .headDiv > *:hover{
+#quizzesDataContainer > .quizDataCard > .headDiv > *:hover {
   background-color: var(--alt-color);
   color: var(--default-color);
   border-radius: 20px;
   border-color: var(--alt-color);
 }
-#quizzesDataContainer > .quizDataCard > .headDiv > *:hover > span{
-    color: var(--default-color);
+#quizzesDataContainer > .quizDataCard > .headDiv > *:hover > span {
+  color: var(--default-color);
 }
 
 #quizzesDataContainer > .quizDataCard > .headDiv > .index {
@@ -101,6 +101,8 @@
 
   font-size: 20px;
   font-weight: 100;
+
+  display: none; /*BLOCK para ver*/
 }
 
 #quizzesDataContainer > .quizDataCard > .moreDataDiv > div {

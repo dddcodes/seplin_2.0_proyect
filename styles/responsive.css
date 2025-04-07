@@ -1,5 +1,3 @@
-/* Ventanas mas chicas ============================================*/
-
 @media (max-width: 800px) {
   /*LAYOUT ==========================================================*/
   #navigationBar,
@@ -28,11 +26,11 @@
     top: auto;
   }
 
-  #navigationBar > .iconAndText{
+  #navigationBar > .iconAndText {
     display: none;
   }
 
-  #navigationBar > a > p{
+  #navigationBar > a > p {
     font-size: 0;
   }
 
@@ -83,13 +81,12 @@
   }
 
   /*Hacer que el 4to child de #navigationBar desaparesca*/
-  #navigationBar > a:nth-child(n+5) {
+  #navigationBar > a:nth-child(n + 5) {
     display: none;
   }
   /*y que pasa si quiero que todos los childs despues de este tambien?*/
 
-
-  /*INPUTS =====================================*/
+  /*INPUTS =============================================================================*/
   input,
   textarea {
     width: 95%;
@@ -114,5 +111,15 @@
 
   #practiceLayout {
     margin-top: -80px;
+  }
+
+  /*CATALOG ============================================================================*/
+
+  #quizzesDataContainer{
+    padding: 0;
+    margin: 0;
+  }
+  #quizzesDataContainer > .quizDataCard{
+    margin: 10px 0;
   }
 }

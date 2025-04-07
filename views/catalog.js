@@ -82,22 +82,33 @@ export default () => {
     `;
   };
 
-  let catalogContent = ``;
-  for (let i = 0; i < LQ.length; i++) {
-    /*ID*/ const actualID = LQ.keys[i];
-    console.log(actualID);
-    /*DATA*/ const actualQuizData = LQ.content[actualID];
+  setTimeout(() => {
+    const quizzesDataContainer = document.getElementById(
+      "quizzesDataContainer"
+    );
 
-    /*from DATA to HTML*/
-    const quizHTML = convertQuizDataToHTML(actualQuizData, i);
-    /*HTML added to CATALOG HTML*/
-    catalogContent += quizHTML;
-  }
+    for (let i = 0; i < LQ.length; i++) {
+      /*ID*/ const actualID = LQ.keys[i];
+      console.log(actualID);
+
+      /*DATA*/ const actualQuizData = LQ.content[actualID];
+
+      /*from DATA to HTML*/
+      const quizHTML = convertQuizDataToHTML(actualQuizData, i);
+
+      /*HTML added to CATALOG HTML*/
+      quizzesDataContainer.innerHTML += quizHTML;
+      /*const editButton = document.querySelector(`#quizDataCard${i} > .headDiv >  > .editButton`);
+      editButton.addEventListener("click", ()=>{
+        console.log("editButton clicked");
+      })*/
+    }
+
+  }, 200);
   return `
   <div class="titleBox">
       TUS QUIZZES!
       <div id="quizzesDataContainer">
-        ${catalogContent}
       </div>
   </div>
   `;
