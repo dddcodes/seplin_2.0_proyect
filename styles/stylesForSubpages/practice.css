@@ -5,13 +5,11 @@
 .quizBox {
   padding: 0;
 }
-
-.quizBox.animated {
-  animation: quizBoxAnimation 1s ease-in-out;
-}
 .quizBox * {
   border-radius: var(--border-radius-2);
 }
+
+/*.quizBox.animated{...} esta en ANIMATIONS.CSS*/
 
 .quizBox > .details {
   color: var(--default-color-3);

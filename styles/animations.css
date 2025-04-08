@@ -33,3 +33,23 @@
     opacity: 1;
   }
 }
+
+#main {
+  animation: appEntryAnimation 1s ease-in-out;
+}
+
+#sidebar {
+  animation: sideBarEntryAnimation 2.5s ease-in-out;
+}
+
+#navigationBar {
+  animation: navBarEntryAnimation 2.5s ease-in-out;
+}
+
+.animated {
+  animation: appEntryAnimation 3s ease-in-out;
+}
+
+.quizBox.animated {
+  animation: quizBoxAnimation 1s ease-in-out;
+}

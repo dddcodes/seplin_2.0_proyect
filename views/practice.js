@@ -142,14 +142,15 @@ export default () => {
     backButton.addEventListener("click", () => {
       u.goBackWithConfirm();
     });
-    nextQuizButton.addEventListener("click", () => {
-      getQuiz();
-    });
     submitAnswerButton.addEventListener("click", () => {
       verifyQuiz();
+      getFeedback();
     });
     feedbackButton.addEventListener("click", () => {
       getFeedback();
+    });
+    nextQuizButton.addEventListener("click", () => {
+      getQuiz();
     });
   };
 
