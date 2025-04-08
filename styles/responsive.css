@@ -54,7 +54,7 @@
 
   #main {
     padding: 80px 5px 100px 5px;
-    width: 100vw;
+    width: calc(100vw - 10px);
   }
 
   #main.extended {
