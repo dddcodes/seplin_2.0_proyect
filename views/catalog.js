@@ -102,8 +102,9 @@ export default () => {
       editButton.addEventListener("click", ()=>{
         console.log("editButton clicked");
       })*/
-    }
 
+      //USA ONCLICK EN EL HTML PENDEJO!!!!
+    }
   }, 200);
   return `
   <div class="titleBox">
