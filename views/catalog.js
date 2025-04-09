@@ -61,8 +61,7 @@ export default () => {
             document.querySelector(
               '#quizDataCard${index}'
             ).classList.toggle('selected');
-
-            console.log('selected' + ${index});">
+            ">
             <span class="material-symbols-rounded">
               check_box_outline_blank
             </span> 
@@ -129,6 +128,9 @@ export default () => {
   setTimeout(() => {
     u.extendedMainAppWidth();
 
+    const catalogBar = document.querySelector("#catalogBar");
+    u.disappear(catalogBar);
+
     const quizzesDataContainer = document.getElementById(
       "quizzesDataContainer"
     );
@@ -142,16 +144,37 @@ export default () => {
       /*from DATA to HTML*/
       const quizHTML = convertQuizDataToHTML(actualQuizData, i);
 
-      /*HTML added to CATALOG HTML*/
+      /*HTML added to CATALOG HTML LOL*/
       quizzesDataContainer.innerHTML += quizHTML;
     }
 
-    const indentifySelectedQuizzesButton = document.querySelector(
-      "#indentifySelectedQuizzes"
+    //Al haber algo seleccionado: catalogBar aparece
+    const selectButtons = document.querySelectorAll(".selectButton");
+    selectButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const catalogBar = document.querySelector("#catalogBar");
+        u.appear(catalogBar, "flex");
+      });
+    });
+
+    //Al no haber nada seleccionado: catalogBar desaparece
+    const quizDataCards = document.querySelectorAll(".quizDataCard");
+    quizDataCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const selectedCards = document.querySelectorAll(".selected");
+        if (selectedCards.length === 0) {
+          u.disappear(catalogBar);
+        }
+      });
+    });
+
+    const indentifyButton = document.querySelector(
+      "#indentifyButton"
     );
-    indentifySelectedQuizzesButton.addEventListener("click", () => {
+    indentifyButton.addEventListener("click", () => {
       console.log(getSelectedIndexes());
     });
+    console.log(LQ);
   }, 200);
   return `
   <button id="backButton">
@@ -164,7 +187,9 @@ export default () => {
   </div>
 
   <div id="catalogBar">
-    <button id="indentifySelectedQuizzes">Indentify Selected quizzes</button>
+    <button id="indentifyButton">Identificar</button>
+    <button id="indentifySelectedQuizzes">Eliminar</button>
+    <button id="">Exportar</button>
   </div>
   
   `;
