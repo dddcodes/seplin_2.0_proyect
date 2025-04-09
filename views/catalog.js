@@ -174,7 +174,6 @@ export default () => {
     indentifyButton.addEventListener("click", () => {
       console.log(getSelectedIndexes());
     });
-    console.log(LQ);
   }, 200);
   return `
   <button id="backButton">
