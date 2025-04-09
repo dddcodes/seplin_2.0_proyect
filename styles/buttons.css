@@ -36,3 +36,33 @@ button:active {
   background-color: var(--alt-color);
   color: var(--default-color);
 }
+
+#backButton {
+  border: var(--default-color-3) solid 2px;
+  border-radius: var(--border-radius-2);
+  background-color: var(--default-color);
+  color: var(--default-color-3);
+  padding: 0;
+
+  width: 60px;
+  height: 60px;
+  min-width: 0;
+  min-height: 0;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#backButton > .material-symbols-rounded {
+  font-size: 35px;
+  color: var(--default-color-3);
+  margin: 0;
+  padding: 0;
+
+  margin-top: 5px; /*mala practica, pero centra el icono*/
+}
+
+#backButton:hover {
+  border-color: var(--fail-color);
+  color: var(--alt-color);
+}

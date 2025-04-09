@@ -174,11 +174,12 @@ export default () => {
     indentifyButton.addEventListener("click", () => {
       console.log(getSelectedIndexes());
     });
-    console.log(LQ);
   }, 200);
   return `
   <button id="backButton">
-    X
+    <span class="material-symbols-rounded">
+      close
+    </span>
   </button>
 
   <p class="titleBox">TUS QUIZZES!</p>
