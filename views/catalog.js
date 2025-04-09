@@ -189,8 +189,8 @@ export default () => {
 
   <div id="catalogBar">
     <button id="indentifyButton">Identificar</button>
-    <button id="indentifySelectedQuizzes">Eliminar</button>
-    <button id="">Exportar</button>
+    <button id="removeButton">Eliminar</button>
+    <button id="exportButton">Exportar</button>
   </div>
   
   `;

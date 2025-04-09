@@ -64,5 +64,9 @@ button:active {
 
 #backButton:hover {
   border-color: var(--fail-color);
-  color: var(--alt-color);
+  background-color: var(--fail-color);
+}
+
+#backButton:hover > .material-symbols-rounded{
+  color: var(--default-color);
 }

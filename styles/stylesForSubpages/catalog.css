@@ -132,7 +132,7 @@
 #quizzesDataContainer > .quizDataCard.selected > .dataDiv > * {
   color: var(--default-color);
 }
-#quizzesDataContainer > .quizDataCard.selected > .headDiv{
+#quizzesDataContainer > .quizDataCard.selected > .headDiv {
   background-color: var(--info-color);
 }
 
@@ -169,4 +169,24 @@
   font-weight: 600;
   padding: 0;
   width: 40%;
+
+  border-color: var(--info-color);
+  background-color: var(--default-color);
+  color: var(--info-color);
+}
+
+#catalogBar > button:hover {
+  border: var(--info-color) solid 2px;
+  background-color: var(--info-color);
+  color: var(--default-color);
+}
+
+#catalogBar > #removeButton{
+  border-color: var(--fail-color);
+  color: var(--alt-color);
+}
+
+#catalogBar > #removeButton:hover{
+  background-color: var(--fail-color);
+  color: var(--default-color);
 }
