@@ -99,7 +99,11 @@
   font-size: 20px;
   font-weight: 400;
 
-  display: block; /*BLOCK para ver*/
+  display: block;
+}
+
+#quizzesDataContainer > .quizDataCard > .moreDataDiv.hidden{
+  display: none; /*BLOCK para ver*/
 }
 
 #quizzesDataContainer > .quizDataCard > .moreDataDiv > div {

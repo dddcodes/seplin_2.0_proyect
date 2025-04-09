@@ -2,8 +2,6 @@ import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 import { LSM } from "../localStorage/localStorageManager.js";
 
-import getRandomQuizID from "../localStorage/getRandomQuizID.js";
-
 const actualView = CONFIG.routes.catalog;
 
 export default () => {
@@ -33,22 +31,31 @@ export default () => {
       <div class="quizDataCard" id="quizDataCard${index}">
 
         <div class="headDiv">
+
           <p class="index">${index + 1}</p>
+
           <button class="editButton">
             <span class="material-symbols-rounded">
               edit
             </span>
           </button>
-          <button class="seeMoreButton">
+
+          <button class="seeMoreButton" onClick="
+            document.querySelector(
+              '#quizDataCard${index} > .moreDataDiv'
+            ).classList.toggle('hidden');
+          ">
             <span class="material-symbols-rounded">
               visibility
             </span>
           </button>
+
           <button class="selectButton">
             <span class="material-symbols-rounded">
               check_box_outline_blank
-            </span>
+            </span> 
           </button>
+
         </div>
 
         <div class="dataDiv">
@@ -56,7 +63,7 @@ export default () => {
           <p class="question">${quizData.question}</p>
         </div>
 
-        <div class="moreDataDiv">
+        <div class="moreDataDiv hidden  ">
           <div class="answer">
             <p class="title">RESPUESTA</p>
             <p class="content">
