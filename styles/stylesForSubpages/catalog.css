@@ -126,9 +126,44 @@
 
 /*  MORE   */
 
-#quizzesDataContainer > .quizDataCard.selected{
+#quizzesDataContainer > .quizDataCard.selected {
   background-color: var(--info-color);
 }
 #quizzesDataContainer > .quizDataCard.selected > .dataDiv > .group {
   color: var(--default-color);
+}
+
+#catalogBar {
+  gap: 10px;
+
+  position: fixed;
+
+  z-index: 9;
+
+  width: 100%;
+  height: 85px;
+
+  margin: 0;
+  border-radius: 0;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  animation: none;
+
+  background-color: var(--default-color);
+  border-top: var(--default-color-2) solid 3px;
+
+  bottom: 0;
+  left: 0;
+}
+
+#catalogBar > button {
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+  padding: 0;
+  width: 40%;
 }

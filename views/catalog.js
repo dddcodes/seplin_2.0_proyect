@@ -34,7 +34,7 @@ export default () => {
   };
   const convertQuizDataToHTML = (quizData, index) => {
     return `
-      <div class="quizDataCard" id="quizDataCard${index}">
+      <div class="quizDataCard" id="quizDataCard${index}" index="${index}">
 
         <div class="headDiv">
 
@@ -101,6 +101,31 @@ export default () => {
     `;
   };
 
+  const getSelectedIndexes = () => {
+    // 1. Selecciona todos los elementos con la clase "selected"
+    const elements = document.querySelectorAll(".selected");
+
+    // 2. Crea un arreglo para guardar los índices
+    const indexes = [];
+
+    // 3. Recorre cada elemento encontrado
+    elements.forEach((element) => {
+      // 4. Obtiene el atributo "index" como texto
+      const indexString = element.getAttribute("index");
+
+      // 5. Convierte el texto a número
+      const indexNumber = Number(indexString);
+
+      // 6. Agrega el número al arreglo si es válido
+      if (!isNaN(indexNumber)) {
+        indexes.push(indexNumber);
+      }
+    });
+
+    // 7. Devuelve el arreglo final
+    return indexes;
+  };
+
   setTimeout(() => {
     u.extendedMainAppWidth();
 
@@ -120,13 +145,26 @@ export default () => {
       /*HTML added to CATALOG HTML*/
       quizzesDataContainer.innerHTML += quizHTML;
     }
+
+    const indentifySelectedQuizzesButton = document.querySelector(
+      "#indentifySelectedQuizzes"
+    );
+    indentifySelectedQuizzesButton.addEventListener("click", () => {
+      console.log(getSelectedIndexes());
+    });
   }, 200);
   return `
   <button id="backButton">
     X
   </button>
+
   <p class="titleBox">TUS QUIZZES!</p>
+
   <div id="quizzesDataContainer">
+  </div>
+
+  <div id="catalogBar">
+    <button id="indentifySelectedQuizzes">Indentify Selected quizzes</button>
   </div>
   
   `;
