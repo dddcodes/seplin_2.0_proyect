@@ -54,11 +54,11 @@
 
   #main {
     padding: 80px 5px 100px 5px;
-    width: calc(100vw - 10px);
+    width: calc(100vw - 1px);
   }
 
   #main.extended {
-    padding: 80px 5px;
+    padding: 10px 5px 80px ;
   }
 
   #navigationBar > .centerNavbarButton {
@@ -107,10 +107,6 @@
 
   #sidebar > a > p {
     display: none;
-  }
-
-  #practiceLayout {
-    margin-top: -80px;
   }
 
   /*CATALOG ============================================================================*/

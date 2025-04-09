@@ -96,6 +96,15 @@ export function addClassToElement(element, className) {
 export function extendedMainAppWidth() {
   const mainApp = document.querySelector("#main");
   addClassToElement(mainApp, "extended");
+
+  if (backButton) {
+    const backButton = document.querySelector("#backButton");
+    backButton.addEventListener("click", () => {
+      if (confirm("¿Seguro que quieres ir devuelta bro?")) {
+        back();
+      }
+    });
+  }
 }
 
 export function defaultMainAppWidth() {

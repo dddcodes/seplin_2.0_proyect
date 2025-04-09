@@ -1,6 +1,4 @@
-#main.extended {
-  padding: 10px 15%;
-}
+
 
 .quizBox {
   padding: 0;
@@ -72,27 +70,7 @@
   font-weight: 700;
 }
 
-#backButton {
-  border: var(--default-color-3) solid 2px;
-  border-radius: var(--border-radius-2);
-  background-color: var(--default-color);
-  color: var(--default-color-3);
-  padding: 0;
 
-  width: 60px;
-  height: 60px;
-  min-width: 0;
-  min-height: 0;
-
-  text-align: center;
-  font-size: 27px;
-  font-weight: 900;
-}
-
-#backButton:hover {
-  border-color: var(--fail-color);
-  color: var(--alt-color);
-}
 
 #feedbackBox {
   border-radius: var(--border-radius-2);

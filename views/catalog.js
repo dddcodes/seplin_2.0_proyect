@@ -7,6 +7,12 @@ const actualView = CONFIG.routes.catalog;
 export default () => {
   u.setPageTitle(actualView.title);
 
+  const sidebar = document.querySelector("#sidebar");
+  const navbar = document.querySelector("#navigationBar");
+
+  u.disappear(sidebar);
+  u.disappear(navbar);
+
   const LQ = {
     content: LSM.getLocalQuizzes(),
     keys: Object.keys(LSM.getLocalQuizzes()),
@@ -48,9 +54,15 @@ export default () => {
             <span class="material-symbols-rounded">
               visibility
             </span>
+            
           </button>
 
-          <button class="selectButton">
+          <button class="selectButton" onClick="
+            document.querySelector(
+              '#quizDataCard${index}'
+            ).classList.toggle('selected');
+
+            console.log('selected' + ${index});">
             <span class="material-symbols-rounded">
               check_box_outline_blank
             </span> 
@@ -90,6 +102,8 @@ export default () => {
   };
 
   setTimeout(() => {
+    u.extendedMainAppWidth();
+
     const quizzesDataContainer = document.getElementById(
       "quizzesDataContainer"
     );
@@ -105,19 +119,15 @@ export default () => {
 
       /*HTML added to CATALOG HTML*/
       quizzesDataContainer.innerHTML += quizHTML;
-      /*const editButton = document.querySelector(`#quizDataCard${i} > .headDiv >  > .editButton`);
-      editButton.addEventListener("click", ()=>{
-        console.log("editButton clicked");
-      })*/
-
-      //USA ONCLICK EN EL HTML PENDEJO!!!!
     }
   }, 200);
   return `
-  <div class="titleBox">
-      TUS QUIZZES!
-      <div id="quizzesDataContainer">
-      </div>
+  <button id="backButton">
+    X
+  </button>
+  <p class="titleBox">TUS QUIZZES!</p>
+  <div id="quizzesDataContainer">
   </div>
+  
   `;
 };

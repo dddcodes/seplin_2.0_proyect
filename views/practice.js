@@ -11,7 +11,7 @@ export default () => {
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
 
-  u.extendedMainAppWidth();
+  
   u.disappear(sidebar);
   u.disappear(navbar);
 
@@ -135,13 +135,9 @@ export default () => {
 
   const addEventListenersToButtons = () => {
     const submitAnswerButton = document.querySelector("#submitAnswerButton");
-    const backButton = document.querySelector("#backButton");
     const nextQuizButton = document.querySelector("#nextQuizButton");
     const feedbackButton = document.querySelector("#feedbackButton");
-
-    backButton.addEventListener("click", () => {
-      u.goBackWithConfirm();
-    });
+    
     submitAnswerButton.addEventListener("click", () => {
       verifyQuiz();
       getFeedback();
@@ -157,6 +153,7 @@ export default () => {
   setTimeout(() => {
     getQuiz();
     addEventListenersToButtons();
+    u.extendedMainAppWidth();
   }, 200);
 
   return `
