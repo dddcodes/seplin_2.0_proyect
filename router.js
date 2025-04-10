@@ -23,7 +23,6 @@ export const router = async () => {
     "/catalog": () => import(`./views/${ROUTE.catalog.component}`), //catalogo
     "/practice": () => import(`./views/${ROUTE.practice.component}`),
     "/create-quizzes": () => import(`./views/${ROUTE.createQuizzes.component}`),
-    "/archived": () => import(`./views/${ROUTE.archived.component}`), //quizes archivados
   };
 
   const view =
