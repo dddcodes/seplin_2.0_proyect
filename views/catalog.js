@@ -1,7 +1,7 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 import { LSM } from "../localStorage/localStorageManager.js";
-
+import { getCard } from "../components/getCards.js";
 
 const actualView = CONFIG.routes.catalog;
 
@@ -11,8 +11,8 @@ export default () => {
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
 
-  u.disappear(sidebar);
   u.disappear(navbar);
+  u.disappear(sidebar);
 
   const LQ = {
     content: LSM.getLocalQuizzes(),
@@ -169,9 +169,7 @@ export default () => {
       });
     });
 
-    const indentifyButton = document.querySelector(
-      "#indentifyButton"
-    );
+    const indentifyButton = document.querySelector("#indentifyButton");
     indentifyButton.addEventListener("click", () => {
       console.log(getSelectedIndexes());
     });
@@ -180,6 +178,12 @@ export default () => {
   <button id="backButton">
     <span class="material-symbols-rounded">
       close
+    </span>
+  </button>
+  
+  <button id="createButton">
+    <span class="material-symbols-rounded">
+      note_stack_add
     </span>
   </button>
 
