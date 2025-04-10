@@ -137,4 +137,5 @@
 .card > p,
 #sidebar > a > p {
   color: var(--alt-color-2);
+  font-weight: 300;
 }

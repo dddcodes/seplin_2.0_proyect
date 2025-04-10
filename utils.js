@@ -1,3 +1,5 @@
+import { getCard } from "../components/getCards.js";
+
 export function setPageTitle(newTitle) {
   document.title = newTitle || "TITLE NOT FOUND";
 }

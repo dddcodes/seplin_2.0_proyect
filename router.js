@@ -15,13 +15,14 @@ export const router = async () => {
 
   u.defaultMainAppWidth(); // Restablece el ancho del main-app
   u.scrollToTop(); // Mueve la página al inicio
-  u.updateSidebar(getCard.catalog() + getCard.gitHubLink()); // SIDEBAR DEFAULT
+  u.updateSidebar( getCard.gitHubLink() + getCard.catalog() + getCard.createQuizzes()); // SIDEBAR DEFAULT
 
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/": () => import(`./views/${ROUTE.home.component}`), //inicio
     "/catalog": () => import(`./views/${ROUTE.catalog.component}`), //catalogo
     "/practice": () => import(`./views/${ROUTE.practice.component}`),
+    "/create-quizzes": () => import(`./views/${ROUTE.createQuizzes.component}`),
     "/archived": () => import(`./views/${ROUTE.archived.component}`), //quizes archivados
   };
 

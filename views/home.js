@@ -6,7 +6,6 @@ const actualView = CONFIG.routes.home;
 
 export default () => {
   u.setPageTitle(actualView.description);
-  
 
   return `
         <div class="titleBox">

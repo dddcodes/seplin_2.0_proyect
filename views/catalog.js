@@ -2,6 +2,7 @@ import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 import { LSM } from "../localStorage/localStorageManager.js";
 
+
 const actualView = CONFIG.routes.catalog;
 
 export default () => {
