@@ -159,7 +159,9 @@ export default () => {
   return `
     <div id="practiceLayout">
       <button id="backButton">
-        X
+        <span class="material-symbols-rounded">
+          close
+        </span>
       </button>
     
       <div class="quizBox animated">
