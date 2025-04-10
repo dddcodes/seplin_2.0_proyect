@@ -39,4 +39,12 @@ export const getCard = {
       "intern"
     );
   },
+  catalog: function () {
+    return createCard(
+      "CATALOGO",
+      CONFIG.routes.catalog.description,
+      CONFIG.routes.catalog.path,
+      "intern"
+    );
+  },
 };

@@ -77,8 +77,8 @@
     outline: var(--primary-color) solid 2px;
   }
 
-  #navigationBar > .centerNavbarButton > .material-symbols-rounded:hover {
-    color: var(--alt-color);
+  #navigationBar > .centerNavbarButton:hover > .material-symbols-rounded {
+    color: var(--primary-color);
   }
 
   /*Hacer que el 4to child de #navigationBar desaparesca*/
@@ -100,10 +100,25 @@
 
   /*MORE*/
 
+  #sidebar{
+    height: 50px;
+  }
+
   #sidebar > a {
     padding: 0;
     align-content: center;
     min-height: 0;
+
+    border: var(--default-color-2) solid 3px;
+    outline: 0;
+
+    color: var(--alt-color);
+    font-weight: 300;
+  }
+
+  #sidebar > a:hover{
+    background-color: var(--default-color-2);
+    color: var(--info-color);
   }
 
   #sidebar > a > p {

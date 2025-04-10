@@ -6,7 +6,7 @@ const actualView = CONFIG.routes.home;
 
 export default () => {
   u.setPageTitle(actualView.description);
-  u.updateSidebar(getCard.practice() + getCard.gitHubLink());
+  
 
   return `
         <div class="titleBox">
