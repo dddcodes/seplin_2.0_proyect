@@ -7,4 +7,5 @@ export default () => {
   const localQuizzesLength = localQuizzesKeys.length - 1;
 
   return localQuizzesKeys[u.random(0, localQuizzesLength)];
+  //return localQuizzesKeys[4];
 };

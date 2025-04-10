@@ -1,7 +1,7 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 import { LSM } from "../localStorage/localStorageManager.js";
-import { getCard } from "../components/getCards.js";
+import { navigateTo } from "../router.js";
 
 const actualView = CONFIG.routes.catalog;
 
@@ -173,6 +173,13 @@ export default () => {
     indentifyButton.addEventListener("click", () => {
       console.log(getSelectedIndexes());
     });
+
+    const createButton = document.querySelector("#createButton");
+    createButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigateTo("/create-quizzes");
+    });
+
   }, 200);
   return `
   <button id="backButton">
@@ -181,7 +188,7 @@ export default () => {
     </span>
   </button>
   
-  <button id="createButton">
+  <button id="createButton" data-link>
     <span class="material-symbols-rounded">
       note_stack_add
     </span>

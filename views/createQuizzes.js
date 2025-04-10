@@ -1,10 +1,40 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
+import { LSM } from "../localStorage/localStorageManager.js";
 
 const actualView = CONFIG.routes.home;
 
 export default () => {
   u.setPageTitle(actualView.description);
+
+  setTimeout(() => {
+    const createQuizButton = document.getElementById("createQuizButton");
+
+    createQuizButton.addEventListener("click", async () => {
+      const values = {
+        question: document.getElementById("questionInput").value,
+        answer: document.getElementById("answerInput").value,
+        options: [
+          document.getElementById("option1").value,
+          document.getElementById("option2").value || null,
+          document.getElementById("option3").value || null,
+          document.getElementById("option4").value || null,
+        ],
+        feedback: document.getElementById("feedbackInput").value || null,
+        //group: document.getElementById("groupInput").value || null,
+      };
+
+      if (values.question && values.answer && values.options[0]) {
+        alert("Quiz creado correctamente");
+        console.log(values);
+
+        LSM.addQuiz(values.question, values.answer, values.feedback, [...values.options]);
+        console.log(LSM.getLocalQuizzes());
+      } else {
+        alert("Por favor completa todos los campos obligatorios");
+      }
+    });
+  }, 500);
 
   return `
         <div class="titleBox">
@@ -26,7 +56,7 @@ export default () => {
           <input type="text" id="option1" placeholder="Opción 1 (OBLIGATORIA)" required>
           <input type="text" id="option2" placeholder="Opción 2">
           <input type="text" id="option3" placeholder="Opción 3">
-          <input type="text" id="option3" placeholder="Opción 3">
+          <input type="text" id="option4" placeholder="Opción 4">
         </div>
 
         <div class="inputBox">
@@ -44,7 +74,7 @@ export default () => {
           </select>
         </div>
 
-  
+        <button id="createQuizButton">Crear Quiz</button>
         
     `;
 };

@@ -1,5 +1,4 @@
 import { CONFIG } from "../config.js";
-import createQuizzes from "../views/createQuizzes.js";
 
 function createCard(
   title,

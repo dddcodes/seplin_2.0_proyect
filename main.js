@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navigateTo(link.href); // Usa navigateTo() para cambiar la vista
       }
     });
-  });
+  }); 
 });
 
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================

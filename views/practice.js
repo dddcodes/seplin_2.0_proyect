@@ -11,7 +11,6 @@ export default () => {
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
 
-  
   u.disappear(sidebar);
   u.disappear(navbar);
 
@@ -55,17 +54,17 @@ export default () => {
       <p class="question">${actualQuiz.question}</p>
 
       <div class="optionsBox">
-        ${allQuizOptions
-          .map(
-            (option, index) => `
+      ${allQuizOptions
+        .filter((option) => option) // ❌ filtra null, undefined, "", 0, false
+        .map(
+          (option, index) => `
           <button class="option" value="${
             option === actualQuiz.answer ? "correct" : "incorrect"
-          }" 
-                  onclick="">
+          }">
             ${index + 1} - ${option}
           </button>`
-          )
-          .join("")}
+        )
+        .join("")}
       </div>
       <div id="feedbackBox">
           <p class="title">Ayuda:</p>
@@ -137,7 +136,7 @@ export default () => {
     const submitAnswerButton = document.querySelector("#submitAnswerButton");
     const nextQuizButton = document.querySelector("#nextQuizButton");
     const feedbackButton = document.querySelector("#feedbackButton");
-    
+
     submitAnswerButton.addEventListener("click", () => {
       verifyQuiz();
       getFeedback();
