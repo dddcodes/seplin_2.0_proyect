@@ -53,7 +53,7 @@
   }
 
   #main {
-    padding: 50px 5px 5px 5px;
+    padding: 50px 5px 80px 5px;
     width: calc(100vw - 1px);
     
   }
@@ -89,7 +89,8 @@
 
   /*INPUTS =============================================================================*/
   input,
-  textarea {
+  textarea,
+  select {
     width: 95%;
     margin: 5px 0 5px 0;
   }

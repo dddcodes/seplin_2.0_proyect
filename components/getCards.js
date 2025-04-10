@@ -29,7 +29,7 @@ export const getCard = {
   gitHubLink: function () {
     return createCard(
       "GITHUB",
-      "Seplin es de codigo abierto, por lo que puedes acceder al codigo fuente en Github!",
+      "Codigo del proyecto a tus manos!",
       CONFIG.gitHub,
       "extern"
     );

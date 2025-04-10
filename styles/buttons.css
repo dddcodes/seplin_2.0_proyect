@@ -39,7 +39,7 @@ button:active {
 
 #backButton,
 #createButton {
-  border: var(--default-color-3) solid 2px;
+  border: var(--default-color-4) solid 2px;
   border-radius: var(--border-radius-2);
   background-color: var(--default-color);
   color: var(--default-color-3);
@@ -57,7 +57,7 @@ button:active {
 #backButton > .material-symbols-rounded,
 #createButton > .material-symbols-rounded {
   font-size: 35px;
-  color: var(--default-color-3);
+  color: var(--default-color-4);
   margin: 0;
   padding: 0;
 

@@ -1,9 +1,10 @@
 /* Estilos para los inputs ============================================*/
 
 input,
-textarea {
+textarea,
+select {
   background-color: var(--default-color);
-  border: var(--default-color-2) solid 2px;
+  border: var(--default-color-3) solid 2px;
 
   outline: none;
 
@@ -16,17 +17,20 @@ textarea {
 
 input,
 button,
-textarea{
+textarea,
+select{
   width: 46.5%;
   min-height: 60px;
 }
 
 input:hover,
-textarea:hover {
+textarea:hover,
+select:hover {
   border-color: var(--default-color-3);
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   border-color: var(--alt-color);
 }
