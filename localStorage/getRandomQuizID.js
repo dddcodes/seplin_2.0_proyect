@@ -6,6 +6,9 @@ export default () => {
   const localQuizzesKeys = Object.keys(localQuizzes);
   const localQuizzesLength = localQuizzesKeys.length - 1;
 
-  return localQuizzesKeys[u.random(0, localQuizzesLength)];
+  const randomNumber = u.random(0, localQuizzesLength);
+  const randomQuizID = localQuizzesKeys[randomNumber];
+
+  return randomQuizID;
   //return localQuizzesKeys[4];
 };

@@ -11,10 +11,10 @@
 @import url("./responsive.css");
 
 :root {
-  --default-color: #000000;
-  --default-color-2: #0f0f0f;
-  --default-color-3: #212121;
-  --default-color-4: #414141;
+  --default-color: #0a0a0a;
+  --default-color-2: #1f1f1f;
+  --default-color-3: #373737;
+  --default-color-4: #3b3b3b;
 
   /* Colores de Interfaz */
   --alt-color: #e0e0e0; /* Gris claro (mejor que #bab8b8 para fondos) */
@@ -25,10 +25,10 @@
   --secondary-color: #ff7e6b;   
 
   /* Nuevos colores para estados */
-  --success-color: #4caf50; /* Verde más calmado (#28a745 es muy vibrante) */
+  --success-color: #5dae60; /* Verde más calmado (#28a745 es muy vibrante) */
   --info-color: rgb(106, 165, 167);
   --warning-color: #ff9800; /* Naranja menos agresivo */
-  --fail-color: #f44336; /* Rojo con 8% más luminosidad */
+  --fail-color: #c95a52; /* Rojo con 8% más luminosidad */
 
   /* Gradiente Científico */
   --primary-gradient: linear-gradient(
