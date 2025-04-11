@@ -55,11 +55,10 @@
   #main {
     padding: 50px 5px 80px 5px;
     width: calc(100vw - 1px);
-    
   }
 
   #main.extended {
-    padding: 10px 5px 80px ;
+    padding: 10px 5px 80px;
   }
 
   #navigationBar > .centerNavbarButton {
@@ -101,7 +100,7 @@
 
   /*MORE*/
 
-  #sidebar{
+  #sidebar {
     height: 50px;
   }
 
@@ -117,7 +116,7 @@
     color: var(--alt-color);
   }
 
-  #sidebar > a:hover{
+  #sidebar > a:hover {
     background-color: var(--default-color-2);
     color: var(--info-color);
   }
@@ -128,11 +127,11 @@
 
   /*CATALOG ============================================================================*/
 
-  #quizzesDataContainer{
+  #quizzesDataContainer {
     padding: 0;
     margin: 0;
   }
-  #quizzesDataContainer > .quizDataCard{
+  #quizzesDataContainer > .quizDataCard {
     margin: 10px 0;
   }
 }

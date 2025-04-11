@@ -135,21 +135,25 @@ export default () => {
     const quizzesDataContainer = document.getElementById(
       "quizzesDataContainer"
     );
+    const loadAllQuizzesHTML = () => {
+      quizzesDataContainer.innerHTML = ``;
+      for (let i = 0; i < LQ.length; i++) {
+        /*ID*/ const actualID = LQ.keys[i];
+        console.log(actualID);
 
-    for (let i = 0; i < LQ.length; i++) {
-      /*ID*/ const actualID = LQ.keys[i];
-      console.log(actualID);
+        /*DATA*/ const actualQuizData = LQ.content[actualID];
 
-      /*DATA*/ const actualQuizData = LQ.content[actualID];
+        /*from DATA to HTML*/
+        const quizHTML = convertQuizDataToHTML(actualQuizData, i);
 
-      /*from DATA to HTML*/
-      const quizHTML = convertQuizDataToHTML(actualQuizData, i);
+        /*HTML added to CATALOG HTML LOL*/
+        quizzesDataContainer.innerHTML += quizHTML;
+      }
+    };
 
-      /*HTML added to CATALOG HTML LOL*/
-      quizzesDataContainer.innerHTML += quizHTML;
-    }
+    loadAllQuizzesHTML();
 
-    //Al haber algo seleccionado: catalogBar aparece
+    //Algo seleccionado: catalogBar aparece
     const selectButtons = document.querySelectorAll(".selectButton");
     selectButtons.forEach((button) => {
       button.addEventListener("click", () => {
@@ -158,7 +162,7 @@ export default () => {
       });
     });
 
-    //Al no haber nada seleccionado: catalogBar desaparece
+    //Nada seleccionado: catalogBar desaparece
     const quizDataCards = document.querySelectorAll(".quizDataCard");
     quizDataCards.forEach((card) => {
       card.addEventListener("click", () => {
@@ -168,6 +172,8 @@ export default () => {
         }
       });
     });
+
+    //BAR BUTTONS ==============
 
     const indentifyButton = document.querySelector("#indentifyButton");
     indentifyButton.addEventListener("click", () => {
@@ -179,7 +185,25 @@ export default () => {
       e.preventDefault();
       navigateTo("/create-quizzes");
     });
+
+    const removeButton = document.querySelector("#removeButton");
+    removeButton.addEventListener("click", () => {
+      const selectedIndexes = getSelectedIndexes();
+      selectedIndexes.forEach((index) => {
+        const quizID = LQ.keys[index];
+        console.log(`[CATALOG] => ${quizID} Removed`);
+        LSM.removeQuiz(quizID); //Actualiza el LocalStorage
+      });
+      
+      LQ.content = LSM.getLocalQuizzes(); //Actualiza el objeto LQ
+      LQ.keys = Object.keys(LQ.content); //Actualiza las keys
+      LQ.length = Object.keys(LQ.content).length; //Actualiza el length
+
+      loadAllQuizzesHTML(); //Se carga el HTML de nuevo
+      u.disappear(catalogBar); //Se desaparece el CatalogBar
+    });
   }, 200);
+
   return `
   <button id="backButton">
     <span class="material-symbols-rounded">
