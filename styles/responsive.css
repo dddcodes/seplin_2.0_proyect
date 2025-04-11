@@ -112,9 +112,9 @@
 
     border: var(--default-color-2) solid 3px;
     outline: 0;
+    font-weight: 400;
 
     color: var(--alt-color);
-    font-weight: 300;
   }
 
   #sidebar > a:hover{
