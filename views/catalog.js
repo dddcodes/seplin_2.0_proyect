@@ -71,7 +71,7 @@ export default () => {
         </div>
 
         <div class="dataDiv">
-          <p class="group">Grupo default 4to semestre</p>
+          <p class="group">Sin grupo</p>
           <p class="question">${quizData.question}</p>
         </div>
 
@@ -148,30 +148,31 @@ export default () => {
 
         /*HTML added to CATALOG HTML LOL*/
         quizzesDataContainer.innerHTML += quizHTML;
+
+        //Algo seleccionado: catalogBar aparece
+        const selectButtons = document.querySelectorAll(".selectButton");
+        selectButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            u.appear(catalogBar, "flex");
+            console.warn("Algo seleccionado");
+          });
+        });
+
+        //Nada seleccionado: catalogBar desaparece
+        const quizDataCards = document.querySelectorAll(".quizDataCard");
+        quizDataCards.forEach((card) => {
+          card.addEventListener("click", () => {
+            const selectedCards = document.querySelectorAll(".selected");
+            if (selectedCards.length === 0) {
+              u.disappear(catalogBar);
+              console.warn("Nada seleccionado");
+            }
+          });
+        });
       }
     };
 
     loadAllQuizzesHTML();
-
-    //Algo seleccionado: catalogBar aparece
-    const selectButtons = document.querySelectorAll(".selectButton");
-    selectButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const catalogBar = document.querySelector("#catalogBar");
-        u.appear(catalogBar, "flex");
-      });
-    });
-
-    //Nada seleccionado: catalogBar desaparece
-    const quizDataCards = document.querySelectorAll(".quizDataCard");
-    quizDataCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const selectedCards = document.querySelectorAll(".selected");
-        if (selectedCards.length === 0) {
-          u.disappear(catalogBar);
-        }
-      });
-    });
 
     //BAR BUTTONS ==============
 
@@ -194,13 +195,14 @@ export default () => {
         console.log(`[CATALOG] => ${quizID} Removed`);
         LSM.removeQuiz(quizID); //Actualiza el LocalStorage
       });
-      
+
       LQ.content = LSM.getLocalQuizzes(); //Actualiza el objeto LQ
       LQ.keys = Object.keys(LQ.content); //Actualiza las keys
       LQ.length = Object.keys(LQ.content).length; //Actualiza el length
 
       loadAllQuizzesHTML(); //Se carga el HTML de nuevo
       u.disappear(catalogBar); //Se desaparece el CatalogBar
+      console.warn("Seleccionados eliminados");
     });
   }, 200);
 
