@@ -19,6 +19,11 @@ export default () => {
     keys: Object.keys(LSM.getLocalQuizzes()),
     length: Object.keys(LSM.getLocalQuizzes()).length,
   };
+  const reloadLQ = () => {
+    LQ.content = LSM.getLocalQuizzes();
+    LQ.keys = Object.keys(LSM.getLocalQuizzes());
+    LQ.length = Object.keys(LSM.getLocalQuizzes()).length;
+  };
   const printAllOptions = (quizData) => {
     const options = quizData.options;
     let optionsHTML = ``;
@@ -154,7 +159,7 @@ export default () => {
         selectButtons.forEach((button) => {
           button.addEventListener("click", () => {
             u.appear(catalogBar, "flex");
-            console.warn("Algo seleccionado");
+            console.log("Algo seleccionado");
           });
         });
 
@@ -165,7 +170,7 @@ export default () => {
             const selectedCards = document.querySelectorAll(".selected");
             if (selectedCards.length === 0) {
               u.disappear(catalogBar);
-              console.warn("Nada seleccionado");
+              console.log("Nada seleccionado");
             }
           });
         });
@@ -176,11 +181,6 @@ export default () => {
 
     //BAR BUTTONS ==============
 
-    const indentifyButton = document.querySelector("#indentifyButton");
-    indentifyButton.addEventListener("click", () => {
-      console.log(getSelectedIndexes());
-    });
-
     const createButton = document.querySelector("#createButton");
     createButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -190,19 +190,21 @@ export default () => {
     const removeButton = document.querySelector("#removeButton");
     removeButton.addEventListener("click", () => {
       const selectedIndexes = getSelectedIndexes();
-      selectedIndexes.forEach((index) => {
-        const quizID = LQ.keys[index];
-        console.log(`[CATALOG] => ${quizID} Removed`);
-        LSM.removeQuiz(quizID); //Actualiza el LocalStorage
-      });
+      if (confirm("¿Seguro que quieres eliminar los seleccionados?")) {
+        selectedIndexes.forEach((index) => {
+          const quizID = LQ.keys[index];
+          console.log(`[CATALOG] => ${quizID} Removed`);
+          LSM.removeQuiz(quizID); //Actualiza el LocalStorage
+        });
 
-      LQ.content = LSM.getLocalQuizzes(); //Actualiza el objeto LQ
-      LQ.keys = Object.keys(LQ.content); //Actualiza las keys
-      LQ.length = Object.keys(LQ.content).length; //Actualiza el length
+        reloadLQ(); //Actualiza el LocalQuizzes
+        loadAllQuizzesHTML(); //Se carga el HTML de nuevo
 
-      loadAllQuizzesHTML(); //Se carga el HTML de nuevo
-      u.disappear(catalogBar); //Se desaparece el CatalogBar
-      console.warn("Seleccionados eliminados");
+        u.disappear(catalogBar); //Se desaparece el CatalogBar
+        u.notification("Quizzes eliminados :)")
+      } else{
+        u.notification("Operación cancelada :)");
+      }
     });
   }, 200);
 
@@ -225,7 +227,6 @@ export default () => {
   </div>
 
   <div id="catalogBar">
-    <button id="indentifyButton">Identificar</button>
     <button id="removeButton">Eliminar</button>
     <button id="exportButton">Exportar</button>
   </div>

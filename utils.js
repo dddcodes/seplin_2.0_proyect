@@ -119,3 +119,24 @@ export function resetAnimation(element) {
   void element.offsetWidth; // Forzar el reflow
   element.classList.add("animated");
 }
+
+export function notification(msg, duration = 5000) {
+  const noti = document.createElement("div");
+  noti.className = "notification";
+  noti.textContent = msg;
+
+  setTimeout(() => {
+    document.body.appendChild(noti);
+  }, 500);
+
+  // Animar con clase <<.show>>
+  requestAnimationFrame(() => {
+    noti.classList.add("show");
+  });
+
+  // Eliminar después <<duration>>
+  setTimeout(() => {
+    noti.classList.remove("show");
+    setTimeout(() => noti.remove(), 3000);
+  }, duration);
+}
