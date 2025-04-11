@@ -16,25 +16,22 @@
   --default-color-3: #373737;
   --default-color-4: #3b3b3b;
 
-  /* Colores de Interfaz */
-  --alt-color: #e0e0e0; /* Gris claro (mejor que #bab8b8 para fondos) */
-  --alt-color-2: #9e9e9e; /* Gris medio accesible */
+  --alt-color: #e0e0e0;
+  --alt-color-2: #9e9e9e;
 
-  /* Énfasis (basado en tu identidad pero optimizado) */
-  --primary-color: #FFB74D;      /* Amarillo más cálido */
+  --primary-color: #FFB74D;  
   --secondary-color: #ff7e6b;   
 
-  /* Nuevos colores para estados */
-  --success-color: #5dae60; /* Verde más calmado (#28a745 es muy vibrante) */
+  --success-color: #5dae60;
   --info-color: rgb(106, 165, 167);
-  --warning-color: #ff9800; /* Naranja menos agresivo */
-  --fail-color: #c95a52; /* Rojo con 8% más luminosidad */
+  --warning-color: #ff9800;
+  --fail-color: #c95a52; 
 
   /* Gradiente Científico */
   --primary-gradient: linear-gradient(
     135deg,
     var(--secondary-color) 0%,
-    var(--primary-color) 100% /* Azul-cian (aumenta concentración) */
+    var(--primary-color) 100%
   );
 
   --border-radius: 3px;
