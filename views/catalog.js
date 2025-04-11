@@ -179,7 +179,6 @@ export default () => {
       e.preventDefault();
       navigateTo("/create-quizzes");
     });
-
   }, 200);
   return `
   <button id="backButton">
