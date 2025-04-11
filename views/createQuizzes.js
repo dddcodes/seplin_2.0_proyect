@@ -35,7 +35,6 @@ export default () => {
           ]);
           console.log(LSM.getLocalQuizzes());
 
-          //Siguiente: Irr a la vista Catalog con navigateTo sin recargar pagina
           navigateTo("/catalog");
         } else {
           alert("Por favor completa todos los campos obligatorios");
