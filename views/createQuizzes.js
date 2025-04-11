@@ -2,6 +2,8 @@ import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 import { LSM } from "../localStorage/localStorageManager.js";
 
+import { navigateTo } from "../router.js";
+
 const actualView = CONFIG.routes.home;
 
 export default () => {
@@ -10,30 +12,37 @@ export default () => {
   setTimeout(() => {
     const createQuizButton = document.getElementById("createQuizButton");
 
-    createQuizButton.addEventListener("click", async () => {
-      const values = {
-        question: document.getElementById("questionInput").value,
-        answer: document.getElementById("answerInput").value,
-        options: [
-          document.getElementById("option1").value,
-          document.getElementById("option2").value || null,
-          document.getElementById("option3").value || null,
-          document.getElementById("option4").value || null,
-        ],
-        feedback: document.getElementById("feedbackInput").value || null,
-        //group: document.getElementById("groupInput").value || null,
-      };
+    createQuizButton.addEventListener(
+      "click",
+      async () => {
+        const values = {
+          question: document.getElementById("questionInput").value,
+          answer: document.getElementById("answerInput").value,
+          options: [
+            document.getElementById("option1").value,
+            document.getElementById("option2").value || null,
+            document.getElementById("option3").value || null,
+            document.getElementById("option4").value || null,
+          ],
+          feedback: document.getElementById("feedbackInput").value || null,
+          //group: document.getElementById("groupInput").value || null,
+        };
 
-      if (values.question && values.answer && values.options[0]) {
-        alert("Quiz creado correctamente");
-        console.log(values);
+        if (values.question && values.answer && values.options[0]) {
+          console.log(values);
+          LSM.addQuiz(values.question, values.answer, values.feedback, [
+            ...values.options,
+          ]);
+          console.log(LSM.getLocalQuizzes());
 
-        LSM.addQuiz(values.question, values.answer, values.feedback, [...values.options]);
-        console.log(LSM.getLocalQuizzes());
-      } else {
-        alert("Por favor completa todos los campos obligatorios");
-      }
-    });
+          //Siguiente: Irr a la vista Catalog con navigateTo sin recargar pagina
+          navigateTo("/catalog");
+        } else {
+          alert("Por favor completa todos los campos obligatorios");
+        }
+      },
+      { once: true }
+    );
   }, 500);
 
   return `
@@ -41,19 +50,21 @@ export default () => {
           CREAR QUIZ
         </div>
 
+        <p class="weakText">Espacios con * son obligatorios</p>
+
         <div class="inputBox">
-          <p>Pregunta</p>
+          <p>Pregunta *</p>
           <input type="text" id="questionInput" placeholder="Como si fuera un examen" required>
         </div>
 
         <div class="inputBox">
-          <p>Respuesta</p>
+          <p>Respuesta *</p>
           <input type="text" id="answerInput" placeholder="Solo puede haber una respuesta correcta" required>
         </div>
         
         <div class="inputBox optionsBox">
           <p>Opciones alternativas (incorrectas)</p>
-          <input type="text" id="option1" placeholder="Opción 1 (OBLIGATORIA)" required>
+          <input type="text" id="option1" placeholder="Opción 1 *" required>
           <input type="text" id="option2" placeholder="Opción 2">
           <input type="text" id="option3" placeholder="Opción 3">
           <input type="text" id="option4" placeholder="Opción 4">
