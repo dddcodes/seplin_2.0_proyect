@@ -104,12 +104,12 @@ export default () => {
         localQuizzes[actualQuizID] = actualQuiz;
         LSM.updateItem("localQuizzes", localQuizzes);
 
-        console.log("RESPUESTA CORRECTA");
+        u.notification(`OMG YES!!!`, "success");
         break;
 
       case "incorrect":
         u.shiftAndPush(actualQuiz.hitScore, false);
-        console.log("RESPUESTA INCORRECTA");
+        u.notification("Nah...Esta mal", "error");
         break;
 
       default:

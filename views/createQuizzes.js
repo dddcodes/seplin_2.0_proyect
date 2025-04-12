@@ -39,7 +39,7 @@ export default () => {
           setTimeout(() => {
             u.scrollToBottom();
           }, 500);
-          u.notification("Quiz creado con éxito");
+          u.notification("Quiz creado con éxito", "success");
         } else {
           alert("Por favor completa todos los campos obligatorios");
         }

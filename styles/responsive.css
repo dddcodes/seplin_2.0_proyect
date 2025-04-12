@@ -134,4 +134,8 @@
   #quizzesDataContainer > .quizDataCard {
     margin: 10px 0;
   }
+
+  .notification{
+    width: 300px;
+  }
 }
