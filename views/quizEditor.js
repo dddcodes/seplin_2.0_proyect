@@ -1,14 +1,14 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 
-const actualView = CONFIG.routes.home;
+const actualView = CONFIG.routes.quizEditor;
 
 export default () => {
   u.setPageTitle(actualView.description);
 
   return `
         <div class="titleBox">
-          ${CONFIG.proyectName} ${CONFIG.version}
+          ${actualView.title}
         </div>
         <p class="basicBox llamative">Muy pronto podras estudiar de manera mucho mas eficiente y elegante que SEPLIN ALPHA 1 y los metodos tradicionales!</p>
         <p class="basicBox">Objetivo: Desarrollar una WebApp elegante y basada en la neurociencia para un aprendizaje eficiente y ordenado</p>

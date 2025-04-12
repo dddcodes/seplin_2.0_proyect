@@ -30,5 +30,12 @@ export const CONFIG = {
       description:
         "Crea quizzes personalizados para estudiar de manera inteligente!",
     },
+    quizEditor: {
+      component: "quizEditor.js",
+      path: "/quiz-editor",
+      title: "Editar Quiz",
+      description:
+        "Edita tus quizzes de manera sencilla y eficiente!",
+    },
   },
 };
