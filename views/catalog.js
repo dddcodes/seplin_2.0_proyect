@@ -39,6 +39,19 @@ export default () => {
     return optionsHTML;
   };
   const convertQuizDataToHTML = (quizData, index) => {
+    const quizID = LQ.keys[index];
+
+    setTimeout(() => {
+      const editButton = document.querySelector(
+        `#quizDataCard${index} .editButton`
+      );
+
+      editButton.addEventListener("click", (e) => {
+        e.stopPropagation(); // Evita que el evento se propague al contenedor padre
+        navigateTo(`/quiz-editor?=${quizID}`); //lleva al editor de quizzes
+      });
+    }, 500);
+
     return `
       <div class="quizDataCard" id="quizDataCard${index}" index="${index}">
 
@@ -100,7 +113,10 @@ export default () => {
               ${printAllOptions(quizData)}
             </div>
           </div>
-        </div>
+
+          <p class="weakText">Unique ID: ${quizID}</p>
+
+        </div>        
 
       </div>
     `;
@@ -201,9 +217,12 @@ export default () => {
         loadAllQuizzesHTML(); //Se carga el HTML de nuevo
 
         u.disappear(catalogBar); //Se desaparece el CatalogBar
-        let notifMessage = (selectedIndexes.length === 1)? "Quiz eliminado :)" : "Quizzes Eliminados :)";
+        let notifMessage =
+          selectedIndexes.length === 1
+            ? "Quiz eliminado :)"
+            : "Quizzes Eliminados :)";
         u.notification(notifMessage);
-      } else{
+      } else {
         u.notification("Operación cancelada :)");
       }
     });
