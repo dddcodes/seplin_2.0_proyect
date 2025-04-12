@@ -47,7 +47,7 @@ export default () => {
           inputsValue.feedback,
           [...inputsValue.options]
         );
-        console.log(inputsValue);
+        console.log(LSM.getLocalQuizzes()[quizID]);
       } else{
         alert("Por favor completa todos los campos obligatorios");
         u.notification("Por favor completa todos los campos obligatorios","warning");

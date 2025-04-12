@@ -218,10 +218,10 @@ export default () => {
 
         u.disappear(catalogBar); //Se desaparece el CatalogBar
         let notifMessage =
-          selectedIndexes.length === 1
-            ? "Quiz eliminado :)"
-            : "Quizzes Eliminados :)";
-        u.notification(notifMessage);
+          (selectedIndexes.length === 1)
+            ? "Quiz eliminado"
+            : "Quizzes Eliminados";
+        u.notification(notifMessage, "error");
       } else {
         u.notification("Operación cancelada :)");
       }

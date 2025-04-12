@@ -12,40 +12,45 @@ export default () => {
   setTimeout(() => {
     const createQuizButton = document.getElementById("createQuizButton");
 
-    createQuizButton.addEventListener(
-      "click",
-      async () => {
-        const values = {
-          question: document.getElementById("questionInput").value,
-          answer: document.getElementById("answerInput").value,
-          options: [
-            document.getElementById("option1").value,
-            document.getElementById("option2").value || null,
-            document.getElementById("option3").value || null,
-            document.getElementById("option4").value || null,
-          ],
-          feedback: document.getElementById("feedbackInput").value || null,
-          //group: document.getElementById("groupInput").value || null,
-        };
+    let cooldown = false;
+    createQuizButton.addEventListener("click", async () => {
+      if (cooldown) return;
+      cooldown = true;
 
-        if (values.question && values.answer && values.options[0]) {
-          console.log(values);
-          LSM.addQuiz(values.question, values.answer, values.feedback, [
-            ...values.options,
-          ]);
-          console.log(LSM.getLocalQuizzes());
+      const values = {
+        question: document.getElementById("questionInput").value,
+        answer: document.getElementById("answerInput").value,
+        options: [
+          document.getElementById("option1").value,
+          document.getElementById("option2").value || null,
+          document.getElementById("option3").value || null,
+          document.getElementById("option4").value || null,
+        ],
+        feedback: document.getElementById("feedbackInput").value || null,
+        //group: document.getElementById("groupInput").value || null,
+      };
 
-          navigateTo("/catalog");
-          setTimeout(() => {
-            u.scrollToBottom();
-          }, 500);
-          u.notification("Quiz creado con éxito", "success");
-        } else {
-          alert("Por favor completa todos los campos obligatorios");
-        }
-      },
-      { once: true }
-    );
+      if (values.question && values.answer && values.options[0]) {
+        console.log(values);
+        LSM.addQuiz(values.question, values.answer, values.feedback, [
+          ...values.options,
+        ]);
+        console.log(LSM.getLocalQuizzes());
+
+        navigateTo("/catalog");
+
+        setTimeout(() => {
+          u.scrollToBottom();
+        }, 500);
+        u.notification("Quiz creado con éxito", "success");
+      } else {
+        alert("Por favor completa todos los campos obligatorios");
+      }
+
+      setTimeout(() => {
+        cooldown = false;
+      }, 2000);
+    });
   }, 500);
 
   return `
