@@ -14,7 +14,7 @@ export const LSM = {
       return true;
     } catch (error) {
       console.error(`[Error] Failed to store item "${key}":`, error);
-      u.notification("Error con LocalStorage");
+      u.notification("Error con LocalStorage", "error");
       return false;
     }
   },
@@ -128,11 +128,12 @@ export const LSM = {
       localQuizzes[quizID].feedback = feedback;
       localQuizzes[quizID].options = options;
       LSM.updateLocalQuizzes(localQuizzes)
-      u.notification("Quiz actualizado con éxito");
+      u.notification("Quiz actualizado con éxito", "success");
     } catch (error) {
       console.error(`[Error] Failed to update quiz "${quizID}":`, error);
       u.notification(
-        `Error al actualizar el quiz "${quizID}". Quiz no encontrado.`
+        `Error al actualizar el quiz "${quizID}". Quiz no encontrado.`,
+        `error`
       );
       return;
     }

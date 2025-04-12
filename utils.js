@@ -131,14 +131,32 @@ export function resetAnimation(element) {
   element.classList.add("animated");
 }
 
-export function notification(msg, duration = 5000) {
+export function notification(msg, type = "info") {
   const noti = document.createElement("div");
   noti.className = "notification";
   noti.textContent = msg;
 
+  switch (type) {
+    case "success":
+      noti.classList.add("success");
+      break;
+    case "error":
+      noti.classList.add("error");
+      break;
+    case "warning":
+      noti.classList.add("warning");
+      break;
+    case "info":
+      noti.classList.add("info");
+      break;
+  
+    default:
+      break;
+  }
+
   setTimeout(() => {
     document.body.appendChild(noti);
-  }, 500);
+  }, 300);
 
   // Animar con clase <<.show>>
   requestAnimationFrame(() => {
@@ -149,5 +167,5 @@ export function notification(msg, duration = 5000) {
   setTimeout(() => {
     noti.classList.remove("show");
     setTimeout(() => noti.remove(), 3000);
-  }, duration);
+  }, 5000);
 }

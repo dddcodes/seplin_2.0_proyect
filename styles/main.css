@@ -3,6 +3,7 @@
 
 @import url("./inputs.css");
 @import url("./buttons.css");
+@import url("./notifications.css");
 
 @import url("./stylesForSubpages/practice.css");
 @import url("./stylesForSubpages/catalog.css");
@@ -165,31 +166,3 @@ a:hover {
   padding: 5px;
 }
 
-.notification {
-  position: fixed; /* Ignora scroll y layout del body */
-  right: 20px;
-  bottom: 90px;
-
-  opacity: 0;
-
-  background: var(--default-color-2);
-  color: var(--alt-color);
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
-  pointer-events: none;
-
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateY(-10px);
-
-  z-index: 999999; /* Asegura que esté arriba de todo */
-  width: 300px;
-}
-
-.notification.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-
-  animation: notificationAnimation 0.5s ease-in-out;
-}

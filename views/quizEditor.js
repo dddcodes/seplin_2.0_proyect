@@ -21,7 +21,7 @@ export default () => {
     saveChangesButton.addEventListener("click", () => {
       const getInputValue = (id) => {
         const input = document.getElementById(id);
-        return input.value || input.placeholder || null;
+        return input.value || null;
       };
       const inputsValue = {
         question: getInputValue("questionInput"),
@@ -35,14 +35,23 @@ export default () => {
         feedback: getInputValue("feedbackInput"),
       };
 
-      LSM.updateQuiz(
-        quizID,
-        inputsValue.question,
-        inputsValue.answer,
-        inputsValue.feedback,
-        [...inputsValue.options]
-      );
-      console.log(inputsValue);
+      if (
+        inputsValue.question &&
+        inputsValue.answer &&
+        inputsValue.options[0]
+      ) {
+        LSM.updateQuiz(
+          quizID,
+          inputsValue.question,
+          inputsValue.answer,
+          inputsValue.feedback,
+          [...inputsValue.options]
+        );
+        console.log(inputsValue);
+      } else{
+        alert("Por favor completa todos los campos obligatorios");
+        u.notification("Por favor completa todos los campos obligatorios","warning");
+      }
     });
   }, 500);
 
@@ -55,33 +64,31 @@ export default () => {
 
         <div class="inputBox">
           <p>Pregunta</p>
-          <input type="text" id="questionInput" placeholder="${
+          <input type="text" id="questionInput" value="${
             quizData.question
-          }">
+          }" placeholder="CAMPO OBLIGATORIO" required>
         </div>
 
         <div class="inputBox">
           <p>Respuesta</p>
-          <input type="text" id="answerInput" placeholder="${quizData.answer}">
+          <input type="text" id="answerInput" value="${
+            quizData.answer
+          }" placeholder="CAMPO OBLIGATORIO" required>
         </div>
         
         <div class="inputBox optionsBox">
           <p>Opciones alternativas (incorrectas)</p>
-          <input type="text" id="option1" placeholder="${quizData.options[0]}">
-          <input type="text" id="option2" placeholder="${
-            quizData.options[1] || ""
-          }">
-          <input type="text" id="option3" placeholder="${
-            quizData.options[2] || ""
-          } ">
-          <input type="text" id="option4" placeholder="${
-            quizData.options[3] || ""
-          }">
+          <input type="text" id="option1" value="${
+            quizData.options[0] || ""
+          }" placeholder="CAMPO OBLIGATORIO" required>
+          <input type="text" id="option2" value="${quizData.options[1] || ""}">
+          <input type="text" id="option3" value="${quizData.options[2] || ""} ">
+          <input type="text" id="option4" value="${quizData.options[3] || ""}">
         </div>
 
         <div class="inputBox">
           <p>Explicación</p>
-          <textarea type="text" id="feedbackInput" placeholder="${
+          <textarea type="text" id="feedbackInput" value="${
             quizData.feedback || ""
           }"></textarea>
         </div>
@@ -89,10 +96,10 @@ export default () => {
         <div class="inputBox">
           <p>Grupo (BETA)</p>
           <select id="groupInput" required>
-            <option value="default">Grupo 1</option>
-            <option value="default">Grupo 2</option>
-            <option value="default">Grupo 3</option>
-            <option value="default">Grupo 4</option>
+            <option value="">Grupo 1</option>
+            <option value="">Grupo 2</option>
+            <option value="">Grupo 3</option>
+            <option value="">Grupo 4</option>
           </select>
         </div>
 
