@@ -8,6 +8,10 @@ export function scrollToTop() {
   window.scrollTo(0, 0); // Mueve el scroll a la posición (0, 0)
 }
 
+export function scrollToBottom() {
+  window.scrollTo(0, document.body.scrollHeight); // Mueve el scroll a la posición (0, document.body.scrollHeight)
+}
+
 export function updateSidebar(newSidebarContent) {
   const sidebar = document.querySelector("#sidebar"); // Selecciona el sidebar
 

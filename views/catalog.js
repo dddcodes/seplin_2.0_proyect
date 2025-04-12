@@ -201,7 +201,8 @@ export default () => {
         loadAllQuizzesHTML(); //Se carga el HTML de nuevo
 
         u.disappear(catalogBar); //Se desaparece el CatalogBar
-        u.notification("Quizzes eliminados :)")
+        let notifMessage = (selectedIndexes.length === 1)? "Quiz eliminado :)" : "Quizzes Eliminados :)";
+        u.notification(notifMessage);
       } else{
         u.notification("Operación cancelada :)");
       }

@@ -36,6 +36,10 @@ export default () => {
           console.log(LSM.getLocalQuizzes());
 
           navigateTo("/catalog");
+          setTimeout(() => {
+            u.scrollToBottom();
+          }, 500);
+          u.notification("Quiz creado con éxito");
         } else {
           alert("Por favor completa todos los campos obligatorios");
         }

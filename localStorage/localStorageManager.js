@@ -9,10 +9,12 @@ export const LSM = {
     try {
       const stringValue = JSON.stringify(value);
       localStorage.setItem(key, stringValue);
+
       console.log(`[Success] Stored item with key: "${key}"`);
       return true;
     } catch (error) {
       console.error(`[Error] Failed to store item "${key}":`, error);
+      u.notification("Error con LocalStorage")
       return false;
     }
   },
@@ -32,6 +34,7 @@ export const LSM = {
     try {
       const stringValue = JSON.stringify(newValue);
       localStorage.setItem(key, stringValue);
+
       console.warn(`[Success] Updated item with key: "${key}"`);
       return true;
     } catch (error) {
@@ -133,7 +136,7 @@ export const LSM = {
   },
   RESET: function () {
     LSM.removeItem("localQuizzes");
-    console.log("RESETEADO");
+    console.warn("RESETEADO");
   },
 };
 
