@@ -33,7 +33,7 @@ export const CONFIG = {
     quizEditor: {
       component: "quizEditor.js",
       path: "/quiz-editor",
-      title: "Editar Quiz",
+      title: "Editor de quizzes",
       description:
         "Edita tus quizzes de manera sencilla y eficiente!",
     },

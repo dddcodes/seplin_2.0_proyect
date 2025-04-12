@@ -34,3 +34,7 @@ textarea:focus,
 select:focus {
   border-color: var(--alt-color);
 }
+
+textarea {
+  min-height: 100px;
+}

@@ -75,7 +75,7 @@ export default () => {
 
         <div class="inputBox">
           <p>Explicación</p>
-          <input type="text" id="feedbackInput" placeholder="Mejora tu retencion un ~50%">
+          <textarea type="text" id="feedbackInput" placeholder="Mejora tu retencion un ~50%"></textarea>
         </div>
 
         <div class="inputBox">
