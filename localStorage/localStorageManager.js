@@ -14,7 +14,7 @@ export const LSM = {
       return true;
     } catch (error) {
       console.error(`[Error] Failed to store item "${key}":`, error);
-      u.notification("Error con LocalStorage")
+      u.notification("Error con LocalStorage");
       return false;
     }
   },
@@ -67,6 +67,10 @@ export const LSM = {
     }
   },
 
+  updateLocalQuizzes: function (newValue) {
+    LSM.updateItem("localQuizzes", newValue);
+  },
+
   //QUIZZES FUNCTIONS ============================================
   addQuiz: function (question, answer, feedback, options) {
     try {
@@ -113,6 +117,24 @@ export const LSM = {
         error
       );
       return false;
+    }
+  },
+  updateQuiz: function (quizID, question, answer, feedback, options) {
+    //ahora todo el mismo proceso pero con try y catch, en caso de que el quizID no exista
+    try {
+      const localQuizzes = LSM.getItem("localQuizzes");
+      localQuizzes[quizID].question = question;
+      localQuizzes[quizID].answer = answer;
+      localQuizzes[quizID].feedback = feedback;
+      localQuizzes[quizID].options = options;
+      LSM.updateLocalQuizzes(localQuizzes)
+      u.notification("Quiz actualizado con éxito");
+    } catch (error) {
+      console.error(`[Error] Failed to update quiz "${quizID}":`, error);
+      u.notification(
+        `Error al actualizar el quiz "${quizID}". Quiz no encontrado.`
+      );
+      return;
     }
   },
   removeQuiz: function (quizID) {

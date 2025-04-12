@@ -50,7 +50,7 @@ export default () => {
         e.stopPropagation(); // Evita que el evento se propague al contenedor padre
         navigateTo(`/quiz-editor?id=${quizID}`); //lleva al editor de quizzes
       });
-    }, 500);
+    }, 100);
 
     return `
       <div class="quizDataCard" id="quizDataCard${index}" index="${index}">

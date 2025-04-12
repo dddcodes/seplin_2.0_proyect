@@ -87,3 +87,8 @@ button:active {
   border-color: var(--primary-color);
   background-color: var(--primary-color);
 }
+
+#createQuizButton,
+#saveChangesButton{
+  width: 98%;
+}
