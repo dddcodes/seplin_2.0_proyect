@@ -18,7 +18,10 @@ export default () => {
 
   setTimeout(() => {
     const saveChangesButton = document.getElementById("saveChangesButton");
+    let cooldown = false;
     saveChangesButton.addEventListener("click", () => {
+      u.applyCooldown(cooldown)
+
       const getInputValue = (id) => {
         const input = document.getElementById(id);
         return input.value || null;
@@ -48,9 +51,12 @@ export default () => {
           [...inputsValue.options]
         );
         console.log(LSM.getLocalQuizzes()[quizID]);
-      } else{
+      } else {
         alert("Por favor completa todos los campos obligatorios");
-        u.notification("Por favor completa todos los campos obligatorios","warning");
+        u.notification(
+          "Por favor completa todos los campos obligatorios",
+          "warning"
+        );
       }
     });
   }, 500);

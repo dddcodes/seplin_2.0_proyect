@@ -14,8 +14,7 @@ export default () => {
 
     let cooldown = false;
     createQuizButton.addEventListener("click", async () => {
-      if (cooldown) return;
-      cooldown = true;
+      u.applyCooldown(cooldown)
 
       const values = {
         question: document.getElementById("questionInput").value,
@@ -45,11 +44,11 @@ export default () => {
         u.notification("Quiz creado con éxito", "success");
       } else {
         alert("Por favor completa todos los campos obligatorios");
+        u.notification(
+          "Por favor completa todos los campos obligatorios",
+          "warning"
+        );
       }
-
-      setTimeout(() => {
-        cooldown = false;
-      }, 2000);
     });
   }, 500);
 

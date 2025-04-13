@@ -168,3 +168,13 @@ export function notification(msg, type = "info") {
     setTimeout(() => noti.remove(), 3000);
   }, 5000);
 }
+
+export function applyCooldown(cooldownVariable) {
+  if (cooldownVariable) return;
+
+  cooldownVariable = true;
+  
+  setTimeout(() => {
+    cooldownVariable = false;
+  }, 3000);
+}
