@@ -32,7 +32,7 @@ export default () => {
 
       optionsHTML += `
           <p class="option">
-            ${i + 1} - ${option}
+            ${i + 1} - ${option || "<i>Sin opción</i>"}
           </p>
       `;
     }
@@ -89,7 +89,7 @@ export default () => {
         </div>
 
         <div class="dataDiv">
-          <p class="group">Sin grupo</p>
+          <p class="group">${quizData.group || "<i>Sin grupo</i>"}</p>
           <p class="question">${quizData.question}</p>
         </div>
 
@@ -103,7 +103,7 @@ export default () => {
           <div class="feedback">
             <p class="title">EXPLICACIÓN</p>
             <p class="content">
-              ${quizData.feedback}
+              ${quizData.feedback || "<i>Sin feedback</i>"}
             </p>
           </div>
 
@@ -216,7 +216,7 @@ export default () => {
 
         u.disappear(catalogBar); //Se desaparece el CatalogBar
         let notifMessage =
-          (selectedIndexes.length === 1)
+          selectedIndexes.length === 1
             ? "Quiz eliminado"
             : "Quizzes Eliminados";
         u.notification(notifMessage, "error");
@@ -224,7 +224,6 @@ export default () => {
         u.notification("Operación cancelada :)");
       }
     });
-
   }, 200);
 
   return `

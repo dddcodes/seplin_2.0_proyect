@@ -14,7 +14,7 @@ export default () => {
 
     let cooldown = false;
     createQuizButton.addEventListener("click", async () => {
-      u.applyCooldown(cooldown)
+      u.applyCooldown(cooldown);
 
       const values = {
         question: document.getElementById("questionInput").value,
@@ -39,11 +39,14 @@ export default () => {
         navigateTo("/catalog");
 
         setTimeout(() => {
+          const moreDataDivs = document.querySelectorAll(".quizDataCard > .moreDataDiv");
+          const last = moreDataDivs[moreDataDivs.length - 1];
+          last.classList.remove("hidden");
+          
           u.scrollToBottom();
-        }, 500);
+        }, 600);
         u.notification("Quiz creado con éxito", "success");
       } else {
-        alert("Por favor completa todos los campos obligatorios");
         u.notification(
           "Por favor completa todos los campos obligatorios",
           "warning"

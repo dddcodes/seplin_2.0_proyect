@@ -72,7 +72,7 @@ export const LSM = {
   },
 
   //QUIZZES FUNCTIONS ============================================
-  addQuiz: function (question, answer, feedback, options) {
+  addQuiz: function (question, answer, feedback, options, groupID = null) {
     try {
       // 1. Get existing parent item
       const localQuizzesKey = "localQuizzes";
@@ -80,7 +80,14 @@ export const LSM = {
 
       const hitScore = [false, false, false, false, false];
       const newQuizID = uuidv4();
-      const newQuizContent = { question, answer, feedback, options, hitScore };
+      const newQuizContent = {
+        question,
+        answer,
+        feedback,
+        options,
+        hitScore,
+        groupID,
+      };
 
       if (localQuizzes === null) {
         console.warn(`[Warning] Parent key "${localQuizzesKey}" doesn't exist`);
@@ -127,7 +134,7 @@ export const LSM = {
       localQuizzes[quizID].answer = answer;
       localQuizzes[quizID].feedback = feedback;
       localQuizzes[quizID].options = options;
-      LSM.updateLocalQuizzes(localQuizzes)
+      LSM.updateLocalQuizzes(localQuizzes);
       u.notification("Quiz actualizado con éxito", "success");
     } catch (error) {
       console.error(`[Error] Failed to update quiz "${quizID}":`, error);
