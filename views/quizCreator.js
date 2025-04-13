@@ -4,7 +4,7 @@ import { LSM } from "../localStorage/localStorageManager.js";
 
 import { navigateTo } from "../router.js";
 
-const actualView = CONFIG.routes.home;
+const actualView = CONFIG.routes.quizCreator; // Obtiene la vista actual desde el archivo de configuración
 
 export default () => {
   u.setPageTitle(actualView.description);

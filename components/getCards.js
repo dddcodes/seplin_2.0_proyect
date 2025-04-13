@@ -51,11 +51,11 @@ export const getCard = {
       "var(--default-color-2)"
     );
   },
-  createQuizzes: function () {
+  quizCreator: function () {
     return createCard(
       "CREAR",
-      CONFIG.routes.createQuizzes.description,
-      CONFIG.routes.createQuizzes.path,
+      CONFIG.routes.quizCreator.description,
+      CONFIG.routes.quizCreator.path,
       "intern",
       null,
       "var(--info-color)",

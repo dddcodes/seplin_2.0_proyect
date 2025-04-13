@@ -173,7 +173,7 @@ export function applyCooldown(cooldownVariable) {
   if (cooldownVariable) return;
 
   cooldownVariable = true;
-  
+
   setTimeout(() => {
     cooldownVariable = false;
   }, 3000);

@@ -26,10 +26,10 @@ export default () => {
             
             </a>
 
-            <a href="/create-quizzes" data-link>
+            <a href="/quiz-creator" data-link>
                 <span class="material-symbols-rounded">add_circle</span>
             
-                <p>${CONFIG.routes.createQuizzes.title}</p>
+                <p>${CONFIG.routes.quizCreator.title}</p>
             
             </a>
         </nav>

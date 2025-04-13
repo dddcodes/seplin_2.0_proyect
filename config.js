@@ -23,9 +23,9 @@ export const CONFIG = {
       description:
         "Practica tus quizzes y mejora tus habilidades de manera efectiva, basado en ciencia!",
     },
-    createQuizzes: {
-      component: "createQuizzes.js",
-      path: "/create-quizzes",
+    quizCreator: {
+      component: "quizCreator.js",
+      path: "/quiz-creator",
       title: "Crear",
       description:
         "Crea quizzes personalizados para estudiar de manera inteligente!",

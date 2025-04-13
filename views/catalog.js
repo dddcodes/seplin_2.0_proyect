@@ -200,7 +200,7 @@ export default () => {
     const createButton = document.querySelector("#createButton");
     createButton.addEventListener("click", (e) => {
       e.preventDefault();
-      navigateTo("/create-quizzes");
+      navigateTo("/quiz-creator");
     });
 
     const removeButton = document.querySelector("#removeButton");
