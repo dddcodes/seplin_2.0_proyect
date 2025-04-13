@@ -93,9 +93,7 @@ export default () => {
 
         <div class="inputBox">
           <p>Explicación</p>
-          <textarea type="text" id="feedbackInput" value="${
-            quizData.feedback || ""
-          }"></textarea>
+          <textarea type="text" id="feedbackInput">${quizData.feedback || ""}</textarea>
         </div>
 
         <div class="inputBox">
