@@ -112,6 +112,11 @@ export default () => {
     `;
   } else {
     console.error("No se ha encontrado el ID del quiz en la URL.");
+    u.notification(
+      "Error: No se ha encontrado el ID del quiz",
+      "error"
+    );
+    u.activeBackButton();
     return `
       <button id="backButton">
         Volver

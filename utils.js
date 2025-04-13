@@ -178,3 +178,12 @@ export function applyCooldown(cooldownVariable) {
     cooldownVariable = false;
   }, 3000);
 }
+
+export function activeBackButton() {
+  setTimeout(() => {
+    const backButton = document.getElementById("backButton");
+    backButton.addEventListener("click", () => {
+      u.goBackWithConfirm(); // Volver a la página anterior
+    });
+  }, 200);
+}

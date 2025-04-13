@@ -37,4 +37,5 @@ select:focus {
 
 textarea {
   min-height: 100px;
+  width: 99%;
 }

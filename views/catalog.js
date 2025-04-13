@@ -195,8 +195,6 @@ export default () => {
 
     loadAllQuizzesHTML();
 
-    //BAR BUTTONS ==============
-
     const createButton = document.querySelector("#createButton");
     createButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -226,6 +224,7 @@ export default () => {
         u.notification("Operación cancelada :)");
       }
     });
+
   }, 200);
 
   return `
