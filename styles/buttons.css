@@ -49,6 +49,8 @@ button:active {
   height: 60px;
   min-width: 0;
   min-height: 0;
+  font-size: 17px;
+  font-weight: 600;
 
   justify-content: center;
   align-items: center;
@@ -68,6 +70,7 @@ button:active {
 #createButton:hover {
   border-color: var(--fail-color);
   background-color: var(--fail-color);
+  color: var(--default-color);
 }
 
 #backButton:hover > .material-symbols-rounded,

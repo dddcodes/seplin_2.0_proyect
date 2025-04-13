@@ -15,7 +15,7 @@ export const router = async () => {
 
   u.defaultMainAppWidth(); // Restablece el ancho del main-app
   u.scrollToTop(); // Mueve la página al inicio
-  u.updateSidebar( getCard.gitHubLink() + getCard.catalog() + getCard.quizCreator()); // SIDEBAR DEFAULT
+  u.updateSidebar( getCard.gitHubLink() + getCard.quizCreator()); // SIDEBAR DEFAULT
 
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio

@@ -7,61 +7,60 @@ const actualView = CONFIG.routes.quizEditor;
 export default () => {
   u.setPageTitle(actualView.title);
 
-  console.warn("Sí hay parámetros en la URL.");
-
-  const localQuizzes = LSM.getLocalQuizzes();
   const params = new URLSearchParams(window.location.search);
+  const localQuizzes = LSM.getLocalQuizzes();
   const quizID = params.get("id");
   const quizData = localQuizzes[quizID];
 
-  console.log("ID del quiz:", quizID);
+  if (/*Si hay parametros*/ quizID) {
+    console.log("ID del quiz:", quizID);
 
-  setTimeout(() => {
-    const saveChangesButton = document.getElementById("saveChangesButton");
-    let cooldown = false;
-    saveChangesButton.addEventListener("click", () => {
-      u.applyCooldown(cooldown)
+    setTimeout(() => {
+      const saveChangesButton = document.getElementById("saveChangesButton");
+      let cooldown = false;
+      saveChangesButton.addEventListener("click", () => {
+        u.applyCooldown(cooldown);
 
-      const getInputValue = (id) => {
-        const input = document.getElementById(id);
-        return input.value || null;
-      };
-      const inputsValue = {
-        question: getInputValue("questionInput"),
-        answer: getInputValue("answerInput"),
-        options: [
-          getInputValue("option1"),
-          getInputValue("option2"),
-          getInputValue("option3"),
-          getInputValue("option4"),
-        ],
-        feedback: getInputValue("feedbackInput"),
-      };
+        const getInputValue = (id) => {
+          const input = document.getElementById(id);
+          return input.value || null;
+        };
+        const inputsValue = {
+          question: getInputValue("questionInput"),
+          answer: getInputValue("answerInput"),
+          options: [
+            getInputValue("option1"),
+            getInputValue("option2"),
+            getInputValue("option3"),
+            getInputValue("option4"),
+          ],
+          feedback: getInputValue("feedbackInput"),
+        };
 
-      if (
-        inputsValue.question &&
-        inputsValue.answer &&
-        inputsValue.options[0]
-      ) {
-        LSM.updateQuiz(
-          quizID,
-          inputsValue.question,
-          inputsValue.answer,
-          inputsValue.feedback,
-          [...inputsValue.options]
-        );
-        console.log(LSM.getLocalQuizzes()[quizID]);
-      } else {
-        alert("Por favor completa todos los campos obligatorios");
-        u.notification(
-          "Por favor completa todos los campos obligatorios",
-          "warning"
-        );
-      }
-    });
-  }, 500);
+        if (
+          inputsValue.question &&
+          inputsValue.answer &&
+          inputsValue.options[0]
+        ) {
+          LSM.updateQuiz(
+            quizID,
+            inputsValue.question,
+            inputsValue.answer,
+            inputsValue.feedback,
+            [...inputsValue.options]
+          );
+          console.log(LSM.getLocalQuizzes()[quizID]);
+        } else {
+          alert("Por favor completa todos los campos obligatorios");
+          u.notification(
+            "Por favor completa todos los campos obligatorios",
+            "warning"
+          );
+        }
+      });
+    }, 500);
 
-  return `
+    return `
         <div class="titleBox">
           ${actualView.title}
         </div>
@@ -111,4 +110,14 @@ export default () => {
 
         <button id="saveChangesButton">Guardar cambios</button>
     `;
+  } else {
+    console.error("No se ha encontrado el ID del quiz en la URL.");
+    return `
+      <button id="backButton">
+        Volver
+      </button>
+      <p class="titleBox">
+        Error: No se han logrado extraer la ID del quiz
+      </p>`;
+  }
 };
