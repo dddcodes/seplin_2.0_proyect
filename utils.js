@@ -20,10 +20,11 @@ export function scrollToBottom() {
 
 export function updateSidebar(newSidebarContent) {
   const sidebar = document.querySelector("#sidebar"); // Selecciona el sidebar
-
-  sidebar.innerHTML =
-    newSidebarContent ||
-    "ERROR EN ./UTILS.JS O ./VIEW/ O ./COMPONENTS/LAYOUT.JS"; // Actualiza el contenido del sidebar
+  if (!newSidebarContent) {
+    disappear(sidebar);
+  } else {
+    sidebar.innerHTML = newSidebarContent || "SIDEBAR CONTENT NOT FOUND";
+  }
 }
 
 export function random(min, max) {

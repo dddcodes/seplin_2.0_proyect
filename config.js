@@ -34,8 +34,13 @@ export const CONFIG = {
       component: "quizEditor.js",
       path: "/quiz-editor",
       title: "Editor de quizzes",
-      description:
-        "Edita tus quizzes de manera sencilla y eficiente!",
+      description: "Edita tus quizzes de manera sencilla y eficiente!",
+    },
+    import: {
+      component: "import.js",
+      path: "/import",
+      title: "Importar",
+      description: "Pega el codigo de un quiz y sera todo tuyo!",
     },
   },
 };

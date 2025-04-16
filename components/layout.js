@@ -32,6 +32,14 @@ export default () => {
                 <p>${CONFIG.routes.quizCreator.title}</p>
             
             </a>
+
+            <a href="/import" data-link>
+                <span class="material-symbols-rounded">download</span>
+            
+                <p>${CONFIG.routes.import.title}</p>
+            
+            </a>
+
         </nav>
         
     
