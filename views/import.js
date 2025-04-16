@@ -2,7 +2,7 @@ import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 import { LSM } from "../localStorage/localStorageManager.js";
 import { navigateTo } from "../router.js";
-
+//lol
 const actualView = CONFIG.routes.import;
 
 export default () => {
