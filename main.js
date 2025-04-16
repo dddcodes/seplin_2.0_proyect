@@ -8,8 +8,6 @@ defaultQuizzes();
 
 getLayout(); // Carga el navbar, sidebar y main-app (HTML)
 
-navigateTo("/import");
-
 //navigateTo("/catalog"); // Navega a la ruta actual
 
 // ==> Carga la vista =====================================================
