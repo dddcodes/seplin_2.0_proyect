@@ -47,8 +47,6 @@ export const getCard = {
       CONFIG.routes.catalog.description,
       CONFIG.routes.catalog.path,
       "intern",
-      null,
-      "var(--default-color-2)"
     );
   },
   quizCreator: function () {
@@ -57,9 +55,6 @@ export const getCard = {
       CONFIG.routes.quizCreator.description,
       CONFIG.routes.quizCreator.path,
       "intern",
-      null,
-      "var(--info-color)",
-      "var(--default-color)"
     );
   },
 };
