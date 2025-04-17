@@ -93,6 +93,9 @@
     width: 99%;
     margin: 5px 0 5px 0;
   }
+  button{
+    padding: 5px;
+  }
 
   button:hover {
     border-width: 2px;
@@ -137,5 +140,18 @@
 
   .notification{
     width: 300px;
+  }
+
+  .popup {
+    padding: 40px 15px !important;
+  }
+
+  .popupContent{
+    height: 100% !important;
+  }
+
+  .closePopup{
+    top: 50px !important;
+    right: 25px !important;
   }
 }

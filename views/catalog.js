@@ -224,6 +224,42 @@ export default () => {
         u.notification("Operación cancelada :)");
       }
     });
+
+    const exportButton = document.querySelector("#exportButton");
+    exportButton.addEventListener("click", () => {
+      const selectedIndexes = getSelectedIndexes();
+      let selectedQuizzes = [];
+      selectedIndexes.forEach((index) => {
+        //quiero que el quizID no se guarde
+        const quizID = LQ.keys[index];
+        const quizData = LQ.content[quizID];
+        selectedQuizzes.push({
+          question: quizData.question,
+          answer: quizData.answer,
+          group: quizData.group,
+          feedback: quizData.feedback,
+          options: quizData.options,
+        });
+      });
+      //Transformo el objeto a JSON
+      const jsonQuizzes = JSON.stringify(selectedQuizzes, null, 2);
+      console.log(jsonQuizzes);
+
+      //Ahora aparece un popup con el JSON
+      u.createPopup(
+        "Exportar Quizzes",
+        `<p class="weakText">Este es formato JSON: un formato sencillo de entender para el algoritmo que importa quizzes en Seplin. Una IA puede entender esta informacion ( Como ChatGPT, puedes pasarle esta informacion para que mejore tus quizzes! ).</p>
+        <textarea id="jsonQuizzes" readonly>${jsonQuizzes}</textarea>
+        <button id="copyButton">Copiar</button>`,
+        "copyButton",
+        () => {
+          const textArea = document.querySelector("#jsonQuizzes");
+          textArea.select();
+          document.execCommand("copy");
+          u.notification("Copiado al portapapeles", "info");
+        }
+      );
+    });
   }, 200);
 
   return `

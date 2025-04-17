@@ -15,6 +15,9 @@
 
   z-index: 999999; /* Asegura que esté arriba de todo */
   width: 600px;
+
+  background-color: var(--default-color-2);
+  color: var(--alt-color);
 }
 
 .notification.show {
@@ -25,22 +28,22 @@
   animation: notificationAnimation 0.5s ease-in-out;
 }
 
-.info{
-    background: var(--default-color-2);
-    color: var(--alt-color);
+.info {
+  background: var(--info-color);
+  color: var(--default-color);
 }
 
-.success{
-    background: var(--success-color);
-    color: var(--alt-color);
+.success {
+  background: var(--success-color);
+  color: var(--alt-color);
 }
 
-.error{
-    background: var(--fail-color);
-    color: var(--alt-color);
+.error {
+  background: var(--fail-color);
+  color: var(--alt-color);
 }
 
-.warning{
-    background: var(--warning-color);
-    color: var(--alt-color);
+.warning {
+  background: var(--warning-color);
+  color: var(--alt-color);
 }

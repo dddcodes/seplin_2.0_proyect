@@ -1,5 +1,3 @@
-import { getCard } from "../components/getCards.js";
-
 export function setPageTitle(newTitle) {
   document.title = newTitle || "TITLE NOT FOUND";
 }
@@ -131,7 +129,7 @@ export function resetAnimation(element) {
   element.classList.add("animated");
 }
 
-export function notification(msg, type = "info") {
+export function notification(msg, type) {
   const noti = document.createElement("div");
   noti.className = "notification";
   noti.textContent = msg;
@@ -148,9 +146,6 @@ export function notification(msg, type = "info") {
       break;
     case "info":
       noti.classList.add("info");
-      break;
-
-    default:
       break;
   }
 
@@ -189,13 +184,20 @@ export function activeBackButton() {
   }, 200);
 }
 
-export function createDropdown(title, content){
+export function createDropdown(title, content, callbackButtonID, callback) {
+  const dropdownID = uuidv4(); // Genera un ID único para el dropdown
+  setTimeout(() => {
+    document.querySelector(`#${callbackButtonID}`).addEventListener("click", () => {
+      callback();
+    });
+  }, 300);
+
   return `
   <div class="dropdown">
 
-      <input type="checkbox" id="toggle">
+      <input type="checkbox" id="toggle${dropdownID}">
 
-      <label for="toggle" class="dropdown-label">
+      <label for="toggle${dropdownID}" class="dropdown-label">
         <span class="title">${title}</span>
         <span class="material-symbols-rounded">
           keyboard_arrow_down
@@ -209,4 +211,31 @@ export function createDropdown(title, content){
       </div>
 
     </div>`;
+}
+
+export function createPopup(title, content, callbackButtonID, callback) {
+  const popup = document.createElement("div");
+  const popupID = uuidv4(); // Genera un ID único para el popup
+  popup.classList.add("popup");
+  popup.id = `popup${popupID}`;
+  popup.innerHTML = `
+        <div class="popupContent">
+          <span class="material-symbols-rounded closePopup" id="closePopup${popupID}">
+            close
+          </span>
+          <p class="popupTitle">${title}</p>
+          ${content}
+        </div>
+  `;
+
+  document.body.appendChild(popup);
+  const closePopup = document.querySelector(`#closePopup${popupID}`);
+  closePopup.addEventListener("click", () => {
+    popup.remove();
+  });
+
+  const callbackButton = document.querySelector(`#${callbackButtonID}`);
+  callbackButton.addEventListener("click", () => {
+    callback();
+  });
 }

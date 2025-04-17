@@ -35,11 +35,17 @@ FORMATO DE QUIZZES:
 
 [
   {
-    "question": "",
-    "answer": "",
-    "feedback": "",
-    "options": []
-  }
+    "question": "Here goes the question",
+    "answer": "Here goes the CORRECT answer",
+    "feedback": "Here goes an explanation to find out what is the answer and why (very short)",
+    "options": ["incorrect option 1", "incorrect option 2", "incorrect option 3"]
+  },
+  {
+    "question": "Here goes the question",
+    "answer": "Here goes the CORRECT answer",
+    "feedback": "Here goes an explanation to find out what is the answer and why (very short)",
+    "options": ["incorrect option 1", "incorrect option 2", "incorrect option 3"]
+  },
 ]
 
 [
