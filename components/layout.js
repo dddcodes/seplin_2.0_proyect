@@ -12,17 +12,17 @@ export default () => {
 
             </a>
             
+            <a href="/catalog" data-link>
+            <span class="material-symbols-rounded">event_list</span>
+            
+            <p>${CONFIG.routes.catalog.title}</p>
+            
+            </a>
+            
             <a href="/practice" data-link class="centerNavbarButton">
                 <span class="material-symbols-rounded">exercise</span>
             
                 <p>${CONFIG.routes.practice.title}</p>
-            
-            </a>
-
-            <a href="/catalog" data-link>
-                <span class="material-symbols-rounded">event_list</span>
-            
-                <p>${CONFIG.routes.catalog.title}</p>
             
             </a>
 

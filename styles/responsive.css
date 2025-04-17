@@ -79,11 +79,6 @@
   #navigationBar > .centerNavbarButton:hover > .material-symbols-rounded {
     color: var(--primary-color);
   }
-
-  /*Hacer que el 4to child de #navigationBar desaparesca*/
-  #navigationBar > a:nth-child(n + 5) {
-    display: none;
-  }
   /*y que pasa si quiero que todos los childs despues de este tambien?*/
 
   /*INPUTS =============================================================================*/
