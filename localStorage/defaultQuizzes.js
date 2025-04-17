@@ -1,7 +1,7 @@
 import { LSM } from "../localStorage/localStorageManager.js";
 
 export default () => {
-  //LSM.RESET(); //RESETEA EL LOCALSTORAGE
+  LSM.RESET(); //RESETEA EL LOCALSTORAGE
 
   if (!localStorage.getItem("localQuizzes")) {
     LSM.createItem("localQuizzes");
@@ -9,18 +9,17 @@ export default () => {
       {
         question: "¿Cuál es la capital de Francia?",
         answer: "París",
-        feedback: "Correcto!",
-        options: ["Londres", "Berlín", "Madrid", "París"],
+        feedback: "",
+        options: ["Londres", "Berlín", "Madrid"],
       },
       {
         question: "¿Cuál es el océano más grande del mundo?",
         answer: "Océano Pacífico",
-        feedback: "Correcto!",
+        feedback: "",
         options: [
           "Océano Atlántico",
           "Océano Índico",
           "Océano Ártico",
-          "Océano Pacífico",
         ],
       },
     ];

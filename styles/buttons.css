@@ -74,24 +74,41 @@ button:active {
 }
 
 #backButton:hover > .material-symbols-rounded,
-#createButton:hover > .material-symbols-rounded{
+#createButton:hover > .material-symbols-rounded {
   color: var(--default-color);
 }
 
-#createButton{
+#createButton {
   border-color: var(--primary-color);
 }
 
-#createButton > .material-symbols-rounded{
+#createButton > .material-symbols-rounded {
   color: var(--primary-color);
 }
 
-#createButton:hover{
+#createButton:hover {
   border-color: var(--primary-color);
   background-color: var(--primary-color);
 }
 
 #createQuizButton,
-#saveChangesButton{
+#saveChangesButton {
   width: 98%;
+}
+
+.llamativeButton {
+  border-color: var(--default-color) solid 2px;
+  background: var(--primary-gradient);
+  color: var(--default-color);
+  font-weight: 600;
+}
+
+.llamativeButton:hover {
+  border-color: var(--default-color) solid 0;
+  background: var(--primary-gradient);
+  color: var(--default-color);
+
+  border: var(--alt-color) solid 2px;
+
+  padding: 20px 0;
 }

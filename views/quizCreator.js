@@ -95,7 +95,7 @@ export default () => {
           </select>
         </div>
 
-        <button id="createQuizButton">Crear Quiz</button>
+        <button id="createQuizButton" class="llamativeButton">Crear Quiz</button>
         
     `;
 };

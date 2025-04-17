@@ -2,7 +2,7 @@ import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
 import { LSM } from "../localStorage/localStorageManager.js";
 import { navigateTo } from "../router.js";
-//lol
+
 const actualView = CONFIG.routes.import;
 
 export default () => {
@@ -39,51 +39,39 @@ export default () => {
   }, 200);
 
   return `
-        <div class="titleBox">
-          ${actualView.title} 
-        </div>
+<div class="titleBox">
+  ${actualView.title} 
+</div>
 
-        <div>
-          <H5>
-            INSTRUCCIONES:
-          </H5>
+<div>
+  <h3>
+    INSTRUCCIONES:
+  </h3>
 
-          <p class="weakText">
-            1 - Copia el codigo del quiz ( o quizzes ).
-          </p>
-          <p class="weakText">
-            2 - Entrar a esta seccion de 'Importar' y pegar el codigo en el cuadro de texto grande.
-          </p>
-          <p class="weakText">
-            3 - Estar seguro y hacer click en el boton 'Importar'.
-          </p>
+  <p class="weakText">
+    1 - Copia el código del quiz (o quizzes).
+  </p>
+  <p class="weakText">
+    2 - Entra a esta sección de 'Importar' y pega el código en el cuadro de texto grande.
+  </p>
+  <p class="weakText">
+    3 - Está seguro y haz clic en el botón 'Importar'.
+  </p>
+</div>
 
-        </div>
+<div>
+  <h3>PEGAR:</h3>
+  <textarea id="importTextarea" 
+    placeholder="Pegar el código aquí ( Puedes pegar un solo quiz o varios quizzes a la vez. )" 
+    style="height: 250px"></textarea>
 
-        <div>
-          <h5>PEGAR:</h5>
-          <p class="weakText">
-            Puedes pegar un solo quiz o varios quizzes a la vez.
-          </p>
-          <textarea id="importTextarea" 
-            placeholder="Pegar el codigo aqui" 
-            style="height: 250px"></textarea>
+  <button id="importButton" class="llamativeButton">Importar</button>
 
-          <button id="importButton">Importar</button>
 
-          <div class="basicBox">
-            <H5>
-              COMO EXPORTAR:
-            </H5>
-
-            <p class="weakText">
-              Ve a la seccion de 'Catalogo' >> Selecciona el quiz o quizzes con los botones "◻" >> Click en el boton "Exportar" >> Copia el codigo que aparece en la ventana emergente.
-            </p>
-          
-          </div>
-
-        </div>
-
-        
+  ${u.createDropdown(
+    "CÓMO EXPORTAR",
+    `Ve a '${CONFIG.url}/catalog' >> Selecciona el quiz o quizzes que deseas exportar con los botones '◻' >> Haz clic en el botón 'Exportar' >> Copia el código que aparece en la ventana emergente.`
+  )}
+</div>
     `;
 };

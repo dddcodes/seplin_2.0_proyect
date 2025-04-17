@@ -188,3 +188,25 @@ export function activeBackButton() {
     });
   }, 200);
 }
+
+export function createDropdown(title, content){
+  return `
+  <div class="dropdown">
+
+      <input type="checkbox" id="toggle">
+
+      <label for="toggle" class="dropdown-label">
+        <span class="title">${title}</span>
+        <span class="material-symbols-rounded">
+          keyboard_arrow_down
+        </span>
+      </label>
+
+      <div class="dropdown-content">
+        <p>
+          ${content}
+        </p>
+      </div>
+
+    </div>`;
+}

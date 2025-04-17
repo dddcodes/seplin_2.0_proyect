@@ -106,7 +106,7 @@ export default () => {
           </select>
         </div>
 
-        <button id="saveChangesButton">Guardar cambios</button>
+        <button id="saveChangesButton" class="llamativeButton">Guardar cambios</button>
     `;
   } else {
     console.error("No se ha encontrado el ID del quiz en la URL.");
