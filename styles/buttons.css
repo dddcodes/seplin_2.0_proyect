@@ -1,6 +1,7 @@
 /* Estilos para los botones ============================================*/
 button,
-a {
+a,
+label{
   -webkit-tap-highlight-color: transparent; /* Quita el resaltado azul en móviles */
 }
 
