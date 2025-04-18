@@ -29,7 +29,9 @@ export default () => {
 
         u.notification("Importado exitosamente!!!", "success");
         navigateTo(CONFIG.routes.catalog.path);
-        u.scrollToBottom();
+        setTimeout(() => {
+          u.scrollToBottom();
+        }, 600);
 
         console.log(LSM.getLocalQuizzes());
       }
