@@ -1,7 +1,7 @@
 /* Estilos para los botones ============================================*/
 button,
 a,
-label{
+label {
   -webkit-tap-highlight-color: transparent; /* Quita el resaltado azul en móviles */
 }
 
@@ -38,14 +38,14 @@ button:active {
   color: var(--default-color);
 }
 
-.tinyButton{
+.tinyButton {
   background-color: var(--default-color-2);
   border-color: var(--default-color-3);
   padding: 5px !important;
   min-height: 0;
 }
 
-.tinyButton:hover{
+.tinyButton:hover {
   border: var(--default-color-4) solid 2px;
   background-color: var(--default-color-4);
 }
@@ -110,18 +110,15 @@ button:active {
 }
 
 .llamativeButton {
-  border-color: var(--default-color) solid 2px;
+  border: var(--default-color) solid 2px;
   background: var(--primary-gradient);
   color: var(--default-color);
   font-weight: 600;
 }
 
 .llamativeButton:hover {
-  border-color: var(--default-color) solid 0;
   background: var(--primary-gradient);
   color: var(--default-color);
 
-  border: var(--alt-color) solid 2px;
-
-  padding: 20px 0;
+  border-color: var(--alt-color);
 }

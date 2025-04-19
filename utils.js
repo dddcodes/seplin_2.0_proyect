@@ -111,9 +111,7 @@ export function extendedMainAppWidth() {
   if (backButton) {
     const backButton = document.querySelector("#backButton");
     backButton.addEventListener("click", () => {
-      if (confirm("¿Seguro que quieres ir devuelta bro?")) {
-        back();
-      }
+      back();
     });
   }
 }
@@ -187,9 +185,11 @@ export function activeBackButton() {
 export function createDropdown(title, content, callbackButtonID, callback) {
   const dropdownID = uuidv4(); // Genera un ID único para el dropdown
   setTimeout(() => {
-    document.querySelector(`#${callbackButtonID}`).addEventListener("click", () => {
-      callback();
-    });
+    document
+      .querySelector(`#${callbackButtonID}`)
+      .addEventListener("click", () => {
+        callback();
+      });
   }, 300);
 
   return `

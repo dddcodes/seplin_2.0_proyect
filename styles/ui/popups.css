@@ -1,0 +1,54 @@
+/*POPUPS*/
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px;
+  z-index: 9999;
+
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popupContent {
+  background-color: var(--default-color-2);
+  border-radius: var(--border-radius-2);
+  width: 100%;
+  height: fit-content;
+  padding: 40px 20px;
+  box-shadow: 0px 0px 10px black;
+
+  animation: popupAnimation 1.5s ease-in-out;
+}
+
+.popupContent > Textarea {
+  height: 250px;
+}
+
+.popupTitle {
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--alt-color);
+  padding-bottom: 20px;
+}
+
+.closePopup {
+  position: absolute;
+  top: 55px;
+  right: 55px;
+  cursor: pointer;
+  color: var(--default-color);
+  font-size: 30px;
+  padding: 7px;
+  border-radius: var(--border-radius-2);
+  border: var(--default-color) solid 2px;
+}
+
+.closePopup:hover {
+  border-color: var(--fail-color);
+  color: var(--fail-color);
+}

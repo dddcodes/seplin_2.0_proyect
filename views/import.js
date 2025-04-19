@@ -31,7 +31,7 @@ export default () => {
         navigateTo(CONFIG.routes.catalog.path);
         setTimeout(() => {
           u.scrollToBottom();
-        }, 600);
+        }, 800);
 
         console.log(LSM.getLocalQuizzes());
       }
