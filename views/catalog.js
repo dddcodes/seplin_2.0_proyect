@@ -40,8 +40,9 @@ export default () => {
   };
   const convertQuizDataToHTML = (quizData, index) => {
     const quizID = LQ.keys[index];
-    //Crea una variable constante donde envase al groupID del quizData actual, busques el name del group en localGroups
-    let groupName = (quizData.groupID)? LSM.getLocalGroups()[quizData.groupID].name : "<i>Sin grupo</i>";
+    let groupName = quizData.groupID
+      ? LSM.getLocalGroups()[quizData.groupID].name
+      : "<i>Sin grupo</i>";
 
     setTimeout(() => {
       const editButton = document.querySelector(
@@ -259,6 +260,40 @@ export default () => {
         }
       );
     });
+
+    const groupButton = document.querySelector("#groupButton");
+    groupButton.addEventListener("click", () => {
+      u.createPopup(
+        "Agrupar Quizzes",
+        `
+        <label for="group">Agregar quizzes seleccionados a:</label>
+        <select id="groupInput" name="group">
+          <option value="">Ningun grupo</option>
+        </select>
+        <button id="readyButton">Confirmar</button>
+        `,
+        "readyButton",
+        () => {
+          const selectedIndexes = getSelectedIndexes();
+          const groupID = document.querySelector("#groupInput").value;
+          selectedIndexes.forEach((index) => {
+            const quizID = LQ.keys[index];
+            const content = LQ.content[quizID];
+            LSM.updateQuiz(
+              quizID,
+              content.name,
+              content.question,
+              content.answer,
+              content.feedback,
+              content.options,
+              groupID
+            );
+          });
+          u.notification("Quizzes agrupados", "info");
+        }
+      );
+      u.printGroups();
+    });
   }, 200);
 
   return `
@@ -282,6 +317,7 @@ export default () => {
   <div id="catalogBar">
     <button id="removeButton">Eliminar</button>
     <button id="exportButton">Exportar</button>
+    <button id="groupButton">Agrupar</button>
   </div>
   
   `;

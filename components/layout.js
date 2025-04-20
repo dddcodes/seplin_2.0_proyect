@@ -2,7 +2,6 @@ import { CONFIG } from "../config.js";
 
 export default () => {
   document.querySelector("body").innerHTML = `
-    
         <nav id="navigationBar">
             <div class="iconAndText">${CONFIG.proyectName}</div>
             <a href="/" data-link>
@@ -41,17 +40,12 @@ export default () => {
             </a>
 
         </nav>
-        
     
         <div id="main" class="animated">
             <div id="app" ></div>
         </div>
         
         <div id="sidebar">
-        </div>
-
-        
-        
-        
-    `; // Crea la barra de navegación y el contenedor de la aplicación...
+        </div>    
+    `;
 };

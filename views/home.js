@@ -1,19 +1,31 @@
 import * as u from "../utils.js";
 import { CONFIG } from "../config.js";
+import { LSM } from "../localStorage/localStorageManager.js";
 
 const actualView = CONFIG.routes.home;
 
 export default () => {
   u.setPageTitle(actualView.description);
 
+  setTimeout(() => {
+    const groupsContainer = document.getElementById("groupsContainer");
+
+    const groups = Object.entries(LSM.getLocalGroups());
+    console.log(groups);
+    groups.forEach((group) => {
+      groupsContainer.innerHTML += `
+            <div class="groupCard">
+                <p class="groupName">${group[1].name}</p>
+                <p class="groupDescription">${group[1].description}</p>
+            </div>
+        `;
+    });
+  }, 300);
+
   return `
         <div class="titleBox">
-          ${CONFIG.proyectName} ${CONFIG.version}
+          Tus grupos de quizzes!
         </div>
-        <p class="basicBox llamative">Muy pronto podras estudiar de manera mucho mas eficiente y elegante que SEPLIN ALPHA 1 y los metodos tradicionales!</p>
-        <p class="basicBox">Objetivo: Desarrollar una WebApp elegante y basada en la neurociencia para un aprendizaje eficiente y ordenado</p>
-        <p class="basicBox onlyBorder">PROYECTO IDEADO DESDE 2021, Y ESTA SEGUNDA VERSION ALPHA INICIO DESARROLLO A MEDIADOS DE MARZO! </p>
-        <p>Detalles tecnicos: S.P.A, Open Source, JS y CSS vanilla, no frameworks, Uso de Google Icons y uso constante de LocalStorage</p>
-        
+        <div id="groupsContainer"></div>
     `;
 };

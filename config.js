@@ -1,6 +1,6 @@
 export const CONFIG = {
   proyectName: "SEPLIN",
-  version: "ALPHA 2024.4.2",
+  version: "ALPHA 2024.5",
   url: "https://seplin.netlify.app",
   gitHub: "https://github.com/dddcodes/seplin_2.0_proyect",
   developerMode: false, //DEBES de crear un item en el LS para guardar los IDS de los grupos
