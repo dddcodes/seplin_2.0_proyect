@@ -3,8 +3,8 @@ export const CONFIG = {
   version: "ALPHA 2024.4.2",
   url: "https://seplin.netlify.app",
   gitHub: "https://github.com/dddcodes/seplin_2.0_proyect",
-  developerMode: true, //DEBES de crear un item en el LS para guardar los IDS de los grupos
-  dataSaving: false,
+  developerMode: false, //DEBES de crear un item en el LS para guardar los IDS de los grupos
+  dataSaving: true,
   routes: {
     home: {
       component: "home.js",
