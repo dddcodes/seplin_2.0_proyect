@@ -3,6 +3,8 @@ export const CONFIG = {
   version: "ALPHA 2024.4.2",
   url: "https://seplin.netlify.app",
   gitHub: "https://github.com/dddcodes/seplin_2.0_proyect",
+  developerMode: true, //DEBES de crear un item en el LS para guardar los IDS de los grupos
+  dataSaving: false,
   routes: {
     home: {
       component: "home.js",
@@ -13,7 +15,7 @@ export const CONFIG = {
     catalog: {
       component: "catalog.js",
       path: "/catalog",
-      title: "Quizzes",
+      title: "Tus quizzes",
       description: "Admirad vuestro ser y mejorad cada dia!",
     },
     practice: {

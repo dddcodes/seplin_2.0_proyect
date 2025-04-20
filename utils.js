@@ -1,3 +1,5 @@
+import { LSM } from "./localStorage/localStorageManager.js";
+
 export function setPageTitle(newTitle) {
   document.title = newTitle || "TITLE NOT FOUND";
 }
@@ -118,7 +120,9 @@ export function extendedMainAppWidth() {
 
 export function defaultMainAppWidth() {
   const mainApp = document.querySelector("#main");
-  removeClassFromElement(mainApp, "extended");
+  if (mainApp.classList.contains("extended")) {
+    removeClassFromElement(mainApp, "extended");
+  }
 }
 
 export function resetAnimation(element) {
@@ -237,5 +241,14 @@ export function createPopup(title, content, callbackButtonID, callback) {
   const callbackButton = document.querySelector(`#${callbackButtonID}`);
   callbackButton.addEventListener("click", () => {
     callback();
+  });
+}
+
+//funcion para imprimir todos los nombres y IDs de los grupos en un select
+export function printGroups() {
+  const groupInput = document.getElementById("groupInput");
+  const localGroups = Object.entries(LSM.getLocalGroups());
+  localGroups.forEach((group) => {
+    groupInput.innerHTML += `<option value="${group[0]}" >${group[1].name}</option>`;
   });
 }

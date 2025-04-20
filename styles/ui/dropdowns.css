@@ -5,11 +5,7 @@
 }
 
 .dropdown:hover {
-  background-color: var(--default-color-2);
-}
-
-.dropdown:hover .dropdown-content {
-  border-color: var(--default-color-4);
+  border-color: var(--alt-color);
 }
 
 .dropdown input {

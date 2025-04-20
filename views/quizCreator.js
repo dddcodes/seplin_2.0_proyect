@@ -10,9 +10,10 @@ export default () => {
   u.setPageTitle(actualView.description);
 
   setTimeout(() => {
-    const createQuizButton = document.getElementById("createQuizButton");
+    u.printGroups()
 
     let cooldown = false;
+    const createQuizButton = document.getElementById("createQuizButton");
     createQuizButton.addEventListener("click", async () => {
       u.applyCooldown(cooldown);
 
@@ -26,25 +27,34 @@ export default () => {
           document.getElementById("option4").value || null,
         ],
         feedback: document.getElementById("feedbackInput").value || null,
-        //group: document.getElementById("groupInput").value || null,
+        group: document.getElementById("groupInput").value || null,
       };
 
       if (values.question && values.answer && values.options[0]) {
         console.log(values);
-        LSM.addQuiz(values.question, values.answer, values.feedback, [
-          ...values.options,
-        ]);
+        LSM.addQuiz(
+          values.question,
+          values.answer,
+          values.feedback,
+          [...values.options],
+          values.group
+        );
+        console.log(values.group);
         console.log(LSM.getLocalQuizzes());
 
-        navigateTo("/catalog");
+        if (!CONFIG.developerMode) {
+          navigateTo("/catalog");
 
-        setTimeout(() => {
-          const moreDataDivs = document.querySelectorAll(".quizDataCard > .moreDataDiv");
-          const last = moreDataDivs[moreDataDivs.length - 1];
-          last.classList.remove("hidden");
-          
-          u.scrollToBottom();
-        }, 600);
+          setTimeout(() => {
+            const moreDataDivs = document.querySelectorAll(
+              ".quizDataCard > .moreDataDiv"
+            );
+            const last = moreDataDivs[moreDataDivs.length - 1];
+            last.classList.remove("hidden");
+
+            u.scrollToBottom();
+          }, 600);
+        }
         u.notification("Quiz creado con éxito", "success");
       } else {
         u.notification(
@@ -86,16 +96,13 @@ export default () => {
         </div>
 
         <div class="inputBox">
-          <p>Grupo (BETA)</p>
+          <p>Grupo</p>
           <select id="groupInput" required>
-            <option value="default">Grupo 1</option>
-            <option value="default">Grupo 2</option>
-            <option value="default">Grupo 3</option>
-            <option value="default">Grupo 4</option>
+            <option value="">Sin grupo</option>
           </select>
         </div>
 
-        <button id="createQuizButton" class="llamativeButton">Crear Quiz</button>
+        <button id="createQuizButton" class="llamativeButton" style="margin-bottom: 100px;">Crear Quiz</button>
         
     `;
 };

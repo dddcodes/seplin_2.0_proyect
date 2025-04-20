@@ -66,9 +66,13 @@ export const LSM = {
       return null;
     }
   },
-
   updateLocalQuizzes: function (newValue) {
     LSM.updateItem("localQuizzes", newValue);
+  },
+  RESET: function () {
+    LSM.removeItem("localQuizzes");
+    LSM.removeItem("localGroups");
+    console.warn("RESETEADO");
   },
 
   //QUIZZES FUNCTIONS ============================================
@@ -88,11 +92,6 @@ export const LSM = {
         hitScore,
         groupID,
       };
-
-      if (localQuizzes === null) {
-        console.warn(`[Warning] Parent key "${localQuizzesKey}" doesn't exist`);
-        return false;
-      }
 
       // 2. Verify parent is an object
       if (typeof localQuizzes !== "object" || Array.isArray(localQuizzes)) {
@@ -126,7 +125,7 @@ export const LSM = {
       return false;
     }
   },
-  updateQuiz: function (quizID, question, answer, feedback, options) {
+  updateQuiz: function (quizID, question, answer, feedback, options, groupID) {
     //ahora todo el mismo proceso pero con try y catch, en caso de que el quizID no exista
     try {
       const localQuizzes = LSM.getItem("localQuizzes");
@@ -134,6 +133,7 @@ export const LSM = {
       localQuizzes[quizID].answer = answer;
       localQuizzes[quizID].feedback = feedback;
       localQuizzes[quizID].options = options;
+      localQuizzes[quizID].groupID = groupID;
       LSM.updateLocalQuizzes(localQuizzes);
       u.notification("Quiz actualizado con éxito", "success");
     } catch (error) {
@@ -164,14 +164,28 @@ export const LSM = {
   getLocalQuizzes: function () {
     return LSM.getItem("localQuizzes");
   },
-  RESET: function () {
-    LSM.removeItem("localQuizzes");
-    console.warn("RESETEADO");
+
+  //GROUPS FUNCTIONS ============================================
+  addGroup: function (name, description, color) {
+    try {
+      const localGroups = LSM.getItem("localGroups");
+      const newGroupID = uuidv4();
+      const newGroupContent = {
+        name,
+        description,
+        color
+      };
+      localGroups[newGroupID] = newGroupContent;
+      LSM.updateItem("localGroups", localGroups);
+    } catch (error) {
+      console.error(`[Error] Failed to add group:`, error);
+    }
+  },
+  getLocalGroups: function () {
+    return LSM.getItem("localGroups");
   },
 };
 
 /*FALTA AGREGAR FUNCIONES PARA LOS GRUPOS DE QUIZZES: 
-    -> getLocalGroups()
-    -> addGroup(info)
     -> removeGroup(ID, withQuizzes = false)
 */

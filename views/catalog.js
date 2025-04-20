@@ -40,12 +40,13 @@ export default () => {
   };
   const convertQuizDataToHTML = (quizData, index) => {
     const quizID = LQ.keys[index];
+    //Crea una variable constante donde envase al groupID del quizData actual, busques el name del group en localGroups
+    let groupName = (quizData.groupID)? LSM.getLocalGroups()[quizData.groupID].name : "<i>Sin grupo</i>";
 
     setTimeout(() => {
       const editButton = document.querySelector(
         `#quizDataCard${index} .editButton`
       );
-
       editButton.addEventListener("click", (e) => {
         e.stopPropagation(); // Evita que el evento se propague al contenedor padre
         navigateTo(`/quiz-editor?id=${quizID}`); //lleva al editor de quizzes
@@ -89,7 +90,7 @@ export default () => {
         </div>
 
         <div class="dataDiv">
-          <p class="group">${quizData.group || "<i>Sin grupo</i>"}</p>
+          <p class="group">${groupName}</p>
           <p class="question">${quizData.question}</p>
         </div>
 
@@ -113,8 +114,6 @@ export default () => {
               ${printAllOptions(quizData)}
             </div>
           </div>
-
-          <p class="weakText">Unique ID: ${quizID}</p>
 
         </div>        
 

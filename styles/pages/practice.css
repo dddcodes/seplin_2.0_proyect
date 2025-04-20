@@ -102,11 +102,11 @@
 
   margin: 0;
   border-radius: 0;
-  padding: 5px;
+  padding: 5px 10% 5px 5px;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: right;
 
   animation: none;
 

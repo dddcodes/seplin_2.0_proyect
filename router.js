@@ -9,7 +9,6 @@ export const router = async () => {
   const app = document.querySelector("#app"); //document.querySelector("#app").style.visibility = "hidden";
 
   u.resetAnimation(app);
-  u.defaultMainAppWidth(); // Restablece el ancho del main-app
   u.scrollToTop(); // Mueve la página al inicio
   u.updateSidebar(getCard.gitHubLink() + getCard.quizCreator()); // SIDEBAR DEFAULT
 
@@ -36,6 +35,7 @@ export const router = async () => {
 export const navigateTo = (url) => {
   history.pushState(null, null, url); // Cambia la URL sin recargar la página
   router(); // Llama al router para actualizar la vista
+  u.defaultMainAppWidth(); // Restablece el ancho del main-app
 };
 
 // Detecta cuando el botón "atrás" del navegador es activado

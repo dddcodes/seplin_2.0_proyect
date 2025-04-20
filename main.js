@@ -1,14 +1,17 @@
 import { CONFIG } from "./config.js";
 import { router, navigateTo } from "./router.js";
 import getLayout from "../components/layout.js";
+import { LSM } from "./localStorage/localStorageManager.js";
 
 import defaultQuizzes from "./localStorage/defaultQuizzes.js";
+import defaultQuizGroups from "./localStorage/defaultQuizGroups.js";
+
+if (!CONFIG.dataSaving) LSM.RESET();
 
 defaultQuizzes();
+defaultQuizGroups();
 
 getLayout(); // Carga el navbar, sidebar y main-app (HTML)
-
-//navigateTo("/catalog"); // Navega a la ruta actual
 
 // ==> Carga la vista =====================================================
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,5 +50,3 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==> COSAS INFORMATIVAS / INUTILES =========================================================
 
 console.log(CONFIG);
-
-// ========================================================

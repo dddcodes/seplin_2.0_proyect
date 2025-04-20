@@ -16,6 +16,8 @@ export default () => {
     console.log("ID del quiz:", quizID);
 
     setTimeout(() => {
+      u.printGroups();
+
       const saveChangesButton = document.getElementById("saveChangesButton");
       let cooldown = false;
       saveChangesButton.addEventListener("click", () => {
@@ -28,13 +30,14 @@ export default () => {
         const inputsValue = {
           question: getInputValue("questionInput"),
           answer: getInputValue("answerInput"),
+          feedback: getInputValue("feedbackInput"),
           options: [
             getInputValue("option1"),
             getInputValue("option2"),
             getInputValue("option3"),
             getInputValue("option4"),
           ],
-          feedback: getInputValue("feedbackInput"),
+          group: getInputValue("groupInput"),
         };
 
         if (
@@ -47,7 +50,8 @@ export default () => {
             inputsValue.question,
             inputsValue.answer,
             inputsValue.feedback,
-            [...inputsValue.options]
+            [...inputsValue.options],
+            inputsValue.group
           );
           console.log(LSM.getLocalQuizzes()[quizID]);
         } else {
@@ -93,16 +97,15 @@ export default () => {
 
         <div class="inputBox">
           <p>Explicación</p>
-          <textarea type="text" id="feedbackInput">${quizData.feedback || ""}</textarea>
+          <textarea type="text" id="feedbackInput">${
+            quizData.feedback || ""
+          }</textarea>
         </div>
 
         <div class="inputBox">
-          <p>Grupo (BETA)</p>
+          <p>Grupo</p>
           <select id="groupInput" required>
-            <option value="">Grupo 1</option>
-            <option value="">Grupo 2</option>
-            <option value="">Grupo 3</option>
-            <option value="">Grupo 4</option>
+            <option value="">Sin grupo</option>
           </select>
         </div>
 
@@ -110,17 +113,15 @@ export default () => {
     `;
   } else {
     console.error("No se ha encontrado el ID del quiz en la URL.");
-    u.notification(
-      "Error: No se ha encontrado el ID del quiz",
-      "error"
-    );
+    u.notification("Error: No se ha encontrado el ID del quiz", "error");
     u.activeBackButton();
     return `
       <button id="backButton">
         Volver
       </button>
       <p class="titleBox">
-        Error: No se han logrado extraer la ID del quiz
-      </p>`;
+        Error: No se ha logrado extraer la ID del quiz
+      </p>
+      `;
   }
 };
