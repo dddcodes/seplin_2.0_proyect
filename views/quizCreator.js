@@ -98,7 +98,7 @@ export default () => {
         <div class="inputBox">
           <p>Grupo</p>
           <select id="groupInput" required>
-            <option value="">Sin grupo</option>
+            
           </select>
         </div>
 

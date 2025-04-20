@@ -22,7 +22,7 @@
   padding: 40px 20px;
   box-shadow: 0px 0px 10px black;
 
-  animation: popupAnimation 1.5s ease-in-out;
+  animation: popupAnimation 1s ease-in-out;
 }
 
 .popupContent > Textarea {

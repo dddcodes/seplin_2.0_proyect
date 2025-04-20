@@ -6,6 +6,7 @@ const actualView = CONFIG.routes.quizEditor;
 
 export default () => {
   u.setPageTitle(actualView.title);
+  u.defaultMainAppWidth();
 
   const params = new URLSearchParams(window.location.search);
   const localQuizzes = LSM.getLocalQuizzes();
@@ -16,7 +17,7 @@ export default () => {
     console.log("ID del quiz:", quizID);
 
     setTimeout(() => {
-      u.printGroups();
+      u.printGroups(quizData.groupID);
 
       const saveChangesButton = document.getElementById("saveChangesButton");
       let cooldown = false;
@@ -105,7 +106,7 @@ export default () => {
         <div class="inputBox">
           <p>Grupo</p>
           <select id="groupInput" required>
-            <option value="">Sin grupo</option>
+            
           </select>
         </div>
 

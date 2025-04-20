@@ -244,11 +244,36 @@ export function createPopup(title, content, callbackButtonID, callback) {
   });
 }
 
-//funcion para imprimir todos los nombres y IDs de los grupos en un select
-export function printGroups() {
+export function removePopups() {
+  const popups = document.querySelectorAll(".popup");
+  popups.forEach((popup) => {
+    popup.remove();
+  });
+}
+
+export function printGroups(specificFirstGroup) {
   const groupInput = document.getElementById("groupInput");
   const localGroups = Object.entries(LSM.getLocalGroups());
+  const x = localGroups.forEach((group) => {
+    if (group[0] === specificFirstGroup) {
+      console.log("Encontrado?", group);
+      groupInput.innerHTML += `<option value="${group[0]}" selected>${group[1].name}</option>`;
+    }
+  });
+  groupInput.innerHTML += "<option value=''>Sin grupo</option>";
+  console.log(localGroups);
   localGroups.forEach((group) => {
     groupInput.innerHTML += `<option value="${group[0]}" >${group[1].name}</option>`;
   });
+}
+
+export function getGroupName(ID){
+  const localGroups = Object.entries(LSM.getLocalGroups());
+  for (let i = 0; i < localGroups.length; i++) {
+    const group = localGroups[i];
+    if (group[0] === ID) {
+      return group[1].name;
+    }
+  }
+  return "<i>Sin grupo</i>";
 }

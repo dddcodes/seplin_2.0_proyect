@@ -40,7 +40,8 @@ export default () => {
   };
   const convertQuizDataToHTML = (quizData, index) => {
     const quizID = LQ.keys[index];
-    const groupData = Object.entries(LSM.getLocalGroups())[index][1];
+
+    const groupData = LSM.getLocalGroups()[quizData.groupID];
     const groupName = quizData.groupID ? groupData.name : "<i>Sin grupo</i>";
 
     setTimeout(() => {
@@ -155,6 +156,17 @@ export default () => {
     const quizzesDataContainer = document.getElementById(
       "quizzesDataContainer"
     );
+    const hasSelectedQuizzes = () => {
+      const selectedCards = document.querySelectorAll(".selected");
+      if (selectedCards.length === 0) {
+        catalogBar.classList.add("exitBottomFloatAnimation");
+        setTimeout(() => {
+          u.disappear(catalogBar);
+          catalogBar.classList.remove("exitBottomFloatAnimation");
+        }, 600);
+        console.log("Nada seleccionado");
+      }
+    };
     const loadAllQuizzesHTML = () => {
       quizzesDataContainer.innerHTML = ``;
       for (let i = 0; i < LQ.length; i++) {
@@ -182,14 +194,16 @@ export default () => {
         const quizDataCards = document.querySelectorAll(".quizDataCard");
         quizDataCards.forEach((card) => {
           card.addEventListener("click", () => {
-            const selectedCards = document.querySelectorAll(".selected");
-            if (selectedCards.length === 0) {
-              u.disappear(catalogBar);
-              console.log("Nada seleccionado");
-            }
+            hasSelectedQuizzes();
           });
         });
       }
+    };
+    const reloadCatalog = () => {
+      u.removePopups();
+      reloadLQ();
+      loadAllQuizzesHTML();
+      hasSelectedQuizzes();
     };
 
     loadAllQuizzesHTML();
@@ -249,7 +263,7 @@ export default () => {
         "Exportar Quizzes",
         `<p class="weakText">Este es formato JSON: un formato sencillo de entender para el algoritmo que importa quizzes en Seplin. Una IA puede entender esta informacion ( Como ChatGPT, puedes pasarle esta informacion para que mejore tus quizzes! ).</p>
         <textarea id="jsonQuizzes" readonly>${jsonQuizzes}</textarea>
-        <button id="copyButton">Copiar</button>`,
+        <button id="copyButton" class="llamativeButton">Copiar</button>`,
         "copyButton",
         () => {
           const textArea = document.querySelector("#jsonQuizzes");
@@ -269,7 +283,7 @@ export default () => {
         <select id="groupInput" name="group">
           <option value="">Ningun grupo</option>
         </select>
-        <button id="readyButton">Confirmar</button>
+        <button id="readyButton" class="llamativeButton">Confirmar</button>
         `,
         "readyButton",
         () => {
@@ -279,7 +293,6 @@ export default () => {
           selectedIndexes.forEach((index) => {
             const quizID = LQ.keys[index];
             const content = LQ.content[quizID];
-            console.log("index", index, "groupID", groupID);
             LSM.updateQuiz(
               quizID,
               content.question,
@@ -289,8 +302,9 @@ export default () => {
               groupID
             );
           });
-          u.notification("Quizzes agrupados", "info");
-          console.log(LSM.getLocalQuizzes());
+
+          u.notification("Accion realizada con exito", "info");
+          reloadCatalog();
         }
       );
       u.printGroups();
@@ -316,7 +330,11 @@ export default () => {
   </div>
 
   <div id="catalogBar">
-    <button id="removeButton">Eliminar</button>
+    <button id="removeButton">
+    <span class="material-symbols-rounded">
+      delete
+    </span>
+    </button>
     <button id="exportButton">Exportar</button>
     <button id="groupButton">Agrupar</button>
   </div>

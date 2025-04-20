@@ -3,7 +3,8 @@
 input,
 textarea,
 select {
-  background-color: var(--default-color);
+  background: none;
+  background-color: var(--default-color-2);
   border: var(--default-color-3) solid 2px;
 
   outline: none;

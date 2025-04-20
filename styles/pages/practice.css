@@ -111,9 +111,8 @@
   animation: none;
 
   background-color: var(--default-color);
-  border-top: var(--default-color-2) solid 3px;
 
-  bottom: 0;
+  bottom: 15px;
   left: 0;
 }
 

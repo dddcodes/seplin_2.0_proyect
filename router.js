@@ -8,6 +8,7 @@ const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configurac
 export const router = async () => {
   const app = document.querySelector("#app"); //document.querySelector("#app").style.visibility = "hidden";
 
+  u.removePopups();
   u.resetAnimation(app);
   u.scrollToTop(); // Mueve la página al inicio
   u.updateSidebar(getCard.gitHubLink() + getCard.quizCreator()); // SIDEBAR DEFAULT

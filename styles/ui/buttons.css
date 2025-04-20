@@ -6,7 +6,8 @@ label {
 }
 
 button {
-  background-color: var(--default-color);
+  background: none;
+  background-color: none;
   border: var(--default-color-3) solid 2px;
   color: var(--alt-color);
   border-radius: 30px;
@@ -23,12 +24,8 @@ button {
 }
 
 button:hover {
-  background-color: var(--default-color);
   border: var(--alt-color) solid 2px;
   color: var(--alt-color);
-
-  border-left: var(--alt-color) solid 20px;
-  border-right: var(--alt-color) solid 20px;
 
   padding: 20px 0;
 }

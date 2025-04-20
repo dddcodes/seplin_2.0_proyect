@@ -67,7 +67,7 @@ export default () => {
       .join("");
 
     quizBox.innerHTML = `
-      <p class="details">Deportes 401</p>
+      <p class="details">${u.getGroupName(actualQuiz.groupID)}</p>
       <p class="question">${actualQuiz.question}</p>
 
       <div class="optionsBox">
