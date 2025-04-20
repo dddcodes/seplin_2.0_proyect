@@ -267,7 +267,7 @@ export function printGroups(specificFirstGroup) {
   });
 }
 
-export function getGroupName(ID){
+export function getGroupName(ID) {
   const localGroups = Object.entries(LSM.getLocalGroups());
   for (let i = 0; i < localGroups.length; i++) {
     const group = localGroups[i];

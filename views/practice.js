@@ -112,12 +112,11 @@ export default () => {
 
         localQuizzes[actualQuizID] = actualQuiz;
         LSM.updateItem("localQuizzes", localQuizzes);
-
-        u.notification(`Correcto!`, "success");
+        u.notification("Correcto!", "success");
         break;
       case "incorrect":
         u.shiftAndPush(actualQuiz.hitScore, false);
-        u.notification("Mal contestado", "error");
+        u.notification("Chavo tas mal", "error");
         break;
       default:
         console.log("NO SE SELECCIONO RESPUESTA");
@@ -139,12 +138,12 @@ export default () => {
       verifyQuiz();
     });
     nextQuizButton.addEventListener("click", () => {
+      u.removePopups();
       getQuiz();
     });
   };
 
   setTimeout(() => {
-    //
     getQuiz();
     addEventListenersToButtons();
   }, 200);
