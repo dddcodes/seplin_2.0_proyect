@@ -40,9 +40,8 @@ export default () => {
   };
   const convertQuizDataToHTML = (quizData, index) => {
     const quizID = LQ.keys[index];
-    let groupName = quizData.groupID
-      ? LSM.getLocalGroups()[quizData.groupID].name
-      : "<i>Sin grupo</i>";
+    const groupData = Object.entries(LSM.getLocalGroups())[index][1];
+    const groupName = quizData.groupID ? groupData.name : "<i>Sin grupo</i>";
 
     setTimeout(() => {
       const editButton = document.querySelector(
@@ -276,12 +275,13 @@ export default () => {
         () => {
           const selectedIndexes = getSelectedIndexes();
           const groupID = document.querySelector("#groupInput").value;
+          console.log(selectedIndexes);
           selectedIndexes.forEach((index) => {
             const quizID = LQ.keys[index];
             const content = LQ.content[quizID];
+            console.log("index", index, "groupID", groupID);
             LSM.updateQuiz(
               quizID,
-              content.name,
               content.question,
               content.answer,
               content.feedback,
@@ -290,6 +290,7 @@ export default () => {
             );
           });
           u.notification("Quizzes agrupados", "info");
+          console.log(LSM.getLocalQuizzes());
         }
       );
       u.printGroups();

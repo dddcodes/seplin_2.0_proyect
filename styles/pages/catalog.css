@@ -85,6 +85,7 @@
   padding: 1px 5px;
   margin-bottom: 5px;
   border-radius: var(--border-radius-2);
+  border: var(--default-color-3) solid 2px;
 
   background-color: var(--default-color-3);
   color: var(--info-color);
@@ -140,6 +141,11 @@
 }
 #quizzesDataContainer > .quizDataCard.selected > .headDiv {
   background-color: var(--info-color);
+}
+#quizzesDataContainer > .quizDataCard.selected > .dataDiv > .group {
+  background-color: var(--info-color);
+  color: var(--default-color-2);
+  border-color: var(--default-color-3);
 }
 
 #catalogBar {

@@ -11,12 +11,13 @@ export default () => {
     const groupsContainer = document.getElementById("groupsContainer");
 
     const groups = Object.entries(LSM.getLocalGroups());
-    console.log(groups);
+
     groups.forEach((group) => {
+      const groupValues = group[1];
       groupsContainer.innerHTML += `
             <div class="groupCard">
-                <p class="groupName">${group[1].name}</p>
-                <p class="groupDescription">${group[1].description}</p>
+                <p class="groupName">${groupValues.name}</p>
+                <p class="groupDescription">${groupValues.description}</p>
             </div>
         `;
     });

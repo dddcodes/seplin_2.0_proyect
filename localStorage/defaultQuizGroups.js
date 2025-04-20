@@ -10,10 +10,20 @@ export default () => {
         color: "blue"
       },
       {
-        name: "Group 2",
+        name: "English",
         description: "Group 2 description",
         color: "green"
       },
+      {
+        name: "Spanish",
+        description: "Group 3 description",
+        color: "red"
+      },
+      {
+        name: "Math",
+        description: "Group 4 description",
+        color: "yellow"
+      }
     ]
     defaultGroups.forEach((group) => {
       LSM.addGroup(group.name, group.description, group.color);

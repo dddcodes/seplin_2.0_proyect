@@ -136,6 +136,7 @@ export const LSM = {
       localQuizzes[quizID].groupID = groupID;
       LSM.updateLocalQuizzes(localQuizzes);
       u.notification("Quiz actualizado con éxito", "success");
+      console.log("updateQuiz()")
     } catch (error) {
       console.error(`[Error] Failed to update quiz "${quizID}":`, error);
       u.notification(
