@@ -4,7 +4,7 @@ export const CONFIG = {
   url: "https://seplin.netlify.app",
   gitHub: "https://github.com/dddcodes/seplin_2.0_proyect",
   developerMode: false,
-  dataSaving: false,
+  dataSaving: true,
   routes: {
     home: {
       component: "home.js",
