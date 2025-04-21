@@ -44,5 +44,11 @@ export const CONFIG = {
       title: "Importar",
       description: "Pega el codigo de un quiz y sera todo tuyo!",
     },
+    groupCatalog:{
+      component: "groupCatalog.js",
+      path: "/group-catalog",
+      title: "Tus grupos",
+      description: "Agrupad tus quizzes y mejora tus habilidades de manera efectiva, basado en ciencia!",
+    }
   },
 };

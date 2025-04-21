@@ -3,10 +3,16 @@ import { CONFIG } from "../config.js";
 import { LSM } from "../localStorage/localStorageManager.js";
 import { navigateTo } from "../router.js";
 
-const actualView = CONFIG.routes.catalog;
+const actualView = CONFIG.routes.groupCatalog;
 
 export default () => {
-  u.setPageTitle(actualView.title);
+  u.defaultMainAppWidth();
+
+  const localGroups = LSM.getLocalGroups();
+  const params = new URLSearchParams(window.location.search);
+  const groupPageID = params.get("id");
+  const groupName = localGroups[groupPageID].name;
+  u.setPageTitle("Quizzes de " + groupName);
 
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
@@ -31,10 +37,10 @@ export default () => {
       const option = options[i];
 
       optionsHTML += `
-          <p class="option">
-            ${i + 1} - ${option || "<i>Sin opción</i>"}
-          </p>
-      `;
+            <p class="option">
+              ${i + 1} - ${option || "<i>Sin opción</i>"}
+            </p>
+        `;
     }
     return optionsHTML;
   };
@@ -55,71 +61,71 @@ export default () => {
     }, 100);
 
     return `
-      <div class="quizDataCard" id="quizDataCard${index}" index="${index}">
-
-        <div class="headDiv">
-
-          <p class="index">${index + 1}</p>
-
-          <button class="editButton">
-            <span class="material-symbols-rounded">
-              edit
-            </span>
-          </button>
-
-          <button class="seeMoreButton" onClick="
-            document.querySelector(
-              '#quizDataCard${index} > .moreDataDiv'
-            ).classList.toggle('hidden');
-          ">
-            <span class="material-symbols-rounded">
-              visibility
-            </span>
-            
-          </button>
-
-          <button class="selectButton" onClick="
-            document.querySelector(
-              '#quizDataCard${index}'
-            ).classList.toggle('selected');
+        <div class="quizDataCard" id="quizDataCard${index}" index="${index}">
+  
+          <div class="headDiv">
+  
+            <p class="index">${index + 1}</p>
+  
+            <button class="editButton">
+              <span class="material-symbols-rounded">
+                edit
+              </span>
+            </button>
+  
+            <button class="seeMoreButton" onClick="
+              document.querySelector(
+                '#quizDataCard${index} > .moreDataDiv'
+              ).classList.toggle('hidden');
             ">
-            <span class="material-symbols-rounded">
-              check_box_outline_blank
-            </span> 
-          </button>
-
-        </div>
-
-        <div class="dataDiv">
-          <p class="group">${groupName}</p>
-          <p class="question">${quizData.question}</p>
-        </div>
-
-        <div class="moreDataDiv hidden  ">
-          <div class="answer">
-            <p class="title">RESPUESTA</p>
-            <p class="content">
-              ${quizData.answer}
-            </p>
+              <span class="material-symbols-rounded">
+                visibility
+              </span>
+              
+            </button>
+  
+            <button class="selectButton" onClick="
+              document.querySelector(
+                '#quizDataCard${index}'
+              ).classList.toggle('selected');
+              ">
+              <span class="material-symbols-rounded">
+                check_box_outline_blank
+              </span> 
+            </button>
+  
           </div>
-          <div class="feedback">
-            <p class="title">EXPLICACIÓN</p>
-            <p class="content">
-              ${quizData.feedback || "<i>Sin feedback</i>"}
-            </p>
+  
+          <div class="dataDiv">
+            <p class="group">${groupName}</p>
+            <p class="question">${quizData.question}</p>
           </div>
-
-          <div class="optionsBox">
-            <p class="title">OPCIONES INCORRECTAS</p>
-            <div class="content">
-              ${printAllOptions(quizData)}
+  
+          <div class="moreDataDiv hidden  ">
+            <div class="answer">
+              <p class="title">RESPUESTA</p>
+              <p class="content">
+                ${quizData.answer}
+              </p>
             </div>
-          </div>
-
-        </div>        
-
-      </div>
-    `;
+            <div class="feedback">
+              <p class="title">EXPLICACIÓN</p>
+              <p class="content">
+                ${quizData.feedback || "<i>Sin feedback</i>"}
+              </p>
+            </div>
+  
+            <div class="optionsBox">
+              <p class="title">OPCIONES INCORRECTAS</p>
+              <div class="content">
+                ${printAllOptions(quizData)}
+              </div>
+            </div>
+  
+          </div>        
+  
+        </div>
+      `;
   };
 
   const getSelectedIndexes = () => {
@@ -171,31 +177,32 @@ export default () => {
       quizzesDataContainer.innerHTML = ``;
       for (let i = 0; i < LQ.length; i++) {
         /*ID*/ const actualID = LQ.keys[i];
-
         /*DATA*/ const actualQuizData = LQ.content[actualID];
 
-        /*from DATA to HTML*/
-        const quizHTML = convertQuizDataToHTML(actualQuizData, i);
+        if (groupPageID === actualQuizData.groupID) {
+          /*from DATA to HTML*/
+          const quizHTML = convertQuizDataToHTML(actualQuizData, i);
 
-        /*HTML added to CATALOG HTML LOL*/
-        quizzesDataContainer.innerHTML += quizHTML;
+          /*HTML added to CATALOG HTML LOL*/
+          quizzesDataContainer.innerHTML += quizHTML;
 
-        //Algo seleccionado: catalogBar aparece
-        const selectButtons = document.querySelectorAll(".selectButton");
-        selectButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            u.appear(catalogBar, "flex");
-            console.log("Algo seleccionado");
+          //Algo seleccionado: catalogBar aparece
+          const selectButtons = document.querySelectorAll(".selectButton");
+          selectButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              u.appear(catalogBar, "flex");
+              console.log("Algo seleccionado");
+            });
           });
-        });
 
-        //Nada seleccionado: catalogBar desaparece
-        const quizDataCards = document.querySelectorAll(".quizDataCard");
-        quizDataCards.forEach((card) => {
-          card.addEventListener("click", () => {
-            hasSelectedQuizzes();
+          //Nada seleccionado: catalogBar desaparece
+          const quizDataCards = document.querySelectorAll(".quizDataCard");
+          quizDataCards.forEach((card) => {
+            card.addEventListener("click", () => {
+              hasSelectedQuizzes();
+            });
           });
-        });
+        }
       }
     };
     const reloadCatalog = () => {
@@ -261,8 +268,8 @@ export default () => {
       u.createPopup(
         "Exportar Quizzes",
         `<p class="weakText">Este es formato JSON: un formato sencillo de entender para el algoritmo que importa quizzes en Seplin. Una IA puede entender esta informacion ( Como ChatGPT, puedes pasarle esta informacion para que mejore tus quizzes! ).</p>
-        <textarea id="jsonQuizzes" readonly>${jsonQuizzes}</textarea>
-        <button id="copyButton" class="llamativeButton">Copiar</button>`,
+          <textarea id="jsonQuizzes" readonly>${jsonQuizzes}</textarea>
+          <button id="copyButton" class="llamativeButton">Copiar</button>`,
         "copyButton",
         () => {
           const textArea = document.querySelector("#jsonQuizzes");
@@ -278,12 +285,12 @@ export default () => {
       u.createPopup(
         "Agrupar Quizzes",
         `
-        <label for="group">Agregar quizzes seleccionados a:</label>
-        <select id="groupInput" name="group">
-          <option value="">Ningun grupo</option>
-        </select>
-        <button id="readyButton" class="llamativeButton">Confirmar</button>
-        `,
+          <label for="group">Agregar quizzes seleccionados a:</label>
+          <select id="groupInput" name="group">
+            <option value="">Ningun grupo</option>
+          </select>
+          <button id="readyButton" class="llamativeButton">Confirmar</button>
+          `,
         "readyButton",
         () => {
           const selectedIndexes = getSelectedIndexes();
@@ -311,32 +318,32 @@ export default () => {
   }, 200);
 
   return `
-  <button id="backButton">
-    <span class="material-symbols-rounded">
-      close
-    </span>
-  </button>
-  
-  <button id="createButton" data-link>
-    <span class="material-symbols-rounded">
-      note_stack_add
-    </span>
-  </button>
-
-  <p class="titleBox">Todos tus quizzes</p>
-
-  <div id="quizzesDataContainer">
-  </div>
-
-  <div id="catalogBar">
-    <button id="removeButton">
-    <span class="material-symbols-rounded">
-      delete
-    </span>
+    <button id="backButton">
+      <span class="material-symbols-rounded">
+        close
+      </span>
     </button>
-    <button id="exportButton">Exportar</button>
-    <button id="groupButton">Agrupar</button>
-  </div>
+    
+    <button id="createButton" data-link>
+      <span class="material-symbols-rounded">
+        note_stack_add
+      </span>
+    </button>
   
-  `;
+    <p class="titleBox groupCatalogTitle">${groupName}</p>
+  
+    <div id="quizzesDataContainer">
+    </div>
+  
+    <div id="catalogBar">
+      <button id="removeButton">
+      <span class="material-symbols-rounded">
+        delete
+      </span>
+      </button>
+      <button id="exportButton">Exportar</button>
+      <button id="groupButton">Agrupar</button>
+    </div>
+    
+    `;
 };

@@ -21,6 +21,7 @@ export const router = async () => {
     "/quiz-creator": () => import(`./views/${ROUTE.quizCreator.component}`),
     "/quiz-editor": () => import(`./views/${ROUTE.quizEditor.component}`),
     "/import": () => import(`./views/${ROUTE.import.component}`),
+    "/group-catalog": () => import(`./views/${ROUTE.groupCatalog.component}`),
   };
 
   const view =

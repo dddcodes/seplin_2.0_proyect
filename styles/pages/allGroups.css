@@ -1,0 +1,40 @@
+#groupsContainer {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Permite que bajen a la siguiente línea */
+  justify-content: center;
+  margin: 0;
+}
+
+#groupsContainer > .groupCard {
+  background-color: var(--default-color-2);
+  border-radius: 30px;
+  padding: 20px;
+  margin: 10px;
+  width: 450px;
+  min-height: 110px;
+
+  border-left: var(--info-color) solid 10px;
+}
+
+#groupsContainer > .groupCard:hover {
+  background-color: var(--default-color-3);
+}
+
+#groupsContainer > .groupCard > * {
+  padding: 3px 0;
+}
+
+#groupsContainer > .groupCard > .groupName {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#groupsContainer > .groupCard > .groupDescription {
+  font-size: 17px;
+}
+
+#groupsContainer > .groupCard > .groupLength {
+  font-size: 15px;
+  color: var(--primary-color);
+}

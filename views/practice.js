@@ -129,6 +129,27 @@ export default () => {
       button.disabled = true;
     });
   };
+  const handleKeyPress = (event) => {
+    const options = document.querySelectorAll(".option");
+    const feedback = document.querySelector(".dropdown-label");
+    switch (event.key) {
+      case "1":
+        options[0].click();
+        break;
+      case "2":
+        options[1].click();
+        break;
+      case "3":
+        options[2].click();
+        break;
+      case "4":
+        options[3].click();
+        break;
+      case "a":
+        feedback.click();
+        break;
+    }
+  };
 
   const addEventListenersToButtons = () => {
     const submitAnswerButton = document.querySelector("#submitAnswerButton");
@@ -140,6 +161,13 @@ export default () => {
     nextQuizButton.addEventListener("click", () => {
       u.removePopups();
       getQuiz();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      handleKeyPress(event);
+    });
+    document.removeEventListener("keyup", () => {
+      handleKeyPress();
     });
   };
 
