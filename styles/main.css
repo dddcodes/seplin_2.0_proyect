@@ -48,6 +48,10 @@ body * {
 
   text-decoration: none;
   text-align: left;
+
+  /*que el scroll no se vea*/
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 ::selection {

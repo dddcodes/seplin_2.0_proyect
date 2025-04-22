@@ -1,7 +1,7 @@
 /* Estilos para el LAYOUT  ============================================*/
 #main {
-  width: calc(100vw - 20px);
-  min-height: calc(100vh + 100px);
+  width: 100vw;
+  min-height: 100vh;
   padding: 10px 295px 0 110px;
   box-sizing: border-box;
 }

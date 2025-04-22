@@ -8,24 +8,26 @@
   justify-content: center;
   align-items: center;
 
-  padding: 50px;
+  padding: 80px 20%;
   z-index: 9999;
 
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .popupContent {
   background-color: var(--default-color-2);
   border-radius: var(--border-radius-2);
   width: 100%;
-  height: fit-content;
-  padding: 40px 20px;
+  height: 100%;
   box-shadow: 0px 0px 10px black;
+  padding: 0;
 
-  animation: popupAnimation 1s ease-in-out;
+  animation: popupAnimation 1s ease-out ;
+  will-change: transform;
+
 }
 
-.popupContent > Textarea {
+.popupContent > .contentContainer > Textarea {
   height: 250px;
 }
 
@@ -33,22 +35,39 @@
   font-size: 25px;
   font-weight: 900;
   color: var(--alt-color);
-  padding-bottom: 20px;
+  padding: 0;
+}
+
+.headContainer {
+  width: 100%;
+  padding: 15px;
+  margin: 0;
+  border-bottom: var(--alt-color-2) solid 2px;
+
+  /*todos los elementos en fila*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .closePopup {
-  position: absolute;
-  top: 55px;
-  right: 55px;
   cursor: pointer;
-  color: var(--default-color);
-  font-size: 30px;
-  padding: 7px;
+  color: var(--default-color-3);
+  font-size: 45px;
+  padding: 0;
   border-radius: var(--border-radius-2);
-  border: var(--default-color) solid 2px;
 }
 
 .closePopup:hover {
   border-color: var(--fail-color);
   color: var(--fail-color);
+}
+
+.contentContainer {
+  padding: 20px;
+  /*permitir scrollear si se supera el height visual*/
+  overflow-y: scroll;
+  /*que el scroll no se vea*/
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

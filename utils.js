@@ -224,11 +224,18 @@ export function createPopup(title, content, callbackButtonID, callback) {
   popup.id = `popup${popupID}`;
   popup.innerHTML = `
         <div class="popupContent">
-          <span class="material-symbols-rounded closePopup" id="closePopup${popupID}">
-            close
-          </span>
-          <p class="popupTitle">${title}</p>
-          ${content}
+
+          <div class="headContainer">
+            <p class="popupTitle">${title}</p>
+            <span class="material-symbols-rounded closePopup" id="closePopup${popupID}">
+              close
+            </span>
+          </div>
+
+          <div class="contentContainer">
+            ${content}
+          </div>
+
         </div>
   `;
 

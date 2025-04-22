@@ -93,7 +93,7 @@
     width: 99%;
     margin: 5px 0 5px 0;
   }
-  button{
+  button {
     padding: 5px;
   }
 
@@ -128,7 +128,7 @@
     display: none;
   }
 
-  .titleBox{
+  .titleBox {
     font-size: 26px !important;
   }
 
@@ -142,24 +142,25 @@
     margin: 10px 0;
   }
 
-  .notification{
+  .notification {
     width: 300px;
   }
 
   .popup {
-    padding: 40px 15px !important;
+    padding: 0 !important;
   }
 
-  .popupContent{
+  .popupContent {
     height: 100% !important;
+    border-radius: 0 !important;
   }
 
-  .closePopup{
+  .closePopup {
     top: 50px !important;
     right: 25px !important;
   }
 
-  #catalogBar{
+  #catalogBar {
     padding: 5px;
     height: 80px;
     width: 100%;
@@ -169,11 +170,11 @@
     border-top-color: var(--default-color-2);
   }
 
-  #catalogBar > button{
+  #catalogBar > button {
     background-color: var(--default-color);
   }
 
-  .groupCatalogTitle{
+  .groupCatalogTitle {
     width: 100% !important;
   }
 }
