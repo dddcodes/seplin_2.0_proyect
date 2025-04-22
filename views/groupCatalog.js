@@ -163,16 +163,12 @@ export default () => {
       "quizzesDataContainer"
     );
     const hasSelectedQuizzes = () => {
-      const selectedCards = document.querySelectorAll(".selected");
-      if (selectedCards.length === 0) {
-        catalogBar.classList.add("exitBottomFloatAnimation");
-        setTimeout(() => {
-          u.disappear(catalogBar);
-          catalogBar.classList.remove("exitBottomFloatAnimation");
-        }, 600);
-        console.log("Nada seleccionado");
-      }
-    };
+          const selectedCards = document.querySelectorAll(".selected");
+          if (selectedCards.length === 0) {
+            u.addFinalAnimationToElement("#catalogBar", "exitBottomFloatAnimation", "disappear");
+            console.log("Nada seleccionado");
+          }
+        };
     const loadAllQuizzesHTML = () => {
       quizzesDataContainer.innerHTML = ``;
       for (let i = 0; i < LQ.length; i++) {

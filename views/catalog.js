@@ -159,11 +159,7 @@ export default () => {
     const hasSelectedQuizzes = () => {
       const selectedCards = document.querySelectorAll(".selected");
       if (selectedCards.length === 0) {
-        catalogBar.classList.add("exitBottomFloatAnimation");
-        setTimeout(() => {
-          u.disappear(catalogBar);
-          catalogBar.classList.remove("exitBottomFloatAnimation");
-        }, 600);
+        u.addFinalAnimationToElement("#catalogBar", "exitBottomFloatAnimation", "disappear");
         console.log("Nada seleccionado");
       }
     };

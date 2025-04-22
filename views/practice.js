@@ -48,7 +48,6 @@ export default () => {
   const getQuizLayout = () => {
     const quizBox = document.querySelector(".quizBox");
 
-    u.resetAnimation(quizBox);
     const feedbackContent = () => {
       return actualQuiz.feedback && actualQuiz.feedback.trim() !== ""
         ? u.createDropdown("Ayuda", actualQuiz.feedback)
@@ -85,8 +84,8 @@ export default () => {
       actualQuiz = localQuizzes[actualQuizID];
       allQuizOptions = suffleQuizOptions();
 
-      u.disappear(nextQuizButton);
-      u.appear(submitAnswerButton);
+      u.disappear(nextQuizButton); //
+      u.appear(submitAnswerButton); //
       u.extendedMainAppWidth();
       u.scrollToTop();
 
@@ -159,15 +158,23 @@ export default () => {
       verifyQuiz();
     });
     nextQuizButton.addEventListener("click", () => {
-      u.removePopups();
-      getQuiz();
+      u.addFinalAnimationToElement(
+        ".quizBox",
+        "hideQuizBoxAnimation",
+        "disappear"
+      );
+      setTimeout(() => {
+        getQuiz();
+        const quizBox = document.querySelector(".quizBox");
+        u.appear(quizBox);
+
+        u.resetAnimation(quizBox);
+        console.log("Timeout ejecutado")
+      }, 600);
     });
 
     document.addEventListener("keydown", (event) => {
       handleKeyPress(event);
-    });
-    document.removeEventListener("keyup", () => {
-      handleKeyPress();
     });
   };
 

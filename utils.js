@@ -131,6 +131,23 @@ export function resetAnimation(element) {
   element.classList.add("animated");
 }
 
+export function addFinalAnimationToElement(
+  elementID,
+  animationClassName,
+  removeOrDisappear
+) {
+  console.log("addFinalAnimationToElement ejecutado");
+  const element = document.querySelector(elementID);
+  element.classList.add(animationClassName);
+  setTimeout(() => {
+    element.classList.remove(animationClassName);
+    if (removeOrDisappear === "disappear") disappear(element);
+    if (removeOrDisappear === "remove") element.remove();
+    if (removeOrDisappear === "removeFather") element.parentNode.remove();
+    console.log("timeout de addFinalAnimationToElement ejecutado");
+  }, 600);
+}
+
 export function notification(msg, type) {
   const noti = document.createElement("div");
   noti.className = "notification";
@@ -223,7 +240,7 @@ export function createPopup(title, content, callbackButtonID, callback) {
   popup.classList.add("popup");
   popup.id = `popup${popupID}`;
   popup.innerHTML = `
-        <div class="popupContent">
+        <div class="popupContent" id="popupContent${popupID}">
 
           <div class="headContainer">
             <p class="popupTitle">${title}</p>
@@ -242,7 +259,11 @@ export function createPopup(title, content, callbackButtonID, callback) {
   document.body.appendChild(popup);
   const closePopup = document.querySelector(`#closePopup${popupID}`);
   closePopup.addEventListener("click", () => {
-    popup.remove();
+    addFinalAnimationToElement(
+      "#popupContent" + popupID,
+      "closePopupAnimation",
+      "removeFather"
+    );
   });
 
   const callbackButton = document.querySelector(`#${callbackButtonID}`);
