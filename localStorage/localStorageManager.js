@@ -185,6 +185,17 @@ export const LSM = {
   getLocalGroups: function () {
     return LSM.getItem("localGroups");
   },
+  updateGroup: function(groupID, {name, description, color}){
+    try {
+      const localGroups = LSM.getItem("localGroups");
+      localGroups[groupID].name = name;
+      localGroups[groupID].description = description;
+      localGroups[groupID].color = color;
+      LSM.updateItem("localGroups", localGroups);
+    } catch (error) {
+      console.error(`[Error] Failed to update group:`, error);
+    }
+  }
 };
 
 /*FALTA AGREGAR FUNCIONES PARA LOS GRUPOS DE QUIZZES: 

@@ -1,14 +1,53 @@
-.groupCatalogTitle {
-  background: var(--primary-gradient);
+#headContainer > p{
+  padding: 5px;
+  text-align: center !important;
+  text-justify: center !important;
+}
+
+#headBox {
+  background-color: var(--info-color);
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  padding: 5px;
+  border-radius: 30px;
+
+  gap: 0 5px;
+}
+
+#headBox > #groupCatalogTitle {
   color: var(--default-color);
+  font-size: 30px;
+  font-weight: bold;
+  
+  text-align: center !important;
+  text-justify: center !important;
+  padding-top: 3px; /*???*/
 
   text-align: center !important;
-  justify-self: center !important;
-  width: 50% !important;
-
-  margin: 10px 0 !important;
-
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
 }
+
+#headBox > #editGroupDataButton {
+  padding: 2px 1px 0 1px;
+  width: fit-content;
+  height: fit-content;
+  min-height: 0;
+
+  border-color: var(--default-color);
+  border-radius: var(--border-radius-2);  
+}
+
+#headBox > #editGroupDataButton:hover{
+  padding: 2px 1px 0 1px;
+  background-color: var(--default-color);
+}
+
+#headBox > #editGroupDataButton:hover > .material-symbols-rounded {
+  color: var(--info-color);
+}
+
+#headBox > #editGroupDataButton > .material-symbols-rounded {
+  color: var(--default-color);
+} 

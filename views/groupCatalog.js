@@ -11,7 +11,9 @@ export default () => {
   const localGroups = LSM.getLocalGroups();
   const params = new URLSearchParams(window.location.search);
   const groupPageID = params.get("id");
-  const groupName = localGroups[groupPageID].name;
+  let groupName = localGroups[groupPageID].name;
+  let groupDescription = localGroups[groupPageID].description;
+  let groupColor = localGroups[groupPageID].color;
   u.setPageTitle("Quizzes de " + groupName);
 
   const sidebar = document.querySelector("#sidebar");
@@ -205,12 +207,74 @@ export default () => {
         }
       }
     };
+    const loadHeadContainerHTML = () => {
+      const groupData = LSM.getLocalGroups()[groupPageID];
+      const headContainer = document.getElementById("headContainer");
+      headContainer.innerHTML = `
+        <div id="headBox">
+
+          <p id="groupCatalogTitle">${groupData.name}</p>
+
+          <button id="editGroupDataButton">
+            <span class="material-symbols-rounded">
+              edit
+            </span>
+          </button>
+
+        </div>
+
+        <p>${groupData.description}</p>
+      `;
+      u.setPageTitle("Quizzes de " + groupData.name);
+      setTimeout(() => {
+        const editGroupDataButton = document.querySelector(
+          "#editGroupDataButton"
+        );
+        editGroupDataButton.addEventListener("click", () => {
+          u.createPopup(
+            "Editar Grupo",
+            `
+            <div>
+              <label for="groupName">Nombre del Grupo:</label>
+              <input id="groupName" type="text" value="${groupData.name}">
+            </div>
+
+            <div>
+              <label for="groupDescription">Descripcion del Grupo:</label>
+              <input id="groupDescription" type="text" value="${groupData.description}">
+            </div>
+            
+            <button id="readyButton" class="llamativeButton">Confirmar</button>
+        `,
+            "readyButton",
+            () => {
+              const newGroupName = document.querySelector("#groupName").value;
+              const newGroupDescription =
+                document.querySelector("#groupDescription").value;
+
+              LSM.updateGroup(groupPageID, {
+                name: newGroupName,
+                description: newGroupDescription,
+              });
+
+              u.notification("Accion realizada con exito", "info");
+              setTimeout(() => {
+                reloadCatalog();
+              }, 1500);
+            },
+            true
+          );
+        });
+      }, 300);
+    };
     const reloadCatalog = () => {
       reloadLQ();
+      loadHeadContainerHTML(); //\\
       loadAllQuizzesHTML();
       hasSelectedQuizzes();
     };
 
+    loadHeadContainerHTML(); //\\
     loadAllQuizzesHTML();
 
     const createButton = document.querySelector("#createButton");
@@ -330,8 +394,11 @@ export default () => {
         note_stack_add
       </span>
     </button>
+
+    <div id="headContainer">
+      
+    </div>
   
-    <p class="titleBox groupCatalogTitle">${groupName}</p>
   
     <div id="quizzesDataContainer">
     </div>
