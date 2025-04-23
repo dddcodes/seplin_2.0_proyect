@@ -141,9 +141,23 @@
   #quizzesDataContainer > .quizDataCard {
     margin: 10px 0;
   }
+  .quizBox{
+    width: 100% !important;
+    translate: 0;
+  }
+  .quizBox.hideQuizBoxAnimation {
+    animation: hideQuizBoxAnimationMovile 0.65s ease-in-out !important;
+  }
+  #practiceBar{
+    padding: 5px 20px 5px 5px;
+  }
 
   .notification {
-    width: 300px;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    right: 0;
+    bottom: 90px;
   }
 
   .popup {

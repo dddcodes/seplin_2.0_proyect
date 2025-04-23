@@ -50,7 +50,9 @@ export default () => {
 
     const feedbackContent = () => {
       return actualQuiz.feedback && actualQuiz.feedback.trim() !== ""
-        ? u.createDropdown("Ayuda", actualQuiz.feedback)
+        ? u.createDropdown("Ayuda", actualQuiz.feedback, null, null, () => {
+            u.scrollToBottom();
+          })
         : "";
     };
     const allQuizOptionsHTML = allQuizOptions
@@ -84,9 +86,9 @@ export default () => {
       actualQuiz = localQuizzes[actualQuizID];
       allQuizOptions = suffleQuizOptions();
 
-      u.disappear(nextQuizButton); //
-      u.appear(submitAnswerButton); //
-      u.extendedMainAppWidth();
+      u.disappear(nextQuizButton);
+      u.appear(submitAnswerButton);
+
       u.scrollToTop();
 
       selectedOptionValue = undefined;
@@ -169,7 +171,6 @@ export default () => {
         u.appear(quizBox);
 
         u.resetAnimation(quizBox);
-        console.log("Timeout ejecutado")
       }, 600);
     });
 
@@ -181,6 +182,7 @@ export default () => {
   setTimeout(() => {
     getQuiz();
     addEventListenersToButtons();
+    u.extendedMainAppWidth();
   }, 200);
 
   //LAYOUT

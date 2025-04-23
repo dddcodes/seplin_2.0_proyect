@@ -40,15 +40,23 @@
   }
 }
 
-@keyframes quizBoxAnimation {
+@keyframes quizBoxAnimation { /*AQUI PUEDE HABER FALLA?*/
   from {
-    translate: 130% 0;
+    translate: 210% 0;
   }
   to {
-    translate: 0 0;
+    translate: auto;
   }
 }
 @keyframes hideQuizBoxAnimation {
+  from {
+    translate: 50% 0;
+  }
+  to {
+    translate: -130% 0;
+  }
+}
+@keyframes hideQuizBoxAnimationMovile{
   from {
     translate: 0 0;
   }

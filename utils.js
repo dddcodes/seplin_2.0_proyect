@@ -44,7 +44,6 @@ export function random(min, max) {
   return randomNumer;
 }
 
-// Función para mezclar arrays
 export function shuffleArray(array) {
   const newArray = [...array];
 
@@ -180,8 +179,8 @@ export function notification(msg, type) {
   // Eliminar después <<duration>>
   setTimeout(() => {
     noti.classList.remove("show");
-    setTimeout(() => noti.remove(), 3000);
-  }, 5000);
+    setTimeout(() => noti.remove(), 2000);
+  }, 2000);
 }
 
 export function applyCooldown(cooldownVariable) {
@@ -203,15 +202,32 @@ export function activeBackButton() {
   }, 200);
 }
 
-export function createDropdown(title, content, callbackButtonID, callback) {
+export function createDropdown(
+  title,
+  content,
+  callbackButtonID,
+  callback,
+  openingCallbackFunction
+) {
   const dropdownID = uuidv4(); // Genera un ID único para el dropdown
   setTimeout(() => {
-    document
-      .querySelector(`#${callbackButtonID}`)
-      .addEventListener("click", () => {
-        callback();
-      });
+    if (callbackButtonID && callback) {
+      document
+        .querySelector(`#${callbackButtonID}`)
+        .addEventListener("click", () => {
+          callback();
+        });
+    }
   }, 300);
+
+  setTimeout(() => {
+    if (openingCallbackFunction) {
+      const checkbox = document.querySelector(`#toggle${dropdownID}`);
+      checkbox.addEventListener("click", () => {
+        openingCallbackFunction();
+      });
+    }
+  }, 500);
 
   return `
   <div class="dropdown">
@@ -234,7 +250,7 @@ export function createDropdown(title, content, callbackButtonID, callback) {
     </div>`;
 }
 
-export function createPopup(title, content, callbackButtonID, callback) {
+export function createPopup(title, content, callbackButtonID, callback, closePopupWhenCallback = false) {
   const popup = document.createElement("div");
   const popupID = uuidv4(); // Genera un ID único para el popup
   popup.classList.add("popup");
@@ -257,17 +273,22 @@ export function createPopup(title, content, callbackButtonID, callback) {
   `;
 
   document.body.appendChild(popup);
-  const closePopup = document.querySelector(`#closePopup${popupID}`);
-  closePopup.addEventListener("click", () => {
+
+  const closePopup = () =>{
     addFinalAnimationToElement(
       "#popupContent" + popupID,
       "closePopupAnimation",
       "removeFather"
     );
+  }
+  const closePopupButton = document.querySelector(`#closePopup${popupID}`);
+  closePopupButton.addEventListener("click", () => {
+    closePopup();
   });
 
   const callbackButton = document.querySelector(`#${callbackButtonID}`);
   callbackButton.addEventListener("click", () => {
+    if(closePopupWhenCallback === true) closePopup();
     callback();
   });
 }

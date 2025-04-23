@@ -163,12 +163,16 @@ export default () => {
       "quizzesDataContainer"
     );
     const hasSelectedQuizzes = () => {
-          const selectedCards = document.querySelectorAll(".selected");
-          if (selectedCards.length === 0) {
-            u.addFinalAnimationToElement("#catalogBar", "exitBottomFloatAnimation", "disappear");
-            console.log("Nada seleccionado");
-          }
-        };
+      const selectedCards = document.querySelectorAll(".selected");
+      if (selectedCards.length === 0) {
+        u.addFinalAnimationToElement(
+          "#catalogBar",
+          "exitBottomFloatAnimation",
+          "disappear"
+        );
+        console.log("Nada seleccionado");
+      }
+    };
     const loadAllQuizzesHTML = () => {
       quizzesDataContainer.innerHTML = ``;
       for (let i = 0; i < LQ.length; i++) {
@@ -202,7 +206,6 @@ export default () => {
       }
     };
     const reloadCatalog = () => {
-      u.removePopups();
       reloadLQ();
       loadAllQuizzesHTML();
       hasSelectedQuizzes();
@@ -281,12 +284,11 @@ export default () => {
       u.createPopup(
         "Agrupar Quizzes",
         `
-          <label for="group">Agregar quizzes seleccionados a:</label>
-          <select id="groupInput" name="group">
-            <option value="">Ningun grupo</option>
-          </select>
-          <button id="readyButton" class="llamativeButton">Confirmar</button>
-          `,
+              <label for="group">Agregar quizzes seleccionados a:</label>
+              <select id="groupInput" name="group">
+              </select>
+              <button id="readyButton" class="llamativeButton">Confirmar</button>
+              `,
         "readyButton",
         () => {
           const selectedIndexes = getSelectedIndexes();
@@ -306,8 +308,11 @@ export default () => {
           });
 
           u.notification("Accion realizada con exito", "info");
-          reloadCatalog();
-        }
+          setTimeout(() => {
+            reloadCatalog();
+          }, 1500);
+        },
+        true
       );
       u.printGroups();
     });

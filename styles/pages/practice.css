@@ -1,5 +1,11 @@
 .quizBox {
-  padding: 0;
+  padding: 10px 10px 100px 10px;
+  z-index: 1;
+  position: absolute;
+  margin: 0;
+  left: 0;
+  width: 50%;
+  translate: 50% 0;
 }
 .quizBox * {
   border-radius: var(--border-radius-2);
@@ -93,26 +99,24 @@
 #practiceBar {
   gap: 10px;
 
-  position: fixed;
+  position: fixed !important;
 
-  z-index: 200;
+  z-index: 200 !important;
 
   width: 100%;
-  height: 85px;
+  height: 75px;
 
   margin: 0;
   border-radius: 0;
-  padding: 5px 10% 5px 5px;
+  padding: 5px 380px 5px 5px;
 
   display: flex;
   flex-direction: row;
   justify-content: right;
 
-  animation: none;
-
   background-color: var(--default-color);
 
-  bottom: 0;
+  bottom: 15px;
   left: 0;
 }
 

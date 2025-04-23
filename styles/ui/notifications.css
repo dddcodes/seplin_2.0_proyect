@@ -1,6 +1,6 @@
 .notification {
   position: fixed; /* Ignora scroll y layout del body */
-  right: 20px;
+  right: 15%;
   bottom: 105px;
 
   opacity: 0;

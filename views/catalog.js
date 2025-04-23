@@ -159,7 +159,11 @@ export default () => {
     const hasSelectedQuizzes = () => {
       const selectedCards = document.querySelectorAll(".selected");
       if (selectedCards.length === 0) {
-        u.addFinalAnimationToElement("#catalogBar", "exitBottomFloatAnimation", "disappear");
+        u.addFinalAnimationToElement(
+          "#catalogBar",
+          "exitBottomFloatAnimation",
+          "disappear"
+        );
         console.log("Nada seleccionado");
       }
     };
@@ -195,7 +199,6 @@ export default () => {
       }
     };
     const reloadCatalog = () => {
-      u.removePopups();
       reloadLQ();
       loadAllQuizzesHTML();
       hasSelectedQuizzes();
@@ -276,7 +279,6 @@ export default () => {
         `
         <label for="group">Agregar quizzes seleccionados a:</label>
         <select id="groupInput" name="group">
-          <option value="">Ningun grupo</option>
         </select>
         <button id="readyButton" class="llamativeButton">Confirmar</button>
         `,
@@ -299,8 +301,11 @@ export default () => {
           });
 
           u.notification("Accion realizada con exito", "info");
-          reloadCatalog();
-        }
+          setTimeout(() => {
+            reloadCatalog();
+          }, 1500);
+        },
+        true
       );
       u.printGroups();
     });

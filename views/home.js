@@ -30,7 +30,7 @@ export default () => {
         <div class="groupCard" id="groupCard${groupID}">
             <p class="groupName">${groupValues.name}</p>
             <p class="groupDescription">${groupValues.description}</p>
-            <p class="groupLength">${groupQuizzes.length} quizzes</p>
+            <p class="groupLength">${(groupQuizzes.length > 0)? groupQuizzes.length + " quizzes" : "No hay ningun quiz"}</p>
         </div>
       `;
       setTimeout(() => {
