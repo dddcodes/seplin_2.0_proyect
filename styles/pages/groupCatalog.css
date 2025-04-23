@@ -1,15 +1,14 @@
-.groupCatalogTitle{
-    background: var(--primary-gradient);
-    color: var(--default-color);
-    
-    text-align: center !important;
-    justify-self: center !important;
-    width: 50% !important;
+.groupCatalogTitle {
+  background: var(--primary-gradient);
+  color: var(--default-color);
 
-    margin: 10px 0 !important;
+  text-align: center !important;
+  justify-self: center !important;
+  width: 50% !important;
 
-    /*Siguiente: cuando el texto no quepa, se pone en dos lineas*/
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+  margin: 10px 0 !important;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }

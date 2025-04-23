@@ -335,7 +335,13 @@ export default () => {
       delete
     </span>
     </button>
-    <button id="exportButton">Exportar</button>
+    <button id="exportButton">
+        <span class="material-symbols-rounded">
+          upload
+        </span>
+        <p>Exportar</p>
+      </button>
+      
     <button id="groupButton">Agrupar</button>
   </div>
   

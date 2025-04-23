@@ -1,6 +1,6 @@
 #quizzesDataContainer {
   margin: 0;
-  
+
   display: flex;
   flex-wrap: wrap; /* Permite que bajen a la siguiente línea */
   justify-content: center;
@@ -80,7 +80,7 @@
   font-size: 15px;
   width: fit-content;
   font-weight: 200;
-  
+
   padding: 1px 5px;
   margin-bottom: 5px;
   border-radius: var(--border-radius-2);
@@ -130,7 +130,7 @@
   font-size: 18px;
 }
 
-/*  MORE   */
+/*  SELECTED   */
 
 #quizzesDataContainer > .quizDataCard.selected {
   background-color: var(--info-color);
@@ -146,6 +146,11 @@
   color: var(--default-color-2);
   border-color: var(--default-color-3);
 }
+#quizzesDataContainer > .quizDataCard.selected > .headDiv > * {
+  background-color: var(--default-color-3);
+}
+
+/*  CATALOG BAR  */
 
 #catalogBar {
   gap: 15px;
@@ -168,6 +173,7 @@
   animation: none;
 
   background-color: var(--default-color-2);
+  box-shadow: 15px 0 15px rgba(0, 0, 0, 0.8);
 
   bottom: 15px;
 
@@ -189,20 +195,19 @@
   background-color: var(--default-color-2);
   border-color: var(--alt-color-2);
   color: var(--alt-color-2);
-
 }
 
-#catalogBar > button:hover{
+#catalogBar > button:hover {
   background-color: var(--default-color-3);
 }
 
-#catalogBar > #removeButton{
+#catalogBar > #removeButton {
   border-color: var(--fail-color);
   color: var(--alt-color);
   width: 72px;
 }
 
-#catalogBar > #removeButton:hover{
+#catalogBar > #removeButton:hover {
   background-color: var(--fail-color);
   color: var(--default-color);
 }
@@ -216,3 +221,12 @@
   color: var(--default-color);
 }
 
+#catalogBar > #exportButton > .material-symbols-rounded {
+  display: none;
+}
+
+#catalogBar > #exportButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

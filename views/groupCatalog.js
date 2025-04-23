@@ -337,13 +337,21 @@ export default () => {
     </div>
   
     <div id="catalogBar">
+
       <button id="removeButton">
-      <span class="material-symbols-rounded">
-        delete
-      </span>
+        <span class="material-symbols-rounded">
+          delete
+        </span>
       </button>
-      <button id="exportButton">Exportar</button>
-      <button id="groupButton">Agrupar</button>
+
+      <button id="exportButton">
+        <span class="material-symbols-rounded">
+          upload
+        </span>
+        <p>Exportar</p>
+      </button>
+
+      <button id="groupButton">Cambiar de grupo</button>
     </div>
     
     `;
