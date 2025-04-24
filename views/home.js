@@ -12,14 +12,14 @@ export default () => {
   setTimeout(() => {
     const groupsContainer = document.getElementById("groupsContainer");
 
-    const groups = Object.entries(LSM.getLocalGroups());
+    const localGroups = Object.entries(LSM.getLocalGroups());
+    const localQuizzes = Object.entries(LSM.getLocalQuizzes());
 
-    groups.forEach((group) => {
+    localGroups.forEach((group) => {
       let groupQuizzes = [];
       const groupID = group[0];
       const groupValues = group[1];
 
-      const localQuizzes = Object.entries(LSM.getLocalQuizzes());
       localQuizzes.forEach((quiz) => {
         if (quiz[1].groupID === groupID) {
           groupQuizzes.push(quiz);
@@ -44,6 +44,29 @@ export default () => {
         });
       }, 300);
     });
+
+    let quizzesWithoutGroup = 0;
+
+    localQuizzes.forEach((quiz) => {
+      const quizData = quiz[1];
+      if (!quizData.groupID || quizData.groupID === "") {
+        quizzesWithoutGroup++;
+        console.log(quizzesWithoutGroup);
+      }
+    });
+
+    groupsContainer.innerHTML += `
+      <div class="groupCard" id="withoutGroupCard" style="border-color: var(--default-color-4);">
+          <p class="groupName">Quizzes sin grupo</p>
+          <p class="groupDescription">Aqui estan tus quizzes sin grupo</p>
+          <p class="groupLength">${quizzesWithoutGroup} quizzes</p>
+      </div>`;
+    setTimeout(() => {
+      const withoutGroupCard = document.getElementById("withoutGroupCard");
+      withoutGroupCard.addEventListener("click", () => {
+        navigateTo("/group-catalog?id=no-group");
+      });
+    }, 300);
   }, 300);
 
   return `

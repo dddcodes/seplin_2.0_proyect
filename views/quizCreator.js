@@ -82,7 +82,7 @@ export default () => {
 
         <div>
           <button id="createGroupPageButton" class="staticButton">Crear un grupo</button>
-          <button id="importQuizPageButton" class="staticButton">Importar un quiz externo</button>
+          <button id="importQuizPageButton" class="staticButton">Importar quizzes</button>
         </div>
 
         <p class="weakText">Espacios con * son obligatorios</p>

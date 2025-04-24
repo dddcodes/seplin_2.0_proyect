@@ -11,10 +11,10 @@ export default () => {
   const localGroups = LSM.getLocalGroups();
   const params = new URLSearchParams(window.location.search);
   const groupPageID = params.get("id");
-  let groupName = localGroups[groupPageID].name;
-  let groupDescription = localGroups[groupPageID].description;
-  let groupColor = localGroups[groupPageID].color;
-  u.setPageTitle("Quizzes de " + groupName);
+  let groupName;
+  if (groupPageID === "no-group") groupName = "Sin grupo";
+  else if (groupPageID === "all-groups") localGroups[groupPageID].name;
+  u.setPageTitle(groupName);
 
   const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
@@ -181,51 +181,68 @@ export default () => {
         /*ID*/ const actualID = LQ.keys[i];
         /*DATA*/ const actualQuizData = LQ.content[actualID];
 
-        if (groupPageID === actualQuizData.groupID) {
+        if (
+          groupPageID === actualQuizData.groupID ||
+          (groupPageID === "no-group" && !actualQuizData.groupID)
+        ) {
           /*from DATA to HTML*/
           const quizHTML = convertQuizDataToHTML(actualQuizData, i);
 
           /*HTML added to CATALOG HTML LOL*/
           quizzesDataContainer.innerHTML += quizHTML;
-
-          //Algo seleccionado: catalogBar aparece
-          const selectButtons = document.querySelectorAll(".selectButton");
-          selectButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-              u.appear(catalogBar, "flex");
-              console.log("Algo seleccionado");
-            });
-          });
-
-          //Nada seleccionado: catalogBar desaparece
-          const quizDataCards = document.querySelectorAll(".quizDataCard");
-          quizDataCards.forEach((card) => {
-            card.addEventListener("click", () => {
-              hasSelectedQuizzes();
-            });
-          });
         }
+
+        //Algo seleccionado: catalogBar aparece
+        const selectButtons = document.querySelectorAll(".selectButton");
+        selectButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            u.appear(catalogBar, "flex");
+            console.log("Algo seleccionado");
+          });
+        });
+
+        //Nada seleccionado: catalogBar desaparece
+        const quizDataCards = document.querySelectorAll(".quizDataCard");
+        quizDataCards.forEach((card) => {
+          card.addEventListener("click", () => {
+            hasSelectedQuizzes();
+          });
+        });
       }
     };
     const loadHeadContainerHTML = () => {
-      const groupData = LSM.getLocalGroups()[groupPageID];
+      const groupData =
+        groupPageID === "no-group"
+          ? {
+              name: "Quizzes sin grupo",
+              description:
+                "Estos quizzes estan solitos, agrupalos para organizarlos y hacer examenes por tema!",
+              color: "",
+            }
+          : LSM.getLocalGroups()[groupPageID];
       const headContainer = document.getElementById("headContainer");
       headContainer.innerHTML = `
         <div id="headBox">
 
           <p id="groupCatalogTitle">${groupData.name}</p>
 
-          <button id="editGroupDataButton">
-            <span class="material-symbols-rounded">
-              edit
-            </span>
-          </button>
+          ${
+            groupPageID === "no-group"
+              ? ``
+              : `
+            <button id="editGroupDataButton">
+              <span class="material-symbols-rounded">
+                edit
+              </span>
+            </button>
+            `
+          }
 
         </div>
 
         <p>${groupData.description}</p>
       `;
-      u.setPageTitle("Quizzes de " + groupData.name);
+      u.setPageTitle(groupData.name);
       setTimeout(() => {
         const editGroupDataButton = document.querySelector(
           "#editGroupDataButton"

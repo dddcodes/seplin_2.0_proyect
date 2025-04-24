@@ -51,7 +51,7 @@ button:active {
 }
 
 .staticButton {
-  width: fit-content;
+  width: calc(50% - 13px);
   height: fit-content;
 
   min-width: 0;
@@ -148,6 +148,6 @@ button:active {
 
 /*POPUP BUTTONS*/
 
-.popup > .popupContent> .contentContainer > .llamativeButton:hover{
+.popup > .popupContent > .contentContainer > .llamativeButton:hover {
   background-color: var(--default-color-2);
 }

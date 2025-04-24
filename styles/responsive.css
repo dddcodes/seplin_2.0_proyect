@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   /*LAYOUT ==========================================================*/
   #navigationBar,
   #sidebar {
@@ -90,8 +90,14 @@
   input,
   textarea,
   select {
-    width: 99%;
+    width: 100%;
     margin: 5px 0 5px 0;
+  }
+
+  input:hover,
+  textarea:hover,
+  select:hover {
+    border-color:var(--default-color);
   }
   button {
     padding: 5px;
@@ -99,6 +105,33 @@
 
   button:hover {
     border-width: 2px;
+  }
+
+  .optionsBox > input {
+    border-radius: 0;
+    margin: 0;
+    border-color: var(--default-color-2);
+    border-bottom-color: var(--default-color-3);
+  }
+
+  .optionsBox > input:hover {
+    border-color: var(--default-color-3);
+  }
+
+  /*Cambia el background-color del primer input y el ultimo a rojo*/
+
+  .optionsBox > input:first-of-type {
+    border-radius: 30px 30px 0 0;
+    margin-top: 5px;
+  }
+
+  .optionsBox > input:last-of-type {
+    border-radius: 0 0 30px 30px;
+    border-color: var(--default-color-2);
+  }
+
+  .optionsBox > input:last-of-type:hover {
+    border-color: var(--default-color-3);
   }
 
   /*MORE*/
@@ -209,7 +242,9 @@
     display: none;
   }
 
-  #catalogBar > #groupButton{
-    width: calc(100% - 72px - 72px - 10px); /*100% - button - button - father padding*/
+  #catalogBar > #groupButton {
+    width: calc(
+      100% - 72px - 72px - 10px
+    ); /*100% - button - button - father padding*/
   }
 }

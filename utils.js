@@ -135,7 +135,6 @@ export function addFinalAnimationToElement(
   animationClassName,
   removeOrDisappear
 ) {
-  console.log("addFinalAnimationToElement ejecutado");
   const element = document.querySelector(elementID);
   element.classList.add(animationClassName);
   setTimeout(() => {
@@ -143,7 +142,6 @@ export function addFinalAnimationToElement(
     if (removeOrDisappear === "disappear") disappear(element);
     if (removeOrDisappear === "remove") element.remove();
     if (removeOrDisappear === "removeFather") element.parentNode.remove();
-    console.log("timeout de addFinalAnimationToElement ejecutado");
   }, 600);
 }
 
@@ -250,7 +248,13 @@ export function createDropdown(
     </div>`;
 }
 
-export function createPopup(title, content, callbackButtonID, callback, closePopupWhenCallback = false) {
+export function createPopup(
+  title,
+  content,
+  callbackButtonID,
+  callback,
+  closePopupWhenCallback = false
+) {
   const popup = document.createElement("div");
   const popupID = uuidv4(); // Genera un ID único para el popup
   popup.classList.add("popup");
@@ -274,13 +278,13 @@ export function createPopup(title, content, callbackButtonID, callback, closePop
 
   document.body.appendChild(popup);
 
-  const closePopup = () =>{
+  const closePopup = () => {
     addFinalAnimationToElement(
       "#popupContent" + popupID,
       "closePopupAnimation",
       "removeFather"
     );
-  }
+  };
   const closePopupButton = document.querySelector(`#closePopup${popupID}`);
   closePopupButton.addEventListener("click", () => {
     closePopup();
@@ -288,7 +292,7 @@ export function createPopup(title, content, callbackButtonID, callback, closePop
 
   const callbackButton = document.querySelector(`#${callbackButtonID}`);
   callbackButton.addEventListener("click", () => {
-    if(closePopupWhenCallback === true) closePopup();
+    if (closePopupWhenCallback === true) closePopup();
     callback();
   });
 }
@@ -305,7 +309,6 @@ export function printGroups(specificFirstGroup) {
   const localGroups = Object.entries(LSM.getLocalGroups());
   const x = localGroups.forEach((group) => {
     if (group[0] === specificFirstGroup) {
-      console.log("Encontrado?", group);
       groupInput.innerHTML += `<option value="${group[0]}" selected>${group[1].name}</option>`;
     }
   });

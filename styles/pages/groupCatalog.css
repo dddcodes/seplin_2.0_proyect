@@ -2,6 +2,7 @@
   padding: 5px;
   text-align: center !important;
   text-justify: center !important;
+  color: var(--default-color-4);
 }
 
 #headBox {
