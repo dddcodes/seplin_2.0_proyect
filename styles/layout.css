@@ -2,12 +2,12 @@
 #main {
   width: 100vw;
   min-height: 100vh;
-  padding: 10px 295px 0 110px;
+  padding: 10px 295px 0 105px;
   box-sizing: border-box;
 }
 
 #main.extended {
-  padding: 10px 15% 80px 15%;
+  padding: 10px 15% 80px;
 }
 
 #app {

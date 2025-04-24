@@ -51,9 +51,17 @@ export const getCard = {
   },
   quizCreator: function () {
     return createCard(
-      "CREAR",
+      "CREAR QUIZ",
       CONFIG.routes.quizCreator.description,
       CONFIG.routes.quizCreator.path,
+      "intern",
+    );
+  },
+  groupCreator: function () {
+    return createCard(
+      "CREAR GRUPO",
+      CONFIG.routes.groupCreator.description,
+      CONFIG.routes.groupCreator.path,
       "intern",
     );
   },

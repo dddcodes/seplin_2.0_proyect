@@ -11,7 +11,7 @@ export const router = async () => {
   u.removePopups();
   u.resetAnimation(app);
   u.scrollToTop(); // Mueve la página al inicio
-  u.updateSidebar(getCard.gitHubLink() + getCard.quizCreator()); // SIDEBAR DEFAULT
+  u.updateSidebar(getCard.quizCreator() + getCard.groupCreator()); // SIDEBAR DEFAULT
 
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio
@@ -22,6 +22,7 @@ export const router = async () => {
     "/quiz-editor": () => import(`./views/${ROUTE.quizEditor.component}`),
     "/import": () => import(`./views/${ROUTE.import.component}`),
     "/group-catalog": () => import(`./views/${ROUTE.groupCatalog.component}`),
+    "/group-creator": () => import(`./views/${ROUTE.groupCreator.component}`),
   };
 
   const view =
@@ -31,13 +32,13 @@ export const router = async () => {
 
   import(`./localStorage/localStorageManager.js`);
   u.confirmLayoutVisibility();
+  u.defaultMainAppWidth(); // Restablece el ancho del main-app
   app.innerHTML = await (await view()).default();
 };
 
 export const navigateTo = (url) => {
   history.pushState(null, null, url); // Cambia la URL sin recargar la página
   router(); // Llama al router para actualizar la vista
-  u.defaultMainAppWidth(); // Restablece el ancho del main-app
 };
 
 // Detecta cuando el botón "atrás" del navegador es activado

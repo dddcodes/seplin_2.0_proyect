@@ -12,12 +12,15 @@ button {
   color: var(--alt-color);
   border-radius: 30px;
 
-  padding: 20px;
+  padding: 12px;
 
   outline: none; /* Quita el borde de enfoque */
 
   font-size: 15px;
   text-align: center;
+
+  width: calc(50% - 13px);
+  min-height: 60px;
 
   margin: 5px;
   cursor: pointer;
@@ -45,6 +48,28 @@ button:active {
 .tinyButton:hover {
   border: var(--default-color-2) solid 2px;
   background-color: var(--default-color-2);
+}
+
+.staticButton {
+  width: fit-content;
+  height: fit-content;
+
+  min-width: 0;
+  min-height: 0;
+
+  background-color: none;
+  background: var(--success-color);
+  color: var(--default-color);
+  border-color: var(--success-color);
+
+  padding: 10px;
+}
+
+.staticButton:hover {
+  background-color: var(--default-color);
+  color: var(--success-color);
+  border-color: inherit;
+  padding: inherit;
 }
 
 #backButton,
@@ -107,15 +132,22 @@ button:active {
 }
 
 .llamativeButton {
-  border: var(--default-color) solid 2px;
-  background: var(--primary-gradient);
+  border: var(--info-color) solid 2px;
+  background-color: var(--info-color);
   color: var(--default-color);
   font-weight: 600;
 }
 
 .llamativeButton:hover {
-  background: var(--primary-gradient);
-  color: var(--default-color);
+  background-color: var(--default-color);
+  color: var(--info-color);
+  border-width: 2px;
+  border-color: var(--info-color);
+  padding: inherit;
+}
 
-  border: var(--alt-color) solid 2px;
+/*POPUP BUTTONS*/
+
+.popup > .popupContent> .contentContainer > .llamativeButton:hover{
+  background-color: var(--default-color-2);
 }

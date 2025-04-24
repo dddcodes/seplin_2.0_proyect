@@ -63,11 +63,26 @@ export default () => {
         );
       }
     });
+
+    const createGroupPageButton = document.getElementById("createGroupPageButton");
+    createGroupPageButton.addEventListener("click", () => {
+      navigateTo(CONFIG.routes.groupCreator.path);
+    });
+
+    const importQuizPageButton = document.getElementById("importQuizPageButton");
+    importQuizPageButton.addEventListener("click", () => {
+      navigateTo(CONFIG.routes.import.path);
+    });
   }, 500);
 
   return `
         <div class="titleBox">
-          CREAR QUIZ
+          Crear un quiz
+        </div>
+
+        <div>
+          <button id="createGroupPageButton" class="staticButton">Crear un grupo</button>
+          <button id="importQuizPageButton" class="staticButton">Importar un quiz externo</button>
         </div>
 
         <p class="weakText">Espacios con * son obligatorios</p>

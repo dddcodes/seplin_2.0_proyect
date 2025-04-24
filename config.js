@@ -49,6 +49,13 @@ export const CONFIG = {
       path: "/group-catalog",
       title: "Tus grupos",
       description: "Agrupad tus quizzes y mejora tus habilidades de manera efectiva, basado en ciencia!",
+    },
+    groupCreator:{
+      component: "groupCreator.js",
+      path: "/group-creator",
+      title: "Crear",
+      description:
+        "Crea grupos de quizzes para dividir tus quizzes y hacer examenes!",
     }
   },
 };
