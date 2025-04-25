@@ -192,6 +192,7 @@ export const LSM = {
       localGroups[groupID].description = description;
       localGroups[groupID].color = color;
       LSM.updateItem("localGroups", localGroups);
+      console.log(LSM.getItem("localGroups"));
     } catch (error) {
       console.error(`[Error] Failed to update group:`, error);
     }

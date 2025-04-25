@@ -51,6 +51,7 @@ export default () => {
 
     const groupData = LSM.getLocalGroups()[quizData.groupID];
     const groupName = quizData.groupID ? groupData.name : "<i>Sin grupo</i>";
+    const groupColor = quizData.groupID ? groupData.color : null;
 
     setTimeout(() => {
       const editButton = document.querySelector(
@@ -99,7 +100,14 @@ export default () => {
           </div>
   
           <div class="dataDiv">
-            <p class="group">${groupName}</p>
+            <p class="group" ${
+              quizData.groupID
+                ? `style="color: var(--${groupColor}-color);"`
+                : ""
+            }
+            id="group${quizData.groupID}">
+            ${groupName}
+          </p>  
             <p class="question">${quizData.question}</p>
           </div>
   
@@ -222,7 +230,11 @@ export default () => {
           : LSM.getLocalGroups()[groupPageID];
       const headContainer = document.getElementById("headContainer");
       headContainer.innerHTML = `
-        <div id="headBox">
+        <div id="headBox" ${
+          groupData.color && groupData.color !== ""
+            ? `style="border-color: var(--${groupData.color}-color);"`
+            : ""
+        }>
 
           <p id="groupCatalogTitle">${groupData.name}</p>
 
@@ -260,6 +272,11 @@ export default () => {
               <label for="groupDescription">Descripcion del Grupo:</label>
               <input id="groupDescription" type="text" value="${groupData.description}">
             </div>
+
+            <div>
+              <label for="colorGroupInput">Color del Grupo:</label>
+              <select id="colorGroupInput"></select>
+            </div>
             
             <button id="readyButton" class="llamativeButton">Confirmar</button>
         `,
@@ -268,10 +285,13 @@ export default () => {
               const newGroupName = document.querySelector("#groupName").value;
               const newGroupDescription =
                 document.querySelector("#groupDescription").value;
+              const newGroupColor =
+                document.querySelector("#colorGroupInput").value;
 
               LSM.updateGroup(groupPageID, {
                 name: newGroupName,
                 description: newGroupDescription,
+                color: newGroupColor,
               });
 
               u.notification("Accion realizada con exito", "info");
@@ -281,6 +301,8 @@ export default () => {
             },
             true
           );
+          //Traducir el
+          u.printAvailableColorGroups(groupData.color);
         });
       }, 300);
     };

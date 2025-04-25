@@ -27,7 +27,11 @@ export default () => {
       });
 
       groupsContainer.innerHTML += `
-        <div class="groupCard" id="groupCard${groupID}">
+        <div class="groupCard" id="groupCard${groupID}" ${
+        groupValues.color
+          ? `style="border-color: var(--${groupValues.color}-color);"`
+          : ""
+      }>
             <p class="groupName">${groupValues.name}</p>
             <p class="groupDescription">${groupValues.description}</p>
             <p class="groupLength">${

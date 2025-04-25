@@ -307,7 +307,7 @@ export function removePopups() {
 export function printGroups(specificFirstGroup) {
   const groupInput = document.getElementById("groupInput");
   const localGroups = Object.entries(LSM.getLocalGroups());
-  const x = localGroups.forEach((group) => {
+  localGroups.forEach((group) => {
     if (group[0] === specificFirstGroup) {
       groupInput.innerHTML += `<option value="${group[0]}" selected>${group[1].name}</option>`;
     }
@@ -316,6 +316,32 @@ export function printGroups(specificFirstGroup) {
   console.log(localGroups);
   localGroups.forEach((group) => {
     groupInput.innerHTML += `<option value="${group[0]}" >${group[1].name}</option>`;
+  });
+}
+
+export function getAvailableColorGroups() {
+  return [
+    "azul",
+    "aqua",
+    "verde",
+    "rojo",
+    "amarillo",
+    "naranja",
+    "morado",
+  ];
+}
+export function printAvailableColorGroups(specificDefaultColor) {
+  const colorGroupInput = document.getElementById("colorGroupInput");
+  const availableColors = getAvailableColorGroups();
+
+  availableColors.forEach((color) => {
+    if (color === specificDefaultColor) {
+      colorGroupInput.innerHTML = `<option value="${color}" selected>${color}</option>`;
+    }
+  });
+  colorGroupInput.innerHTML += "<option value=''>Sin color</option>";
+  availableColors.forEach((color) => {
+    colorGroupInput.innerHTML += `<option value="${color}">${color}</option>`;
   });
 }
 

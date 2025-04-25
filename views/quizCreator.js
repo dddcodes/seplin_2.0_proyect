@@ -87,15 +87,17 @@ export default () => {
 
         <p class="weakText">Espacios con * son obligatorios</p>
 
-        <div class="inputBox">
-          <p>Pregunta *</p>
-          <input type="text" id="questionInput" placeholder="Como si fuera un examen" required>
-        </div>
+        <container class="inputsContainer">
+          <div class="inputBox">
+            <p>Pregunta *</p>
+            <input type="text" id="questionInput" placeholder="Como si fuera un examen" required>
+          </div>
 
-        <div class="inputBox">
-          <p>Respuesta *</p>
-          <input type="text" id="answerInput" placeholder="Solo puede haber una respuesta correcta" required>
-        </div>
+          <div class="inputBox">
+            <p>Respuesta *</p>
+            <input type="text" id="answerInput" placeholder="Solo puede haber una respuesta correcta" required>
+          </div>
+        </container>
         
         <div class="inputBox optionsBox">
           <p>Opciones alternativas (incorrectas)</p>

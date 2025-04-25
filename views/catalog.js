@@ -43,6 +43,7 @@ export default () => {
 
     const groupData = LSM.getLocalGroups()[quizData.groupID];
     const groupName = quizData.groupID ? groupData.name : "<i>Sin grupo</i>";
+    const groupColor = quizData.groupID ? groupData.color : null;
 
     setTimeout(() => {
       const editButton = document.querySelector(
@@ -52,7 +53,7 @@ export default () => {
         e.stopPropagation(); // Evita que el evento se propague al contenedor padre
         navigateTo(`/quiz-editor?id=${quizID}`); //lleva al editor de quizzes
       });
-    }, 100);
+    }, 200);
 
     return `
       <div class="quizDataCard" id="quizDataCard${index}" index="${index}">
@@ -91,7 +92,12 @@ export default () => {
         </div>
 
         <div class="dataDiv">
-          <p class="group">${groupName}</p>
+          <p class="group" ${
+            quizData.groupID ? `style="color: var(--${groupColor}-color);"` : ""
+          }
+            id="group${quizData.groupID}">
+            ${groupName}
+          </p>
           <p class="question">${quizData.question}</p>
         </div>
 

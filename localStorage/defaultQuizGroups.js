@@ -7,17 +7,17 @@ export default () => {
       {
         name: "Literatura",
         description: "Tipos de literatura, y generos literarios",
-        color: "blue",
+        color: "azul",
       },
       {
         name: "Biología",
         description: "Estudio de los seres vivos, genética y ecología",
-        color: "green",
+        color: "verde",
       },
       {
         name: "Historia",
         description: "Eventos y procesos históricos relevantes",
-        color: "brown",
+        color: "rojo",
       },
     ];
     defaultGroups.forEach((group) => {

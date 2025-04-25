@@ -6,7 +6,7 @@ import { getCard } from "./components/getCards.js";
 const ROUTE = CONFIG.routes; // Obtiene las rutas desde el archivo de configuración
 
 export const router = async () => {
-  const app = document.querySelector("#app"); //document.querySelector("#app").style.visibility = "hidden";
+  const app = document.querySelector("#app");
 
   u.removePopups();
   u.resetAnimation(app);
@@ -27,8 +27,7 @@ export const router = async () => {
 
   const view =
     routes[window.location.pathname] ||
-    (() => `<h1>404 - Página no encontrada</h1>`);
-  //PARECE NO FUNCIONAR NUNCA
+    (() => `<h1>404 - Página no encontrada</h1>`); //PARECE NO FUNCIONAR NUNCA
 
   import(`./localStorage/localStorageManager.js`);
   u.confirmLayoutVisibility();

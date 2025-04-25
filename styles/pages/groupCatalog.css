@@ -6,7 +6,8 @@
 }
 
 #headBox {
-  background-color: var(--info-color);
+  background-color: var(--default-color);
+  border: var(--default-color-2) solid 2px;
 
   display: flex;
   justify-content: center;
@@ -19,7 +20,7 @@
 }
 
 #headBox > #groupCatalogTitle {
-  color: var(--default-color);
+  color: var(--alt-color);
   font-size: 30px;
   font-weight: bold;
   
@@ -36,19 +37,20 @@
   height: fit-content;
   min-height: 0;
 
-  border-color: var(--default-color);
+  border-color: var(--alt-color);
   border-radius: var(--border-radius-2);  
 }
 
 #headBox > #editGroupDataButton:hover{
   padding: 2px 1px 0 1px;
-  background-color: var(--default-color);
-}
-
-#headBox > #editGroupDataButton:hover > .material-symbols-rounded {
-  color: var(--info-color);
+  background-color: var(--alt-color);
 }
 
 #headBox > #editGroupDataButton > .material-symbols-rounded {
-  color: var(--default-color);
+  color: var(--alt-color);
 } 
+
+#headBox > #editGroupDataButton:hover > .material-symbols-rounded {
+  color: var(--default-color);
+}
+

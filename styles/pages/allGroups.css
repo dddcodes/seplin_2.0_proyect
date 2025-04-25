@@ -8,13 +8,14 @@
 
 #groupsContainer > .groupCard {
   background-color: var(--default-color-2);
+
   border-radius: 30px;
   padding: 20px;
   margin: 10px;
   width: 450px;
   min-height: 110px;
 
-  border-left: var(--info-color) solid 10px;
+  border-left: var(--default-color-3) solid 5px;
 }
 
 #groupsContainer > .groupCard:hover {

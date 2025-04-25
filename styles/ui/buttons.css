@@ -69,7 +69,7 @@ button:active {
   background-color: var(--default-color);
   color: var(--success-color);
   border-color: inherit;
-  padding: inherit;
+  padding: 10px;
 }
 
 #backButton,

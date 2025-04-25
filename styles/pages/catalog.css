@@ -141,11 +141,6 @@
 #quizzesDataContainer > .quizDataCard.selected > .headDiv {
   background-color: var(--info-color);
 }
-#quizzesDataContainer > .quizDataCard.selected > .dataDiv > .group {
-  background-color: var(--info-color);
-  color: var(--default-color-2);
-  border-color: var(--default-color-3);
-}
 #quizzesDataContainer > .quizDataCard.selected > .headDiv > * {
   background-color: var(--default-color-3);
 }

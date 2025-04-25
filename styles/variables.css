@@ -14,6 +14,14 @@
     --info-color: rgb(106, 165, 167);
     --warning-color: #ff9800;
     --fail-color: #c95a52;
+
+    --verde-color: #5dae60;
+    --rojo-color: #c95a52;
+    --aqua-color: rgb(106, 165, 167);
+    --azul-color: #00a3ff;
+    --naranja-color: #ff9800;
+    --amarillo-color: #fff389;
+    --morado-color: #9347a0;
   
     /* Gradiente Científico */
     --primary-gradient: linear-gradient(
