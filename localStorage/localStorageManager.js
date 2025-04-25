@@ -73,6 +73,7 @@ export const LSM = {
     LSM.removeItem("localQuizzes");
     LSM.removeItem("localGroups");
     console.warn("RESETEADO");
+    u.notification("RESETEADO", "success");
   },
 
   //QUIZZES FUNCTIONS ============================================
@@ -196,9 +197,20 @@ export const LSM = {
     } catch (error) {
       console.error(`[Error] Failed to update group:`, error);
     }
-  }
+  },
+  removeGroup: function (groupID) {
+    try {
+      if (!localStorage.getItem("localGroups").includes(groupID)) {
+        console.warn(`[Warning] Key "${groupID}" doesn't exist in localStorage`);
+        return false;
+      } else {
+        let localGroups = LSM.getItem("localGroups");
+        delete localGroups[groupID];
+        LSM.updateItem("localGroups", localGroups);
+      }
+    } catch (error) {
+      console.error(`[Error] Failed to remove group "${groupID}":`, error);
+      return;
+    }
+  },
 };
-
-/*FALTA AGREGAR FUNCIONES PARA LOS GRUPOS DE QUIZZES: 
-    -> removeGroup(ID, withQuizzes = false)
-*/

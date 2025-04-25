@@ -31,7 +31,8 @@
   text-align: center !important;
 }
 
-#headBox > #editGroupDataButton {
+#headBox > #editGroupDataButton,
+#headBox > #removeGroupButton {
   padding: 2px 1px 0 1px;
   width: fit-content;
   height: fit-content;
@@ -41,16 +42,18 @@
   border-radius: var(--border-radius-2);  
 }
 
-#headBox > #editGroupDataButton:hover{
+#headBox > #editGroupDataButton:hover,
+#headBox > #removeGroupButton:hover {
   padding: 2px 1px 0 1px;
   background-color: var(--alt-color);
 }
 
-#headBox > #editGroupDataButton > .material-symbols-rounded {
+#headBox > #editGroupDataButton > .material-symbols-rounded,
+#headBox > #removeGroupButton > .material-symbols-rounded {
   color: var(--alt-color);
 } 
 
-#headBox > #editGroupDataButton:hover > .material-symbols-rounded {
+#headBox > #editGroupDataButton:hover > .material-symbols-rounded,
+#headBox > #removeGroupButton:hover > .material-symbols-rounded {
   color: var(--default-color);
 }
-

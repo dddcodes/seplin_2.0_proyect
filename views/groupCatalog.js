@@ -247,6 +247,11 @@ export default () => {
                 edit
               </span>
             </button>
+            <button id="removeGroupButton">
+              <span class="material-symbols-rounded">
+                delete
+              </span>
+            </button>
             `
           }
 
@@ -303,6 +308,17 @@ export default () => {
           );
           //Traducir el
           u.printAvailableColorGroups(groupData.color);
+        });
+        const removeButton = document.querySelector("#removeGroupButton");
+        removeButton.addEventListener("click", () => {
+          if (confirm("¿Seguro que quieres eliminar el grupo?")) {
+            LSM.removeGroup(groupPageID);
+            u.notification("Accion realizada con exito", "info");
+
+            navigateTo("/");
+          } else{
+            u.notification("Accion cancelada", "info");
+          }
         });
       }, 300);
     };

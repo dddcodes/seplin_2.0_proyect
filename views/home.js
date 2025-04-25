@@ -64,11 +64,21 @@ export default () => {
           <p class="groupName">Quizzes sin grupo</p>
           <p class="groupDescription">Aqui estan tus quizzes sin grupo</p>
           <p class="groupLength">${quizzesWithoutGroup} quizzes</p>
-      </div>`;
+      </div>
+      ${u.createDropdown(
+        "Resetear datos",
+        `<button id="resetButton" class="staticButton" style="margin-top: 20px;">Resetear Seplin</button>`
+      )}`;
+
     setTimeout(() => {
       const withoutGroupCard = document.getElementById("withoutGroupCard");
       withoutGroupCard.addEventListener("click", () => {
         navigateTo("/group-catalog?id=no-group");
+      });
+
+      const resetButton = document.getElementById("resetButton");
+      resetButton.addEventListener("click", () => {
+        if (confirm("¿Seguro que quieres resetear Seplin?")) LSM.RESET();
       });
     }, 300);
   }, 300);
@@ -78,5 +88,6 @@ export default () => {
           Tus grupos de quizzes!
         </div>
         <div id="groupsContainer"></div>
+        
     `;
 };
