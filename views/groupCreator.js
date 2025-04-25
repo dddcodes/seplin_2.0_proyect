@@ -19,8 +19,14 @@ export default () => {
         "groupDescriptionInput"
       ).value;
       const groupColor = document.getElementById("colorGroupInput").value;
-      LSM.addGroup(groupName, groupDescription, groupColor);
-      navigateTo("/");
+
+      if (groupName && groupDescription) {
+        LSM.addGroup(groupName, groupDescription, groupColor);
+        navigateTo("/");
+        u.notification("Grupo creado", "success");
+      } else {
+        u.notification("Nombre y descripcion son obligatorios", "error");
+      }
     });
 
     u.printAvailableColorGroups();
