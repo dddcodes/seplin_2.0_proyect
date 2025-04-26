@@ -55,7 +55,6 @@ export default () => {
       const quizData = quiz[1];
       if (!quizData.groupID || quizData.groupID === "") {
         quizzesWithoutGroup++;
-        console.log(quizzesWithoutGroup);
       }
     });
 

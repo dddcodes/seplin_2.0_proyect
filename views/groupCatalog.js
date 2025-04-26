@@ -313,10 +313,28 @@ export default () => {
         removeButton.addEventListener("click", () => {
           if (confirm("¿Seguro que quieres eliminar el grupo?")) {
             LSM.removeGroup(groupPageID);
+
+            //Hacer una constante array que contenga todos los quizzes de ese grupo (buscando en su groupID)
+            const quizzesToMove = Object.entries(LSM.getLocalQuizzes()).filter(
+              (quiz) => quiz[1].groupID === groupPageID
+            );
+            console.log(quizzesToMove);
+            //todos los groupID de quizzesToMove re asigna su valor a null
+            quizzesToMove.forEach((quiz) => {
+              LSM.updateQuiz(
+                quiz[0],
+                quiz[1].question,
+                quiz[1].answer,
+                quiz[1].feedback,
+                quiz[1].options,
+                null
+              );
+            });
+
             u.notification("Accion realizada con exito", "info");
 
             navigateTo("/");
-          } else{
+          } else {
             u.notification("Accion cancelada", "info");
           }
         });
