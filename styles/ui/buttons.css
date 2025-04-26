@@ -50,6 +50,11 @@ button:active {
   background-color: var(--default-color-2);
 }
 
+.tinyButton:active {
+  background-color: var(--alt-color);
+  color: var(--default-color);
+}
+
 .staticButton {
   width: calc(50% - 13px);
   height: fit-content;
