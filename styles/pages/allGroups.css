@@ -39,3 +39,11 @@
   font-size: 15px;
   color: var(--primary-color);
 }
+
+#resetButton{
+  max-height: 30px;
+  padding: 0;
+  /*que siempre este hasta abajo de la caja sin nada alado*/
+
+  bottom: 90px;
+}

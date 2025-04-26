@@ -189,7 +189,7 @@
 
   background-color: var(--default-color-2);
   border-color: var(--alt-color-2);
-  color: var(--alt-color-2);
+  color: var(--alt-color);
 }
 
 #catalogBar > button:hover {

@@ -65,10 +65,7 @@ export default () => {
           <p class="groupDescription">Aqui estan tus quizzes sin grupo</p>
           <p class="groupLength">${quizzesWithoutGroup} quizzes</p>
       </div>
-      ${u.createDropdown(
-        "Resetear datos",
-        `<button id="resetButton" class="staticButton" style="margin-top: 20px;">Resetear Seplin</button>`
-      )}`;
+      <button id="resetButton" class="tinyButton" style="margin-top: 20px;">Resetear Seplin</button>`;
 
     setTimeout(() => {
       const withoutGroupCard = document.getElementById("withoutGroupCard");
@@ -78,7 +75,11 @@ export default () => {
 
       const resetButton = document.getElementById("resetButton");
       resetButton.addEventListener("click", () => {
-        if (confirm("¿Seguro que quieres resetear Seplin?")) LSM.RESET();
+        if (confirm("¿Seguro que quieres resetear Seplin?")) {
+          LSM.RESET();
+          navigateTo("/");
+          location.reload();
+        }
       });
     }, 300);
   }, 300);
