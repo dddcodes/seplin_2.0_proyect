@@ -5,25 +5,29 @@ export default () => {
     LSM.createItem("localGroups");
     const defaultGroups = [
       {
-        name: "Literatura",
-        description: "Tipos de literatura, y generos literarios",
-        color: "azul",
-      },
-      {
-        name: "Biología",
-        description: "Estudio de los seres vivos, genética y ecología",
-        color: "verde",
-      },
-      {
-        name: "Historia",
-        description: "Eventos y procesos históricos relevantes",
-        color: "rojo",
+        name: "Conciencia histórica",
+        description:
+          "Prueba tus conocimientos para no fallar en el examen we :)",
+        color: "aqua",
       },
     ];
     defaultGroups.forEach((group) => {
       LSM.addGroup(group.name, group.description, group.color);
     });
-
+    //agregar todos los quizzes existentes a este grupo
+    setTimeout(() => {
+      //un forEach donde cada cada quiz de localQuizzes se le asigne el grupID del unico grupo existente
+      const localGroups = LSM.getLocalGroups();
+      const groupsKeys = Object.entries(localGroups);
+      const localQuizzes = LSM.getLocalQuizzes();
+      const quizzesKeys = Object.entries(localQuizzes);
+      quizzesKeys.forEach((quiz) => {
+        quiz[1].groupID = groupsKeys[0][0];
+        console.log(groupsKeys[0][0]);
+      });
+      LSM.updateLocalQuizzes(localQuizzes);
+    }, 200);
+    /*
     setTimeout(() => {
       const localGroups = LSM.getLocalGroups();
       const groupsKeys = Object.entries(localGroups);
@@ -37,7 +41,7 @@ export default () => {
         quiz[1].groupID = groupsKeys[groupIndex][0];
       });
       LSM.updateLocalQuizzes(localQuizzes);
-    }, 200);
+    }, 200);*/
   }
   console.log(LSM.getLocalGroups());
 };

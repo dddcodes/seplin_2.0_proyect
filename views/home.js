@@ -62,7 +62,11 @@ export default () => {
       <div class="groupCard" id="withoutGroupCard" style="border-color: var(--default-color-4);">
           <p class="groupName">Quizzes sin grupo</p>
           <p class="groupDescription">Aqui estan tus quizzes sin grupo</p>
-          <p class="groupLength">${quizzesWithoutGroup} quizzes</p>
+          <p class="groupLength">${
+            quizzesWithoutGroup.length > 0
+              ? quizzesWithoutGroup.length + " quizzes"
+              : "No hay ningun quiz"
+          }</p>
       </div>
       <button id="resetButton" class="tinyButton" style="margin-top: 20px;">Resetear Seplin</button>`;
 
