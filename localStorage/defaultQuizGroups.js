@@ -8,7 +8,7 @@ export default () => {
         name: "Conciencia histórica",
         description:
           "Prueba tus conocimientos para no fallar en el examen we :)",
-        color: "aqua",
+        color: "verde",
       },
     ];
     defaultGroups.forEach((group) => {

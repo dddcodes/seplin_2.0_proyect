@@ -32,7 +32,7 @@ export default () => {
           ? `style="border-color: var(--${groupValues.color}-color);"`
           : ""
       }>
-            <p class="groupName">${groupValues.name}</p>
+            <p class="groupName" style="color: var(--${groupValues.color}-color);">${groupValues.name}</p>
             <p class="groupDescription">${groupValues.description}</p>
             <p class="groupLength">${
               groupQuizzes.length > 0
