@@ -46,4 +46,3 @@ export default () => {
         </div>  
     `;
 };
-//NO SIDEBAR DESDE EL COMMIT ANTERIOR
