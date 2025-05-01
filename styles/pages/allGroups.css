@@ -67,11 +67,12 @@
 
 #resetButton{
   max-height: 30px;
+  width:calc(50% - 12.5px);
   padding: 0;
   /*boton estara centrado en la parte mas baja de su caja*/
   position: relative;
   bottom: 0;
-  transform: translateY(50%) translateX(50%);
+  transform: translateY(28vw);
   color: var(--default-color-2);
 }
 
@@ -79,4 +80,14 @@
   background-color: var(--fail-color);
   border-color: var(--fail-color);
   color: var(--default-color);
+}
+
+#instagramButton{
+  width:calc(50% - 12.5px);
+  padding: 0;
+  /*boton estara centrado en la parte mas baja de su caja*/
+  position: relative;
+  bottom: 0;
+  transform: translateY(28vw);
+  color: var(--default-color-2);
 }

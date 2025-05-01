@@ -100,15 +100,30 @@ export default () => {
           location.reload();
         }
       });
+
+      const instagramButton = document.getElementById("instagramButton");
+      instagramButton.addEventListener("click", () => {
+        window.open("https://www.instagram.com/rl___dnx/", "_blank");
+      });
     }, 300);
   }, 300);
 
   return `
-        <div class="titleBox">
-          Tus grupos de quizzes!
-        </div>
-        <div id="groupsContainer"></div>
-        
-        <button id="resetButton" class="tinyButton" style="margin-top: 20px;">Resetear Seplin</button>
+  
+  <div class="titleBox" style="padding-top: 0 !important;">
+  Tus grupos de quizzes!
+  </div>
+
+  <p class="weakText" style="padding-top: 0;">Ya no hay actualizaciones significativas. Este es un proyecto experimental de hobby, no comercial</p>
+  <div id="groupsContainer"></div>
+
+  <button id="instagramButton" class="staticButton tinyButton" ">
+    @rl___dnx 
+  </button>
+  
+  <button id="resetButton" class="tinyButton" style="margin-top: 20px;">
+    Resetear Seplin
+  </button>
+  <p class="weakText">Este proyecto no es comercial, solo es un proyecto de varios que he creado para experimentar y probar habilidades personales. Hay errores y limitaciones.</p>
     `;
 };

@@ -110,11 +110,11 @@ export default () => {
 
         localQuizzes[actualQuizID] = actualQuiz;
         LSM.updateItem("localQuizzes", localQuizzes);
-        u.notification("Correcto!", "success");
+        u.notification("Haci mero!", "success");
         break;
       case "incorrect":
         u.shiftAndPush(actualQuiz.hitScore, false);
-        u.notification("Chavo tas mal", "error");
+        u.notification("Vas con nada!!! echale mas ganas", "error");
         break;
       default:
         console.log("NO SE SELECCIONO RESPUESTA");

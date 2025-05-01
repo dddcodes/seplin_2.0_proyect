@@ -5,174 +5,172 @@ export default () => {
     LSM.createItem("localQuizzes");
     const defaultQuizzes = [
       {
-        question:
-          "¿Qué caracteriza principalmente a la historiografía antigua?",
-        answer: "Narraciones míticas, genealogías y eventos bélicos",
+        question: "¿Qué caracteriza a la historiografía antigua?",
+        answer: "Relatos míticos y batallas de gobernantes",
         feedback:
-          "La historiografía antigua se centra en mitos y hazañas de élites para legitimar el poder.",
+          "Se centraba en héroes, guerras y mitos que legitimaban el poder.",
         options: [
-          "Críticas a instituciones tradicionales",
-          "Análisis económico de clases sociales",
-          "Uso de herramientas digitales",
+          "Análisis racional de hechos económicos",
+          "Estudios sociales desde el enfoque actual",
+          "Registros detallados de conflictos legales",
         ],
       },
       {
-        question: "¿Cuál es el enfoque central de la historiografía medieval?",
-        answer: "Interpretar la historia como parte de un plan divino",
+        question: "¿Qué enfoque tiene la historiografía medieval?",
+        answer: "Narrativas cristianas con sentido divino",
         feedback:
-          "Durante la Edad Media, la historia era vista como un reflejo del plan de Dios.",
+          "Presenta la historia como parte de un plan divino, muy ligada a la Iglesia.",
         options: [
-          "Buscar leyes generales del desarrollo histórico",
-          "Estudiar ciudades como espacios sociales",
-          "Incorporar minorías y vida cotidiana",
+          "Relatos seculares sobre comercio exterior",
+          "Investigación técnica de la vida cotidiana",
+          "Estudios filosóficos sobre la política",
         ],
       },
       {
         question: "¿Qué recupera la historiografía humanista del Renacimiento?",
-        answer: "Modelos grecorromanos y enfoque en logros humanos",
+        answer: "Modelo clásico centrado en el individuo",
         feedback:
-          "El humanismo rescata el pensamiento clásico y da importancia al individuo.",
+          "Retoma ideales griegos y romanos, destacando la razón y el ser humano.",
         options: [
-          "Documentos primarios con objetividad",
-          "Crónicas religiosas",
-          "Herramientas digitales para narración",
+          "Crónicas reales con enfoque militar",
+          "Estudios mágicos y cosmovisiones tribales",
+          "Perspectivas jurídicas con visión teológica",
         ],
       },
       {
-        question: "¿Qué valor fundamental guía a la historiografía ilustrada?",
-        answer: "La razón y el progreso",
+        question: "¿Qué resalta la historiografía ilustrada?",
+        answer: "Uso de razón y análisis del progreso",
         feedback:
-          "La Ilustración promueve la razón y la crítica a lo tradicional.",
+          "Promueve el pensamiento crítico, buscando patrones racionales en la historia.",
         options: [
-          "Providencia divina",
-          "Lucha de clases",
-          "Vida cotidiana de mujeres y minorías",
+          "Defensa de mitos y leyendas ancestrales",
+          "Valoración religiosa del pasado humano",
+          "Tradiciones épicas sin análisis objetivo",
+        ],
+      },
+      {
+        question: "¿Qué propone la historiografía positivista?",
+        answer: "Análisis objetivo con documentos reales",
+        feedback:
+          "Busca una historia científica basada en hechos verificables.",
+        options: [
+          "Interpretaciones místicas de personajes antiguos",
+          "Estudios emocionales con enfoque narrativo",
+          "Historias basadas en la memoria popular",
+        ],
+      },
+      {
+        question: "¿Qué explica la historiografía marxista?",
+        answer: "Historia como conflicto entre clases sociales",
+        feedback:
+          "Interpreta el desarrollo histórico desde la economía y la lucha de clases.",
+        options: [
+          "Estudios morales sobre decisiones éticas",
+          "Crónicas poéticas sin marco económico",
+          "Análisis religioso sobre el alma humana",
+        ],
+      },
+      {
+        question: "¿Qué busca la escuela de los Annales?",
+        answer: "Analizar estructuras sociales y económicas",
+        feedback:
+          "Propone una historia integral con enfoque en estructuras a largo plazo.",
+        options: [
+          "Narraciones bélicas con tono heroico",
+          "Biografías centradas en reyes importantes",
+          "Interpretaciones individuales de batallas",
+        ],
+      },
+      {
+        question: "¿Qué temas aborda la Nueva Historia?",
+        answer: "Vida diaria, cultura y minorías sociales",
+        feedback:
+          "Amplía la historia incluyendo mujeres, pueblos y prácticas culturales.",
+        options: [
+          "Hechos diplomáticos con impacto político",
+          "Perspectivas jurídicas de tratados antiguos",
+          "Tradiciones filosóficas del pensamiento clásico",
+        ],
+      },
+      {
+        question: "¿Qué analiza la historia del tiempo presente?",
+        answer: "Hechos recientes con fuentes vivas",
+        feedback: "Trabaja con testimonios orales, medios y actores vivos.",
+        options: [
+          "Visiones mitológicas del origen humano",
+          "Estudios sobre conflictos del siglo XVI",
+          "Crónicas medievales con sentido místico",
+        ],
+      },
+      {
+        question: "¿Qué caracteriza a la microhistoria?",
+        answer: "Casos locales que revelan procesos amplios",
+        feedback:
+          "Estudia hechos pequeños que reflejan grandes estructuras sociales.",
+        options: [
+          "Perspectiva global sobre imperios antiguos",
+          "Revisión de textos clásicos del Renacimiento",
+          "Estudios políticos de grandes civilizaciones",
+        ],
+      },
+      {
+        question: "¿Qué perspectiva aporta la historia cultural?",
+        answer: "Estudio de símbolos, rituales y lenguaje",
+        feedback:
+          "Enfoca cómo la cultura y los símbolos influyen en la vida y la historia.",
+        options: [
+          "Análisis económico de sistemas agrarios",
+          "Evaluación militar de grandes conquistas",
+          "Crónicas legales centradas en reyes",
+        ],
+      },
+      {
+        question: "¿Qué permite la historia digital?",
+        answer: "Uso de tecnología para analizar el pasado",
+        feedback:
+          "Facilita el acceso y análisis de datos históricos con herramientas digitales.",
+        options: [
+          "Narrativas religiosas sin fuentes digitales",
+          "Estudios intuitivos con base oral popular",
+          "Relatos simbólicos sin respaldo técnico",
         ],
       },
       {
         question:
-          "¿Qué objetivo tenía la historiografía positivista del siglo XIX?",
-        answer: "Establecer la historia como una ciencia objetiva",
+          "¿Cuál de las siguientes afirmaciones describe mejor el concepto de historiografía?",
+        answer: "Disciplina que analiza cómo se escribe la historia",
         feedback:
-          "El positivismo prioriza hechos y documentos, buscando objetividad total.",
+          "La historiografía estudia los métodos, fuentes y contextos del trabajo histórico.",
         options: [
-          "Interpretar el mundo desde la fe",
-          "Centrarse en estructuras de larga duración",
-          "Incorporar representaciones culturales",
+          "Serie cronológica de eventos antiguos",
+          "Estudio místico del universo humano",
+          "Descripciones subjetivas del pasado",
         ],
       },
       {
-        question: "¿Qué enfoque define a la historiografía marxista?",
-        answer: "Análisis de la lucha de clases y estructuras económicas",
+        question: "¿Cuál describe mejor el enfoque positivista en la historia?",
+        answer: "Análisis empírico basado en documentos primarios",
         feedback:
-          "Marx analiza la historia como conflicto entre clases por el control económico.",
+          "Se basa en fuentes verificables y busca leyes generales del progreso.",
         options: [
-          "Razón y crítica ilustrada",
-          "Narrativas mitológicas",
-          "Estudio de santos y mártires",
+          "Narración simbólica de eventos legendarios",
+          "Estudio emocional de héroes antiguos",
+          "Relato mágico con contenido poético",
         ],
       },
       {
-        question: "¿Qué propone la historiografía de los Annales?",
-        answer:
-          "Estudiar estructuras de larga duración con enfoque interdisciplinario",
+        question: "¿Cuál define mejor el marxismo como teoría histórica?",
+        answer: "Historia determinada por lucha de clases y economía",
         feedback:
-          "Annales rompe con el positivismo y amplía el campo de estudio histórico.",
+          "El marxismo interpreta la historia desde los conflictos económicos y sociales.",
         options: [
-          "Fijarse en logros humanos individuales",
-          "Uso exclusivo de fuentes digitales",
-          "Interpretación divina de la historia",
+          "Construcción divina del alma humana",
+          "Relatos épicos sobre reinos celestiales",
+          "Visión poética del destino humano",
         ],
       },
-      {
-        question: "¿Qué nuevo enfoque aporta la Nueva Historia?",
-        answer: "Estudiar la vida cotidiana, mujeres y minorías",
-        feedback:
-          "La Nueva Historia amplía los temas tradicionales, incluyendo nuevos actores históricos.",
-        options: [
-          "Narración de batallas épicas",
-          "Crónicas eclesiásticas",
-          "Clases sociales y modos de producción",
-        ],
-      },
-      {
-        question: "¿Qué estudia la historiografía urbana?",
-        answer: "Las ciudades como espacios sociales y culturales",
-        feedback:
-          "Esta corriente analiza la evolución y dinámica de las ciudades.",
-        options: [
-          "Relaciones entre infraestructura y superestructura",
-          "Planes divinos en la historia",
-          "Narrativas históricas digitales",
-        ],
-      },
-      {
-        question:
-          "¿Qué aspectos aborda la historiografía de la Revolución Mexicana?",
-        answer:
-          "Causas, actores, ideologías y consecuencias desde diversas perspectivas",
-        feedback:
-          "Esta historiografía busca comprender el conflicto desde enfoques sociales y culturales.",
-        options: [
-          "Exclusivamente la historia oficial",
-          "Solo las batallas militares",
-          "Interpretación desde un solo punto de vista",
-        ],
-      },
-      {
-        question: "¿Qué estudia la historiografía del tiempo presente?",
-        answer: "Eventos recientes con impacto actual",
-        feedback:
-          "Analiza hechos contemporáneos y su resonancia social y política.",
-        options: [
-          "Historia de santos y mártires",
-          "Eventos mitológicos",
-          "Hechos únicamente antiguos",
-        ],
-      },
-      {
-        question: "¿Qué distingue a la historiografía digital?",
-        answer:
-          "Uso de tecnologías digitales para investigar y difundir historia",
-        feedback:
-          "La historiografía digital permite nuevas formas de análisis histórico.",
-        options: [
-          "Centrarse solo en documentos físicos",
-          "Análisis divino de la historia",
-          "Rechazo al uso de tecnologías",
-        ],
-      },
-      {
-        "question": "¿Cuál de las siguientes afirmaciones describe mejor el concepto de historiografía?",
-        "answer": "La disciplina que analiza cómo se escribe la historia, incluyendo los métodos, las fuentes, las interpretaciones y los contextos de los historiadores.",
-        "feedback": "La historiografía estudia cómo se escribe la historia, no solo los hechos, sino las formas y motivos detrás de las narraciones históricas.",
-        "options": [
-          "El estudio de los eventos pasados de forma objetiva y sin interpretación.",
-          "La simple recopilación cronológica de fechas y personajes importantes de la historia.",
-          "La narración oral de tradiciones populares."
-        ]
-      },
-      {
-        "question": "Según la perspectiva positivista aplicada al oficio de la historia, ¿cuál de las siguientes afirmaciones describe mejor su enfoque?",
-        "answer": "El estudio histórico debe fundamentarse rigurosamente en el análisis crítico de documentos primarios y fuentes empíricas, buscando establecer leyes generales del progreso social a través de la aplicación de la razón y la observación, reflejando una evolución lineal a través de los tres estadios teológico, metafísico y positivo.",
-        "feedback": "El positivismo busca hacer de la historia una ciencia basada en hechos verificables, evitando interpretaciones subjetivas.",
-        "options": [
-          "La historia debe basarse principalmente en la interpretación subjetiva de los grandes relatos y mitos fundacionales.",
-          "La labor del historiador consiste en narrar de forma literaria y evocadora los acontecimientos del pasado.",
-          "La historia debe centrarse en emociones y valores culturales para entender mejor a las sociedades."
-        ]
-      },
-      {
-        "question": "¿Cuál de las siguientes afirmaciones describe y define de manera más precisa el marxismo como teoría social y económica?",
-        "answer": "El marxismo es una teoría que analiza la historia a través de la lente de la lucha de clases, donde el desarrollo social está determinado fundamentalmente por las tensiones y conflictos derivados de las relaciones económicas y la propiedad de los medios de producción. El factor económico se considera la base (infraestructura) que moldea la superestructura social, política e ideológica.",
-        "feedback": "El marxismo interpreta la historia como un conflicto constante entre clases sociales generado por relaciones económicas desiguales.",
-        "options": [
-          "El marxismo enfatiza la importancia de las ideas y los valores culturales como motor de la historia.",
-          "El marxismo aboga por una sociedad individualista basada en la competencia libre.",
-          "El marxismo propone una colaboración armónica entre clases sociales."
-        ]
-      }
     ];
+    
     defaultQuizzes.forEach((quiz) => {
       LSM.addQuiz(quiz.question, quiz.answer, quiz.feedback, quiz.options);
     });
