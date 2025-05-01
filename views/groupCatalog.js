@@ -16,11 +16,8 @@ export default () => {
   else if (groupPageID === "all-groups") localGroups[groupPageID].name;
   u.setPageTitle(groupName);
 
-  const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
-
   u.disappear(navbar);
-  u.disappear(sidebar);
 
   const LQ = {
     content: LSM.getLocalQuizzes(),

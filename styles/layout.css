@@ -2,7 +2,7 @@
 #main {
   width: 100vw;
   min-height: 100vh;
-  padding: 10px 295px 0 105px;
+  padding: 10px 10px 10px 110px;
   box-sizing: border-box;
 }
 
@@ -14,10 +14,10 @@
   width: 100%;
   margin: 0 0;
   padding: 0;
+  padding-bottom: 250px;
   border-radius: var(--border-radius-2);
 }
 
-#sidebar,
 #navigationBar {
   display: flex;
   height: 100%;
@@ -29,7 +29,6 @@
   position: fixed;
 }
 
-#sidebar > *,
 #navigationBar > * {
   border-radius: 40px;
 
@@ -37,16 +36,6 @@
   align-items: left;
 }
 
-#sidebar {
-  right: 0;
-  top: 0;
-
-  width: 290px;
-  background-color: var(--default-color);
-  border-left: var(--default-color-2) solid 2px;
-
-  z-index: 10;
-}
 
 #navigationBar {
   top: 0;
@@ -112,30 +101,4 @@
   border-radius: 0;
 
   padding: 10px 0;
-}
-
-.card,
-#sidebar > a {
-  background-color: var(--default-color);
-  border-radius: var(--border-radius-2);
-
-  width: 100%;
-  padding: 20px 10px 10px 10px;
-  min-height: 100px;
-  font-weight: 600;
-
-  text-align: center;
-
-  outline: var(--default-color-2) solid 2px;
-}
-
-.card:hover,
-#sidebar > a:hover {
-  outline-color: var(--alt-color);
-}
-
-.card > p,
-#sidebar > a > p {
-  color: var(--alt-color-2);
-  font-weight: 300;
 }

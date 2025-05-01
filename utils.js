@@ -18,15 +18,6 @@ export function scrollToBottom() {
   });
 }
 
-export function updateSidebar(newSidebarContent) {
-  const sidebar = document.querySelector("#sidebar"); // Selecciona el sidebar
-  if (!newSidebarContent) {
-    disappear(sidebar);
-  } else {
-    sidebar.innerHTML = newSidebarContent || "SIDEBAR CONTENT NOT FOUND";
-  }
-}
-
 export function random(min, max) {
   // Validación de parámetros
   if (typeof min !== "number" || typeof max !== "number") {
@@ -64,12 +55,8 @@ export function appear(element, display = "block") {
 }
 
 export function confirmLayoutVisibility() {
-  const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
   const mainApp = document.querySelector("#main");
-  if (sidebar.style.display !== "flex") {
-    appear(sidebar, "flex");
-  }
   if (navbar.style.display !== "flex") {
     appear(navbar, "flex");
   }
@@ -320,15 +307,7 @@ export function printGroups(specificFirstGroup) {
 }
 
 export function getAvailableColorGroups() {
-  return [
-    "azul",
-    "aqua",
-    "verde",
-    "rojo",
-    "amarillo",
-    "naranja",
-    "morado",
-  ];
+  return ["azul", "aqua", "verde", "rojo", "amarillo", "naranja", "morado"];
 }
 export function printAvailableColorGroups(specificDefaultColor) {
   const colorGroupInput = document.getElementById("colorGroupInput");

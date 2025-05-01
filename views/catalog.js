@@ -8,11 +8,9 @@ const actualView = CONFIG.routes.catalog;
 export default () => {
   u.setPageTitle(actualView.title);
 
-  const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
 
   u.disappear(navbar);
-  u.disappear(sidebar);
 
   const LQ = {
     content: LSM.getLocalQuizzes(),

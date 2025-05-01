@@ -11,7 +11,6 @@ export const router = async () => {
   u.removePopups();
   u.resetAnimation(app);
   u.scrollToTop(); // Mueve la página al inicio
-  u.updateSidebar(getCard.quizCreator() + getCard.groupCreator()); // SIDEBAR DEFAULT
 
   const routes = {
     "/index.html": () => import(`./views/${ROUTE.home.component}`), //inicio

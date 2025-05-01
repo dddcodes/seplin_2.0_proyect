@@ -9,10 +9,7 @@ export default () => {
   const actualView = CONFIG.routes.practice;
   u.setPageTitle(actualView.title); //titulo
 
-  const sidebar = document.querySelector("#sidebar");
   const navbar = document.querySelector("#navigationBar");
-
-  u.disappear(sidebar);
   u.disappear(navbar);
 
   const localQuizzes = LSM.getLocalQuizzes();

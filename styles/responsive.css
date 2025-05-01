@@ -1,7 +1,6 @@
 @media (max-width: 910px) {
   /*LAYOUT ==========================================================*/
-  #navigationBar,
-  #sidebar {
+  #navigationBar {
     width: 100%;
     height: 80px;
 
@@ -50,15 +49,8 @@
     padding: 0;
   }
 
-  #sidebar {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    top: 0;
-  }
-
   #main {
-    padding: 50px 5px 80px 5px;
+    padding: 20px 5px 80px;
     width: calc(100vw - 1px);
   }
 
@@ -123,18 +115,18 @@
     border-color: var(--default-color-3);
   }
 
-  .inputsContainer{
+  .inputsContainer {
     padding: 5px;
     gap: 20px;
     margin: 0;
   }
 
-  .inputsContainer > .inputBox{
+  .inputsContainer > .inputBox {
     /*que cada item ocupe el 100%*/
     width: 100%;
   }
 
-  .inputsContainer > .inputBox > p{
+  .inputsContainer > .inputBox > p {
     padding: 0 0 5px 25px;
   }
   /*Cambia el background-color del primer input y el ultimo a rojo*/
@@ -151,33 +143,6 @@
 
   .optionsBox > input:last-of-type:hover {
     border-color: var(--default-color-3);
-  }
-
-  /*MORE*/
-
-  #sidebar {
-    height: 50px;
-  }
-
-  #sidebar > a {
-    padding: 0;
-    align-content: center;
-    min-height: 0;
-
-    border: var(--default-color-2) solid 3px;
-    outline: 0;
-    font-weight: 400;
-
-    color: var(--alt-color);
-  }
-
-  #sidebar > a:hover {
-    background-color: var(--default-color-2);
-    color: var(--info-color);
-  }
-
-  #sidebar > a > p {
-    display: none;
   }
 
   .titleBox {
@@ -201,7 +166,7 @@
     animation: hideQuizBoxAnimationMovile 0.65s ease-in-out !important;
   }
   #practiceBar {
-    padding: 5px 20px 5px 5px;
+    padding: 5px 20px 70px 5px;
   }
 
   .notification {
