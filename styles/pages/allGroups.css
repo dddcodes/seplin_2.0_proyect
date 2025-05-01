@@ -10,12 +10,12 @@
   background-color: var(--default-color-2);
 
   border-radius: 30px;
-  padding: 20px;
+  padding: 15px 20px 20px;
   margin: 10px;
   width: 450px;
   min-height: 110px;
 
-  border-left: var(--default-color-3) solid 5px;
+  border-top: var(--default-color-3) solid 10px;
 }
 
 #groupsContainer > .groupCard:hover {
@@ -40,10 +40,43 @@
   color: var(--primary-color);
 }
 
+#groupsContainer > #createGroupCard {
+  border: 0;
+  /*Centrar sus items*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--default-color);
+  border: var(--default-color-2) solid 2px;
+  border-color: var(--default-color-2) !important;
+}
+
+#groupsContainer > #createGroupCard > .material-symbols-rounded {
+  font-size: 50px;
+  color: var(--default-color-2);
+}
+
+#groupsContainer > #createGroupCard:hover {
+  background-color: var(--default-color-2);
+}
+
+#groupsContainer > #createGroupCard:hover > .material-symbols-rounded {
+  color: var(--info-color);
+}
+
 #resetButton{
   max-height: 30px;
   padding: 0;
-  /*que siempre este hasta abajo de la caja sin nada alado*/
+  /*boton estara centrado en la parte mas baja de su caja*/
+  position: relative;
+  bottom: 0;
+  transform: translateY(50%) translateX(50%);
+  color: var(--default-color-2);
+}
 
-  bottom: 90px;
+#resetButton:hover{
+  background-color: var(--fail-color);
+  border-color: var(--fail-color);
+  color: var(--default-color);
 }

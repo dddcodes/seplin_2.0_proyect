@@ -148,7 +148,8 @@ button:active {
   color: var(--info-color);
   border-width: 2px;
   border-color: var(--info-color);
-  padding: inherit;
+
+  padding: unset;
 }
 
 /*POPUP BUTTONS*/

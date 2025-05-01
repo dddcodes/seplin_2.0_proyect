@@ -25,14 +25,16 @@ export default () => {
           groupQuizzes.push(quiz);
         }
       });
-
+      //Cards: "GRUPOS"
       groupsContainer.innerHTML += `
         <div class="groupCard" id="groupCard${groupID}" ${
         groupValues.color
           ? `style="border-color: var(--${groupValues.color}-color);"`
           : ""
       }>
-            <p class="groupName" style="color: var(--${groupValues.color}-color);">${groupValues.name}</p>
+            <p class="groupName" style="color: var(--${
+              groupValues.color
+            }-color);">${groupValues.name}</p>
             <p class="groupDescription">${groupValues.description}</p>
             <p class="groupLength">${
               groupQuizzes.length > 0
@@ -57,18 +59,32 @@ export default () => {
         quizzesWithoutGroup++;
       }
     });
-
+    //Card: "QUIZZES SIN GRUPO"
     groupsContainer.innerHTML += `
       <div class="groupCard" id="withoutGroupCard" style="border-color: var(--default-color-4);">
           <p class="groupName">Quizzes sin grupo</p>
           <p class="groupDescription">Aqui estan tus quizzes sin grupo</p>
           <p class="groupLength">${
-            quizzesWithoutGroup.length > 0
-              ? quizzesWithoutGroup.length + " quizzes"
+            quizzesWithoutGroup > 0
+              ? quizzesWithoutGroup + " quizzes"
               : "No hay ningun quiz"
           }</p>
+      </div>`;
+
+    //Card: "CREAR GRUPO"
+    groupsContainer.innerHTML += `
+      <div class="groupCard" id="createGroupCard" style="border-color: var(--default-color-4);">
+          <span class="material-symbols-rounded">
+            add
+          </span>          
       </div>
-      <button id="resetButton" class="tinyButton" style="margin-top: 20px;">Resetear Seplin</button>`;
+    `;
+    setTimeout(() => {
+      const createGroupCard = document.getElementById("createGroupCard");
+      createGroupCard.addEventListener("click", () => {
+        navigateTo("/group-creator");
+      });
+    }, 300);
 
     setTimeout(() => {
       const withoutGroupCard = document.getElementById("withoutGroupCard");
@@ -93,5 +109,6 @@ export default () => {
         </div>
         <div id="groupsContainer"></div>
         
+        <button id="resetButton" class="tinyButton" style="margin-top: 20px;">Resetear Seplin</button>
     `;
 };
