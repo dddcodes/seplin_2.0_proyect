@@ -307,7 +307,7 @@ export function printGroups(specificFirstGroup) {
 }
 
 export function getAvailableColorGroups() {
-  return ["azul", "aqua", "verde", "rojo", "amarillo", "naranja", "morado"];
+  return ["azul", "aqua", "verde", "rojo", "amarillo", "naranja", "morado", "menta"];
 }
 export function printAvailableColorGroups(specificDefaultColor) {
   const colorGroupInput = document.getElementById("colorGroupInput");

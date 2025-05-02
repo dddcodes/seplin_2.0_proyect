@@ -15,15 +15,15 @@
     --warning-color: #ff9800;
     --fail-color: #c95a52;
 
-    --verde-color: #5dae60;
-    --rojo-color: #c95a52;
-    --aqua-color: rgb(106, 165, 167);
-    --azul-color: #00a3ff;
+    --verde-color: #46e34c;
+    --rojo-color: #ff4d40;
+    --aqua-color: rgb(138, 247, 251);
+    --azul-color: #3765ff;
     --naranja-color: #ff9800;
-    --amarillo-color: #fff389;
-    --morado-color: #9347a0;
+    --amarillo-color: #fff833;
+    --morado-color: #dd3bfa;
+    --menta-color: #00ffff;
   
-    /* Gradiente Científico */
     --primary-gradient: linear-gradient(
       135deg,
       var(--secondary-color) 0%,
