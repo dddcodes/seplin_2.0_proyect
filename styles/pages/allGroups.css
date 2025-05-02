@@ -65,28 +65,28 @@
   color: var(--info-color);
 }
 
-#resetButton{
+#resetButton {
   max-height: 30px;
-  width:calc(50% - 12.5px);
+  width: calc(50% - 12.5px);
   padding: 0;
   /*boton estara centrado en la parte mas baja de su caja*/
   position: relative;
   bottom: 0;
-  transform: translateY(40vw);
+  transform: translateY(30vw);
   color: var(--default-color-2);
 }
 
-#resetButton:hover{
+#resetButton:hover {
   background-color: var(--fail-color);
   border-color: var(--fail-color);
   color: var(--default-color);
 }
 
-#instagramButton{
-  width:calc(50% - 12.5px);
+#instagramButton {
+  width: calc(50% - 12.5px);
   padding: 0;
   /*boton estara centrado en la parte mas baja de su caja*/
   position: relative;
   bottom: 0;
-  transform: translateY(40vw);
+  transform: translateY(30vw);
 }

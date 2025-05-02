@@ -78,15 +78,13 @@
 }
 #quizzesDataContainer > .quizDataCard > .dataDiv > .group {
   font-size: 15px;
-  width: fit-content;
+  width:  100%;
   font-weight: 200;
 
   padding: 1px 5px;
   margin-bottom: 5px;
   border-radius: var(--border-radius-2);
-  border: var(--default-color-3) solid 2px;
 
-  background-color: var(--default-color-3);
   color: var(--info-color);
 }
 #quizzesDataContainer > .quizDataCard > .dataDiv > .question {
