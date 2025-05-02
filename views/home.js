@@ -114,7 +114,8 @@ export default () => {
   Tus grupos de quizzes!
   </div>
 
-  <p class="weakText" style="padding-top: 0;">Ya no hay actualizaciones significativas. Este es un proyecto experimental de hobby, no comercial</p>
+  <p class="weakText" style="padding-top: 0;">
+    Prototipo experimental. En unos meses se implementara IA, puntajes, cuentas google, efectos de sonido, etc.</p>
   <div id="groupsContainer"></div>
 
   <button id="instagramButton" class="staticButton tinyButton" ">
@@ -124,6 +125,5 @@ export default () => {
   <button id="resetButton" class="tinyButton" style="margin-top: 20px;">
     Resetear Seplin
   </button>
-  <p class="weakText">Este proyecto no es comercial, solo es un proyecto de varios que he creado para experimentar y probar habilidades personales. Hay errores y limitaciones.</p>
     `;
 };
